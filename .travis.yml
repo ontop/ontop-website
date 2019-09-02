@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+    - "10"
+env:
+    - CXX=g++-4.8addons:
+    apt:
+        sources:
+            - ubuntu-toolchain-r-test
+        packages:
+            - g++-4.8
+install:
+    - npm install -g vuepress
+script:
+    - npm run docs:build
+cache:
+    directories:
+        - "node_modules"
+deploy:
+    provider: pages
+    skip-cleanup: true
+    local_dir: docs/.vuepress/dist
+    repo: ontop/ontop-docs
+    target-branch: master
+    on:
+        branch: master
