@@ -1,12 +1,16 @@
 ---
 home: true
-title: 'Ontop Documentation'
-description: ' '
+heroImage: /ontop-logo.png
+title: 'Ontop'
+description: 'A Virtual Knowledge Graph Platform'
+actionText: Get Started →
+actionLink: /guide/
+footer: Documentation under CC-BY license | Copyright 2009-present - Free University of Bozen-Bolzano
 ---
 
-# Introduction
+### Versions
 
-Starting from Ontop 4.0
+This documentation is for Ontop 4.0 and more recent versions.
+Note that is still UNDER CONSTRUCTION.
 
-UNDER CONSTRUCTION
-
+For earlier versions, please visit [our previous Wiki](https://github.com/ontop/ontop/wiki)
