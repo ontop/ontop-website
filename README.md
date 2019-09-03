@@ -1,6 +1,12 @@
-# Ontop documentation
+---
+home: true
+title: 'Ontop Documentation'
+description: ' '
+---
 
-For Ontop >= 4.0
+# Introduction
+
+Starting from Ontop 4.0
 
 UNDER CONSTRUCTION
 
