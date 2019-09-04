@@ -1,4 +1,4 @@
-# Formalization characterization of IQs
+# Formal characterization of IQs
 
 ::: warning
 TODO: CHECK/UPDATE (2 years old and formatted in AsciiDocs)

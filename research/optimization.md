@@ -4,10 +4,10 @@
 TODO: UPDATE AND CHECK (2 years old, imported from AsciiDocs)
 :::
 
-This section provides a high level description of different transformations which may be applied to link:intermediateQuery.adoc[Intermediate Queries] (_IQs_ in what follows) for optimization purposes.
+This section provides a high level description of different transformations which may be applied to [Intermediate Queries](/dev/iq) (_IQs_ in what follows) for optimization purposes.
 
 ## Notation
-The different types of nodes of an IQ are presented link:intermediateQuery_detailed.adoc[in the dedicated section].
+The different types of nodes of an IQ are presented [in the dedicated section](/dev/iq#query-nodes).
 The following notation will also be use in the current document.
 
 ### (Sub)trees
@@ -162,8 +162,7 @@ instead of strictly pushed down.
 This prevents an alteration of the semantic of the IQ.
 Consider for instance the following example (where r = j' for simplicity).
 
-[NOTE]
-=======================================================
+::: tip NOTE
 Let:
 
 * Q1 be a well-formed IQ
@@ -192,4 +191,4 @@ and ||n1|| = { {} }.
 But ||l2|| = { {y &map; 2} } and ||r2|| = { {} } must also hold,
 therefore ||j2|| = { {y &map; 2} } and ||n2|| = { {y &map; 2} },
 such that ||n1|| &ne; ||n2||.
-======================================================
+:::

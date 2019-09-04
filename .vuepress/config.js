@@ -63,7 +63,6 @@ function genDevSidebarConfig (title) {
 		children: [
 		  '',
 		  'iq',
-		  'query-nodes',
 		]
 	  }
 	]
