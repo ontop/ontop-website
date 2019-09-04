@@ -20,14 +20,14 @@ module.exports = {
 				link: '/dev/'
 			},
 			{
-				text: 'Academia',
-				link: '/academia/'
+				text: 'Research',
+				link: '/research/'
 			},
 		],
 		sidebar: {
 			'/guide/': genGuideSidebarConfig('Guide'),
 			'/dev/': genDevSidebarConfig('Development'),
-			'/academia/': genAcademiaSidebarConfig('Academic corner'),
+			'/research/': genResearchSidebarConfig('Research'),
 		}
 	},
 	plugins: [
@@ -69,7 +69,7 @@ function genDevSidebarConfig (title) {
 	]
   }
 
-function genAcademiaSidebarConfig (title) {
+function genResearchSidebarConfig (title) {
 	return [
 	  {
 		title,

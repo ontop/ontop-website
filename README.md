@@ -2,7 +2,7 @@
 home: true
 heroImage: /ontop-logo.png
 title: 'Ontop'
-description: 'A Virtual Knowledge Graph Engine'
+description: 'A Virtual Knowledge Graph System'
 actionText: Get Started →
 actionLink: /guide/
 footer: Documentation under CC-BY license | Copyright 2009-present - Free University of Bozen-Bolzano
@@ -22,9 +22,6 @@ The source code of the documentation is on [Github](https://github.com/ontop/ont
 To test it on your local machine:
 
 ``` bash
-# install
-yarn global add vuepress # OR npm install -g vuepress
-
 git clone git@github.com:ontop/ontop-docs-src.git
 cd ontop-docs-src
 
