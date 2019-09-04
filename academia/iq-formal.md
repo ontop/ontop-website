@@ -1,7 +1,7 @@
-# Formalization of Intermediate Queries
+# Formalization characterization of IQs
 
 ::: warning
-TODO: CHECK/UPDATE (2 years old)
+TODO: CHECK/UPDATE (2 years old and formatted in AsciiDocs)
 :::
 
 This section aims at providing a more precise characterization of an _intermediate query_ (_IQ_ in what follows),

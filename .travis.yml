@@ -9,11 +9,10 @@ addons:
             - ubuntu-toolchain-r-test
         packages:
             - g++-4.8
-install:
-    - npm install -g vuepress
 script:
-    - npm run docs:build
+    - yarn docs:build
 cache:
+    yarn: true
     directories:
         - "node_modules"
 deploy:

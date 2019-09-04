@@ -29,7 +29,15 @@ module.exports = {
 			'/dev/': genDevSidebarConfig('Development'),
 			'/academia/': genAcademiaSidebarConfig('Academic corner'),
 		}
-	}
+	},
+	plugins: [
+		['mathjax', {
+		  target: 'svg',
+		  macros: {
+			'*': '\\times',
+		  },
+		}],
+	  ]
 }
 
 function genGuideSidebarConfig (title) {
@@ -41,6 +49,7 @@ function genGuideSidebarConfig (title) {
 		  '',
 		  'getting-started',
 		  'concepts',
+		  'materialization',
 		]
 	  }
 	]
@@ -53,7 +62,8 @@ function genDevSidebarConfig (title) {
 		collapsable: false,
 		children: [
 		  '',
-		  'iq-dev',
+		  'iq',
+		  'query-nodes',
 		]
 	  }
 	]
@@ -67,8 +77,7 @@ function genAcademiaSidebarConfig (title) {
 		children: [
 		  '',
 		  'notation',
-		  'iq/iq-nodes',
-		  'iq/iq-formal',
+		  'iq-formal',
 		  'optimization',
 		]
 	  }

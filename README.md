@@ -17,7 +17,7 @@ For earlier versions, please visit [our previous Wiki](https://github.com/ontop/
 
 
 ### Editing the documentation
-The source code of the documentation is on [Github](https://github.com/ontop/ontop-docs-src) and is powered by [VuePress](https://vuepress.vuejs.org/).
+The source code of the documentation is on [Github](https://github.com/ontop/ontop-docs-src) and is powered by [VuePress](https://v1.vuepress.vuejs.org/).
 
 To test it on your local machine:
 
@@ -34,7 +34,7 @@ yarn docs:dev
 # commit your changes and push them back to Github
 ```
 
-VuePress requires Node.js >= 8.
+VuePress requires Node.js >= 8.6.
 
 Once pushed on Github, this public documentation is automatically rebuilt by Travis CI.
 

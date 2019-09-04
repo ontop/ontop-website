@@ -1,4 +1,4 @@
-# Query nodes (academic description)
+# Query nodes
 
 ::: warning
 TODO: CHECK/UPDATE (2 years old and formatted in AsciiDocs)
@@ -24,8 +24,8 @@ Optimizations applied to IQs are described in link:intermediateQuery_optimizatio
 
 A data node is a prototypical leaf node.
 
-It is characterized by a predicate p(v~1~, .., v~n~),
-where each v~i~ is either a constant or a variable name.
+It is characterized by a predicate $p(v_1, \dots, v_n)$,
+where each $v_i$ is either a constant or a variable name.
 
 Variable names can informally be viewed as SPARQL variables (or as RA attributes).
 

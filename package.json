@@ -2,6 +2,9 @@
   "scripts": {
     "docs:dev": "vuepress dev",
     "docs:build": "vuepress build"
+  },
+  "dependencies": {
+    "vuepress": "^1.0.3",
+    "vuepress-plugin-mathjax": "^1.2.8"
   }
 }
-
