@@ -1,5 +1,5 @@
 module.exports = {
-	base: '/ontop-docs/',
+	base: '/',
 	title: 'Ontop',
 	themeConfig: {
 		repo: 'ontop/ontop',

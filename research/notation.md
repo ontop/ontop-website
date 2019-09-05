@@ -1,4 +1,4 @@
-## Notation
+# Notation
 
 ::: warning
 TODO: CHECK/UPDATE (2 years old and formatted in AsciiDocs)
