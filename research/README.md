@@ -1,6 +1,8 @@
-# Presentation
+# Outline
 
 ::: warning 
-TO BE DONE
+TO BE COMPLETED
 :::
+
+ * [Publications](/research/publications)
 

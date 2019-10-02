@@ -12,16 +12,20 @@ module.exports = {
 			  link: '/guide/',
 			},
 			{
-				text: 'Glossary',
-				link: '/glossary/',
-			},
-			{
 				text: 'Dev',
 				link: '/dev/'
 			},
 			{
 				text: 'Research',
 				link: '/research/'
+			},
+			{
+				text: 'Community',
+				link: '/community/'
+			},
+			{
+				text: 'Jobs',
+				link: '/jobs/'
 			},
 		],
 		sidebar: {
@@ -44,12 +48,13 @@ function genGuideSidebarConfig (title) {
 	return [
 	  {
 		title,
-		collapsable: false,
+		collapsable: true,
 		children: [
 		  '',
 		  'getting-started',
 		  'concepts',
 		  'materialization',
+		  'glossary'
 		]
 	  }
 	]
@@ -75,6 +80,7 @@ function genResearchSidebarConfig (title) {
 		collapsable: false,
 		children: [
 		  '',
+		  'publications',
 		  'notation',
 		  'iq-formal',
 		  'optimization',

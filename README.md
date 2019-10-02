@@ -17,13 +17,13 @@ For earlier versions, please visit [our previous Wiki](https://github.com/ontop/
 
 
 ### Editing the documentation
-The source code of the documentation is on [Github](https://github.com/ontop/ontop-docs-src) and is powered by [VuePress](https://v1.vuepress.vuejs.org/).
+The source code of the documentation is on [Github](https://github.com/ontop/ontop-website) and is powered by [VuePress](https://v1.vuepress.vuejs.org/).
 
 To test it on your local machine:
 
 ``` bash
-git clone git@github.com:ontop/ontop-docs-src.git
-cd ontop-docs-src
+git clone git@github.com:ontop/ontop-website.git
+cd ontop-website
 
 # start the local server
 yarn docs:dev
