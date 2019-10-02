@@ -10,7 +10,7 @@ footer: Documentation under CC-BY license | Copyright 2009-present - Free Univer
 
 ### Versions
 
-This documentation is for Ontop 4.0 and more recent versions.
+This documentation is for Ontop 3.0 and more recent versions.
 Note that is still UNDER CONSTRUCTION.
 
 For earlier versions, please visit [our previous Wiki](https://github.com/ontop/ontop/wiki)

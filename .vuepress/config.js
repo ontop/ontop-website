@@ -3,7 +3,7 @@ module.exports = {
 	title: 'Ontop',
 	themeConfig: {
 		repo: 'ontop/ontop',
-		docsRepo: 'ontop/ontop-docs-src',
+		docsRepo: 'ontop/ontop-website',
 		editLinks: true,
 		lastUpdated: 'Last Updated',
 		nav: [
