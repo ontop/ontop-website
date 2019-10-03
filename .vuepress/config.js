@@ -12,6 +12,10 @@ module.exports = {
 			  link: '/guide/',
 			},
 			{
+				text: 'Tutorial',
+				link: '/tutorial/',
+			  },
+			{
 				text: 'Dev',
 				link: '/dev/'
 			},
@@ -30,6 +34,7 @@ module.exports = {
 		],
 		sidebar: {
 			'/guide/': genGuideSidebarConfig('Guide'),
+			'/tutorial/': genTutorialSidebarConfig('Tutorial'),
 			'/dev/': genDevSidebarConfig('Development'),
 			'/research/': genResearchSidebarConfig('Research'),
 		}
@@ -48,7 +53,7 @@ function genGuideSidebarConfig (title) {
 	return [
 	  {
 		title,
-		collapsable: true,
+		collapsable: false,
 		children: [
 		  '',
 		  'getting-started',
@@ -68,6 +73,18 @@ function genDevSidebarConfig (title) {
 		children: [
 		  '',
 		  'iq',
+		]
+	  }
+	]
+  }
+
+  function genTutorialSidebarConfig (title) {
+	return [
+	  {
+		title,
+		collapsable: false,
+		children: [
+		  '',
 		]
 	  }
 	]
