@@ -1,8 +1,6 @@
-# Outline
+# Overview
 
-::: warning 
-TO BE COMPLETED
+::: warning
+TODO: describe the history of the project, the research team at Unibz and the main research collaborations.
 :::
-
- * [Publications](/research/publications)
 

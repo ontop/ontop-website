@@ -1,4 +1,6 @@
-# 5 Research positions on Virtual Knowledge Graphs at KRDB, Univ. Bolzano, Italy
+# Jobs
+
+## 5 Research positions on Virtual Knowledge Graphs at KRDB, Univ. Bolzano, Italy
 
 July 2019
 

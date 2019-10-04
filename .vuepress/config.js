@@ -29,14 +29,15 @@ module.exports = {
 			},
 			{
 				text: 'Jobs',
-				link: '/jobs/'
+				link: '/community/jobs/'
 			},
 		],
 		sidebar: {
-			'/guide/': genGuideSidebarConfig('Guide'),
-			'/tutorial/': genTutorialSidebarConfig('Tutorial'),
-			'/dev/': genDevSidebarConfig('Development'),
-			'/research/': genResearchSidebarConfig('Research'),
+			'/guide/': genGuideSidebarConfig(),
+			'/tutorial/': genTutorialSidebarConfig(),
+			'/dev/': genDevSidebarConfig(),
+			'/community/': genCommunitySidebarConfig(),
+			'/research/': genResearchSidebarConfig(),
 		}
 	},
 	plugins: [
@@ -49,39 +50,57 @@ module.exports = {
 	  ]
 }
 
-function genGuideSidebarConfig (title) {
+function genGuideSidebarConfig () {
 	return [
 	  {
-		title,
+		title: 'Guide',
 		collapsable: false,
 		children: [
 		  '',
 		  'getting-started',
 		  'concepts',
 		  'materialization',
+		]
+	  },
+	  {
+		title: 'Advanced',
+		collapsable: false,
+		children: [
+		]
+	  },
+	  {
+		title: 'Meta',
+		collapsable: false,
+		children: [
 		  'glossary'
 		]
 	  }
 	]
   }
 
-function genDevSidebarConfig (title) {
+function genDevSidebarConfig () {
 	return [
 	  {
-		title,
+		title: 'Development',
 		collapsable: false,
 		children: [
 		  '',
+		]
+	  },
+	  {
+		title: 'Internals',
+		collapsable: false,
+		children: [
 		  'iq',
 		]
 	  }
 	]
   }
 
-  function genTutorialSidebarConfig (title) {
+  function genTutorialSidebarConfig () {
 	return [
 	  {
-		title,
+		title: 'Tutorial',
 		collapsable: false,
 		children: [
 		  '',
@@ -90,14 +109,43 @@ function genDevSidebarConfig (title) {
 	]
   }
 
-function genResearchSidebarConfig (title) {
+function genCommunitySidebarConfig () {
 	return [
 	  {
-		title,
+		title: 'Community',
+		collapsable: false,
+		children: [
+		  '',
+		  'support',
+		]
+	  },
+	  {
+		title: 'Contributing',
+		collapsable: false,
+		children: [
+		  'bug-report',
+		  'pull-request',
+		  'jobs'
+		]
+	  }
+	]
+  }
+
+
+function genResearchSidebarConfig () {
+	return [
+	  {
+		title: 'Research',
 		collapsable: false,
 		children: [
 		  '',
 		  'publications',
+		]
+	  },
+	  {
+		title: 'Theory',
+		collapsable: false,
+		children: [
 		  'notation',
 		  'iq-formal',
 		  'optimization',
