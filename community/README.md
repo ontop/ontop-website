@@ -1,4 +1,4 @@
-# Team
+# People
 
 Ontop has been initiated by [the eponymous research group at the Free University of Bozen-Bolzano](/research) which is still highly involved into the development of the project and into the research around it. Over the years, new members from diverse horizons have joined the project, forming a vibrant international community.
 
@@ -8,7 +8,7 @@ TODO: import data from [https://ontop.inf.unibz.it/about-us/](https://ontop.inf.
 
 ## Active Core Team Members
 
-The development of Ontop is guided by an international team, some of whom have chosen to be featured below. 
+The development of Ontop is guided by an international team. 
 
 ## Core Team Emeriti
 

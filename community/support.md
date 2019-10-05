@@ -1,9 +1,12 @@
 # Support
 
+## FAQ
+
+Please visit our pages about [Frequently Asked Questions](/guide/troubleshooting/faq) and [known issues and limitations](/guide/troubleshooting/known-issues).
+
 ## Mailing list (Google group)
 
 We have a [mailing list (Google group)](https://groups.google.com/d/forum/ontop4obda) for anything related to support, discussion and announcements. Please join for any inquiry.
-
 
 ## Bug tracking system
 

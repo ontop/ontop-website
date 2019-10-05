@@ -69,6 +69,14 @@ function genGuideSidebarConfig () {
 		]
 	  },
 	  {
+		title: 'Troubleshooting',
+		collapsable: false,
+		children: [
+			'troubleshooting/known-issues',
+			'troubleshooting/faq'
+		]
+	  },
+	  {
 		title: 'Meta',
 		collapsable: false,
 		children: [
@@ -116,6 +124,7 @@ function genCommunitySidebarConfig () {
 		collapsable: false,
 		children: [
 		  '',
+		  'organizations',
 		  'support',
 		]
 	  },
@@ -123,9 +132,11 @@ function genCommunitySidebarConfig () {
 		title: 'Contributing',
 		collapsable: false,
 		children: [
-		  'bug-report',
-		  'pull-request',
-		  'jobs'
+			'contributing/',
+			'contributing/bug-report',
+			'contributing/pull-request',
+		  'contributing/documentation',
+		  'contributing/jobs'
 		]
 	  }
 	]
