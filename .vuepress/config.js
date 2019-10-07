@@ -29,7 +29,7 @@ module.exports = {
 			},
 			{
 				text: 'Jobs',
-				link: '/community/jobs/'
+				link: '/community/contributing/jobs/'
 			},
 		],
 		sidebar: {
