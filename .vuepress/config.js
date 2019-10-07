@@ -57,8 +57,8 @@ function genGuideSidebarConfig () {
 		collapsable: false,
 		children: [
 		  '',
-		  'getting-started',
 		  'concepts',
+		  'getting-started',
 		  'materialization',
 		]
 	  },

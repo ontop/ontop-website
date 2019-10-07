@@ -4,7 +4,7 @@ The source code of the documentation is on [Github](https://github.com/ontop/ont
 
 Once a commit is pushed to the Github repository, this public documentation is automatically rebuilt by Travis CI.
 
-## Minor change
+## Small improvements
 
 Have you found a typo, a broken URL or another small problem? Please propose a fix immediately (before forgetting it), by clicking on the link `Edit this page` at the bottom of the page. 
 

@@ -25,7 +25,7 @@ Yes! Ontop is available under the Apache License, Version 2.0.
 
 ### How can I report a bug or ask other questions?
 You can get in touch with us through [our support channels](/community/support) and [contribute to the project](/community/contributing/)
-by for instance filing a [bug report](/community/contributing/bug-report).
+by, for instance, filing a [bug report](/community/contributing/bug-report).
 
 ## Databases
 
