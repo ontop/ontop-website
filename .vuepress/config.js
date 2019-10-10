@@ -113,8 +113,8 @@ function genDevSidebarConfig () {
 		children: [
 		  '',		  
 		  'index',
-		  'getting-started',
-		  'materialization',
+		  'basic',
+		  'university-1',
 		]
 	  }
 	]
