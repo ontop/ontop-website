@@ -16,6 +16,9 @@ For a more involved work on the documentation, we recommend you to test your cha
 git clone git@github.com:ontop/ontop-website.git
 cd ontop-website
 
+# Install the dependencies (e.g. vuepress)
+yarn install
+
 # start the local server
 yarn docs:dev
 
