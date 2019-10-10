@@ -111,7 +111,10 @@ function genDevSidebarConfig () {
 		title: 'Tutorial',
 		collapsable: false,
 		children: [
-		  '',
+		  '',		  
+		  'index',
+		  'getting-started',
+		  'materialization',
 		]
 	  }
 	]
