@@ -1,5 +1,5 @@
-Second data source: university 2
-================================
+# Second data source: university 2
+
 
 We now consider the database of another university. It has a different schema,
 composed of three tables:

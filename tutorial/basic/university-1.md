@@ -1,5 +1,5 @@
-First data source: university 1
-===============================
+# First data source: university 1
+
 
 As a first step, we focus on the database of a first university. It has
 the schema *uni1*.
@@ -71,50 +71,20 @@ c_id | s_id
 
 There is no primary key, but two foreign keys to the tables *uni1.course* and *uni1.student*.
 
-
-## Database setup
-
-Procedure:
-
-1. Unzip the archive of H2 [*(h2.zip)*](../h2.zip)
-2. Start the database:
-   * On Mac/Linux: open a terminal, go into *h2/bin* and run `sh h2.sh`
-   * On Windows: click on the executable `h2w.bat`
-3. After being automatically redirect to the web interface of H2, connect with the default parameters:
-     * JDBC URL:  *jdbc:h2:tcp://localhost/../university-session1*
-     * User name: *sa*
-     * No password
-4. Now you can see the tables in the schema *uni1*.
-5. Try a first SQL query: "Give me the last names of the full professors"
-
-```sql
-SELECT "last_name"
-FROM "uni1"."academic"
-WHERE "position" = 1
-```
-
-Ontology: classes and properties
---------------------------------
+## Ontology: classes and properties
 
 
-0. Unzip the Protégé archive and go into its folder
-1. Run it (*run.bat* on Windows, *run.sh* on Mac/Linux)
-2. Register the H2 JDBC driver: go to "Preferences", "JDBC Drivers" and add an entry with the following information
-     * Description: *h2*
-     * Class Name: *org.h2.Driver*
-     * Driver file (jar): */path/to/h2/bin/h2-1.4.196.jar*
-
-3. Download [this OWL ontology file](university.ttl).
-4. Download [this mapping file](university.obda).
-5. Download [this properties file](university.properties).
-6. Go to "File/Open..." to load the ontology file.
-7. In the tab "Classes" you can visualize the class hierarchy
-8. In the tab "Object properties" you can see the properties *attends*, *isGivenAt*, *isSupervisedBy*, *isTaughtBy* and *teaches*.
-9. In the tab "Data properties" you can see the properties *firstName*, *lastName* and *title*.
+1. Download [this OWL ontology file](university.ttl).
+2. Download [this mapping file](university.obda).
+3. Download [this properties file](university.properties).
+4. Go to "File/Open..." to load the ontology file.
+5. In the tab "Classes" you can visualize the class hierarchy
+6. In the tab "Object properties" you can see the properties *attends*, *isGivenAt*, *isSupervisedBy*, *isTaughtBy* and *teaches*.
+7. In the tab "Data properties" you can see the properties *firstName*, *lastName* and *title*.
 
 
-Mappings
---------
+## Mappings
+
 
 1. Go to the "Window" - "Tabs" - "Ontop mapping" tab
 2. Test the already defined connection configuration using the “Test Connection” button
@@ -211,7 +181,7 @@ Then proceed in a similar way for the other positions (assistant professor, post
 
 ### SPARQL
 
-1. Go to the "Window" - "Tabs" - "Ontop SPARQL" tab
+1. Run Protégé and go to the "Window" - "Tabs" - "Ontop SPARQL" tab
 2. Select Ontop in the “Reasoner” menu
 3. Start the reasoner
 4. Run the following query in "ontop query editor":
