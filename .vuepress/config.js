@@ -156,8 +156,15 @@ function genDevSidebarConfig () {
 		collapsable: false,
 		children: [
 			'federation/',
-		  'federation//denodo/',		  
-		  'federation/dremio',
+		  'federation/denodo/',		  
+		  'federation/dremio/',
+		]
+	  },
+	  {
+		title: 'Api',
+		collapsable: false,
+		children: [
+			'api/',
 		]
 	  }
 	  

@@ -1,5 +1,5 @@
-Ontop with Dremio
-=====================================================================================================
+# Ontop with Dremio
+
 
 In this tutorial we present step-by-step the way of connecting Dremio to Ontop. We show how to integrate *uni1* data saved in the PostgreSQL database and *uni2* data saved in plain JSON files into one Dremio data space. 
 

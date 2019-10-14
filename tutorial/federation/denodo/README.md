@@ -27,13 +27,13 @@ Note: environment variable `JAVA_HOME` must be set
 - Press 'LAUNCH' button
 - Login with 'admin' 'admin'
 
-### 2. Configure datasets in Dremio
+### 2. Configure datasets in Dremio?? Denodo
 
 NB: instead of doing the following step by step, you can also load `bzopendata.sql` directly to Denodo
 
 #### Create database
 
--> Administration -> Database Management -> New
+Administration -> Database Management -> New
 Call the database e.g. bzopendata (leave the rest to the defaults)
 
 Right-clik bzopendata database -> New -> Data Source -> JSON
@@ -45,7 +45,7 @@ Data route 'HTTP Client' -> Configure button
 
 - Weather Stations \
     name: stations \
-    Web API: http://daten.buergernetz.bz.it/services/meteo/v1/stations
+    Web API: http://daten.buergernetz.bz.it/services/weather/station?categoryId=2&lang=de&format=json
     
 - Sensor Data  \
     name: sensors \
