@@ -67,11 +67,6 @@ We get only one result --> We need to flatten the data:
 - Right click features -> Flatten array 'features'
 - Save the result, which creates a new view f_stations
 
-Selection:
-- Right click f_stations -> New -> Selection  
-- Select Output tab and specify what to keep in the output
-- Unfold properties and right-click each subfield and select 'Project field ...'
-
 ### 4. Configure Ontop-protege to use a Denodo datasource
 
 Install the Denodo JDBC driver:

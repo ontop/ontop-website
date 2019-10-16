@@ -5,19 +5,9 @@
 The Docker image [ontop/ontop-endpoint](https://hub.docker.com/r/ontop/ontop-endpoint) is for fast setting up an Ontop SPARQL endpoint.
 One can either use this image directly, or create a dedicated image based on this image.
 
-The required files in this tutorial are in the working directory:
+The required files in this tutorial are:
 
-```console
-.
-├── input
-│   ├── university-complete.docker.properties
-│   ├── university-complete.obda
-│   └── university-complete.ttl
-└── jdbc
-    └── h2-1.4.196.jar
-```
-
-1. Download [this OWL ontology file](input/university-complete.ttl).
+1. Download [this OWL ontology file](input/university-complete.zip).
 2. Download [this mapping file](input/university-complete.obda).
 3. Download [this properties file](input/university-complete.docker.properties).
 

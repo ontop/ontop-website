@@ -74,11 +74,11 @@ There is no primary key, but two foreign keys to the tables *uni1.course* and *u
 ## Ontology: classes and properties
 
 
-1. Download [this OWL ontology file](university.ttl).
+1. Download [this OWL ontology file](university.zip).
 2. Download [this mapping file](university.obda).
 3. Download [this properties file](university.properties).
-4. Go to "File/Open..." to load the ontology file.
-5. In the tab "Classes" you can visualize the class hierarchy
+4. Go to "File/Open..." to load the ontology file (be shure you have all three files in the same folder).
+5. In the tab "Entities/Classes" you can visualize the class hierarchy
 6. In the tab "Object properties" you can see the properties *attends*, *isGivenAt*, *isSupervisedBy*, *isTaughtBy* and *teaches*.
 7. In the tab "Data properties" you can see the properties *firstName*, *lastName* and *title*.
 
@@ -108,11 +108,16 @@ FROM "uni1"."student"
 
 Some remarks:
   - The target part is described using a [Turtle-like syntax](https://github.com/ontop/ontop/wiki/TurtleSyntax) while the source part is a regular SQL query.
-  - We used the primary key `s_id` to create the URI. As we will see later,
+  - We used the primary key `s_id` to create the URI. [As we will see later](../mapping/primary-keys.md),
     this practice enables Ontop to remove self-joins, which is very important for optimizing
     the query performance.
-  - This entry could be split into three mapping assertions.
+  - This entry could be split into three mapping assertions
 
+```turtle
+ex:uni1/student/{s_id} a :Student .
+ex:uni1/student/{s_id} foaf:firstName {first_name}^^xsd:string .
+ex:uni1/student/{s_id} foaf:lastName {last_name}^^xsd:string .
+```
 
 Let us now add the other mapping assertions by clicking on "create":
 
@@ -176,7 +181,7 @@ FROM "uni1"."academic"
 WHERE "position" = 1
 ```
 
-Then proceed in a similar way for the other positions (assistant professor, postdoc, etc.).
+Then proceed in a similar way for the other positions (associate  professor, assistant professor, external teacher, postdoc).
 
 
 ### SPARQL
@@ -184,7 +189,7 @@ Then proceed in a similar way for the other positions (assistant professor, post
 1. Run Protégé and go to the "Window" - "Tabs" - "Ontop SPARQL" tab
 2. Select Ontop in the “Reasoner” menu
 3. Start the reasoner
-4. Run the following query in "ontop query editor":
+4. Add a query in the "Query Manager" and run the following query in "ontop query editor":
 
 ```sparql
 PREFIX : <http://example.org/voc#>

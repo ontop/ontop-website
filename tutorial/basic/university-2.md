@@ -121,7 +121,7 @@ FROM "uni2"."person"
 WHERE "status" = 1
 ```
 
-And so on for the graduate students, the professors, etc.
+And so on for the graduate students, postdoc, full professors, associate professors and assistant professors.
 
 ## SPARQL
 
