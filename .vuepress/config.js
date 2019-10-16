@@ -111,9 +111,63 @@ function genDevSidebarConfig () {
 		title: 'Tutorial',
 		collapsable: false,
 		children: [
-		  '',
+		  '',		  
+		]
+	  },
+	  {
+		title: 'Basics',
+		collapsable: false,
+		children: [
+		  'basic/setup',		  
+		  'basic/university-1',
+		  'basic/university-2',
+		]
+	  },
+	  {
+		title: 'Endpoint',
+		collapsable: false,
+		children: [
+			'endpoint/',
+		  'endpoint/endpoint-cli',		  
+		  'endpoint/endpoint-docker',
+		  'endpoint/endpoint-tomcat',
+		]
+	  },
+	  {
+		title: 'Interact',
+		collapsable: false,
+		children: [
+			'interact/cli.md',
+		]
+	  },
+	  {
+		title: 'Mapping',
+		collapsable: false,
+		children: [
+			'mapping/',
+		  'mapping/primary-keys',		  
+		  'mapping/foreign-keys',
+		  'mapping/uri-templates',
+		  'mapping/existential',
+		]
+	  },
+	  {
+		title: 'Federation',
+		collapsable: false,
+		children: [
+			'federation/',
+		  'federation/denodo/',		  
+		  'federation/dremio/',
+		]
+	  },
+	  {
+		title: 'Api',
+		collapsable: false,
+		children: [
+			'api/',
 		]
 	  }
+	  
 	]
   }
 
