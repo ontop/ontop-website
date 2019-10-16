@@ -7,6 +7,9 @@ Procedure:
 
 1. Download and unzip the Tomcat bundle `ontop-tomcat-bundle-[version].zip` from [GitHub](https://github.com/ontop/ontop/releases)
 2. Copy the driver file of H2 [`jdbc/h2-1.4.196.jar`](jdbc/h2-1.4.196.jar) to the `lib` directory of tomcat  
+
+Note: environment variable `JAVA_HOME` must be set
+
 3. Start tomcat from the *`bin` folder* using the commands: 
 	* On Mac/Linux: using the terminal run `sh catalina.sh run`.
 	* On Windows: click on the executable `startup.bat`.
@@ -15,8 +18,8 @@ Procedure:
 
 ## Setting up a Ontop Virtual RDF Repository using the RDF4J Workbench
 
-1. The files needed are under the [input](input) directory:
-	- the OWL ontology file [input/university-complete.ttl](input/university-complete.ttl)
+1. The files needed are under the input directory:
+	- the OWL ontology file [input/university-complete.zip](input/university-complete.zip)
 	- the mapping file [input/university-complete.obda](input/university-complete.obda)
 	- the properties file [input/university-complete.properties](input/university-complete.properties) 
 
