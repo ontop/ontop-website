@@ -139,5 +139,3 @@ WHERE {
      foaf:lastName ?lastName .
 }
 ```
-
-[Next: choice of URI template](uri-templates.md)

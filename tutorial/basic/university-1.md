@@ -217,4 +217,3 @@ SELECT DISTINCT ?teacher {
 These inference capabilities can be, for a large part, understood as the ability to infer new mappings
 from the original mappings and the ontological axioms (e.g. Professor is a sub-class of Teacher). We will discuss it [later in this tutorial](../mapping/foreign-keys.md).
 
-[Next: Second data source](university-2.md)

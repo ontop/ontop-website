@@ -97,4 +97,3 @@ QVIEW1."last_name" IS NOT NULL
 
 As you can see, the self-joins are removed when primary keys are provided and used as joining conditions.
 
-[Next: without foreign keys](foreign-keys.md)

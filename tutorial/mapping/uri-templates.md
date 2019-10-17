@@ -20,8 +20,10 @@ We will also see that using this new URI template has a negative impact on the p
 
 ## Manual approach
 
-Download the following files: [university-manual-ssn.ttl](university-manual-ssn.ttl) 
-and [university-manual-ssn.obda](university-manual-ssn.obda) files. 
+Download the following files: 
+  - [university-manual-ssn.ttl](university-manual-ssn.ttl) 
+  - [university-manual-ssn.obda](university-manual-ssn.obda)
+  - [university-manual-ssn.properties](university-manual-ssn.properties)
 
 The mapping assertions are currently the same as during the first hands-on session.
 Let us now update them with the new URI template for persons.
