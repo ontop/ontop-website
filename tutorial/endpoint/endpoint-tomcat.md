@@ -19,7 +19,7 @@ Note: environment variable `JAVA_HOME` must be set
 ## Setting up a Ontop Virtual RDF Repository using the RDF4J Workbench
 
 1. The files needed are under the input directory:
-	- the OWL ontology file [input/university-complete.zip](input/university-complete.zip)
+	- the OWL ontology file [input/university-complete.ttl](input/university-complete.ttl)
 	- the mapping file [input/university-complete.obda](input/university-complete.obda)
 	- the properties file [input/university-complete.properties](input/university-complete.properties) 
 

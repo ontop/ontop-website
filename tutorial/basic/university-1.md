@@ -74,7 +74,7 @@ There is no primary key, but two foreign keys to the tables *uni1.course* and *u
 ## Ontology: classes and properties
 
 
-1. Download [this OWL ontology file](university.zip).
+1. Download [this OWL ontology file](university.ttl).
 2. Download [this mapping file](university.obda).
 3. Download [this properties file](university.properties).
 4. Go to "File/Open..." to load the ontology file (be shure you have all three files in the same folder).

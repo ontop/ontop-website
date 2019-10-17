@@ -7,7 +7,7 @@ One can either use this image directly, or create a dedicated image based on thi
 
 The required files in this tutorial are:
 
-1. Download [this OWL ontology file](input/university-complete.zip).
+1. Download [this OWL ontology file](input/university-complete.ttl).
 2. Download [this mapping file](input/university-complete.obda).
 3. Download [this properties file](input/university-complete.docker.properties).
 
