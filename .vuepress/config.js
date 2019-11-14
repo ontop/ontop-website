@@ -111,14 +111,14 @@ function genDevSidebarConfig () {
 		title: 'Tutorial',
 		collapsable: false,
 		children: [
-		  '',		  
+		  '',
 		]
 	  },
 	  {
 		title: 'Basics',
 		collapsable: false,
 		children: [
-		  'basic/setup',		  
+		  'basic/setup',
 		  'basic/university-1',
 		  'basic/university-2',
 		]
@@ -128,7 +128,7 @@ function genDevSidebarConfig () {
 		collapsable: false,
 		children: [
 			'endpoint/',
-		  'endpoint/endpoint-cli',		  
+		  'endpoint/endpoint-cli',
 		  'endpoint/endpoint-docker',
 		  'endpoint/endpoint-tomcat',
 		]
@@ -138,6 +138,7 @@ function genDevSidebarConfig () {
 		collapsable: false,
 		children: [
 			'interact/cli.md',
+			'interact/jupyter.md',
 		]
 	  },
 	  {
@@ -145,7 +146,7 @@ function genDevSidebarConfig () {
 		collapsable: false,
 		children: [
 			'mapping/',
-		  'mapping/primary-keys',		  
+		  'mapping/primary-keys',
 		  'mapping/foreign-keys',
 		  'mapping/uri-templates',
 		  'mapping/existential',
@@ -156,7 +157,7 @@ function genDevSidebarConfig () {
 		collapsable: false,
 		children: [
 			'federation/',
-		  'federation/denodo/',		  
+		  'federation/denodo/',
 		  'federation/dremio/',
 		]
 	  },
@@ -167,7 +168,7 @@ function genDevSidebarConfig () {
 			'api/',
 		]
 	  }
-	  
+
 	]
   }
 

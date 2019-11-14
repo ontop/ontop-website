@@ -26,6 +26,7 @@ git clone https://github.com/ontop/ontop-tutorial.git
     * [Using Ontop Tomcat bundle](endpoint/endpoint-tomcat.md)    
 3. [Interacting with an Ontop SPARQL endpoint](interact/cli.md)
     * [Command Line Tools (curl, http)](interact/cli.md)
+    * [Python and Jupyter Notebook](interact/jupyter.md)
 4. [Mapping Engineering](mapping)
     * [Role of primary keys](mapping/primary-keys.md)
     * [Role of foreign keys](mapping/foreign-keys.md)
