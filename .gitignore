@@ -1,2 +1,5 @@
 .vuepress/dist
 node_modules
+.ipynb_checkpoints/
+h2/
+log/
