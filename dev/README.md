@@ -1,7 +1,5 @@
-# Outline
+# Scope
 
-::: warning 
-TO BE COMPLETED
-:::
+The development chapter is targeted to those interested in the development of the Ontop framework.
 
 [Intermediate Query](/dev/iq)

@@ -16,10 +16,6 @@ module.exports = {
 				link: '/tutorial/',
 			  },
 			{
-				text: 'Dev',
-				link: '/dev/'
-			},
-			{
 				text: 'Research',
 				link: '/research/'
 			},
@@ -30,6 +26,10 @@ module.exports = {
 			{
 				text: 'Jobs',
 				link: '/community/contributing/jobs/'
+			},
+			{
+				text: 'Dev',
+				link: '/dev/'
 			},
 		],
 		sidebar: {
@@ -72,7 +72,6 @@ function genGuideSidebarConfig () {
 		title: 'Troubleshooting',
 		collapsable: false,
 		children: [
-			'troubleshooting/known-issues',
 			'troubleshooting/faq'
 		]
 	  },
@@ -101,6 +100,12 @@ function genDevSidebarConfig () {
 		children: [
 		  'iq',
 		]
+	  },
+	  {
+		  title: 'Outdated corner',
+		  children: [
+			'outdated/known-issues',
+		  ]
 	  }
 	]
   }
