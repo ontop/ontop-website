@@ -165,13 +165,13 @@ function genDevSidebarConfig () {
 		  'federation/dremio/',
 		]
 	  },
-	  {
+	  /*{
 		title: 'Api',
 		collapsable: false,
 		children: [
 			'api/',
 		]
-	  }
+	  }*/
 
 	]
   }
