@@ -23,7 +23,7 @@ Main features
 * Produces efficient SQL queries by applying many optimizations
 * Supports the main database systems (PostgreSQL, MySQL, SQL server, Oracle and DB2)
 * Supports database federators such as Dremio and Denodo (beta)
-* Can [materialize virtual graphs](/guide/materialization) into RDF files
+* Can materialize virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)
 
 Licenses

@@ -59,7 +59,6 @@ function genGuideSidebarConfig () {
 		  '',
 		  'concepts',
 		  'getting-started',
-		  'materialization',
 		]
 	  },
 	  {
