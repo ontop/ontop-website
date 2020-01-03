@@ -1,5 +1,7 @@
 # Presentation
 
+In this tutorial, we will see how to design a Virtual Knowledge Graph (VKG) specification, how to deploy it as a SPARQL endpoint, how to consume it and further more advanced topics.
+
 ## Requirements
 
 * [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
@@ -17,7 +19,7 @@ git clone https://github.com/ontop/ontop-tutorial.git
 
 ## Program
 
-1. [Basics of OBDA System Modeling and Usage](basic/setup.md)
+1. [Basics of VKG Modeling](basic/setup.md)
     * [Mapping the first data source](basic/university-1.md)
     * [Mapping the second data source](basic/university-2.md)
 2. [Deploying an Ontop SPARQL endpoint](endpoint)

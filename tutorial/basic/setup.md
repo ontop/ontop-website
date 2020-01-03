@@ -1,6 +1,6 @@
 # Database and Ontop Setup
 
-In this hands-on session, we are considering fragments of the information systems
+In this tutorial, we are considering fragments of the information systems
 of two universities describing students, academic staff and courses.
 
 ## Database setup
