@@ -15,7 +15,7 @@ For earlier versions, please refer to [our previous Wiki](https://github.com/ont
 Main features
 -------------
 
-* Can be deployed as an HTTP SPARQL endpoint
+* Can be deployed as a SPARQL endpoint
 * Supports the main SPARQL aggregation functions (since 4.0-beta-1)
 * Uses RDF 1.1 as graph data model
 * Supports RDFS and OWL 2 QL ontologies
