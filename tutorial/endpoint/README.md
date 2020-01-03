@@ -1,5 +1,5 @@
 # Deploying a SPARQL endpoint
 
-* [Using Ontop CLI](endpoint-cli.md)
-* [Using Ontop Docker image](endpoint-docker.md)
-* [Using Ontop Tomcat bundle](endpoint-tomcat.md)
+To deploy a SPARQL endpoint, we recommend to use the Ontop endpoint from the
+ * [Command Line Interface](endpoint-cli.md) or from the
+ * [Docker image](endpoint-docker.md)

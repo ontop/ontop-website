@@ -134,7 +134,7 @@ function genDevSidebarConfig () {
 			'endpoint/',
 		  'endpoint/endpoint-cli',
 		  'endpoint/endpoint-docker',
-		  'endpoint/endpoint-tomcat',
+		  //'endpoint/endpoint-tomcat',
 		]
 	  },
 	  {

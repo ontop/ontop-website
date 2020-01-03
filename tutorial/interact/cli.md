@@ -4,12 +4,8 @@ An Ontop Endpoint is accessible by the standard [HTTP protocol](https://www.w3.o
 
 ## URL of the Ontop SPARQL Endpoint
 
-If the endpoint is created by RDF4J Workbench (using Tomcat or Jetty),
-the URL looks like:
-`http://localhost:8080/rdf4j-server/repositories/<repo_name>`
-
-If the endpoint is created by the Ontop CLI or Docker, the URL looks like:
-`http://localhost:8080/sparql`
+When the endpoint is created by the Ontop CLI or Docker, the URL looks like
+`http://localhost:8080/sparql`.
 
 ### Http Request
 
