@@ -119,7 +119,7 @@
         Association for Artificial Intelligence -- Trento, November
         20-23, 2018.
 2.  [Semantic Technologies for Data Access and
-        Integration](http://ontop.inf.unibz.it/cikm-2018-tutorial/).
+        Integration](/research/tutorials/cikm-2018/).
         Diego Calvanese and Guohui Xiao. Full day tutorial, CIKM.
         Torino, 26 October 2018.
 3.  [Ontology-based Data Access: Theory and
