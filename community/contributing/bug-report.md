@@ -33,7 +33,4 @@ Modify the line of the *logback.xml* file from `<root Level="info">` to `<root L
 After running the test, get the log file from */Rdf4j/logs*.
 
 ## Asking for help or information
-If you are not reporting a bug but just asking for help using the program:
-* Have a look at our [documentation](/guide).
-* Check our [FAQ](/guide//troubleshooting/faq) page.
-* Please state where you have already looked for the answer to your question, this will help us improve or update our documentation.
+See [the support page](/community/support).
