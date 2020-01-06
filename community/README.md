@@ -8,13 +8,13 @@ For the research side, [see the dedicated page](/research).
 ## Active Core Team Members
 
 The development of Ontop is guided by an international team (reverse lexicographical order).
-* [Guohui Xiao](http://www.ghxiao.org/) (Unibz, [Ontopic](https://ontopic.biz))
+* [Guohui Xiao](http://www.ghxiao.org/) (Unibz, Ontopic)
 * Davide Lanti (Unibz)
-* [Roman Kontchakov](http://www.dcs.bbk.ac.uk/~roman/) (Birkbeck, University of London)
-* Sarah Komla-Ebri ([Ontopic](https://ontopic.biz))
+* [Roman Kontchakov](http://www.dcs.bbk.ac.uk/~roman/) (Birkbeck)
+* Sarah Komla-Ebri (Ontopic)
 * Julien Corman (Unibz)
-* [Benjamin Cogrel](https://github.com/bcogrel/) ([Ontopic](https://ontopic.biz))
-* [Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Unibz, [Ontopic](https://ontopic.biz))
+* [Benjamin Cogrel](https://github.com/bcogrel/) (Ontopic)
+* [Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Unibz, Ontopic)
 
 ## Core Team Emeriti
 
@@ -22,7 +22,7 @@ Here we honor some no-longer-active core team members who have made important co
 * Mariano Rodriguez-Muro (Google USA)
 * Martin Rezk (Google USA)
 * Elem Güzel
-* Elena Botoeva
+* Elena Botoeva (Imperial College)
 
 ## Contributors
 
