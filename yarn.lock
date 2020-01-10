@@ -7113,6 +7113,11 @@ vuepress-plugin-mathjax@^1.2.8:
     mathjax3 "3.0.0-beta.3"
     vuepress-mergeable "^1.0.2"
 
+vuepress-plugin-matomo@:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-matomo/-/vuepress-plugin-matomo-1.0.2.tgz#04ce864f4f10dce14f13df76416fcaabdfdc9517"
+  integrity sha512-4hTvIhz7r1nZz5U9IqH/OHfkXE5r8+RHh+EY9Fj5t5J4x2s/pr7rAgvz6y5VN4nWP45Y1a9oarUsvJSkl2De+A==
+
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-smooth-scroll/-/vuepress-plugin-smooth-scroll-0.0.3.tgz#6eff2d4c186cca917cc9f7df2b0af7de7c8c6438"

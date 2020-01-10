@@ -47,6 +47,12 @@ module.exports = {
 			'*': '\\times',
 		  },
 		}],
+		["vuepress-plugin-matomo",
+			{
+			  'siteId': 2,
+			  'trackerUrl': "https://ontopic.matomo.cloud/"
+			}
+		  ]
 	  ]
 }
 

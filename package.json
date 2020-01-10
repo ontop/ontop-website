@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "vuepress": "^1.0.3",
-    "vuepress-plugin-mathjax": "^1.2.8"
+    "vuepress-plugin-mathjax": "^1.2.8",
+    "vuepress-plugin-matomo": ""
   }
 }
