@@ -49,3 +49,11 @@ You can find us on the following social platforms:
 - [Twitter (ontop4obda)](https://twitter.com/ontop4obda)
 - [Google Group (ontop4obda)](https://groups.google.com/forum/#!forum/ontop4obda)
 - [GitHub (ontop/ontop)](https://github.com/ontop/ontop/)
+
+Citations
+---------
+
+* If you use Ontop in your work, please cite the following SWJ article for the system description. 
+    * Diego Calvanese, Benjamin Cogrel, Sarah Komla-Ebri, Roman Kontchakov, Davide Lanti, Martin Rezk, Mariano Rodriguez-Muro, and Guohui Xiao. [Ontop: Answering SPARQL Queries over Relational Databases](http://www.semantic-web-journal.net/content/ontop-answering-sparql-queries-over-relational-databases-1).  In: Semantic Web Journal 8.3 (2017), pp. 471–487.
+
+* If you want to cite the techniques behind Ontop, check [our publications](/research/publications).
