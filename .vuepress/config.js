@@ -78,7 +78,8 @@ function genGuideSidebarConfig () {
 		title: 'Meta',
 		collapsable: false,
 		children: [
-		  'glossary'
+		  'glossary',
+		  'releases'
 		]
 	  }
 	]
