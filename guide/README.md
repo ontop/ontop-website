@@ -11,6 +11,12 @@ This documentation is for Ontop 3.0 and more recent versions.
 
 For earlier versions, please refer to [our previous Wiki](https://github.com/ontop/ontop/wiki).
 
+Most recent versions:
+* Stable:  Ontop 3.0.1, released on December 9, 2019. 
+* Beta: Ontop 4.0.0-beta-1, released on December 23, 2019.
+
+See [release notes](/guide/releases) for more details.
+
 
 Main features
 -------------
