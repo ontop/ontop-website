@@ -24,12 +24,12 @@ module.exports = {
 				link: '/community/'
 			},
 			{
-				text: 'Jobs',
-				link: '/community/contributing/jobs/'
-			},
-			{
 				text: 'Dev',
 				link: '/dev/'
+			},
+			{
+				text: 'Jobs',
+				link: '/community/contributing/jobs/'
 			},
 		],
 		sidebar: {
@@ -98,13 +98,18 @@ function genDevSidebarConfig () {
 		collapsable: false,
 		children: [
 		  '',
+		  'git',
+		  'build',
+		  'new-release',
+		  'debug-protege',
+		  'debug-jetty'
 		]
 	  },
 	  {
 		title: 'Internals',
 		collapsable: false,
 		children: [
-		  'iq',
+		  'internals/iq',
 		]
 	  },
 	  {
