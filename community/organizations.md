@@ -9,6 +9,6 @@ The [In2Data research group](https://www.inf.unibz.it/krdb/in2data/) has initiat
 
 ## Ontopic s.r.l.
 
-[Ontopic](https://ontopic.biz/) is the first spin-off of Free University of Bozen-Bolzano co-founded by some members of the In2Data research group.
+[Ontopic](https://ontopic.biz/) is the first spin-off of Free University of Bozen-Bolzano and has been co-founded by some members of the In2Data research group.
 Its mission is to help Ontop and the Virtual Knowledge Graph to become mainstream. 
 Ontopic provides services and additional products.

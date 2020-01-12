@@ -2,7 +2,7 @@
 
 ## FAQ
 
-Please visit our pages about [Frequently Asked Questions](/guide/troubleshooting/faq) and [known issues and limitations](/guide/troubleshooting/known-issues).
+Please visit our pages about [Frequently Asked Questions](/guide/troubleshooting/faq).
 
 ## Mailing list (Google group)
 
