@@ -5,7 +5,7 @@ This list is at the moment incomplete, expect more to come soon.
 
 ## Free University of Bozen-Bolzano
 
-The [In2Data research group](https://www.inf.unibz.it/krdb/in2data/) has initiated and continues to lead the development of Ontop.
+The [In2Data research group](https://www.inf.unibz.it/krdb/in2data/) initiated and continues to lead the development of Ontop.
 
 ## Ontopic s.r.l.
 
