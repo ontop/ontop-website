@@ -47,6 +47,6 @@ The development and the research around Ontop over the years have been mainly fu
 * [INODE](http://www.inode-project.eu/) (data management infrastructures), H2020 EU project
 * High quality Open data Publishing and Enrichment (HOPE), Italian national PRIN (Research Projects of National Relevance)
 * PACMEL (VKG for process mining),  CHIST-ERA EU Project
-* IDEE (data integration in the energy sector), ESF Project
+* IDEE (data integration in the energy sector), FESR Project
 * GeoVKG (geo-spatial VKG), Unibz project
 * High Quality Data Integration with Ontologies (QUADRO), Unibz project
