@@ -1,6 +1,6 @@
 # Guice Conventions
 
-Each module contains a folder `src/main/java/` and a module `it.unibz.inf.ontop.injection/filename.properties` (e.g., `mapping-default`).
+Each module contains a folder `src/main/java/` and a module `it.unibz.inf.ontop.injection/filename.properties` (e.g., `mapping-default.properties`).
 
 The file specifies to which implementation each interface needs to be instantiated. For instance, `mapping-default.properties` contains the following lines
 
