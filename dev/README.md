@@ -15,6 +15,7 @@ The development chapter is targeted to those interested in the development of th
 Information about the internals of Ontop
 
 * [Intermediate Query](/dev/internals/iq) data structure
+* [Guice Conventions](/dev/internals/guice)
 
 
 
