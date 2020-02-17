@@ -14,14 +14,14 @@ module.exports = {
 			{
 				text: 'Tutorial',
 				link: '/tutorial/',
-			  },
-			{
-				text: 'Research',
-				link: '/research/'
 			},
 			{
 				text: 'Community',
 				link: '/community/'
+			},
+			{
+				text: 'Research',
+				link: '/research/'
 			},
 			{
 				text: 'Dev',
