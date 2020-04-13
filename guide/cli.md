@@ -46,7 +46,7 @@ Most commands below require or accept as input a property file.
 This is where you will specify the JDBC connection parameters.
 A basic property file template can be found [here](/properties/basic.properties).
 
-## ontop endpoint
+## `ontop endpoint`
 `ontop endpoint` deploys a SPARQL endpoint locally at the address `/sparql` and by default on the port 8080. It powers [our official Docker](https://hub.docker.com/r/ontop/ontop-endpoint), so feel free to use the Docker image instead of the CLI command if it is more convenient for you.
 
 It offers several advanced options:
@@ -105,7 +105,7 @@ $  ./ontop endpoint -m /Users/xiao/obda/univ-benchQL.obda \
   --cors-allowed-origins=*
 ```
 
-## ontop materialize
+## `ontop materialize`
 
 The second option is the "materialization utility", it does not need any query file, but instead, needs the user to specify a format in which he/she wants the output (either to terminal or output file). Materialization is helpful when you want to generate RDF data out of your database, using the provided mappings. This utility will take all the triples that the mapping can produce from the data source, and write it to the output. For very large datasets, producing the output might take some time. The user can choose between three output formats: Turtle, N-triples or RDF/XML. 
 
@@ -168,7 +168,7 @@ $ /.ontop materialize -m exampleBooks.ttl \
  -p books.properties
 ```
 
-## ontop mapping
+## `ontop mapping`
 
 ```
 $ ./ontop help mapping
@@ -252,7 +252,7 @@ OPTIONS
             Input mapping file in Ontop native format (.obda)
 ```
 
-## ontop bootstrap
+## `ontop bootstrap`
 
 ```
 $ ./ontop help bootstrap
@@ -363,6 +363,6 @@ x
 <http://www.Department0.University0.edu/GraduateStudent142>
 ```
 
-## ontop extract-db-metadata
+## `ontop extract-db-metadata`
 
 At the moment, this command is experimental. The format of the returned JSON file may change without notification. We will document this command once it becomes stable.
