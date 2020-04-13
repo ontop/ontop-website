@@ -1,0 +1,44 @@
+title="My Portal"
+
+[[tabGroups]]
+
+name="Regular Queries"
+
+[[tabGroups.tabs]]
+
+name="Lodging businesses"
+query="""
+PREFIX schema: <http://schema.org/>
+
+SELECT *
+WHERE {
+  ?h a schema:LodgingBusiness .
+}
+LIMIT 500
+"""
+
+[[tabGroups.tabs]]
+name="Number of lodging businesses"
+query="""
+PREFIX schema: <http://schema.org/>
+
+SELECT (COUNT(?h) AS ?c)
+WHERE {
+  ?h a schema:LodgingBusiness
+}
+"""
+
+[[tabGroups]]
+
+name="Others Queries"
+
+[[tabGroups.tabs]]
+
+name="Query 1"
+query="""
+SELECT *
+WHERE {
+  ?s ?p ?o
+}
+LIMIT 100
+"""
