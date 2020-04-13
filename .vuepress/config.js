@@ -27,10 +27,6 @@ module.exports = {
 				text: 'Dev',
 				link: '/dev/'
 			},
-			{
-				text: 'Jobs',
-				link: '/community/contributing/jobs/'
-			},
 		],
 		sidebar: {
 			'/guide/': genGuideSidebarConfig(),
@@ -207,8 +203,7 @@ function genCommunitySidebarConfig () {
 			'contributing/',
 			'contributing/bug-report',
 			'contributing/pull-request',
-		  'contributing/documentation',
-		  'contributing/jobs'
+		  'contributing/documentation'
 		]
 	  }
 	]
