@@ -1,7 +1,12 @@
 # Publications
 
 ## Journals
-1.  **Querying Log Data with Metric Temporal Logic**. Sebastian
+1. **Virtual Knowledge Graphs: An Overview of Systems and Use Cases.** Guohui Xiao, Linfang Ding, Benjamin Cogrel, Diego Calvanese. Data Intelligence. 2019.
+2. **Ontop-spatial: Ontop of Geospatial Databases.** Konstantina Bereta, Guohui Xiao, and Manolis Koubarakis. Journal of Web Semantics. 2019.
+3. **Ontology-Based Access To Temporal Data With Ontop: A Framework Proposal.** Elem Güzel Kalaycı, Sebastian Brandt, Diego Calvanese, Vladislav Ryzhikov, Guohui Xiao, and Michael Zakharyaschev. International Journal of Applied Mathematics and Computer Science. 2019.
+4. **VIG: Data Scaling for OBDA Benchmarks.** Davide Lanti, Guohui Xiao, and Diego Calvanese. Semantic Web Journal. 2019. 
+5. **Ontology-based Data Access - Beyond relational sources.** Elena Botoeva, Diego Calvanese, Benjamin Cogrel, Julien Corman, Guohui Xiao. Intelligenza Artificiale. 2019.
+1.  **Querying Log Data with Metric Temporal Logic.** Sebastian
         Brandt, Elem Güzel Kalaycı, Vladislav Ryzhikov, Guohui Xiao, and
         Michael Zakharyaschev. Journal of Artiﬁcial Intelligence
         Research, 2018.
@@ -26,10 +31,12 @@
 
 
 ## Conferences
-
-1.  **Efficient Handling of SPARQL OPTIONAL for OBDA.** Guohui Xiao,
+1. **Enriching Ontology-based Data Access with Provenance.**  Diego Calvanese, Davide Lanti, Ana Ozaki, Rafael Penaloza, and Guohui Xiao. IJCAI. 2019.
+2.  **Efficient Handling of SPARQL OPTIONAL for OBDA.** Guohui Xiao,
         Roman Kontchakov, Benjamin Cogrel, Diego Calvanese, and Elena
         Botoeva. ISWC (Research), 2018.
+3. **Ontology-based data access: A survey.** Guohui Xiao, Diego Calvanese, Roman Kontchakov, Domenico Lembo, Antonella Poggi, Riccardo Rosati, Michael Zakharyaschev. IJCAI. 2018.
+4. **Ontop-temporal: A Tool for Ontology-based Query Answering over Temporal Data.** Elem Güzel Kalayci, Guohui Xiao, Vladislav Ryzhikov, Tahir Emre Kalayci, and Diego Calvanese. CIKM. 2018.
 2.  **Eﬃcient Ontology-Based Data Integration with canonical IRIs**.
         Guohui Xiao, Dag Hovland, Dimitris Bilidas, Martin Rezk, Martin
         Giese, and Diego Calvanese. ESWC, 2018.
