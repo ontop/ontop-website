@@ -53,25 +53,9 @@ Then add a second data source for sensor data, repeating all the operations abov
 - In the field 'Name', enter 'sensors',
 - Use the URL:	
 <http://daten.buergernetz.bz.it/services/meteo/v1/sensors>
-<!---
-#### Connect to datasources
-
-(press Save icon for each source)
-
-- Weather Stations \
-    name: stations \
-    Web API: <http://daten.buergernetz.bz.it/services/weather/station?categoryId=2&lang=de&format=json>
-    
-- Sensor Data  \
-    name: sensors \
-    Web API: <http://daten.buergernetz.bz.it/services/meteo/v1/sensors>
---->
 
 ### 3. Configure the datasources
 
-<!---
-Open the datasources in a web browser to understand their structure.
---->
 
 Select a data source, and click on 'Create base view'
 - for stations: use the default "tuple root" (`/JSONFile`)
@@ -85,17 +69,13 @@ We get only one result --> We need to flatten the data:
 - In the left window, right-click on {}stations -> New -> flatten
  (to display the data sources, you may need to right-click on 'bzopendata' -> 'Refresh')
 - Enlarge window with data
-<!---
-- Right click features -> Flatten array 'features'
---->
 - Right click on the first row of the table -> 'Flatten array row'
 - Click on 'Save': this creates a new view 'f_stations'
 
 Selection:
 - In the left window, right-click on 'f_stations' -> New -> Selection  
-- Select the Output tab and choose which fields to keep in the output
+- Select the 'Output' tab and choose which fields to keep in the output
 - Click on 'Save': this will create a new view 'p_f_stations'
-<!--- Unfold properties and right-click each subfield and select 'Project field ...' --->
 
 ### 4. Configure Ontop-protege to use a Denodo datasource
 
@@ -159,7 +139,3 @@ SELECT *
 }
 LIMIT 100
 ```
-
-<!-- 5.3 Visualize the results using a simple webpage using YASGUI (which is part of
-    the endpoint) -->
-
