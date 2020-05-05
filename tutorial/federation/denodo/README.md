@@ -2,14 +2,14 @@
 # Ontop with Denodo
 
 NB: You might also consult the following presentation, which shows screenshots for
-some of the steps described below:\
+some of the steps described below:  
 <https://github.com/ontop/ontop-examples/blob/master/cikm-2018-tutorial/4-obdi-demo.pdf>
 
 ### 1. Set up Denodo.
 
 #### Download Denodo Express 
 
-Download it from <https://www.denodo.com/en/denodo-platform/denodo-express> \
+Download it from <https://www.denodo.com/en/denodo-platform/denodo-express>  
 (register, download the platform and the licence file)
 
 Unzip the file and run the installer.
@@ -24,34 +24,34 @@ Note: environment variable `JAVA_HOME` must be set
 
 - Select the 'Virtual DataPort' tab
 - Start 'Virtual DataPort Server'
-- Press the 'LAUNCH' button
-- Login with:
-    . Login:'admin'
-	. Password: 'admin'
+- Press the 'Launch' button
+- Login with:  
+    . Login: 'admin'  
+	. Password: 'admin'  
 	. Server: '//localhost:9999/admin'
-    
-### 2. Configure datasets in Denodo
+	
+### 2. Configure datasets with Denodo
 
-NB: instead of doing the following step by step, you can also load `bzopendata.sql` directly within Denodo
+NB: instead of doing the following step by step, you can also load `bzopendata.sql` directly within Denodo.
 
 #### Create a database
 
-We will create two data sources based on web APIs.
+We will create two data sources based on web APIs.  
 First, a Web API with wheather data.
 
-Administration -> Database Management -> New
+Administration -> Database Management -> New  
 Name the database bzopendata for instance (leave the rest to default values), and click on the 'OK' button.
 
-In the left window, right-clik on the bzopendata database -> New -> Data Source -> JSON.
-In the field 'Name', enter 'stations'.
-In the field 'Data route', select 'HTTP Client'.
-Click on the 'Configure' button to enter the URL of the source:
-<http://daten.buergernetz.bz.it/services/weather/station?categoryId=2&lang=de&format=json>
-Click on 'OK', and then press the 'Save' button to save the data source.
+In the left window, right-clik on the bzopendata database -> New -> Data Source -> JSON.  
+In the field 'Name', enter 'stations'.  
+In the field 'Data route', select 'HTTP Client'.  
+Click on the 'Configure' button to enter the URL of the source:  
+<http://daten.buergernetz.bz.it/services/weather/stations>  
+Click on 'OK', and then press the 'Save' button to save the data source.  
 
-Then add a second data source for sensor data, repeating all the operations above, but:
-- In the field 'Name', enter 'sensors',
-- Use the URL:	
+Then add a second data source for sensor data, repeating all the operations above, but:  
+- in the field 'Name', enter 'sensors',  
+- use the URL:
 <http://daten.buergernetz.bz.it/services/meteo/v1/sensors>
 
 ### 3. Configure the datasources
