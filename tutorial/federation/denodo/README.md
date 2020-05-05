@@ -32,7 +32,7 @@ Note: environment variable `JAVA_HOME` must be set
 	
 ### 2. Configure datasets with Denodo
 
-NB: instead of doing the following step by step, you can also load `bzopendata.sql` directly within Denodo.
+NB: instead of doing the following step by step, you can also load [this SQL script](bzopendata.sql) directly within Denodo.
 
 #### Create a database
 
