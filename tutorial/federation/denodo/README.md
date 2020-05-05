@@ -37,7 +37,7 @@ NB: instead of doing the following step by step, you can also load `bzopendata.s
 #### Create a database
 
 We will create two data sources based on web APIs.  
-First, a Web API with wheather data.
+First, a Web API with weather data.
 
 - Administration -> Database Management -> New  
 Name the database bzopendata for instance (leave the rest to default values), and click on the 'OK' button.
