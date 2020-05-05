@@ -26,9 +26,9 @@ Note: environment variable `JAVA_HOME` must be set
 - Start 'Virtual DataPort Server'
 - Press the 'LAUNCH' button
 - Login with:
-    Login:'admin'
-	Password: 'admin'
-	Server: '//localhost:9999/admin'
+    . Login:'admin'
+	. Password: 'admin'
+	. Server: '//localhost:9999/admin'
     
 ### 2. Configure datasets in Denodo
 
