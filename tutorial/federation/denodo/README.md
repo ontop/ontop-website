@@ -28,7 +28,7 @@ Note: environment variable `JAVA_HOME` must be set
 - Login with:  
     . Login: `admin`  
 	. Password: `admin`  
-	. Server: '//localhost:9999/admin`
+	. Server: `//localhost:9999/admin`
 	
 ### 2. Configure datasets with Denodo
 
@@ -40,16 +40,16 @@ We will create two data sources based on web APIs.
 First, a Web API with weather data.
 
 - Administration -> Database Management -> New  
-- Name the database bzopendata for instance (leave the rest to default values), and click on the 'OK' button
+- Name the database `bzopendata` for instance (leave the rest to default values), and click on the 'OK' button
 - In the left window, right-clik on the bzopendata database -> New -> Data Source -> JSON
-- In the field 'Name', enter 'stations'
+- In the field 'Name', enter `stations`
 - In the field 'Data route', select 'HTTP Client'
 - Click on the 'Configure' button to enter the URL of the source:  
 <http://daten.buergernetz.bz.it/services/weather/stations>  
 - Click on 'OK', and then press the 'Save' button to save the data source
 
 Then add a second data source for sensor data, repeating all the operations above, but:  
-- in the field 'Name', enter 'sensors',
+- in the field 'Name', enter `sensors`,
 - use the URL:
 <http://daten.buergernetz.bz.it/services/meteo/v1/sensors>
 
@@ -79,21 +79,21 @@ Optionally, one may want to select only certain columns in this view:
 
 Install the Denodo JDBC driver:
 - Within Protege: File -> Preferences -> 'JDBC Drivers' tab -> Add  
-    . Description: `Denodo`
-    . Class name: `com.denodo.vdp.jdbc.Driver`
-    . Driver File (jar): browse to `<DenodoInstallationPath>/tools/client-drivers/jdbc/denodo-vdp-jdbcdriver.jar`
+    . Description: `Denodo`  
+    . Class name: `com.denodo.vdp.jdbc.Driver`  
+    . Driver File (jar): browse to `<DenodoInstallationPath>/tools/client-drivers/jdbc/denodo-vdp-jdbcdriver.jar`  
 
-For the connection, in your Datasource manager, use:
-    . Connection url: `jdbc:vdb://localhost:9999/bzopendata`
-    . Database Username: `admin`
-    . Database Password: `admin`
+For the connection, in your Datasource manager, use:  
+    . Connection url: `jdbc:vdb://localhost:9999/bzopendata`  
+    . Database Username: `admin`  
+    . Database Password: `admin`  
     . Driver class: `com.denodo.vdp.jdbc.Driver`
 
 ### 5. Create the ontology and mapping and and try some SPARQL queries
 
 You can use directly the files we have prepared:
 - [bzweather.obda](bzweather.obda)
--  [bzweather.owl](bzweather.owl)
+- [bzweather.owl](bzweather.owl)
 - [bzweather.properties](bzweather.properties)
 - [bzweather.q](bzweather.q)
 
