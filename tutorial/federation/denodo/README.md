@@ -19,27 +19,42 @@ Note: environment variable `JAVA_HOME` must be set
 #### Running Denodo
 
 ```console
-/Applications/DenodoPlatform7.0/bin/DenodoPlatform.sh
+<DenodoInstallationPath>/bin/denodoPlatform.sh
 ```
 
-- Select 'Virtual DataPort' tab
+- Select the 'Virtual DataPort' tab
 - Start 'Virtual DataPort Server'
-- Press 'LAUNCH' button
-- Login with 'admin' 'admin'
-
+- Press the 'LAUNCH' button
+- Login with:
+    Login:'admin'
+	Password: 'admin'
+	Server: '//localhost:9999/admin'
+    
 ### 2. Configure datasets in Denodo
 
-NB: instead of doing the following step by step, you can also load `bzopendata.sql` directly to Denodo
+NB: instead of doing the following step by step, you can also load `bzopendata.sql` directly within Denodo
 
-#### Create database
+#### Create a database
+
+We will create two data sources based on web APIs.
+First, a Web API with wheather data.
 
 Administration -> Database Management -> New
-Call the database e.g. bzopendata (leave the rest to the defaults)
+Name the database bzopendata for instance (leave the rest to default values), and click on the 'OK' button.
 
-Right-clik bzopendata database -> New -> Data Source -> JSON
-Data route 'HTTP Client' -> Configure button
+In the left window, right-clik on the bzopendata database -> New -> Data Source -> JSON.
+In the field 'Name', enter 'stations'.
+In the field 'Data route', select 'HTTP Client'.
+Click on the 'Configure' button to enter the URL of the source:
+<http://daten.buergernetz.bz.it/services/weather/station?categoryId=2&lang=de&format=json>
+Click on 'OK', and then press the 'Save' button to save the data source.
 
-#### Connect datasources
+Then add a second data source for sensor data, repeating all the operations above, but:
+- In the field 'Name', enter 'sensors',
+- Use the URL:	
+<http://daten.buergernetz.bz.it/services/meteo/v1/sensors>
+<!---
+#### Connect to datasources
 
 (press Save icon for each source)
 
@@ -50,37 +65,47 @@ Data route 'HTTP Client' -> Configure button
 - Sensor Data  \
     name: sensors \
     Web API: <http://daten.buergernetz.bz.it/services/meteo/v1/sensors>
+--->
 
-### 3. Configure datasources
+### 3. Configure the datasources
 
+<!---
 Open the datasources in a web browser to understand their structure.
+--->
 
-For each datasource: Create base view
-- for stations: use default Tuple root
-- for sensors: use Tuple root: `/JSONFile/JSONArray` (click on checkbox JSON root)
+Select a data source, and click on 'Create base view'
+- for stations: use the default "tuple root" (`/JSONFile`)
+- for sensors: use the "tuple root": `/JSONFile/JSONArray` (uncheck the checkbox `JSON root`)
 
-For stations, try to run 'Execution panel' button, then Execute
+Click on 'Save'.
+
+For stations, click on the 'Execution panel' button, and then the button 'Execute'
 
 We get only one result --> We need to flatten the data:
-- Right click {}stations -> New -> flatten
+- In the left window, right-click on {}stations -> New -> flatten
+ (to display the data sources, you may need to right-click on 'bzopendata' -> 'Refresh')
 - Enlarge window with data
+<!---
 - Right click features -> Flatten array 'features'
-- Save the result, which creates a new view f_stations
+--->
+- Right click on the first row of the table -> 'Flatten array row'
+- Click on 'Save': this creates a new view 'f_stations'
 
 Selection:
-- Right click f_stations -> New -> Selection  
-- Select Output tab and specify what to keep in the output
-- Unfold properties and right-click each subfield and select 'Project field ...'
+- In the left window, right-click on 'f_stations' -> New -> Selection  
+- Select the Output tab and choose which fields to keep in the output
+- Click on 'Save': this will create a new view 'p_f_stations'
+<!--- Unfold properties and right-click each subfield and select 'Project field ...' --->
 
 ### 4. Configure Ontop-protege to use a Denodo datasource
 
 Install the Denodo JDBC driver:
-- Protege -> Preferences -> JDBC Drivers tab -> Add
+- Within Protege: File -> Preferences -> 'JDBC Drivers' tab -> Add
 - Description: Denodo
 - Class name: `com.denodo.vdp.jdbc.Driver`
-- Driver File (jar): browse to `/.../DenodoPlatform7.0/tools/client-drivers/jdbc/denodo-vdp-jdbcdriver.jar`
+- Driver File (jar): browse to `<DenodoInstallationPath>/tools/client-drivers/jdbc/denodo-vdp-jdbcdriver.jar`
 
-For the connection in your Datasource manager use:
+For the connection in your Datasource manager, use:
 
 - Connection url: `jdbc:vdb://localhost:9999/bzopendata`
 - Database Username: `admin`
