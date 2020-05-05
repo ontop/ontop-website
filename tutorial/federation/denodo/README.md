@@ -36,7 +36,7 @@ NB: instead of doing the following step by step, you can also load `bzopendata.s
 
 #### Create a database
 
-We will create two data sources based on web APIs.  
+We will create two data sources based on web APIs. \
 First, a Web API with wheather data.
 
 Administration -> Database Management -> New  
