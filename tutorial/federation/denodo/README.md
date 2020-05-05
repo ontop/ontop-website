@@ -77,13 +77,13 @@ Optionally, one may want to select only certain columns in this view:
 
 ### 4. Configure Ontop-protege to use a Denodo datasource
 
-Install the Denodo JDBC driver:
-- Within Protege: File -> Preferences -> 'JDBC Drivers' tab -> Add  
+- Install the Denodo JDBC driver:
+ Within Protege: File -> Preferences -> 'JDBC Drivers' tab -> Add  
     . Description: `Denodo`  
     . Class name: `com.denodo.vdp.jdbc.Driver`  
     . Driver File (jar): browse to `<DenodoInstallationPath>/tools/client-drivers/jdbc/denodo-vdp-jdbcdriver.jar`  
 
-For the connection, in your Datasource manager, use:  
+- For the connection, in your Datasource manager, use:  
     . Connection url: `jdbc:vdb://localhost:9999/bzopendata`  
     . Database Username: `admin`  
     . Database Password: `admin`  
