@@ -3,22 +3,89 @@
 This page describes how Ontop can be deployed over a SQL DBMS that is not among the list of supported ones.
 Currently, Ontop can be natively deployed over the following DBMSs:
 
-It is relatively easy though to extend Ontop's source code in order to support an additional DBMS, 
-thanks to dependency injection.
+It is relatively easy though to extend Ontop's source code in order to support an additional DBMS, thanks to dependency injection.
 
-Precisely, 3 classes must be implemented, all of which have already a default implementation.
-Ontop uses internally a variant of Relational Algebra (RA) to manipulate queries, called *IQ* (for "Intermediate Query").
-These 3 classes dictate how an IQ must be serialized into the SQL dialect supported by the DBMS.
-The default implementation of these 3 classes is based on the SQL 99 standard,
+## Required implementations
+
+3 implementations must be provided, each for a different interface that has already have a default (abstract) implementation.
+Ontop uses internally a variant of Relational Algebra (RA) to manipulate queries, called *IQ* (for "Intermediate Query"),
+These 3 implementations dictate how an IQ must be serialized into the SQL dialect supported by the DBMS.
+
+The default implementation of these 3 interfaces is based on the SQL 99 standard,
 so that most operators or functions are generally serialized correctly by default,
 and only a few methods need to be overwritten,
-to account for dialect-specific serialization. 
+to account for aspects that are specific to a dialect. 
 
-The 3 classes are:
-- a *serialzer* that dictates how the  
+The 3 required implemetations are the following:
+
+### Serializer
+
+The *serialzer* dictates the general shape (SELECT-FROM-WHERE) of the SQL query.  
+
+The interface to implement is `it.unibz.inf.ontop.generation.serializer.SelectFromWhereSerializer`,
+and the default implementation is `it.unibz.inf.ontop.generation.serializer.impl.DefaultSelectFromWhereSerializer`.    
+
+For instance, the serializer for Postgresql within Ontop is the class:  
+`it.unibz.inf.ontop.generation.serializer.impl.PostgresSelectFromWhereSerializer`.
+
+### Function Symbol Factory 
+
+The *function symbol factory* establishes the correspondence between function the function symbols of the SPARQL specification (such as "STRLEN" or "NOW") and their counterparts in the SQL dialect (e.g. "LENGTH" or "CURRENT_TIMESTAMP").  
+
+The interface to implement is `it.unibz.inf.ontop.model.term.functionsymbol.db.DBFunctionSymbolFactory`,
+and the default implementation is `it.unibz.inf.ontop.model.term.functionsymbol.db.impl.AbstractSQLDBFunctionSymbolFactory`.  
+
+For instance, the function symbol factory for Postgresql within Ontop is the class:  
+`it.unibz.inf.ontop.model.term.functionsymbol.db.impl.PostgreSQLDBFunctionSymbolFactory`.
+
+### Datatype Factory 
+
+The *datatype factory* declares the hierarchy of datatypes used by the DBMS, and specifies their correspondence with xsd types (used by SPARQL).  
+The interface to implement is `it.unibz.inf.ontop.model.type.SQLDBTypeFactory`, and the default implementation is `it.unibz.inf.ontop.model.type.impl.DefaultSQLDBTypeFactory`  
+For instance, the datatype factory for Postgresql within Ontop is the class:  
+`it.unibz.inf.ontop.model.type.impl.PostgreSQLDBTypeFactory`.
+
+## Optional implementations
+
+In addition to the 3 implementations above, some additional implementations can be optionally declared.
+### Normalizer
+
+The *normalizer* addresses limitations of certain DBMSs (such as a non-canonical evaluation of the ORDER BY clause).
+The interface to implement is `it.unibz.inf.ontop.generation.normalization.DialectExtraNormalizer`, and several implementations are already available, some of which are used by veral DBMSs.
+For instance, the normalizer associated to Oracle within Ontop is `it.unibz.inf.ontop.generation.normalization.impl.OnlyInPresenceOfDistinctProjectOrderByTermsNormalizer`
+
+## Declaring an implementation
+
+All the implementations mentioned above can be declared in the property file:  
+`it/unibz/inf/ontop/injection/sql-default.properties`
+
+A key-value pair must be added for each of the above implementations, where the key indicates the type of the implementation (serializer, function symbol factory, etc.), and the value is the implementation.
+
+The naming scheme for the keys is the following:
+
+Let `$driverName` be the name of the JDBC driver for the DBMS (for instance, the JDBC driver for Postgresql is `org.postgresql.Driver`).  
+Then:
+- the key for 
 
 
-, which may be sufficient for a large numbe of  
+For instance, the key-value pairs declared for Postgresql are:
+```
+org.postgresql.Driver-typeFactory = it.unibz.inf.ontop.model.type.impl.PostgreSQLDBTypeFactory
+org.postgresql.Driver-symbolFactory = it.unibz.inf.ontop.model.term.functionsymbol.db.impl.PostgreSQLDBFunctionSymbolFactory
+org.postgresql.Driver-metadataProvider = it.unibz.inf.ontop.dbschema.impl.PostgreSQLDBMetadataProvider
+```
+
+The 
+Fi
+
+com.denodo.vdp.jdbc.Driver-typeFactory = it.unibz.inf.ontop.model.type.impl.DenodoDBTypeFactory
+com.denodo.vdp.jdbc.Driver-symbolFactory = it.unibz.inf.ontop.model.term.functionsymbol.db.impl.DenodoDBFunctionSymbolFactory
+com.denodo.vdp.jdbc.Driver-normalizer = it.unibz.inf.ontop.generation.normalization.impl.AlwaysProjectOrderByTermsNormalizer
+
+The naming scheme is the following, where `$driverName` is the name of the JDBC for the DBMS.
+`$driverName- 
+com.denodo.vdp.jdbc.Driver
+
 
 
 All there
