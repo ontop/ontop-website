@@ -32,6 +32,10 @@ Main features
 * Can [materialize](/guide/cli#ontop-materialize) virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)
 
+Organizations
+-------------
+Ontop is backed by the [Free University of Bozen-Bolzano](https://www.inf.unibz.it/krdb/in2data/) and [Ontopic s.r.l.](https://ontopic.biz). It also receives regular important contributions from [Birkbeck, University of London](http://www.bbk.ac.uk/). See the [community section](/community) for more details.
+
 Licenses
 --------
 
@@ -49,10 +53,6 @@ You can find us on the following social platforms:
 - [Twitter (ontop4obda)](https://twitter.com/ontop4obda)
 - [Google Group (ontop4obda)](https://groups.google.com/forum/#!forum/ontop4obda)
 - [GitHub (ontop/ontop)](https://github.com/ontop/ontop/)
-
-Organisations
--------------
-Ontop is backed by the [Free University of Bozen-Bolzano](https://www.inf.unibz.it/krdb/in2data/) and the [Ontopic s.r.l.](https://ontopic.biz). It also receives regular important contributions from [Birkbeck, University of London](http://www.bbk.ac.uk/). See the [community section](/community) for more details.
 
 Citations
 ---------

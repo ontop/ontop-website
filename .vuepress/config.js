@@ -64,12 +64,12 @@ function genGuideSidebarConfig () {
 		  'cli'
 		]
 	  },
-	  {
-		title: 'Advanced',
-		collapsable: false,
-		children: [
-		]
-	  },
+	//   {
+	// 	title: 'Advanced',
+	// 	collapsable: false,
+	// 	children: [
+	// 	]
+	//   },
 	  {
 		title: 'Troubleshooting',
 		collapsable: false,
