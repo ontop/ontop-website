@@ -52,7 +52,7 @@ You can find us on the following social platforms:
 
 Organisations
 -------------
-Ontop is backed by the [Free University of Bozen-Bolzano](https://www.inf.unibz.it/krdb/in2data/) and the [Ontopic s.r.l.](https://ontopic.biz). It also receives regular important contributions from [Birkbeck, University of London](http://www.bbk.ac.uk/). See the [community section](/community/organizations) for more details.
+Ontop is backed by the [Free University of Bozen-Bolzano](https://www.inf.unibz.it/krdb/in2data/) and the [Ontopic s.r.l.](https://ontopic.biz). It also receives regular important contributions from [Birkbeck, University of London](http://www.bbk.ac.uk/). See the [community section](/community) for more details.
 
 Citations
 ---------
