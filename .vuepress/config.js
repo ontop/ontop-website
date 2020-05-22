@@ -48,6 +48,18 @@ module.exports = {
 			  'siteId': 2,
 			  'trackerUrl': "https://ontopic.matomo.cloud/"
 			}
+		  ],
+		  ["redirect", {
+				redirectors: [
+				  {
+					base: '/obda-pages/ontop',
+					storage: false, 
+					alternative: [
+					  '../..',
+					],
+				  },
+				],
+			  },
 		  ]
 	  ]
 }
