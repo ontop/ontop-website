@@ -687,6 +687,15 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
+"@shigma/stringify-object@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@shigma/stringify-object/-/stringify-object-3.3.0.tgz#c6611dcdf650024a9f6397580f821accd3021be3"
+  integrity sha512-tO5pn6RJp8m1ldYtqY3GEQA6+Nqp1cIZVrVx7iFVPx0YfhMqfplwrvyrQPP1cCwuyRoAyDr/BxVZYt+USm8LXQ==
+  dependencies:
+    get-own-enumerable-property-symbols "^3.0.0"
+    is-obj "^1.0.1"
+    is-regexp "^2.0.0"
+
 "@types/events@*":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
@@ -3142,6 +3151,11 @@ get-caller-file@^1.0.1:
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.3.tgz#f978fa4c90d1dfe7ff2d6beda2a515e713bdcf4a"
   integrity sha512-3t6rVToeoZfYSGd8YoLFR2DJkiQrIiUrGcjvFX2mDw3bn6k2OtwHN0TNCLbBO+w8qTvimhDkv+LSscbJY1vE6w==
 
+get-own-enumerable-property-symbols@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-3.0.2.tgz#b5fde77f22cbe35f390b4e089922c50bce6ef664"
+  integrity sha512-I0UBV/XOz1XkIJHEUDMZAbzCThU/H8DxmSfmdGcKPnVhu2VfFqr34jr9777IyaTYvxjedWhqVIilEDsCdP5G6g==
+
 get-stream@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-4.1.0.tgz#c1b255575f3dc21d59bfc79cd3d2b46b1c3a54b5"
@@ -3826,7 +3840,7 @@ is-number@^3.0.0:
   dependencies:
     kind-of "^3.0.2"
 
-is-obj@^1.0.0:
+is-obj@^1.0.0, is-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
   integrity sha1-PkcprB9f3gJc19g6iW2rn09n2w8=
@@ -3868,6 +3882,11 @@ is-regex@^1.0.4, is-regex@^1.0.5:
   integrity sha512-vlKW17SNq44owv5AQR3Cq0bQPEb8+kF3UKZ2fiZNOWtztYE5i0CzCZxFDwO58qAOWtxdBRVO/V5Qin1wjCqFYQ==
   dependencies:
     has "^1.0.3"
+
+is-regexp@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/is-regexp/-/is-regexp-2.1.0.tgz#cd734a56864e23b956bf4e7c66c396a4c0b22c2d"
+  integrity sha512-OZ4IlER3zmRIoB9AqNhEggVxqIH4ofDns5nRrPS6yQxXE1TPCUpFznBfRQmQa8uC+pXqjMnukiJBxCisIxiLGA==
 
 is-resolvable@^1.0.0:
   version "1.1.0"
@@ -6914,6 +6933,13 @@ vuepress-plugin-container@^2.0.2:
   dependencies:
     markdown-it-container "^2.0.0"
 
+vuepress-plugin-dehydrate@1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-dehydrate/-/vuepress-plugin-dehydrate-1.1.4.tgz#4447d95ed78e370ad68f480f33f8ec59e37423c6"
+  integrity sha512-WgLftm5vXJiY0PpBTtJa0qJOveZAxkRXq4uarT5UXVmC1XOABLK9wgFcnNPsluMpvxMJ33gu+ipqdLiedA9PhA==
+  dependencies:
+    "@vuepress/shared-utils" "^1.2.0"
+
 vuepress-plugin-mathjax@^1.2.8:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-mathjax/-/vuepress-plugin-mathjax-1.2.8.tgz#decec38e9dbb82de9cf79f042463fa4a56e25340"
@@ -6927,6 +6953,14 @@ vuepress-plugin-matomo@:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-matomo/-/vuepress-plugin-matomo-1.0.2.tgz#04ce864f4f10dce14f13df76416fcaabdfdc9517"
   integrity sha512-4hTvIhz7r1nZz5U9IqH/OHfkXE5r8+RHh+EY9Fj5t5J4x2s/pr7rAgvz6y5VN4nWP45Y1a9oarUsvJSkl2De+A==
+
+vuepress-plugin-redirect@:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-redirect/-/vuepress-plugin-redirect-1.2.4.tgz#e8f7ce578f8a66d9389ce4705d901bf847524ee6"
+  integrity sha512-oLFR+Hl4H3vhr/NzKieSu8vkgCr26WwfWZkrfXs0AMIfWNhDpWir8I325f+l4bLty9tvq4Lmvrqt1nNdhzl70g==
+  dependencies:
+    "@shigma/stringify-object" "^3.3.0"
+    vuepress-plugin-dehydrate "1.1.4"
 
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"

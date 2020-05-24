@@ -48,6 +48,18 @@ module.exports = {
 			  'siteId': 2,
 			  'trackerUrl': "https://ontopic.matomo.cloud/"
 			}
+		  ],
+		  ["redirect", {
+				redirectors: [
+				  {
+					base: '/obda-pages/ontop',
+					storage: false, 
+					alternative: [
+					  '../..',
+					],
+				  },
+				],
+			  },
 		  ]
 	  ]
 }
@@ -64,12 +76,12 @@ function genGuideSidebarConfig () {
 		  'cli'
 		]
 	  },
-	  {
-		title: 'Advanced',
-		collapsable: false,
-		children: [
-		]
-	  },
+	//   {
+	// 	title: 'Advanced',
+	// 	collapsable: false,
+	// 	children: [
+	// 	]
+	//   },
 	  {
 		title: 'Troubleshooting',
 		collapsable: false,
