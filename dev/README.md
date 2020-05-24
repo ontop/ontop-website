@@ -10,6 +10,7 @@ The development chapter is targeted to those interested in the development of th
 * Debug:
   * [Protégé](/dev/debug-protege)
   * [Jetty with RDF4J workbench](/dev/debug-jetty)
+* [Deploy Ontop over an unsupported RDBMS](/dev/write-adapter)
 
 ## Internals
 Information about the internals of Ontop
