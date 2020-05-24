@@ -46,6 +46,7 @@ For instance, the function symbol factory for PostgreSQL within Ontop is the cla
 ### Datatype factory 
 
 The *datatype factory* declares the hierarchy of datatypes used by the DBMS, and specifies their correspondence with types used in SPARQL (such as xsd datatypes).  
+
 The interface to implement (for SQL dialects) is `it.unibz.inf.ontop.model.type.SQLDBTypeFactory`.  
 And the default implementation is `it.unibz.inf.ontop.model.type.impl.DefaultSQLDBTypeFactory` .  
 
@@ -54,26 +55,29 @@ For instance, the datatype factory for PostgreSQL within Ontop is the class `it.
 ## Optional implementations
 
 Additional implementations can be optionally provided.
+
 ### Normalizer
 
 The *normalizer* addresses limitations of certain DBMSs (such as a non-canonical evaluation of the ORDER BY clause).  
-The interface to implement is `it.unibz.inf.ontop.generation.normalization.DialectExtraNormalizer`.
-And several implementations are already available, some of which are used by several DBMSs.
 
-For instance, the normalizer associated to PostgreSQL within Ontop is `it.unibz.inf.ontop.generation.normalization.impl.OnlyInPresenceOfDistinctProjectOrderByTermsNormalizer`
+The interface to implement is `it.unibz.inf.ontop.generation.normalization.DialectExtraNormalizer`.  
+And several implementations are already available, some of which are used by several DBMS.  
+
+For instance, the normalizer associated to PostgreSQL within Ontop is `it.unibz.inf.ontop.generation.normalization.impl.OnlyInPresenceOfDistinctProjectOrderByTermsNormalizer`.
 
 
 ### Metadata provider
 The *metadata provider* specifies how schema and integrity constraints (for instance primary keys) are retrieved from the DBMS.  
+
 The interface to implement is `it.unibz.inf.ontop.dbschema.MetadataProvider`.  
-And the default implementation is `it.unibz.inf.ontop.dbschema.impl.DefaultDBMetadataProvider`.
+And the default implementation is `it.unibz.inf.ontop.dbschema.impl.DefaultDBMetadataProvider`.  
 
 For instance, the metadata provider for PostgreSQL within Ontop is `it.unibz.inf.ontop.dbschema.impl.PostgreSQLDBMetadataProvider`.
 
 
 ## Declaring an implementation
 All the implementations mentioned above can be declared in the property file
-`it/unibz/inf/ontop/injection/sql-default.properties`
+`it/unibz/inf/ontop/injection/sql-default.properties`.
 
 A key-value pair must be added for each of these implementations, where the key indicates the type of the implementation (serializer, function symbol factory, etc.), and the value is the implementation.
 
