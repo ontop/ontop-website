@@ -1,4 +1,4 @@
-# Supporting a new database system
+# Support a new database system
 
 
 This page describes how Ontop can be extended to support a novel relational database system (RDBMS).
