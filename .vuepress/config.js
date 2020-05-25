@@ -111,7 +111,8 @@ function genDevSidebarConfig () {
 		  'build',
 		  'new-release',
 		  'debug-protege',
-		  'debug-jetty'
+		  'debug-jetty',
+		  'db-adapter'
 		]
 	  },
 	  {
