@@ -8,6 +8,10 @@ module.exports = {
         lastUpdated: 'Last Updated',
         nav: [
             {
+                text: 'Download',
+                link: '/download/'
+            },
+            {
                 text: 'Guide',
                 link: '/guide/',
             },
@@ -28,8 +32,8 @@ module.exports = {
                 link: '/dev/'
             },
             {
-                text: 'Download',
-                link: '/download/'
+                text: 'Work with us',
+                link: '/jobs/'
             }
         ],
         sidebar: {
