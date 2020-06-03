@@ -14,8 +14,8 @@ In this tutorial, we will see how to design a Virtual Knowledge Graph (VKG) spec
 Before start, please clone this repository in order to download all the files
 
 ```console
-git clone https://github.com/ontop/ontop-website.git
-cd ontop-website/.vuepress/public/tutorial
+git clone https://github.com/ontop/ontop-tutorial.git
+cd ontop-tutorial
 ```
 
 ## Program
