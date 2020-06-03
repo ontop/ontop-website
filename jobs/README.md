@@ -12,7 +12,7 @@ At the [In2Data research group](https://www.inf.unibz.it/krdb/in2data/) at the K
 - PhD student (**the deadline of the application in 2020 is 13th, July**, see <https://www.inf.unibz.it/krdb/phd/>) 
 - Research assistant / Scientific programmer / PostDoc researcher 
 
-In you are interested, please get in touch with [Prof. Diego Calvanese](http://www.inf.unibz.it/~calvanese/) or [Dr. Guohui Xiao](https://www.ghxiao.org/). 
+If you are interested, please get in touch with [Prof. Diego Calvanese](http://www.inf.unibz.it/~calvanese/) or [Dr. Guohui Xiao](https://www.ghxiao.org/). 
 
 ## Ontopic
 
@@ -22,6 +22,6 @@ At the company [Ontopic s.r.l](http://ontopic.biz/), we are offering:
 - Bachelor/Master thesis 
 - Part time or full time developer
 
-In you are interested, please get in touch with `inquiry@ontopic.biz`.
+If you are interested, please get in touch with `inquiry@ontopic.biz`.
 
 
