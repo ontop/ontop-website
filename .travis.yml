@@ -16,11 +16,15 @@ cache:
     directories:
         - "node_modules"
 deploy:
-    provider: pages
-    skip-cleanup: true
-    local_dir: .vuepress/dist
-    repo: ontop/ontop.github.io
-    github-token: $GITHUB_TOKEN
-    target-branch: master
-    on:
+    - provider: pages
+      skip-cleanup: true
+      local_dir: .vuepress/dist
+      repo: ontop/ontop.github.io
+      github-token: $GITHUB_TOKEN
+      target-branch: master
+      on:
+        branch: master
+    - provider: script
+      script: bash deploy-tutorial-files.sh
+      on:
         branch: master
