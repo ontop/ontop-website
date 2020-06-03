@@ -8,16 +8,16 @@ module.exports = {
         lastUpdated: 'Last Updated',
         nav: [
             {
-                text: 'Download',
-                link: '/download/'
-            },
-            {
                 text: 'Guide',
                 link: '/guide/',
             },
             {
                 text: 'Tutorial',
                 link: '/tutorial/',
+            },
+            {
+                text: 'Download',
+                link: '/download/'
             },
             {
                 text: 'Community',
@@ -64,6 +64,13 @@ module.exports = {
                     storage: false,
                     alternative: [
                         '../..',
+                    ],
+                },
+                {
+                    base: '/download',
+                    storage: false,
+                    alternative: [
+                        '../guide/getting-started',
                     ],
                 },
             ],
