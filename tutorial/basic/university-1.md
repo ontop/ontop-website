@@ -189,7 +189,7 @@ Then proceed in a similar way for the other positions (associate  professor, ass
 1. Run Protégé and go to the "Window" - "Tabs" - "Ontop SPARQL" tab
 2. Select Ontop in the “Reasoner” menu
 3. Start the reasoner
-4. Add a query in the "Query Manager" and run the following query in "ontop query editor":
+4. Add a query in the "Query Manager" and run the following query in "SPARQL query editor":
 
 ```sparql
 PREFIX : <http://example.org/voc#>
