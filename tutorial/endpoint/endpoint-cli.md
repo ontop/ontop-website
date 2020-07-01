@@ -4,10 +4,9 @@
 2. Copy the H2 jdbc driver to `$ONTOP_CLI_DIR/jdbc` (if not done yet)
     * Mac/Linux: `cp jdbc/h2-1.4.196.jar $ONTOP_CLI_IDR/jdbc`
 3. Start the h2 database.
-4. Download [this OWL ontology file](input/university-complete.ttl).
-5. Download [this mapping file](input/university-complete.obda).
-6. Download [this properties file](input/university-complete.properties).
-7. Start the Ontop endpoint:
+4. Go to the `endpoint/` directory. Alternatively, if you don't have already the tutorial files, you can download [this OWL ontology file](input/university-complete.ttl), [this mapping file](input/university-complete.obda), [this properties file](input/university-complete.properties) and paste them in `input/`.
+5. Make sure to have the `jdbc/` directory and the JDBC driver inside.
+6. Start the Ontop endpoint:
 
 ```console
 $ONTOP_CLI_DIR/ontop endpoint \
