@@ -18,7 +18,7 @@ Update pom.xml files by Maven plugin to a SNAPSHOT version:
 
 
 ```console
-$ mvn versions:set -DnewVersion=4.0.0-SNAPSHOT 
+$ ./mvnw versions:set -DnewVersion=4.0.0-SNAPSHOT 
 ```
 
 
@@ -29,13 +29,13 @@ $ mvn release:clean
 
 # Preparing the release will create the new tag in git and automatically push to github
 # When 100% sure, you can skip the test by `-Darguments="-DskipTests"`
-$ mvn -DperformRelease=true release:prepare
+$ ./mvnw -DperformRelease=true release:prepare
 
 # stage the release
-$ mvn release:perform 
+$ ./mvnw release:perform 
 
 # Or stage from a Git tag
-# mvn release:perform  -DconnectionUrl=scm:git:git@github.com:ontop/ontop.git -Dtag=ontop-3.0.0
+# ./mvnw release:perform  -DconnectionUrl=scm:git:git@github.com:ontop/ontop.git -Dtag=ontop-3.0.0
 ```
 
 ### Build Ontop bundles
