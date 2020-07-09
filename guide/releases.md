@@ -19,7 +19,7 @@
 #### Refactoring
 
 - SQL parsing of the mapping improved. JSQLParser's version has been updated.
-- Metadata extraction refactored.
+- Metadata extraction refactored, and SQLDialectAdapter has been eliminated. 
 - Meta-mapping management improved.
 - Non-recognized SQL functions in the mapping are now only assumed to be deterministic. Other assumptions have been removed.
 - Internal data nodes now create variables only for database columns that are used in the query. This sparse usage of variables strongly improve reformulation time and log readibility when using tables with 100+ columns in the mapping.
