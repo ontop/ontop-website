@@ -12,6 +12,9 @@
 - CASE is now supported in the mapping.
 - Streaming mode enabled by default for query answering. It fetches data by batches of 500 results.
 
+#### Deperecation
+
+- The RDF4J Workbench/Server-based SPARQL endpint is deprecated. Tomcat, Jetty bundles and webapps (.war files) will be removed in a future version. Users should switch the `ontop endpoint` CLI or its Docker image.
 
 #### Refactoring
 
