@@ -9,7 +9,7 @@
 - Support of Denodo added. Support of Dremio is postponed to 4.1.
 - Support XML catalog file added (beta). It enables resolving `owl:imports` assertions from the ontology by loading local files instead of fetching remote URLs. It is available in Protégé and with the `ontop endpoint` CLI command.
 - DB metadata extraction CLI command added (experimental).
-- CASE is now supported in the mapping.
+- CASE and CAST is now supported in the mapping.
 - Streaming mode enabled by default for query answering. It fetches data by batches of 500 results.
 
 #### Deperecation
