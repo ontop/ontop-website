@@ -2,6 +2,9 @@
 
 ## 4.0.0-rc-1 (July 8, 2020)
 
+#### Changed behaviors
+ - Streaming mode is enabled by default for query answering. It fetches data by batches of 500 results. 
+
 #### New features
 
 - Support of GROUP_CONCAT added. All the standard SPARQL aggregation functions are now supported.
@@ -10,9 +13,9 @@
 - Support XML catalog file added (beta). It enables resolving `owl:imports` assertions from the ontology by loading local files instead of fetching remote URLs. It is available in Protégé and with the `ontop endpoint` CLI command.
 - DB metadata extraction CLI command added (experimental).
 - CASE and CAST is now supported in the mapping.
-- Streaming mode enabled by default for query answering. It fetches data by batches of 500 results.
+- Streaming mode for query answering added.
 
-#### Deperecation
+#### Deprecation
 
 - The RDF4J Workbench-based SPARQL endpint is deprecated. Tomcat, Jetty bundles and webapps (.war files) will be removed in a future version. Users are recommended to switch to the `ontop endpoint` CLI or its Docker image.
 
