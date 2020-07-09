@@ -1,5 +1,28 @@
 # Release notes
 
+## 4.0.0-rc-1 (July 8, 2020)
+
+#### New features
+
+- Support of GROUP_CONCAT added. All the standard SPARQL aggregation functions are now supported.
+- Named graphs are now supported.
+- Support of Denodo added. Support of Dremio is postponed to 4.1.
+- Support XML catalog file added (beta). It enables resolving `owl:imports` assertions from the ontology by loading local files instead of fetching remote URLs. It is available in Protégé and with the `ontop endpoint` CLI command.
+- DB metadata extraction CLI command added (experimental).
+- CASE is now supported in the mapping.
+- Streaming mode enabled by default for query answering. It fetches data by batches of 500 results.
+
+
+#### Refactoring
+
+- SQL parsing of the mapping improved. JSQLParser's version has been updated.
+- Metadata extraction refactored.
+- Meta-mapping management improved.
+- Non-recognized SQL functions in the mapping are now only assumed to be deterministic. Other assumptions have been removed.
+- Internal data nodes now create variables only for database columns that are used in the query. This sparse usage of variables strongly improve reformulation time and log readibility when using tables with 100+ columns in the mapping.
+
+Many bugfixes.
+
 
 ## 4.0.0-beta-1 (December 23, 2019)
 

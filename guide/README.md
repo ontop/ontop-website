@@ -13,7 +13,7 @@ For earlier versions, please refer to [our previous Wiki](https://github.com/ont
 
 Most recent versions:
 * Stable:  Ontop 3.0.1, released on December 9, 2019. 
-* Beta: Ontop 4.0.0-beta-1, released on December 23, 2019.
+* Release Candidate: Ontop 4.0.0-rc-1, released on July 8, 2020.
 
 See [release notes](/guide/releases) for more details.
 
@@ -28,7 +28,7 @@ Main features
 * Supports R2RML and Ontop mappings
 * Produces efficient SQL queries by applying many optimizations
 * Supports the main database systems (PostgreSQL, MySQL, SQL server, Oracle and DB2)
-* Supports database federators such as Dremio and Denodo (beta)
+* Supports database federators such as Denodo (beta)
 * Can [materialize](/guide/cli#ontop-materialize) virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)
 
