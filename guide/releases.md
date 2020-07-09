@@ -2,7 +2,7 @@
 
 ## 4.0.0-rc-1 (July 8, 2020)
 
-#### Changed behaviors
+#### Changed behavior
  - Streaming mode is enabled by default for query answering. It fetches data by batches of 500 results. 
 
 #### New features
