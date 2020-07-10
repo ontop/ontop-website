@@ -64,7 +64,7 @@ If this is the first time you build the plugin, you may need to create the 'buil
 
 ### IntelliJ configuration
 
-* Create a remote configuration: 'Edit configurations', select 'Remote', then click '+'
+* Create a remote configuration: 'Edit configurations', click '+', then select 'Remote'
 
 * Host: <code>localhost</code>
 
