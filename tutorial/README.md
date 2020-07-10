@@ -15,6 +15,7 @@ Before start, please clone this repository in order to download all the files
 
 ```console
 git clone https://github.com/ontop/ontop-tutorial.git
+cd ontop-tutorial
 ```
 
 ## Program

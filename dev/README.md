@@ -7,7 +7,7 @@ The development chapter is targeted to those interested in the development of th
 * [Conventions for Git](/dev/git)
 * [Build Ontop](/dev/build)
 * [Make a new release](/dev/new-release)
-* [Deploy Ontop over an unsupported RDBMS](/dev/write-adapter)
+* [Extend Ontop to support a new database system](/dev/db-adapter)
 * Debug:
   * [Protégé](/dev/debug-protege)
   * [Jetty with RDF4J workbench](/dev/debug-jetty)
