@@ -19,6 +19,9 @@
 
 - The RDF4J Workbench-based SPARQL endpint is deprecated. Tomcat, Jetty bundles and webapps (.war files) will be removed in a future version. Users are recommended to switch to the `ontop endpoint` CLI or its Docker image.
 
+#### Removal
+ - The Mapping Assistant panel has been removed from the Ontop Protégé plugin.
+
 #### Refactoring
 
 - SQL parsing of the mapping improved. JSQLParser's version has been updated.
