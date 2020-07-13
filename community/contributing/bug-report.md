@@ -22,7 +22,7 @@ When you restart Protégé you will have more information in the command line, t
 You can send us the generated log file from Protégé starting from *Window -> Show log... -> Show log file -> protege.log*
 
 #### Enable Command Line Interface log
-By default command line interface has already the debug mode set. You can find the information about the log in the ontop distribution to the folder *log*.
+Go to the folder *log* and modify the line of the *logback.xml* file from `<root Level="ERROR">` to `<root Level="debug">`.
 
 #### Enable RDF4J log
 It is possible to see the log of the RDF4 Workbench by going to the data directory [Rdf4j_DATA]. 
