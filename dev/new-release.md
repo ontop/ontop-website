@@ -25,7 +25,7 @@ $ ./mvnw versions:set -DnewVersion=4.0.0-SNAPSHOT
 ### Build maven packages
 
 ```
-$ mvn release:clean
+$ ./mvnw release:clean
 
 # Preparing the release will create the new tag in git and automatically push to github
 # When 100% sure, you can skip the test by `-Darguments="-DskipTests"`
