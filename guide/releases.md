@@ -1,5 +1,17 @@
 # Release notes
 
+## 4.0.0 (July 31, 2020)
+
+#### Refactoring
+* Dependencies updated (e.g. RDF4J 3.3.0)
+* SERIAL datatypes of PostgreSQL better handled
+* Anonymous blank nodes are now supported in CONSTRUCT blocks
+* JSON-LD now supported for graph queries
+* Denodo support improved.
+
+Few bugfixes.
+
+
 ## 4.0.0-rc-1 (July 8, 2020)
 
 #### Changed behavior
