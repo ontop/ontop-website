@@ -31,7 +31,9 @@
 
 
 ## Conferences
-1. **Enriching Ontology-based Data Access with Provenance.**  Diego Calvanese, Davide Lanti, Ana Ozaki, Rafael Penaloza, and Guohui Xiao. IJCAI. 2019.
+1. **The Virtual Knowledge Graph System Ontop**. Guohui Xiao, Davide Lanti, Roman Kontchakov, Sarah Komla-Ebri, Elem Güzel-Kalayci, Linfang Ding, Julien Corman, Benjamin Cogrel, Diego Calvanese, and Elena Botoeva. ISWC (Resource), 2020. 
+2. **Semantic Integration of Bosch Manufacturing Data Using Virtual Knowledge Graphs**. Elem Güzel Kalaycı, Irlan Grangel Gonález, Felix Lösch, Guohui Xiao, Anees ul-Mehdi, Evgeny Kharlamov, and Diego Calvanese. ISWC (In-Use), 2020.
+1. **Enriching Ontology-based Data Access with Provenance.**  Diego Calvanese, Davide Lanti, Ana Ozaki, Rafael Penaloza, and Guohui Xiao. IJCAI, 2019.
 2.  **Efficient Handling of SPARQL OPTIONAL for OBDA.** Guohui Xiao,
         Roman Kontchakov, Benjamin Cogrel, Diego Calvanese, and Elena
         Botoeva. ISWC (Research), 2018.
