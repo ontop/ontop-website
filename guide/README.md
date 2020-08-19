@@ -56,7 +56,8 @@ You can find us on the following social platforms:
 Citations
 ---------
 
-* If you use Ontop in your work, please cite the following SWJ article for the system description. 
+* If you use Ontop in your work, please cite one of the following articles describing the system.
+    * Guohui Xiao, Davide Lanti, Roman Kontchakov, Sarah Komla-Ebri, Elem Güzel-Kalayci, Linfang Ding, Julien Corman, Benjamin Cogrel, Diego Calvanese, and Elena Botoeva. [The Virtual Knowledge Graph System Ontop](https://research.bcgl.fr/pdfs/ontop-iswc20.pdf). In: International Semantic Web Conference (Resource Track), 2020. 
     * Diego Calvanese, Benjamin Cogrel, Sarah Komla-Ebri, Roman Kontchakov, Davide Lanti, Martin Rezk, Mariano Rodriguez-Muro, and Guohui Xiao. [Ontop: Answering SPARQL Queries over Relational Databases](http://www.semantic-web-journal.net/content/ontop-answering-sparql-queries-over-relational-databases-1).  In: Semantic Web Journal 8.3 (2017), pp. 471–487.
 
 * If you want to cite the techniques behind Ontop, check [our publications](/research/publications).
