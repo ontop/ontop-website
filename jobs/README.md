@@ -9,7 +9,7 @@ At the [In2Data research group](https://www.inf.unibz.it/krdb/in2data/) at the K
 
 - Student course project 
 - Bachelor/Master thesis 
-- PhD student positions (**the deadline of the application in 2020 is 13th, July**, see <https://www.inf.unibz.it/krdb/phd/>) 
+- PhD student positions (<https://www.inf.unibz.it/krdb/phd/>) 
 - Research assistant / Scientific programmer / PostDoc researcher positions
 
 If you are interested, please get in touch with [Prof. Diego Calvanese](http://www.inf.unibz.it/~calvanese/) or [Dr. Guohui Xiao](https://www.ghxiao.org/). 
