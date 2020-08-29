@@ -1,5 +1,14 @@
 # Release notes
 
+## 4.0.1 (August 28, 2020)
+
+#### New features and bugfixes
+
+- Named Graphs (quad) are supported in materialization ([#343](https://github.com/ontop/ontop/issues/343))
+- Removal of Jena as a dependency ([#349](https://github.com/ontop/ontop/issues/349))
+- `com.mysql.cj.jdbc.Driver` is now also recognized. Non-recognized drivers now use the default SQL factories instead of the mock-up one.
+
+
 ## 4.0.0 (July 31, 2020)
 
 #### Refactoring
