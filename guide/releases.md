@@ -1,5 +1,9 @@
 # Release notes
 
+## 4.0.2 (September 3, 2020)
+
+- Fixed Named Graphs (quad) gammar in the target of the Ontop native mapping language.
+
 ## 4.0.1 (August 28, 2020)
 
 #### New features and bugfixes
