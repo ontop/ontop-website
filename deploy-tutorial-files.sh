@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd .vuepress/public/tutorial
-cp -R ../../../tutorial/ .
+#cp -R ../../../tutorial/ .
 git init
 git add *
 git commit -m "Tutorial files extracted"
