@@ -21,7 +21,8 @@ The development of Ontop is guided by an international team (reverse lexicograph
 Here we honor some no-longer-active core team members who have made important contributions in the past.
 * Mariano Rodriguez-Muro (Google USA)
 * Martin Rezk (Google USA)
-* Elem Güzel
+* Josef Hardi (Stanford University, USA)
+* Elem Güzel (Virtual Vehicle Research GmbH, Austria)
 * Elena Botoeva (Imperial College)
 
 ## Contributors
@@ -32,6 +33,5 @@ Some members of the Ontop community have so enriched it, that they deserve speci
 * Sergey Pugacs
 * Manfred Gerstgrasser
 * Dag Hovland
-* Josef Hardi
 * Uğur Dönmez
 * Timea Bagosi
