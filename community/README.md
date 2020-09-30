@@ -11,19 +11,19 @@ The development of Ontop is guided by an international team (reverse lexicograph
 * [Guohui Xiao](http://www.ghxiao.org/) (Unibz, Ontopic)
 * Davide Lanti (Unibz)
 * [Roman Kontchakov](http://www.dcs.bbk.ac.uk/~roman/) (Birkbeck)
-* Sarah Komla-Ebri (Ontopic)
-* Julien Corman (Unibz)
+* [Sarah Komla-Ebri](https://scholar.google.it/citations?user=SDaIlasAAAAJ&hl=en) (Ontopic)
+* [Julien Corman](https://scholar.google.it/citations?user=pT6E42UAAAAJ&hl=en) (Unibz)
 * [Benjamin Cogrel](https://github.com/bcogrel/) (Ontopic)
 * [Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Unibz, Ontopic)
 
 ## Core Team Emeriti
 
 Here we honor some no-longer-active core team members who have made important contributions in the past.
-* Mariano Rodriguez-Muro (Google USA)
-* Martin Rezk (Google USA)
-* Josef Hardi (Stanford University, USA)
-* Elem Güzel (Virtual Vehicle Research GmbH, Austria)
-* Elena Botoeva (Imperial College)
+* [Mariano Rodriguez-Muro](https://sites.google.com/site/marianomuro/) (Google, USA)
+* [Martin Rezk](http://www.martinrezk.com/) (Google, USA)
+* [Josef Hardi](https://profiles.stanford.edu/josef-hardi) (Stanford University, USA)
+* [Elem Güzel Kalaycı](https://scholar.google.it/citations?user=WYEhpZYAAAAJ&hl=en) (Virtual Vehicle Research GmbH, Austria)
+* [Elena Botoeva](https://www.doc.ic.ac.uk/~ebotoeva/) (Imperial College)
 
 ## Contributors
 
