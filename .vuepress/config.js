@@ -1,6 +1,12 @@
 module.exports = {
     base: '/',
     title: 'Ontop',
+    markdown: {
+	    externalLinks: {
+		    target: '_blank', 
+		    rel: 'noopener' 
+	    }
+    },
     themeConfig: {
         repo: 'ontop/ontop',
         docsRepo: 'ontop/ontop-website',
