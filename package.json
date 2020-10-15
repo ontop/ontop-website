@@ -7,6 +7,6 @@
     "vuepress": "^1.5.4",
     "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-matomo": "",
-    "vuepress-plugin-redirect": ""
+    "vuepress-plugin-redirect": "*"
   }
 }
