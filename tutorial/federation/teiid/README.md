@@ -1,4 +1,4 @@
-# Ontop with Teiid
+# Ontop with Teiid (Work in Progress) 
 
 In this tutorial, we present the way of connecting Teiid to Ontop.
 We first show how to install Teiid, integrate two different data sources, i.e., two MySQL databases uni1 and uni2 
