@@ -1,5 +1,12 @@
 # Release notes
 
+## 4.0.3 (October 16, 2020)
+
+#### Bugfixes
+
+- Wrong IRI decompostion ([#358](https://github.com/ontop/ontop/issues/358))
+- Logback config file ignored by Ontop CLI ([#361](https://github.com/ontop/ontop/issues/361))
+
 ## 4.0.2 (September 3, 2020)
 
 - Fixed Named Graphs (quad) gammar in the target of the Ontop native mapping language.

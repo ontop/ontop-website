@@ -2,9 +2,9 @@
 
 ### Update documents
 
-- `README.html` in `ontop-protege`. This file will be displayed in the Protégé Plugin Update window.
-- `README.md` in `ontop-distribution`. This file will be uploaded to SourceForge
-- `update.properties` file in `ontop-protege`. This is the configuration file for Protégé plugin Auto Update
+- `README.html` in `client/protege`. This file will be displayed in the Protégé Plugin Update window.
+- `README.md` in `build/distribution`. This file will be uploaded to SourceForge
+- `update.properties` file in `client/protege`. This is the configuration file for Protégé plugin Auto Update
 
 ###  Create a git branch for release
 
