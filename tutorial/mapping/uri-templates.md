@@ -1,7 +1,7 @@
-# Choice of the URI templates
+# Choice of the IRI templates
 
 
-Until now, we have been using local identifiers from the data sources to build 3 different URI templates for the persons of these two universities:
+Until now, we have been using local identifiers from the data sources to build 3 different IRI templates for the persons of these two universities:
   - `ex:uni1/student/{*}`
   - `ex:uni1/academic/{*}`
   - `ex:uni2/person/{*}`
@@ -9,14 +9,14 @@ Until now, we have been using local identifiers from the data sources to build 3
 Let us now consider the case where the tables `uni1.student`, `uni1.academic` and `uni2.person` have
 a new column: `ssn`. This column corresponds to the social security number of the person.
 
-This new column gives us the opportunity to use a common URI template for all the persons. Such URI template would allow us to collect information about a same person registered in both universities.
+This new column gives us the opportunity to use a common IRI template for all the persons. Such IRI template would allow us to collect information about a same person registered in both universities.
 
 As we will see, there are actually some persons that are teaching or studying in both universities.
 
 Given that we already have the mapping assertions produced during the first session, we will consider
-two ways to change the URI templates: first by doing it manually, then using the notion of canonical URIs.
+two ways to change the IRI templates: first by doing it manually, then using the notion of canonical IRIs.
 
-We will also see that using this new URI template has a negative impact on the performance of some queries.
+We will also see that using this new IRI template has a negative impact on the performance of some queries.
 
 ## Manual approach
 
@@ -26,7 +26,7 @@ Download the following files:
   - [university-manual-ssn.properties](university-manual-ssn.properties)
 
 The mapping assertions are currently the same as during the first hands-on session.
-Let us now update them with the new URI template for persons.
+Let us now update them with the new IRI template for persons.
 
 #### Mapping uni1.student
  * Target:
@@ -198,9 +198,9 @@ Look at the SQL query, it should be very long as it suffers from a substantial e
 Note that the first query also suffers from an exponential blowup but the latter is less important and thus less sensible on our small dataset.
 
 
-## Canonical URIs
+## Canonical IRIs
 
-Instead of changing the mapping assertions manually, Ontop allows you to declare a canonical URI template for `ex:uni1/student/{*}`, `ex:uni1/academic/{*}` and `ex:uni2/person/{*}`.
+Instead of changing the mapping assertions manually, Ontop allows you to declare a canonical IRI template for `ex:uni1/student/{*}`, `ex:uni1/academic/{*}` and `ex:uni2/person/{*}`.
 
 This takes the form of three additional mapping assertions that can be found in the [university-canonical.ttl](university-canonical.ttl), [university-canonical.obda](university-canonical.obda), and [university-canonical.properties](university-canonical.properties) files.
 
