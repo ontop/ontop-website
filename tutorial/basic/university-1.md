@@ -108,7 +108,7 @@ FROM "uni1"."student"
 
 Some remarks:
   - The target part is described using a [Turtle-like syntax](https://github.com/ontop/ontop/wiki/TurtleSyntax) while the source part is a regular SQL query.
-  - We used the primary key `s_id` to create the URI. [As we will see later](../mapping/primary-keys.md),
+  - We used the primary key `s_id` to create the IRI. [As we will see later](../mapping/primary-keys.md),
     this practice enables Ontop to remove self-joins, which is very important for optimizing
     the query performance.
   - This entry could be split into three mapping assertions
