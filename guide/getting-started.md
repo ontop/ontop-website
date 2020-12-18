@@ -18,7 +18,7 @@ For editing and testing your mappings, you can use our plugin of the [Protégé 
 
 Once your mappings and your ontology are ready, you can deploy your VKG as a SPARQL endpoint. The Ontop endpoint is available both as a [CLI command (`ontop endpoint`)](/guide/cli#ontop-endpoint) and as a [Docker image](https://hub.docker.com/r/ontop/ontop-endpoint).
 
-You can also use the Ontop endpoint during development as it embeds [a nice YASGUI client](https://about.yasgui.org/) and an optional portal (since 4.0-beta-1) containing pre-defined queries.
+You can also use the Ontop endpoint during development as it embeds [a nice YASGUI client](https://about.yasgui.org/) and an optional portal (since 4.0-beta-1) containing queries.
 
 
 ### Command Line Interface
