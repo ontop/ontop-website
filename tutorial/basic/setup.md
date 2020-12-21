@@ -30,7 +30,7 @@ Protégé is an open source ontology editor and knowledge management system. Ont
 
 0. [Download](https://sourceforge.net/projects/ontop4obda/files/ontop-3.0.0/ontop-protege-bundle-3.0.0.zip/download) and unzip the Protégé-bundle archive and go into its folder
 1. Run it (*run.bat* on Windows, *run.sh* on Mac/Linux)
-2. Register the H2 JDBC driver: go to "Preferences", "JDBC Drivers" and add an entry with the following information
+2. Register the H2 JDBC driver: go to *Preferences* -> *JDBC Drivers* and add an entry with the following information
      * Description: *h2*
      * Class Name: *org.h2.Driver*
      * Driver file (jar): */path/to/h2/bin/h2-1.4.196.jar*

@@ -1,7 +1,8 @@
 # Choice of the IRI templates
 
+The choice of IRI templates may impact query complexity and performance, depending on whether joins have to be introduced to materialize those templates.
 
-Until now, we have been using local identifiers from the data sources to build 3 different IRI templates for the persons of these two universities:
+Until now, we have been using local identifiers from the data sources to build three different IRI templates for the persons of the two universities:
   - `ex:uni1/student/{*}`
   - `ex:uni1/academic/{*}`
   - `ex:uni2/person/{*}`
@@ -9,12 +10,12 @@ Until now, we have been using local identifiers from the data sources to build 3
 Let us now consider the case where the tables `uni1.student`, `uni1.academic` and `uni2.person` have
 a new column: `ssn`. This column corresponds to the social security number of the person.
 
-This new column gives us the opportunity to use a common IRI template for all the persons. Such IRI template would allow us to collect information about a same person registered in both universities.
+This new column gives us the opportunity to use a common IRI template for all the persons. Such IRI template would allow us to collect information about a person registered in both universities.
 
 As we will see, there are actually some persons that are teaching or studying in both universities.
 
 Given that we already have the mapping assertions produced during the first session, we will consider
-two ways to change the IRI templates: first by doing it manually, then using the notion of canonical IRIs.
+two ways to change the IRI templates: first by doing it manually, then using the notion of *canonical IRIs*.
 
 We will also see that using this new IRI template has a negative impact on the performance of some queries.
 
@@ -164,8 +165,7 @@ With the new mapping assertions, the following SPARQL query should now return so
 PREFIX : <http://example.org/voc#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-SELECT DISTINCT ?firstName ?lastName ?ins1 ?ins2
-WHERE {
+SELECT DISTINCT ?firstName ?lastName ?ins1 ?ins2 {
    ?p foaf:firstName ?firstName ;
       foaf:lastName ?lastName ;
       :teaches [ :isGivenAt ?ins1 ],
@@ -181,8 +181,7 @@ However, if you execute another variant, you will see it is now very inefficient
 PREFIX : <http://example.org/voc#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-SELECT ?firstName ?lastName ?ins1 ?ins2
-WHERE {
+SELECT ?firstName ?lastName ?ins1 ?ins2 {
    ?p1 foaf:firstName ?firstName ;
       foaf:lastName ?lastName ;
       :teaches [ :isGivenAt ?ins1 ] .
@@ -235,3 +234,4 @@ SELECT * FROM "uni2"."person"
 ```
 
 With these three mapping assertions and the ones of the first session, Ontop produces the same saturated mapping assertions as in the manual approach.
+Query evaluation performance is thus the same (and similarly affected to the additional joins needed to build person IRIs), but the use of canonical IRI templates makes simpler for users to define and adapt mappings.

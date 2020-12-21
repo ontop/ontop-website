@@ -24,7 +24,7 @@ pid | fname   | lname  | status
 As you can see, undergraduate and graduate students are now distinguished.
 
 #### *uni2.course*
-The table *uni2.course* contains Information
+The table *uni2.course* contains information
 about courses, their topic, their lecturer and their lab teacher.
 
 cid | lecturer | lab_teacher | topic
@@ -121,7 +121,7 @@ FROM "uni2"."person"
 WHERE "status" = 1
 ```
 
-And so on for the graduate students, postdoc, full professors, associate professors and assistant professors.
+And so on for the graduate students, postdocs, full professors, associate professors and assistant professors.
 
 ## SPARQL
 
