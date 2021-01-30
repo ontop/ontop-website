@@ -71,4 +71,42 @@ $ docker build -t my-ontop-endpoint .
 $ docker run -it --rm --name my-running-ontop-endpoint -p 8080:8080 my-ontop-endpoint
 ```
 
+### Use Docker-compose
+
+Docker-compose allows to set up a number of containers together. For example, the following [`docker-compose.yml`](docker-compose.yml) file configures a H2 database and an Ontop-endpoint.
+
+```yaml
+version: '3.4'
+
+services:
+  ontop:
+    image: ontop/ontop-endpoint
+    environment:
+      ONTOP_ONTOLOGY_FILE: /opt/ontop/input/university-complete.ttl
+      ONTOP_MAPPING_FILE: /opt/ontop/input/university-complete.obda
+      ONTOP_PROPERTIES_FILE: /opt/ontop/input/university-complete.compose.properties
+      ONTOP_PORTAL_FILE: /opt/ontop/input/university-complete.portal.toml
+      ONTOP_CORS_ALLOWED_ORIGINS: "*"
+      ONTOP_DEV_MODE: "true"
+      ONTOP_LAZY_INIT: "true"
+    volumes:
+      - ./input:/opt/ontop/input
+      - ./jdbc:/opt/ontop/jdbc
+    ports:
+      - "8080:8080"
+  db:
+    image: openjdk:8-jdk-alpine
+    volumes:
+      - ./h2:/opt/h2
+    command: [ "java", "-cp", "/opt/h2/bin/h2-1.4.196.jar", "org.h2.tools.Server", "-tcpAllowOthers" ]
+    ports:
+      - "8082:8082"
+      - "9082:9082"
+```
+
+Now you can simply launch it by:
+
+```
+$ docker-compose up
+``` 
 
