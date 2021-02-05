@@ -133,7 +133,8 @@ function genDevSidebarConfig() {
                 'new-release',
                 'debug-protege',
                 'debug-jetty',
-                'db-adapter'
+                'db-adapter',
+                'stats'
             ]
         },
         {
