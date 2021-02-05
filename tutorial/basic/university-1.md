@@ -73,24 +73,26 @@ There is no primary key, but two foreign keys to the tables *uni1.course* and *u
 
 ## Ontology: classes and properties
 
-
 1. Download [this OWL ontology file](university.ttl).
 2. Download [this mapping file](university.obda).
 3. Download [this properties file](university.properties).
-4. Go to "File/Open..." to load the ontology file (be shure you have all three files in the same folder).
-5. In the tab "Entities/Classes" you can visualize the class hierarchy
-6. In the tab "Object properties" you can see the properties *attends*, *isGivenAt*, *isSupervisedBy*, *isTaughtBy* and *teaches*.
-7. In the tab "Data properties" you can see the properties *firstName*, *lastName* and *title*.
+4. In Protégé, go to *File/Open...* to load the ontology file (be sure you have all three files in the same folder).
+5. In the tab *Classes* you can visualize the class hierarchy
+   <figure><img src='ontology_classes.png' width="303px"></figure>
+6. In the tab *Object properties* you can see the properties *attends*, *isGivenAt*, *isSupervisedBy*, *isTaughtBy* and *teaches* (with its two sub-properties *givesLab* and *givesLecture*).
+   <figure><span><img src='ontology_object_properties.png' width="208px"></span></figure>
+7. In the tab *Data properties* you can see the properties *firstName*, *lastName* and *title*.
+   <figure><img src='ontology_data_properties.png' width="197px"></figure>
 
 
 ## Mappings
 
 
-1. Go to the "Window" - "Tabs" - "Ontop mapping" tab
-2. Test the already defined connection configuration using the “Test Connection” button
-3. Switch to the “Mapping Manager” tab in the ontop mappings tab
+1. Go to the *Window* -> *Tabs* -> *Ontop mapping* tab
+2. Test the already defined connection configuration using the *Test Connection* button
+3. Switch to the *Mapping Manager* tab in the ontop mappings tab
 4. You should see a first mapping assertion called *uni1-student*
-5. Double-clic on it to observe it and then close this pop-up window.
+5. Double-click on it to observe it and then close this pop-up window.
 
 #### Mapping uni1-student
 
@@ -119,7 +121,7 @@ ex:uni1/student/{s_id} foaf:firstName {first_name}^^xsd:string .
 ex:uni1/student/{s_id} foaf:lastName {last_name}^^xsd:string .
 ```
 
-Let us now add the other mapping assertions by clicking on "create":
+Let us now add the other mapping assertions by clicking on *create*:
 
 #### Mapping uni1-academic
  * Target:
@@ -186,10 +188,10 @@ Then proceed in a similar way for the other positions (associate  professor, ass
 
 ### SPARQL
 
-1. Run Protégé and go to the "Window" - "Tabs" - "Ontop SPARQL" tab
-2. Select Ontop in the “Reasoner” menu
+1. Run Protégé and go to the *Window* -> *Tabs* -> *Ontop SPARQL* tab
+2. Select Ontop in the *Reasoner* menu
 3. Start the reasoner
-4. Add a query in the "Query Manager" and run the following query in "SPARQL query editor":
+4. Add a query in the *Query Manager* and run the following query in *SPARQL query editor*:
 
 ```sparql
 PREFIX : <http://example.org/voc#>

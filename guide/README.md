@@ -20,14 +20,14 @@ See [release notes](/guide/releases) for more details.
 Main features
 -------------
 
-* Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint)
-* Supports the main SPARQL aggregation functions (since 4.0-beta-1)
 * Uses RDF 1.1 as graph data model
 * Supports RDFS and OWL 2 QL ontologies
 * Supports R2RML and Ontop mappings
+* Supports the majority of SPARQL 1.1 features, including the main SPARQL aggregation functions (since 4.0-beta-1)
+* Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint)
 * Produces efficient SQL queries by applying many optimizations
 * Supports the main database systems (PostgreSQL, MySQL, SQL server, Oracle and DB2)
-* Supports database federators such as Denodo (beta)
+* Supports database federators such as Denodo (beta) and Dremio (upcoming with 4.1)
 * Can [materialize](/guide/cli#ontop-materialize) virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)
 
