@@ -22,8 +22,8 @@ On Linux/Mac:
 docker run --rm \
            -v $PWD/input:/opt/ontop/input \
            -v $PWD/jdbc:/opt/ontop/jdbc \
-           -e ONTOLOGY_FILE=/opt/ontop/input/university-complete.ttl \
-           -e MAPPING_FILE=/opt/ontop/input/university-complete.obda \
+           -e ONTOP_ONTOLOGY_FILE=/opt/ontop/input/university-complete.ttl \
+           -e ONTOP_MAPPING_FILE=/opt/ontop/input/university-complete.obda \
            -e PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties \
            -p 8080:8080 \
            ontop/ontop-endpoint
@@ -34,9 +34,9 @@ On Windows:
 docker run --rm ^
            -v %CD%/input:/opt/ontop/input ^
            -v %CD%/jdbc:/opt/ontop/jdbc ^
-           -e ONTOLOGY_FILE=/opt/ontop/input/university-complete.ttl ^
-           -e MAPPING_FILE=/opt/ontop/input/university-complete.obda ^
-           -e PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties ^
+           -e ONTOP_ONTOLOGY_FILE=/opt/ontop/input/university-complete.ttl ^
+           -e ONTOP_MAPPING_FILE=/opt/ontop/input/university-complete.obda ^
+           -e ONTOP_PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties ^
            -p 8080:8080 ^
            ontop/ontop-endpoint
 ```
