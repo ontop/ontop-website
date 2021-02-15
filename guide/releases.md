@@ -1,5 +1,23 @@
 # Release notes
 
+## 4.1.0 (upcoming)
+
+#### New features
+
+- TO BE FILLED
+
+#### Removal
+ - TO BE FILLED
+
+#### Refactoring
+
+- TO BE FILLED
+
+#### Important bugfixes
+
+ - TO BE FILLED 
+
+
 ## 4.0.3 (October 16, 2020)
 
 #### Bugfixes
