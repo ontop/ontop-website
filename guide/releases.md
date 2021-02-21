@@ -22,7 +22,7 @@
 
 #### Bugfixes
 
-- Wrong IRI decompostion ([#358](https://github.com/ontop/ontop/issues/358))
+- Wrong IRI decomposition ([#358](https://github.com/ontop/ontop/issues/358))
 - Logback config file ignored by Ontop CLI ([#361](https://github.com/ontop/ontop/issues/361))
 
 ## 4.0.2 (September 3, 2020)

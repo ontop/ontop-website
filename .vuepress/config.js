@@ -97,12 +97,13 @@ function genGuideSidebarConfig() {
                 'cli'
             ]
         },
-        //   {
-        // 	title: 'Advanced',
-        // 	collapsable: false,
-        // 	children: [
-        // 	]
-        //   },
+          {
+        	title: 'Advanced',
+        	collapsable: false,
+        	children: [
+                'advanced/caching'
+        	]
+          },
         {
             title: 'Troubleshooting',
             collapsable: false,
