@@ -19,4 +19,5 @@ Ontop does not embed a HTTP cache. We recommend setting up a HTTP cache like [Va
 ## Remarks
 
 - Most caches (e.g. Nginx but also Web browsers) do not cache POST requests by default. Since most SPARQL queries are sent with the POST method, it is important to turn this option on. This option is safe as Ontop is a read-only system.
-- Consider using the GET method for sending SPARQL queries so as to take advantage from Web browser caches. 
+- Consider using the GET method for sending SPARQL queries so as to take advantage from Web browser caches.
+- For an example of configuration for Nginx, see [this file](https://github.com/noi-techpark/it.bz.opendatahub.sparql/blob/eda53616c252691a73a8eb87963664cd06ca3e93/infrastructure/docker/nginx/default.conf).
