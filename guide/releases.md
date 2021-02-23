@@ -3,7 +3,7 @@
 ## 4.1.0 (upcoming)
 
 #### Changed behavior
- - OBDA to R2RML mapping conversion now requires access to DB metadata (through credentials or as a serialized file). 
+ - OBDA to R2RML mapping conversion requires by default access to DB metadata (through credentials or as a serialized file). This requirement can be bypassed with the argument `--force`.
  - By default, DESCRIBE queries only return the triples where the described IRI appears as subject. To also consider the triples where it appears as object, set the parameter `ontop.includeFixedObjectPositionInDescribe` to true.
  - The Docker endpoint image is now based on Debian ([#394](https://github.com/ontop/ontop/issues/394)), not on Alpine anymore.
 
@@ -16,8 +16,9 @@
 - Supported for Dremio and Teiid added.
 - DB Metadata can now be loaded from files instead of connecting to the database.
 - Bnode labels are now anonymized on-the-fly. Bnode templates can safely use PII.
-- Sensitive JDBC information (user, password, url) can now be passed as arguments or as environment variables (for Docker) instead of being written in the properties file. Docker secrets are also supported for further security.
+- Sensitive JDBC information (user, password, url) can now be passed as arguments or environment variables (for Docker) instead of being written in the properties file. Docker secrets are also supported for further security.
 - Basic support for Ontop views added (experimental). In particular, this allows to specify integrity constraints on views defined at the Ontop-level.
+- New left join optimization techniques added. General functional dependencies are now taken into account. Sensitivity to left-join ordering minimized.
 
 #### Removal
  - As announced before, the RDF4J Workbench-based bundles are not shipped anymore. However, the webapps war file can still be built with Maven.
@@ -26,8 +27,6 @@
 
 - Drastic reduction of memory consumption when processing SPARQL queries ([#370](https://github.com/ontop/ontop/pull/370)). Significative when materializing large RDF graphs.
 - Better file resource handling ([#368](https://github.com/ontop/ontop/pull/368)).
-- New left join optimization techniques added. General functional dependencies are now taken into account.
-- Sensitivity to left-join ordering strongly reduced.
 - Distinct lifting improved.
 - Self-join elimination based on functional dependencies re-implemented.
 - Decomposition of heterogeneous IRI templates enabled.
