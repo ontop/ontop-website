@@ -1,15 +1,64 @@
 # Release notes
 
+## 4.1.0 (upcoming)
+
+#### Changed behavior
+ - OBDA to R2RML mapping conversion requires by default access to DB metadata (through credentials or as a serialized file). This requirement can be bypassed with the argument `--force`.
+ - By default, DESCRIBE queries only return the triples where the described IRI appears as subject. To also consider the triples where it appears as object, set the parameter `ontop.includeFixedObjectPositionInDescribe` to true.
+ - The Docker endpoint image is now based on Debian ([#394](https://github.com/ontop/ontop/issues/394)), not on Alpine anymore.
+
+#### New features
+
+- Support for GeoSPARQL added ([#335](https://github.com/ontop/ontop/issues/335)).
+- [Rich JSON-based query logging](/guide/advanced/logging) added.
+- New endpoint for predefined queries added (beta). It enables the specification of custom low-latency Web APIs in a declarative manner.
+- Support for the `IF`, `IRI`, `BNODE` SPARQL functions added.
+- Supported for Dremio and Teiid added.
+- DB Metadata can now be loaded from files instead of connecting to the database.
+- Bnode labels are now anonymized on-the-fly. Bnode templates can safely use PII.
+- Sensitive JDBC information (user, password, url) can now be passed as arguments or environment variables (for Docker) instead of being written in the properties file. Docker secrets are also supported for further security.
+- Basic support for Ontop views added (experimental). In particular, this allows to specify integrity constraints on views defined at the Ontop-level.
+- New left join optimization techniques added. General functional dependencies are now taken into account. Sensitivity to left-join ordering minimized.
+- [HTTP caching](/guide/advanced/caching) headers can now be returned by the Ontop SPARQL endpoint.
+
+#### Removal
+ - As announced before, the RDF4J Workbench-based bundles are not shipped anymore. However, the webapps war file can still be built with Maven.
+
+#### Refactoring
+
+- Drastic reduction of memory consumption when processing SPARQL queries ([#370](https://github.com/ontop/ontop/pull/370)). Significative when materializing large RDF graphs.
+- Better file resource handling ([#368](https://github.com/ontop/ontop/pull/368)).
+- Distinct lifting improved.
+- Self-join elimination based on functional dependencies re-implemented.
+- Decomposition of heterogeneous IRI templates enabled.
+- Lexical value space is now considered when decomposing IRIs. 
+- Protégé plugin codebase cleaned.
+- RDF4J external binding management refactored.
+- Bnode handling refactored.
+- Java 11 support.
+- Better handling of column names when converting OBDA mappings into R2RML. It now uses DB metadata.
+- Parser for OBDA mappings refactored.
+- CONSTRUCT and DESCRIBE query handling refactored.
+- Character encoding in R2RML templates refactored.
+- Default file encoding set to UTF-8. Particularly useful on Windows. Can be overridden if needed.
+- Build script refactored. Now fully based on Maven ([#393](https://github.com/ontop/ontop/pull/393)) *(to be merged)*.
+- Base Docker image updated.
+- PostgreSQL transaction handling (in streaming mode) improved.
+- Timeout support extended to non-SELECT queries.
+
+Many bugfixes.
+
+
 ## 4.0.3 (October 16, 2020)
 
 #### Bugfixes
 
-- Wrong IRI decompostion ([#358](https://github.com/ontop/ontop/issues/358))
+- Wrong IRI decomposition ([#358](https://github.com/ontop/ontop/issues/358))
 - Logback config file ignored by Ontop CLI ([#361](https://github.com/ontop/ontop/issues/361))
 
 ## 4.0.2 (September 3, 2020)
 
-- Fixed Named Graphs (quad) gammar in the target of the Ontop native mapping language.
+- Fixed Named Graphs (quad) grammar in the target of the Ontop native mapping language.
 
 ## 4.0.1 (August 28, 2020)
 

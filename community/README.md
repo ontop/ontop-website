@@ -9,6 +9,7 @@ For the research side, [see the dedicated page](/research).
 
 The development of Ontop is guided by an international team (reverse lexicographical order).
 * [Guohui Xiao](http://www.ghxiao.org/) (Unibz, Ontopic)
+* Albulen Pano (Ontopic)
 * [Davide Lanti](https://www.inf.unibz.it/~dlanti/) (Unibz)
 * [Roman Kontchakov](http://www.dcs.bbk.ac.uk/~roman/) (Birkbeck)
 * [Sarah Komla-Ebri](https://scholar.google.it/citations?user=SDaIlasAAAAJ&hl=en) (Ontopic)
@@ -31,7 +32,8 @@ Some members of the Ontop community have so enriched it, that they deserve speci
 
 * Mindaugas Slusnys
 * Sergey Pugacs
-* Manfred Gerstgrasser
+* Tomas Kovachev
 * Dag Hovland
+* Manfred Gerstgrasser
 * Uğur Dönmez
 * Timea Bagosi

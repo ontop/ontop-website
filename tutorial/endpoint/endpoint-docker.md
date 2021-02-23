@@ -15,35 +15,33 @@ In addition, we need the [h2 database](../h2.zip) as usual. Assume the h2 databa
 
 ### Use `ontop/ontop-endpoint` directly
 
-We can start an Ontop SPARQL endpoint by using the `ontop/ontop-endpoint` image directly:
-
-#### Linux/Mac
+We can start an Ontop SPARQL endpoint by using the `ontop/ontop-endpoint` image directly.
+On Linux/Mac:
 
 ```console
 docker run --rm \
--v $PWD/input:/opt/ontop/input \
--v $PWD/jdbc:/opt/ontop/jdbc \
--e ONTOLOGY_FILE=/opt/ontop/input/university-complete.ttl \
--e MAPPING_FILE=/opt/ontop/input/university-complete.obda \
--e PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties \
--p 8080:8080 ontop/ontop-endpoint
+           -v $PWD/input:/opt/ontop/input \
+           -v $PWD/jdbc:/opt/ontop/jdbc \
+           -e ONTOP_ONTOLOGY_FILE=/opt/ontop/input/university-complete.ttl \
+           -e ONTOP_MAPPING_FILE=/opt/ontop/input/university-complete.obda \
+           -e PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties \
+           -p 8080:8080 \
+           ontop/ontop-endpoint
+```
+
+On Windows:
+```console
+docker run --rm ^
+           -v %CD%/input:/opt/ontop/input ^
+           -v %CD%/jdbc:/opt/ontop/jdbc ^
+           -e ONTOP_ONTOLOGY_FILE=/opt/ontop/input/university-complete.ttl ^
+           -e ONTOP_MAPPING_FILE=/opt/ontop/input/university-complete.obda ^
+           -e ONTOP_PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties ^
+           -p 8080:8080 ^
+           ontop/ontop-endpoint
 ```
 
 Now we can open <http://localhost:8080/> to test SPARQL queries.
-
-#### Windows
-
-```console
-docker run --rm ^
--v %CD%/input:/opt/ontop/input ^
--v %CD%/jdbc:/opt/ontop/jdbc ^
--e ONTOLOGY_FILE=/opt/ontop/input/university-complete.ttl ^
--e MAPPING_FILE=/opt/ontop/input/university-complete.obda ^
--e PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties ^
--p 8080:8080 ontop/ontop-endpoint
-```
-
-Now we can open <http://localhost:8080/> to test a SPARQL query.
 
 ### Create a dedicated image
 

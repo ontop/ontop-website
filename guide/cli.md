@@ -1,7 +1,7 @@
 # Command Line Interface
 
 
-Ontop ships a shell script (`ontop` for *nix)  and a bat file (`ontop.bat` for Windows) exposing the core functionality and several utilities through the command line interface. It is an easy way to get the system quickly set-up, tested for correct execution, and querying or materializing as needed. 
+Ontop ships a shell script (`ontop` for *nix)  and a bat file (`ontop.bat` for Windows) exposing the core functionality and several utilities through the command line interface. It is an easy way to get the system quickly set-up, test for correct execution, and query or materialize as needed. 
 
 * [Setup](#setup-ontop-cli)
 * [ontop endpoint](#ontop-endpoint)
@@ -18,7 +18,7 @@ Unzip it in a folder. Open the command line terminal and cd to that folder.
 For Windows use the `ontop.bat` file, for Linux and OS X use the `ontop` file.
 
 ```
-$ ./ontop help endpoint
+$ ./ontop help
 usage: ontop <command> [ <args> ]
 
 Commands are:
@@ -33,9 +33,10 @@ Commands are:
     mapping               Manipulate mapping files
 ```
 
-### jdbc configuration
+### JDBC configuration
 
-For jdbc drivers, you will need to manually download them and put them into the `jdbc` directory.
+JDBC drivers are software implemented by third parties (often the same developers of the database system) that handle interaction with the database in their own proprietary protocols.
+You will need to manually download the JDBC drivers for your database management system (e.g., [PostgreSQL JDBC drivers](https://jdbc.postgresql.org/)) and put them into the `jdbc` directory.
 
 ### PATH
 
@@ -99,15 +100,15 @@ OPTIONS
 ### Example
 
 ```
-$  ./ontop endpoint -m /Users/xiao/obda/univ-benchQL.obda \
-  -t /Users/xiao/obda/univ-benchQL.owl \
-  -p /Users/xiao/obda/univ-benchQL.properties \
-  --cors-allowed-origins=*
+$ ./ontop endpoint -m university-complete.obda \
+                   -t university-complete.ttl \
+                   -p university-complete.properties \
+                   --cors-allowed-origins=*
 ```
 
 ## `ontop materialize`
 
-The second option is the "materialization utility", it does not need any query file, but instead, needs the user to specify a format in which he/she wants the output (either to terminal or output file). Materialization is helpful when you want to generate RDF data out of your database, using the provided mappings. This utility will take all the triples that the mapping can produce from the data source, and write it to the output. For very large datasets, producing the output might take some time. The user can choose between three output formats: Turtle, N-triples or RDF/XML. 
+This command provides a "materialization utility". Materialization is helpful when you want to generate RDF data out of your database, using the provided mappings. This utility will take all the triples that the mapping can produce from the data source, and write them to the output. `ontop materialize` does not need any query file, but instead, needs the user to specify a format in which he/she wants the output (either to terminal or output file). The user can choose between three output formats: [Turtle](https://www.w3.org/TR/2014/REC-turtle-20140225/), [N-triples](https://www.w3.org/TR/2014/REC-n-triples-20140225/) or [RDF/XML](https://www.w3.org/TR/2014/REC-rdf-syntax-grammar-20140225/). For very large datasets, producing the output might take some time. 
 
 ```
 $ ./ontop help materialize
@@ -163,12 +164,16 @@ OPTIONS
 Example:
 
 ```
-$ /.ontop materialize -m exampleBooks.ttl \
- -f turtle -o materializedBooks.ttl \
- -p books.properties
+$ /.ontop materialize -m university-complete.obda \
+                      -t university-complete.ttl \
+                      -p university-complete.properties \
+                      -f turtle \
+                      -o materialized-triples.ttl
 ```
 
 ## `ontop mapping`
+
+This command collects several useful sub-commands for dealing with mappings files.
 
 ```
 $ ./ontop help mapping
@@ -193,6 +198,7 @@ SYNOPSIS
 
 ###  `ontop mapping to-r2rml`
 
+Supports automatically converting mappings from Ontop native format (`.obda`) to the [R2RML](http://www.w3.org/TR/2012/REC-r2rml-20120927/) standard format:
 ```
 $ ./ontop help mapping to-r2rml
 NAME
@@ -214,6 +220,7 @@ OPTIONS
             OWL ontology file
 ```
 ### `ontop mapping to-obda`
+Supports automatically converting mappings from [R2RML](http://www.w3.org/TR/2012/REC-r2rml-20120927/) standard format to Ontop native format (`.obda`):
 
 ```
 $ ./ontop help mapping to-obda
@@ -234,6 +241,7 @@ OPTIONS
 ```
 
 ###  `ontop mapping pretty-r2rml`
+Provides automatic formatting and prettifying facilities for mappings files:
 
 ```
 $ ./ontop help mapping pretty-r2rml
@@ -253,6 +261,7 @@ OPTIONS
 ```
 
 ## `ontop bootstrap`
+This command allows the automatic generation of mappings and ontology starting from a database schema. The generated output can be used as-is or further customized manually (e.g., to used different ontological modeling choices and corresponding mappings). In both cases, it helps substantially reducing the user effort involved in setting up the ontology and mappings of a VKG specification.
 
 ```
 $ ./ontop help bootstrap
@@ -281,13 +290,13 @@ OPTIONS
 
 ## `ontop query`
 
-The `ontop query` command is designed for users to be able to test their system quickly using the command line utilities. 
-You can use them if you already have a scenario test case including:
-* the ontology (owl) and the mappings (obda or R2RML) files,
+The `ontop query` command is designed for helping users to test their system quickly using the command line utilities. 
+You can use this command if you already have a scenario test case including:
+* the ontology (RDFS or OWL) and the mappings (obda or R2RML) files,
 * a working database to connect to,
 * a SPARQL query file
 
-The `ontop query` command helps you to set up the system, run the query from the query string file over it, and get the results either in output file or terminal output. What the script actually does is to set up Ontop using the owl and the mapping file, parses the query from the file and executes it over the created instance of Ontop.
+The `ontop query` command helps you to set up the system, runs the query from the query string file over it, and gets the results either in output file or terminal output. What the script actually does is to set up Ontop using the ontology and the mappings files, parse the query from the file and execute it over the created instance of Ontop.
 
 Note that `ontop query` is NOT intended to be used in production and for benchmarking purposes. Most of its execution time is dedicated to offline tasks like DB metadata extraction and mapping processing. Query answering (i.e. answering the SPARQL query) takes usually much less time. For production and benchmarking purposes, please consider [deploying Ontop as a SPARQL endpoint](#ontop-endpoint).
 
@@ -330,13 +339,13 @@ OPTIONS
 
 ### Example 1
 
-Execute a SPARQL query using Ontop mapping.
+Execute a SPARQL query using Ontop mappings.
 
 ```
-$  ./ontop query -m /Users/xiao/obda/univ-benchQL.obda \
-  -t /Users/xiao/obda/univ-benchQL.owl \
-  -q /Users/xiao/obda/q1.txt \
-  -p /Users/xiao/obda/univ-benchQL.properties	
+$  ./ontop query -m university-complete.obda \
+                 -t university-complete.owl \
+                 -p university-complete.properties \
+                 -q q1.txt
 
 x
 <http://www.Department0.University0.edu/GraduateStudent44>
@@ -344,18 +353,23 @@ x
 <http://www.Department0.University0.edu/GraduateStudent124>
 <http://www.Department0.University0.edu/GraduateStudent142>
 ```
+where `q1.txt` contains the SPARQL query, e.g.:
+```sparql
+PREFIX : <http://example.org/voc#>
+SELECT ?x { ?x a :GraduateStudent . }
+```
 
 ### Example 2
 
-Execute a SPARQL query using R2RML mapping and output the query result to a file.
+Execute a SPARQL query using R2RML mappings and output the query result to a file.
 ```
-$ ./ontop query -m /Users/xiao/obda/univ-benchQL.ttl \
- -t /Users/xiao/obda/univ-benchQL.owl \
- -o /tmp/q1.csv \
- -q /Users/xiao/obda/q1.txt \
- -p /Users/xiao/obda/univ-benchQL.properties	
+$ ./ontop query -m university-complete.ttl \
+                -t university-complete.owl \
+                -p university-complete.properties \
+                -q q1.txt \
+                -o q1.csv
 
-$ cat /tmp/q1.csv
+$ cat q1.csv
 x
 <http://www.Department0.University0.edu/GraduateStudent44>
 <http://www.Department0.University0.edu/GraduateStudent101>
