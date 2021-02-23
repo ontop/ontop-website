@@ -101,8 +101,8 @@ function genGuideSidebarConfig() {
         	title: 'Advanced',
         	collapsable: false,
         	children: [
-                'advanced/caching',
-                'advanced/logging'
+                'advanced/logging',
+                'advanced/caching'
         	]
           },
         {
