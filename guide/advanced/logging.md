@@ -1,10 +1,10 @@
 # Query logging
 
-*Since 4.1.0*
+*Since 4.1.0.*
 
 Query logging, disabled by default, prints one-line JSON objects into the standard output.
 
-Its JSON format follows some ElasticSearch conventions and works nicely with the corresponding ELK stack (FileBeat, ES, Kibana).
+Its JSON format follows some ElasticSearch conventions and works nicely with the corresponding stack (FileBeat, ES, Kibana).
 
 ## Example
 ```json
@@ -47,7 +47,7 @@ Its JSON format follows some ElasticSearch conventions and works nicely with the
 | `message`          | String    | Type of the message. It always start with the prefix `query:`. Its default value is `query:all`. In case of an exception, the value starts with `query:exception-`.    |
 | `application`      | String    | Controlled by the property `ontop.applicationName`. |
 | `payload`  | JSON object      | Gathers the entries below.                 |
-| `queryId`  | UUID      | Unique to each processed query.                 |
+| `queryId`  | UUID      | Unique to each query.                 |
 | `classesUsedInQuery` | Array of IRIs | IRIs of the classes appearing in the SPARQL query. |
 | `propertiesUsedInQuery` | Array of IRIs | IRIs of the properties appearing in the SPARQL query. |
 | `tables` | Array of Strings | Names of the relations appearing in the SQL query. |

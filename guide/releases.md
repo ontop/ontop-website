@@ -11,7 +11,7 @@
 
 - Support for GeoSPARQL added ([#335](https://github.com/ontop/ontop/issues/335)).
 - [Rich JSON-based query logging](/guide/advanced/logging) added.
-- New endpoint for predefined queries added (beta). It enables the specification of custom low-latency Web APIs in a declarative manner.
+- [New endpoint for predefined queries](/guide/advanced/predefined) added (beta). It enables the specification of custom low-latency Web APIs in a declarative manner.
 - Support for the `IF`, `IRI`, `BNODE` SPARQL functions added.
 - Supported for Dremio and Teiid added.
 - DB Metadata can now be loaded from files instead of connecting to the database.
