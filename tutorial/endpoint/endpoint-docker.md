@@ -73,12 +73,21 @@ $ docker run -it --rm --name my-running-ontop-endpoint -p 8080:8080 my-ontop-end
 
 ### Use Docker-compose
 
-Docker-compose allows to set up a number of containers together. For example, the following [`docker-compose.yml`](docker-compose.yml) file configures a H2 database and an Ontop-endpoint.
+Docker-compose allows setting up a number of containers together. 
+For example, the following [`docker-compose.yml`](docker-compose.yml) file creates a cluster consisting of an H2 database (`db`) and an Ontop SPARQL endpoint (`ontop`). 
 
 ```yaml
 version: '3.4'
 
 services:
+  db:
+    image: openjdk:8-jdk-alpine
+    volumes:
+      - ./h2:/opt/h2
+    command: [ "java", "-cp", "/opt/h2/bin/h2-1.4.196.jar", "org.h2.tools.Server", "-tcpAllowOthers" ]
+    ports:
+      - "8082:8082"
+      - "9082:9082"
   ontop:
     image: ontop/ontop-endpoint
     environment:
@@ -94,19 +103,15 @@ services:
       - ./jdbc:/opt/ontop/jdbc
     ports:
       - "8080:8080"
-  db:
-    image: openjdk:8-jdk-alpine
-    volumes:
-      - ./h2:/opt/h2
-    command: [ "java", "-cp", "/opt/h2/bin/h2-1.4.196.jar", "org.h2.tools.Server", "-tcpAllowOthers" ]
-    ports:
-      - "8082:8082"
-      - "9082:9082"
 ```
 
-Now you can simply launch it by:
+Now we can simply start it:
 
 ```
 $ docker-compose up
 ``` 
+
+It exposes the following two ports for the browser:
+- <http://localhost:8080> H2 Web Console
+- <http://localhost:8082> Ontop SPARQL endpoint
 
