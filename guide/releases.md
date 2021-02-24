@@ -13,14 +13,14 @@
 - [Rich JSON-based query logging](/guide/advanced/logging) added.
 - [New endpoint for predefined queries](/guide/advanced/predefined) added (beta). It enables the specification of custom low-latency Web APIs in a declarative manner.
 - Support for the `IF`, `IRI`, `BNODE` SPARQL functions added.
-- Supported for Dremio added.
+- Support for Dremio added.
 - DB Metadata can now be loaded from files instead of connecting to the database.
 - Bnode labels are now anonymized on-the-fly. Bnode templates can safely use PII.
 - Sensitive JDBC information (user, password, url) can now be passed as arguments or environment variables (for Docker) instead of being written in the properties file. Docker secrets are also supported for further security.
-- Basic support for Ontop views added (experimental). In particular, this allows to specify integrity constraints on views defined at the Ontop-level.
 - New left join optimization techniques added. General functional dependencies are now taken into account. Sensitivity to left-join ordering minimized.
 - [HTTP caching](/guide/advanced/caching) headers can now be returned by the Ontop SPARQL endpoint.
-- Native Protégé bundles for each platform (win, macOS, linux) with JRE 8 embbed
+- Native Protégé bundles for each platform (Windows, MacOS, Linux) with JRE 8 embedded.
+- Basic support for Ontop views added (experimental). In particular, this allows to specify integrity constraints on views defined at the Ontop-level.
 
 #### Removal
  - As announced before, the RDF4J Workbench-based bundles are not shipped anymore. However, the webapps war file can still be built with Maven.
