@@ -42,7 +42,7 @@
 - CONSTRUCT and DESCRIBE query handling refactored.
 - Character encoding in R2RML templates refactored.
 - Default file encoding set to UTF-8. Particularly useful on Windows. Can be overridden if needed.
-- Build script refactored. Now fully based on Maven ([#393](https://github.com/ontop/ontop/pull/393)) *(to be merged)*.
+- Build script refactored. Now fully based on Maven ([#393](https://github.com/ontop/ontop/pull/393)).
 - Base Docker image updated.
 - PostgreSQL transaction handling (in streaming mode) improved.
 - Timeout support extended to non-SELECT queries.
