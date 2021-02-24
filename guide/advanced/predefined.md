@@ -81,6 +81,9 @@ PREFIX : <http://noi.example.org/ontology/odh#>
 
 ### Cache for the JSON-LD contexts
 
+Optionally, JSON-LD context documents can be stored in a cache and adapted if needed.
+When they are not cached, these documents are directly fetched from the Web.
+
 ```json
 {
   "https://schema.org": {
@@ -105,3 +108,32 @@ Results:
   "name": "Alpenblick - Gasthaus"
 }
 ```
+
+## Entries
+
+### Top-level key
+| Key                | Type      | Description                                     |
+| ------------------ | --------- | ---------------------------------------------   |
+| `queries`          | Map of predefined queries | Groups predefined queries by id. |
+
+### Query keys
+
+| Key                | Type      | Description                                     |
+| ------------------ | --------- | ---------------------------------------------   |
+| `queryType`        | String    | At the moment, only `graph` is supported. Corresponds to CONSTRUCT queries. |
+| `name`             | String    | Name of the predefined query. |
+| `description`      | String    | Description of the predefined query. |
+| `return404IfEmpty` | Boolean   | If true, returns a 404 status code when the result set is empty. |
+| `resultStreaming`  | Boolean   | If true, uses the chunked transfer encoding. |
+| `parameters`       | Map of parameters | Groups parameters by id. |
+| `frame`            | JSON object | [JSON-LD frame](https://w3c.github.io/json-ld-framing/)) for shaping the result set when the JSON-LD format is selected. |
+
+
+### Parameter keys
+
+| Key                | Type      | Description                                     |
+| ------------------ | --------- | ---------------------------------------------   |
+| `description`      | String    | Description of the parameter.                   |
+| `type`             | String    | Type of the parameter. Can be `iri` for an IRI, any XSD datatype like `xsd:string` with the prefix `xsd:` or the IRI string of an RDF datatype. |
+| `safeForRandomGeneration` | Boolean | If true, replacing the parameter value by a random value for generating a "reference" reformulated query can be considered as safe. Replacing afterwards the random value but the real parameter value in the reference reformulated query should produce the expected result. Usually, identifiers are safe while languages are not because the columns to consider differ from a language to another.  |
+| `required`         | Boolean | If true, a value must be given for this parameter in the HTTP request. |
