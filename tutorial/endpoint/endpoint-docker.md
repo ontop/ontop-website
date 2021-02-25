@@ -24,7 +24,7 @@ docker run --rm \
            -v $PWD/jdbc:/opt/ontop/jdbc \
            -e ONTOP_ONTOLOGY_FILE=/opt/ontop/input/university-complete.ttl \
            -e ONTOP_MAPPING_FILE=/opt/ontop/input/university-complete.obda \
-           -e PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties \
+           -e ONTOP_PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties \
            -p 8080:8080 \
            ontop/ontop-endpoint
 ```
