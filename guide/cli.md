@@ -429,7 +429,7 @@ The `ontop query` command helps you to set up the system, runs the query from th
 Note that `ontop query` is NOT intended to be used in production and for benchmarking purposes. Most of its execution time is dedicated to offline tasks like DB metadata extraction and mapping processing. Query answering (i.e. answering the SPARQL query) takes usually much less time. For production and benchmarking purposes, please consider [deploying Ontop as a SPARQL endpoint](#ontop-endpoint).
 
  ::: warning
-At the moment only SELECT queries are supported by this command.
+At the moment only SELECT queries are supported by this command. See [#222](https://github.com/ontop/ontop/issues/222).
 :::
 
 ```
