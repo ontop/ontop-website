@@ -53,17 +53,16 @@ The command compiles Ontop modules and generates the Ontop bundles distributed o
 * `ontop-protege-bundle-linux-[ontop-version].zip` - as above, for Linux;
 * `ontop-protege-bundle-os-x-[ontop-version].zip` - as above, for Mac OS X;
 * `ontop-protege-bundle-win-[ontop-version].zip` - as above, for Windows.
-* `ontop-webapps-[ontop-version].zip` - WAR files of RDF4J server and workbench applications supporting the creation and use via Web UI and SPARQL endpoint of Ontop repositories (drop them into the webapps folder of your Servlet server).
 
 Notes:
 * profile activation `-Prelease` enables the generation of the Ontop bundles (if omitted, only JAR files for Ontop modules are created);
 * option `-DskipTest` disables the execution of unit and integration tests (generally performed at release time) to speed up the process - omit it to enable tests (e.g., to test changes to source code);
-* in Ontop version 4.0.3 or earlier, the build must be performed via Bash script `build-release.sh` (Linux and Mac OS X only) and generated bundles are written to sub-directories ontop-cli, ontop-protege, and ontop-webapps of directory build/distribution. The script also generated bundles for Jetty 9 + RDF4J workbench + Ontop and for Tomcat 8 + RDF4J workbench + Ontop. These bundles are [deprecated and no more supported](https://ontop-vkg.org/guide/releases.html#_4-0-0-rc-1-july-8-2020), but users may still setup these Jetty / Tomcat configurations by generating and using the WAR files in `ontop-webapps-[ontop-version].zip`.
+* in Ontop version 4.0.3 or earlier, the build must be performed via Bash script `build-release.sh` (Linux and Mac OS X only) and generated bundles are written to sub-directories ontop-cli, ontop-protege, and ontop-webapps of directory build/distribution. The script also generated bundles for Jetty 9 + RDF4J workbench + Ontop and for Tomcat 8 + RDF4J workbench + Ontop. These bundles are [deprecated and no more supported](https://ontop-vkg.org/guide/releases.html#_4-0-0-rc-1-july-8-2020), but users may still setup these Jetty / Tomcat configurations by generating and using the WAR files as detailed next.
 
 
 ### Build specific bundles
 
-Starting from version `4.1`, we provide Maven profiles to build specific subsets of Ontop bundles as quickly as possible (with respect to using the above 'build all' command), which may come in handy when modifying Ontop source code. Specifically:
+Starting from version `4.1`, we provide Maven profiles to build specific Ontop bundles as quickly as possible (with respect to using the above 'build all' command), which may come in handy when modifying Ontop source code. Specifically:
 
 * to build the Ontop command line tool only (i.e., `ontop-cli-[ontop-version].zip`)
   ```console
@@ -75,12 +74,13 @@ Starting from version `4.1`, we provide Maven profiles to build specific subsets
   $ mvn -Pprotege
   ```
 
-* to build the WAR files (`ontop-webapps-[ontop-version].zip`)
+* to build the WARs for RDF4J server and workbench applications extended with support for Ontop repositories (file `ontop-webapps-[ontop-version].zip`)
   ```console
   $ mvn -Pwebapps
   ```
+  **Note**: this bundle is no more part of Ontop release (as of version 4.1) but can still be built locally by users. The produced zip contains two WAR files that can be dropped into any Servlet container of choice, including Tomcat and Jetty.
 
-The Maven profiles (cli, protege, webapps) employed in the commands above exclude unneeded artifacts, javadocs generation, and testing from the build.
+The Maven profiles (cli, protege, webapps) employed in the commands above exclude unneeded artifacts, javadocs generation, and testing from the build, which is thus faster. These profiles can be arbitrarily combined to produce multiple bundles (e.g., `mvn -Pcli,webapps` to generate both command line tool and WARs).
 
 
 ### Other useful Maven commands
