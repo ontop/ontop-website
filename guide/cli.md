@@ -428,6 +428,10 @@ The `ontop query` command helps you to set up the system, runs the query from th
 
 Note that `ontop query` is NOT intended to be used in production and for benchmarking purposes. Most of its execution time is dedicated to offline tasks like DB metadata extraction and mapping processing. Query answering (i.e. answering the SPARQL query) takes usually much less time. For production and benchmarking purposes, please consider [deploying Ontop as a SPARQL endpoint](#ontop-endpoint).
 
+ ::: warning
+At the moment only SELECT queries are supported by this command.
+:::
+
 ```
 $ ./ontop help query
 NAME
@@ -534,6 +538,8 @@ x
 ```
 
 ## `ontop extract-db-metadata`
+*Stable since 4.1.0*.
+
 This command extracts the metadata from the database and serializes it into a JSON file.
 This file can later on be passed as an argument to many other commands.
 
