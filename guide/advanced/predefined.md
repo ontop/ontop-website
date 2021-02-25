@@ -12,7 +12,9 @@ At the moment only CONSTRUCT queries are supported.
 
 This endpoint brings one important benefit in terms of performance with respect to the SPARQL endpoint: it is able to reuse reformulations from similar queries. This is particularly valuable for "lookup" requests involving many optional triples, and for which latency is critical.
 
-## Syntax
+This endpoint can be deployed using the command [ontop endpoint](localhost:8080/guide/cli#ontop-endpoint) or the Docker image [ontop/ontop-endpoint](https://hub.docker.com/r/ontop/ontop-endpoint).
+
+## HTTP API
 
 ```http
 GET /predefined/{queryId}?{param1}={value1}&{param2}={value2}&{param3}={value3}

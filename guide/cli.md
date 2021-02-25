@@ -287,7 +287,7 @@ SYNOPSIS
 
 ###  `ontop mapping to-r2rml`
 
-Supports automatically converting mappings from Ontop native format (`.obda`) to the [R2RML](http://www.w3.org/TR/2012/REC-r2rml-20120927/) standard format:
+Supports automatically converting mappings from Ontop native format (`.obda`) to the [R2RML](http://www.w3.org/TR/2012/REC-r2rml-20120927/) standard format. Since 4.1.0, by default, it expects DB credentials (for extracting the DB metadata) or a DB metadata file. This requirement can be bypassed using the option `--force`.
 ```
 $ ./ontop help mapping to-r2rml
 NAME
@@ -558,6 +558,80 @@ OPTIONS
 ### Example
 
 ```sh
-$ ./ontop extract-db-metadata -p odh-fragment.properties -o db-metadata.json
+$ ./ontop extract-db-metadata -p mobility.properties -o db-metadata.json
 ```
 
+```json
+{
+  "relations" : [ {
+    "uniqueConstraints" : [ {
+      "name" : "metadata_pkey",
+      "determinants" : [ "\"id\"" ],
+      "isPrimaryKey" : true
+    } ],
+    "foreignKeys" : [ {
+      "name" : "fk_metadata_station_id_station_pk",
+      "from" : {
+        "relation" : [ "\"mobility\"", "\"metadata\"" ],
+        "columns" : [ "\"station_id\"" ]
+      },
+      "to" : {
+        "relation" : [ "\"mobility\"", "\"station\"" ],
+        "columns" : [ "\"id\"" ]
+      }
+    } ],
+    "columns" : [ {
+      "name" : "\"id\"",
+      "isNullable" : false,
+      "datatype" : "bigserial"
+    }, {
+      "name" : "\"created_on\"",
+      "isNullable" : true,
+      "datatype" : "timestamp"
+    }, {
+      "name" : "\"json\"",
+      "isNullable" : true,
+      "datatype" : "jsonb"
+    }, {
+      "name" : "\"station_id\"",
+      "isNullable" : true,
+      "datatype" : "int8"
+    } ],
+    "name" : [ "\"mobility\"", "\"metadata\"" ]
+  },
+  {
+    "uniqueConstraints" : [ {
+      "name" : "station_pkey",
+      "determinants" : [ "\"id\"" ],
+      "isPrimaryKey" : true
+    }, {
+      "name" : "uc_station_stationcode_stationtype",
+      "determinants" : [ "\"stationcode\"", "\"stationtype\"" ],
+      "isPrimaryKey" : false
+    } ],
+    "columns" : [ {
+      "name" : "\"id\"",
+      "isNullable" : false,
+      "datatype" : "bigserial"
+    }, {
+      "name" : "\"name\"",
+      "isNullable" : false,
+      "datatype" : "varchar(255)"
+    }, {
+      "name" : "\"stationtype\"",
+      "isNullable" : false,
+      "datatype" : "varchar(255)"
+    } ],
+    "name" : [ "\"mobility\"", "\"station\"" ]
+  } ],
+  "metadata" : {
+    "dbmsProductName" : "PostgreSQL",
+    "dbmsVersion" : "13.1",
+    "driverName" : "PostgreSQL JDBC Driver",
+    "driverVersion" : "42.2.8",
+    "quotationString" : "\"",
+    "extractionTime" : "2021-02-25T15:56:09",
+    "idFactoryType" : "POSTGRESQL"
+  }
+}
+```
