@@ -17,29 +17,29 @@
 - DB Metadata can now be loaded from files instead of connecting to the database.
 - Bnode labels are now anonymized on-the-fly. Bnode templates can safely use PII.
 - Sensitive JDBC information (user, password, url) can now be passed as arguments or environment variables (for Docker) instead of being written in the properties file. Docker secrets are also supported for further security.
-- New left join optimization techniques added. General functional dependencies are now taken into account. Sensitivity to left-join ordering minimized.
+- New left join optimization techniques added. General functional dependencies are now taken into account. Sensitivity to left-join ordering reduced.
 - [HTTP caching](/guide/advanced/caching) headers can now be returned by the Ontop SPARQL endpoint.
 - Native Protégé bundles for each platform (Windows, MacOS, Linux) with JRE 8 embedded.
-- Basic support for Ontop views added (experimental). In particular, this allows to specify integrity constraints on views defined at the Ontop-level.
+- Basic support for Ontop views added (experimental). In particular, this allows specifying integrity constraints on views defined at the Ontop level.
 
 #### Removal
  - As announced before, the RDF4J Workbench-based bundles are not shipped anymore. However, the webapps war file can still be built with Maven.
 
 #### Refactoring
 
-- Drastic reduction of memory consumption when processing SPARQL queries ([#370](https://github.com/ontop/ontop/pull/370)). Significative when materializing large RDF graphs.
+- Drastic reduction of memory consumption when processing SPARQL queries ([#370](https://github.com/ontop/ontop/pull/370)), which is significant when materializing large RDF graphs.
 - Better file resource handling ([#368](https://github.com/ontop/ontop/pull/368)).
 - Distinct lifting improved.
 - Self-join elimination based on functional dependencies re-implemented.
 - Decomposition of heterogeneous IRI templates enabled.
 - Lexical value space is now considered when decomposing IRIs. 
-- Protégé plugin codebase cleaned.
+- Protégé plugin codebase cleaned, with parts of UI streamlined and redesigned. Improved syntax highlighting in target and source queries. Mapping validation extended. Multiple open ontologies supported ([#282](https://github.com/ontop/ontop/issue/282) and [#175](https://github.com/ontop/ontop/issue/175)).
 - RDF4J external binding management refactored.
 - Bnode handling refactored.
 - Java 11 support.
-- Better handling of column names when converting OBDA mappings into R2RML. It now uses DB metadata.
-- Parser for OBDA mappings refactored.
+- Better handling of column names when converting OBDA mappings into R2RML, which now uses DB metadata.
 - CONSTRUCT and DESCRIBE query handling refactored.
+- Parser for OBDA mappings refactored.
 - Character encoding in R2RML templates refactored.
 - Default file encoding set to UTF-8. Particularly useful on Windows. Can be overridden if needed.
 - [Build script](/dev/build) refactored. Now fully based on Maven ([#393](https://github.com/ontop/ontop/pull/393)).
