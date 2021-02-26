@@ -33,7 +33,7 @@
 - Self-join elimination based on functional dependencies re-implemented.
 - Decomposition of heterogeneous IRI templates enabled.
 - Lexical value space is now considered when decomposing IRIs. 
-- Protégé plugin codebase cleaned, with parts of UI streamlined and redesigned. Improved syntax highlighting in target and source queries. Mapping validation extended. Multiple open ontologies supported ([#282](https://github.com/ontop/ontop/issue/282) and [#175](https://github.com/ontop/ontop/issue/175)).
+- Protégé plugin codebase cleaned, with parts of UI streamlined and redesigned. Improved syntax highlighting in target and source queries. Mapping validation extended. Multiple open ontologies supported ([#282](https://github.com/ontop/ontop/issues/282) and [#175](https://github.com/ontop/ontop/issues/175)).
 - RDF4J external binding management refactored.
 - Bnode handling refactored.
 - Java 11 support.
