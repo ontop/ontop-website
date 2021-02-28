@@ -59,7 +59,7 @@ We add the table *course-registration* as dataset into *integrated_university_da
 Save the other datasets in similar manner.
 
 
-Now we add the *uni2* data as a JSON data source:
+Now we add the *uni2* data from [here](data/uni2.json) as a JSON data source:
 
 <img src="img/add-json.png" width="600"/>
 
