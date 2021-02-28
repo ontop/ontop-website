@@ -42,7 +42,7 @@ Now we are ready to add our database as a new datasource into Dremio:
 
 Select PostgreSQL:
 
-<img src="img/add-postgres.png" width="600"/>
+<img src="img/add-postgres-external.png" width="600"/>
 
 Enter the required JDBC information:
 
@@ -180,4 +180,4 @@ SELECT DISTINCT ?course ?firstName ?lastName {
 
 The results:
 
-<img src="img/sparql.png" width="600"/>
+<img src="img/sparql-2021plugin.png" width="600"/>
