@@ -38,7 +38,7 @@ jdbc:postgresql://localhost:5435/university-session1?user=postgres&password=post
 
 Now we are ready to add our database as a new datasource into Dremio:
 
-<img src="img/add-source.png" width="300"/>
+<img src="img/add-external-source.png" width="300"/>
 
 Select PostgreSQL:
 
