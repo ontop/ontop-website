@@ -47,11 +47,8 @@ $ ./build-release.sh
 ```
 
 ### Test
-* Travis-CI
-* run ontop-test module
 * run protege plugin tests
 * test CLI
-* test Jetty bundle
 
 ### Release
 
@@ -67,7 +64,7 @@ $ cd /home/pfs/project/o/on/ontop4obda
 
 * Update [the guide homepage](/guide) and [the release notes](/guide/releases) of this website
 
-* Update ontop-api-examples
+* Update <https://github.com/ontop/ontop-api-examples>
 
 * Send release emails to several mail lists
 
