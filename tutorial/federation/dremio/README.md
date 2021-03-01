@@ -98,12 +98,11 @@ SELECT course, cid FROM uni2
 Create a *uni2-student* dataset with a bit more involved SQL that flattens the array of students:
 
 ```sql
-SELECT T.enrollers."pid" AS pid,T.enrollers."fname" AS fname, T.enrollers."lname" AS lnmae 
+SELECT T.enrollers."pid" AS pid,T.enrollers."fname" AS fname, T.enrollers."lname" AS lname 
 FROM(
     SELECT flatten(enrollers) AS enrollers
     FROM uni2
 ) T
-ORDER BY pid
 ``` 
 
 Create *uni2-teaching* dataset with the following SQL:
