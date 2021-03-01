@@ -115,7 +115,7 @@ Now we can list all the datasets we saved in the *university* space:
 Finally we are ready to connect Dremio to Ontop. Dremio can be connected to Ontop through its JDBC interface. By following the instructions provided in [here](https://docs.dremio.com/drivers/dremio-jdbc-driver.html), we provide  to Ontop the following JDBC connection information in a ".properties file" for a Dremio instance running on the localhost:
 
 ```
-jdbc.url=jdbc\:dremio\:direct\=localhost\:31010;schema\=university
+jdbc.url=jdbc\:dremio\:direct\=localhost\:31010
 jdbc.driver=com.dremio.jdbc.Driver
 jdbc.user=dremiotest
 jdbc.password=dremiotest
@@ -139,19 +139,19 @@ rdfs:		http://www.w3.org/2000/01/rdf-schema#
 [MappingDeclaration] @collection [[
 mappingId	uni1-student
 target		:uni1/student/{s_id} a :Student ; foaf:firstName {first_name}^^xsd:string ; foaf:lastName {last_name}^^xsd:string . 
-source		SELECT * FROM "uni1-student"
+source		SELECT * FROM "university"."uni1-student"
 
 mappingId	uni1-attends
 target		:uni1/student/{s_id} :attends :uni1/course/{c_id}/{title} .
-source		SELECT "uni1-registration".s_id, "uni1-course".c_id, "uni1-course".title FROM "uni1-registration", "uni1-course" WHERE "uni1-registration".c_id = "uni1-course".c_id
+source		SELECT "uni1-registration".s_id, "uni1-course".c_id, "uni1-course".title FROM "university"."uni1-registration", "university"."uni1-course" WHERE "uni1-registration".c_id = "uni1-course".c_id
 
 mappingId	uni2-student
 target		:uni2/student/{pid} a :Student ; foaf:firstName {fname}^^xsd:string ; foaf:lastName {lname}^^xsd:string . 
-source		SELECT * FROM "uni2-student"
+source		SELECT * FROM "university"."uni2-student"
 
 mappingId	uni2-attends
 target		:uni2/student/{pid} :attends :uni2/course/{cid}/{course} .
-source		SELECT "uni2-registration".pid, "uni2-course".cid, "uni2-course".course FROM "uni2-registration", "uni2-course" WHERE "uni2-registration".cid = "uni2-course".cid
+source		SELECT "uni2-registration".pid, "uni2-course".cid, "uni2-course".course FROM "university"."uni2-registration", "university"."uni2-course" WHERE "uni2-registration".cid = "uni2-course".cid
 ]]
 ```
 
