@@ -32,11 +32,11 @@ We are ready to add our database as a new datasource into Dremio:
 
 Select PostgreSQL:
 
-<img src="img/add-postgres-external.png" width="600"/>
+<img src="img/add-postgres-external.png" width="700"/>
 
 Enter the required JDBC information (password: *postgres*):
 
-<img src="img/postgres-info.png" width="600"/>
+<img src="img/postgres-info.png" width="700"/>
 
 Now we see the tables in *university-session1*:
 
@@ -55,7 +55,7 @@ Now we add the *uni2* data from [here](data/uni2.json) as a JSON data source:
 
 The *uni2* JSON data can be seen as follows:
 
-<img src="img/see-json.png" width="600"/>
+<img src="img/see-json.png" width="800"/>
 
 JSON files usually contain nested data. However, Ontop cannot directly query nested data. For this reason, in order to make our JSON data queryable by Ontop, first we need to extract relevant group of elements, and save these groups as datasets. 
 
@@ -77,7 +77,7 @@ flatten(enrollers) AS enrollers
 
 *Save As* the data set with the name *uni2-registration*.
 
-<img src="img/uni2-registration.png" width="600"/>
+<img src="img/uni2-registration.png" width="800"/>
 
 Create a dataset named *uni2-course* in a similar manner:
 
