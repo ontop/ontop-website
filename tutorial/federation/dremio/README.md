@@ -9,15 +9,11 @@ Before you proceed, we recommend you to see the following tutorials provided by 
   2. [Working with your first dataset](https://www.dremio.com/tutorials/working-with-your-first-dataset/)
 
 
-As a first step, by following the instructions in [Working with your first dataset](https://www.dremio.com/tutorials/working-with-your-first-dataset/), we create a *space* named **integrated_university_data** as shown below.
+As a first step, by following the instructions in [Working with your first dataset](https://www.dremio.com/tutorials/working-with-your-first-dataset/), we create a *space* named **university** as shown below.
 
-Add new data space:
+Add and save the new data space:
 
 <img src="img/add-space.png" width="300"/>
-
-Save the new data space:
-
-<img src="img/save-space.png" width="600"/>
 
 It will be our data space in which we integrate data from various sources.
 
@@ -52,7 +48,7 @@ Now we see the tables in *university-session1*:
 
 <img src="img/postgres-tables.png" width="600"/>
 
-We add the table *course-registration* as dataset into *integrated_university_data*. We rename it to *uni1-registration*.
+We add the table *course-registration* as dataset into *university*. We rename it to *uni1-registration*.
 
 <img src="img/postgres-uni1-registration-dataset.png" width="600"/>
 
@@ -69,7 +65,7 @@ The *uni2* JSON data can be seen as follows:
 
 JSON files usually contain nested data. However, Ontop can not directly query nested data. For this reason, in order to make our JSON data queryable by Ontop, first we need to extract relevant group of elements, and save these groups as datasets. 
 
-With the following SQL query we create an *uni2-registration* dataset and save it into integrated data space *integrated_university_data*:
+With the following SQL query we create an *uni2-registration* dataset and save it into the data space *university*:
 
 ```sql
 SELECT T.cid, T.enrollers.pid AS pid 
@@ -112,14 +108,14 @@ SELECT cid, uni2.lecturer.pid AS pid
 FROM uni2
 ```
 
-Now we can list all the datasets we saved in the *integrated_university_data* space:
+Now we can list all the datasets we saved in the *university* space:
 
 <img src="img/dataset-list-updated.png" width="600"/>
 
 Finally we are ready to connect Dremio to Ontop. Dremio can be connected to Ontop through its JDBC interface. By following the instructions provided in [here](https://docs.dremio.com/drivers/dremio-jdbc-driver.html), we provide  to Ontop the following JDBC connection information in a ".properties file" for a Dremio instance running on the localhost:
 
 ```
-jdbc.url=jdbc\:dremio\:direct\=localhost\:31010;schema\=integrated_university_data
+jdbc.url=jdbc\:dremio\:direct\=localhost\:31010;schema\=university
 jdbc.driver=com.dremio.jdbc.Driver
 jdbc.user=dremiotest
 jdbc.password=dremiotest
@@ -165,7 +161,7 @@ Now we can execute the following SPARQL query on Ontop:
 PREFIX : <http://example.org/voc#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-SELECT DISTINCT ?course ?firstName ?lastName {
+SELECT ?course ?firstName ?lastName {
   ?student :attends ?course .
   ?student foaf:firstName ?firstName .
   ?student foaf:lastName ?lastName .
