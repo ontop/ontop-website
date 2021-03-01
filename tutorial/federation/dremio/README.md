@@ -1,15 +1,23 @@
 # Ontop with Dremio
 
 
-In this tutorial we present step-by-step the way of connecting Dremio to Ontop. We show how to integrate *uni1* data saved in the PostgreSQL database and *uni2* data saved in plain JSON files into one Dremio data space. 
+In this tutorial we present step-by-step the way of connecting Dremio to Ontop. We show how to integrate *uni1* data saved in the PostgreSQL database and *uni2* data saved in plain JSON files into one Dremio data space.
 
-Before you proceed, we recommend you to see the following tutorials provided by Dremio:
+For this tutorial, we provide a Docker-compose script, which is both launching Dremio and the PostgreSQL database. 
+Go at the root of the [ontop-tutorial git repository](/tutorial/#clone-this-repository) and run the following commands:
+
+```sh
+cd federation/dremio
+docker-compose pull && docker-compose up --build
+```
+
+Once Dremio is initialized, visit [http://localhost:9047](http://localhost:9047). Before you continue, we recommend you to see the following tutorials provided by Dremio:
 
   1. [Getting oriented with Dremio](https://www.dremio.com/tutorials/getting-oriented-to-dremio/)
   2. [Working with your first dataset](https://www.dremio.com/tutorials/working-with-your-first-dataset/)
 
 
-As a first step, by following the instructions in [Working with your first dataset](https://www.dremio.com/tutorials/working-with-your-first-dataset/), we create a *space* named **university** as shown below.
+By following the instructions in [Working with your first dataset](https://www.dremio.com/tutorials/working-with-your-first-dataset/), we create a *space* named **university** as shown below.
 
 Add and save the new data space:
 
@@ -17,22 +25,8 @@ Add and save the new data space:
 
 It will be our data space in which we integrate data from various sources.
 
-The *uni1* data is contained in a PostgreSQL database named *university-session1*. Either you can download the SQL script that generates the database from [here](data/postgres-docker/db/university-session1.sql) and load it to your local PostgreSQL server, or you can run the docker container that we provide by executing the following script:
-
-```bash
-IMAGENAME="university-db"
-docker ps -q --filter ancestor=$IMAGENAME | xargs docker stop
-docker build -t $IMAGENAME .
-docker run -p 5435:5432 $IMAGENAME
-``` 
- 
-The database *university-session1* becomes accesable with the following JDBC URL:
-
-```sql
-jdbc:postgresql://localhost:5435/university-session1?user=postgres&password=postgres
-``` 
-
-Now we are ready to add our database as a new datasource into Dremio:
+The *uni1* data is contained in a PostgreSQL database named *university-session1*. 
+We are ready to add our database as a new datasource into Dremio:
 
 <img src="img/add-external-source.png" width="300"/>
 
@@ -40,7 +34,7 @@ Select PostgreSQL:
 
 <img src="img/add-postgres-external.png" width="600"/>
 
-Enter the required JDBC information:
+Enter the required JDBC information (password: *postgres*):
 
 <img src="img/postgres-info.png" width="600"/>
 
@@ -63,7 +57,7 @@ The *uni2* JSON data can be seen as follows:
 
 <img src="img/see-json.png" width="600"/>
 
-JSON files usually contain nested data. However, Ontop can not directly query nested data. For this reason, in order to make our JSON data queryable by Ontop, first we need to extract relevant group of elements, and save these groups as datasets. 
+JSON files usually contain nested data. However, Ontop cannot directly query nested data. For this reason, in order to make our JSON data queryable by Ontop, first we need to extract relevant group of elements, and save these groups as datasets. 
 
 With the following SQL query we create an *uni2-registration* dataset and save it into the data space *university*:
 
@@ -167,7 +161,3 @@ SELECT ?course ?firstName ?lastName {
   ?student foaf:lastName ?lastName .
 }
 ```
-
-The results:
-
-<img src="img/sparql-2021plugin.png" width="600"/>
