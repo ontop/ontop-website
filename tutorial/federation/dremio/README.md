@@ -95,19 +95,14 @@ Create a dataset named *uni2-course* in a similar manner:
 SELECT course, cid FROM uni2
 ``` 
 
-Create a *uni2-person* dataset with a bit more involved SQL that unions both students and lecturers:
+Create a *uni2-student* dataset with a bit more involved SQL that flattens the array of students:
 
 ```sql
-SELECT * FROM (
-    SELECT uni2.lecturer."pid" AS pid, uni2.lecturer."fname" AS fname, uni2.lecturer."lname" AS lname 
+SELECT T.enrollers."pid" AS pid,T.enrollers."fname" AS fname, T.enrollers."lname" AS lnmae 
+FROM(
+    SELECT flatten(enrollers) AS enrollers
     FROM uni2
-    UNION ALL
-    SELECT T.enrollers."pid" AS pid,T.enrollers."fname" AS fname, T.enrollers."lname" AS lnmae 
-    FROM(
-        SELECT flatten(enrollers) AS enrollers
-        FROM uni2
-    ) T
-) F
+) T
 ORDER BY pid
 ``` 
 
@@ -120,7 +115,7 @@ FROM uni2
 
 Now we can list all the datasets we saved in the *integrated_university_data* space:
 
-<img src="img/dataset-list.png" width="600"/>
+<img src="img/dataset-list-updated.png" width="600"/>
 
 Finally we are ready to connect Dremio to Ontop. Dremio can be connected to Ontop through its JDBC interface. By following the instructions provided in [here](https://docs.dremio.com/drivers/dremio-jdbc-driver.html), we provide  to Ontop the following JDBC connection information in a ".properties file" for a Dremio instance running on the localhost:
 
@@ -157,7 +152,7 @@ source		SELECT "uni1-registration".s_id, "uni1-course".c_id, "uni1-course".title
 
 mappingId	uni2-student
 target		:uni2/student/{pid} a :Student ; foaf:firstName {fname}^^xsd:string ; foaf:lastName {lname}^^xsd:string . 
-source		SELECT DISTINCT "uni2-person".pid, "uni2-person".fname, "uni2-person".lname FROM "uni2-person", "uni2-registration" WHERE "uni2-person".pid = "uni2-registration".pid
+source		SELECT * FROM "uni2-student"
 
 mappingId	uni2-attends
 target		:uni2/student/{pid} :attends :uni2/course/{cid}/{course} .
