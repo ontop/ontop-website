@@ -3,7 +3,7 @@
 
 In this tutorial we present step-by-step the way of connecting Dremio to Ontop. We show how to integrate *uni1* data saved in the PostgreSQL database and *uni2* data saved in plain JSON files into one Dremio data space.
 
-For this tutorial, we provide a Docker-compose script, which is both launching Dremio and the PostgreSQL database. 
+We provide a Docker-compose script, which is both launching Dremio and the PostgreSQL database. 
 Go at the root of the [ontop-tutorial git repository](/tutorial/#clone-this-repository) and run the following commands:
 
 ```sh
