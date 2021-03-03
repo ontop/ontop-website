@@ -12,7 +12,7 @@ This documentation is for Ontop 3.0 and more recent versions.
 For earlier versions, please refer to [our previous Wiki](https://github.com/ontop/ontop/wiki).
 
 Most recent version:
-* Stable:  Ontop 4.0.3, released on October 16, 2020.
+* Stable:  Ontop 4.1.0, released on February 28, 2021.
 
 See [release notes](/guide/releases) for more details.
 
@@ -23,11 +23,11 @@ Main features
 * Uses RDF 1.1 as graph data model
 * Supports RDFS and OWL 2 QL ontologies
 * Supports R2RML and Ontop mappings
-* Supports the majority of SPARQL 1.1 features, including the main SPARQL aggregation functions (since 4.0-beta-1) and GeoSPARQL functions (upcoming with 4.1)
-* Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint) and as [a predefined query endpoint](/guide/advanced/predefined) (upcoming with 4.1)
+* Supports the majority of SPARQL 1.1 features, including the main SPARQL aggregation functions (since 4.0-beta-1) and GeoSPARQL functions (since 4.1)
+* Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint) and as [a predefined query endpoint](/guide/advanced/predefined) (since 4.1)
 * Produces efficient SQL queries by applying many optimizations
 * Supports the main database systems (PostgreSQL, MySQL, SQL server, Oracle and DB2)
-* Supports database federators such as Denodo (beta) and Dremio (upcoming with 4.1)
+* Supports database federators such as Denodo (beta) and Dremio (since 4.1)
 * Can [materialize](/guide/cli#ontop-materialize) virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)
 
