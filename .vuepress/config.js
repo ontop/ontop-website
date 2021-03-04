@@ -2,10 +2,10 @@ module.exports = {
     base: '/',
     title: 'Ontop',
     markdown: {
-	    externalLinks: {
-		    target: '_blank', 
-		    rel: 'noopener' 
-	    }
+        externalLinks: {
+            target: '_blank',
+            rel: 'noopener'
+        }
     },
     themeConfig: {
         repo: 'ontop/ontop',
@@ -97,15 +97,16 @@ function genGuideSidebarConfig() {
                 'cli'
             ]
         },
-          {
-        	title: 'Advanced',
-        	collapsable: false,
-        	children: [
+        {
+            title: 'Advanced',
+            collapsable: false,
+            children: [
                 'advanced/predefined',
+                'advanced/properties',
                 'advanced/logging',
                 'advanced/caching'
-        	]
-          },
+            ]
+        },
         {
             title: 'Troubleshooting',
             collapsable: false,
