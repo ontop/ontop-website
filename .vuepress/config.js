@@ -102,8 +102,8 @@ function genGuideSidebarConfig() {
             collapsable: false,
             children: [
                 'advanced/predefined',
-                'advanced/properties',
                 'advanced/logging',
+                'advanced/properties',
                 'advanced/caching'
             ]
         },
