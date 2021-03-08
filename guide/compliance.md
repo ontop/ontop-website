@@ -23,7 +23,7 @@ In the following table we present a summary of *Ontop* v4 compliance with [SPARQ
 | 17.5 XPath Constructor Functions | ~~easting~~ | 0 |
 | 17.6 Extensible Value Testing | ~~user defined functions~~ | 0 |
 
-# GeoSPARQL 1.0 Compliance
+## GeoSPARQL 1.0 Compliance
 
 The following table provides a summary of *Ontop* v4 compliance with [OGC GeoSPARQL 1.0](https://www.ogc.org/standards/geosparql), the standard for representing and querying geospatial linked data. The summary focuses only on the main geospatial functions and properties and unsupported features are ~~crossed out~~.
 
