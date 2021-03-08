@@ -60,6 +60,8 @@ At the moment, it does NOT support:
  - [R2RML default mapping](https://www.w3.org/TR/r2rml/#default-mappings) generation
  - Normalization of binary SQL datatypes
 
+ For complex SQL queries (e.g. with a `GROUP BY`) in the mapping, Ontop may not be able to infer the datatype of each column. In such a situation, it may not be able to derive the [natural RDF datatype](https://www.w3.org/TR/r2rml/#natural-mapping) of a literal built over a column and may not apply the expected normalization. This can be partially mitigated by expliciting the RDF datatype in the mapping, but normalization would remain unapplied. 
+
 ## RDF 1.1
 
 Ontop complies with [RDF 1.1](https://www.w3.org/TR/rdf11-new/). It types simple literals (from RDF 1.0) as `xsd:string` and literals with a language tag as `rdf:langString`.
