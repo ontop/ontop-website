@@ -14,7 +14,7 @@ In the following table we present a summary of the compliance of the latest vers
 | 11. Aggregates  | `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`, `GROUP_CONCAT`, `SAMPLE`      | 6/6 |
 | 12. Subqueries | Subqueries | 1/1 |
 | 13. RDF Dataset | `GRAPH`, <code>~~FROM \[NAMED\]~~</code> | 1/2 |
-| 14. Basic Federated Query | `SERVICE` | 0 |
+| 14. Basic Federated Query |  <code>~~SERVICE~~</code> | 0 |
 | 15. Solution Seqs. & Mods. | `ORDER BY`, `SELECT`, `DISTINCT`, `REDUCED`, `OFFSET`, `LIMIT` | 6/6 |
 | 16. Query Forms | `SELECT`, `CONSTRUCT`, `ASK`, `DESCRIBE` | 4/4 |
 | 17.4.1. Functional Forms | `BOUND`, `IF`, `COALESCE`, <code>~~EXISTS~~</code>, <code>~~NOT EXISTS~~</code>, <code>&#124;&#124;</code> , `&&`, `=`, `sameTerm`, <code>~~IN~~</code>, <code>~~NOT IN~~</code>  | 7/11 |
@@ -23,7 +23,7 @@ In the following table we present a summary of the compliance of the latest vers
 | 17.4.4. Functions on Numerics | `abs`, `round`, `ceil`, `floor`, `RAND` | 5/5 |
 | 17.4.5. Functions on Dates&Times | `now`, `year`, `month`, `day`, `hours`, `minutes`, `seconds`, <code>~~timezone~~</code>, `tz` | 8/9 |
 | 17.4.6. Hash Functions | `MD5`, `SHA1`, `SHA256`, `SHA384`, `SHA512` | 5/5 |
-| 17.5 XPath Constructor Functions | ~~easting~~ | 0 |
+| 17.5 XPath Constructor Functions | ~~casting~~ | 0 |
 | 17.6 Extensible Value Testing | ~~user defined functions~~ | 0 |
 
 ### Limitations
