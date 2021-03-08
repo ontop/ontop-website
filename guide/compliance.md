@@ -7,7 +7,9 @@ In the following table we present a summary of the compliance of the latest vers
 
 | Section in SPARQL 1.1  | Features  | Coverage |
 | --------------------------- | --------- | --------- |
-| 5-7. Graph Patterns, etc.       | `BGP`, `FILTER`, `OPTIONAL`, `UNION` | 4/4    |
+| [5. Graph Patterns](https://www.w3.org/TR/sparql11-query/#GroupPatterns) | `BGP`, `FILTER` | 2/2    |
+| [6. Including Optional Values](https://www.w3.org/TR/sparql11-query/#optionals) | `OPTIONAL` | 1/1    |
+| 7. Matching Alternatives | `UNION` | 1/1    |
 | 8. Negation          | `MINUS`, <code>~~FILTER \[NOT\] EXISTS~~</code>    | 1/2    |
 | 9. Property Paths      | ~~PredicatePath~~, ~~InversePath~~, ~~ZeroOrMorePath~~, ...    | 0 |
 | 10. Assignment  | `BIND`, `VALUES`      | 2/2 |
