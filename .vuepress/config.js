@@ -103,7 +103,8 @@ function genGuideSidebarConfig() {
         	children: [
                 'advanced/predefined',
                 'advanced/logging',
-                'advanced/caching'
+                'advanced/caching',
+                'advanced/properties'
         	]
           },
         {
