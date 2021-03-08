@@ -94,7 +94,8 @@ function genGuideSidebarConfig() {
                 '',
                 'concepts',
                 'getting-started',
-                'cli'
+                'cli',
+                'compliance'
             ]
         },
           {

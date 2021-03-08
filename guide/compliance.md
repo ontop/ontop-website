@@ -1,6 +1,9 @@
-# SPARQL 1.1 Compliance
+# Standards compliance
 
-In the following table we present a summary of *Ontop* v4 compliance with [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), where rows correspond to sections of the WC3 recommendation and unsupported features are ~~crossed out~~. Most of the features are supported, but some are unsupported or only partially supported.
+## SPARQL 1.1 compliance
+*Updated for 4.1.0*.
+
+In the following table we present a summary of the compliance of the latest version of Ontop with [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), where rows correspond to sections of the WC3 recommendation and unsupported features are ~~crossed out~~. Most of the features are supported, but some are unsupported or only partially supported.
 
 | Section in SPARQL 1.1  | Features  | Coverage |
 | --------------------------- | --------- | --------- |
@@ -23,9 +26,15 @@ In the following table we present a summary of *Ontop* v4 compliance with [SPARQ
 | 17.5 XPath Constructor Functions | ~~easting~~ | 0 |
 | 17.6 Extensible Value Testing | ~~user defined functions~~ | 0 |
 
-## GeoSPARQL 1.0 Compliance
+### Limitations
+ - The 5 hash functions and functions `REPLACE` and `REGEX` for regular expressions have limited support because they heavily depend on the DBMS: not all DBMSs provide all hash functions, and many DBMSs have their own regex dialects. Currently, the SPARQL regular expressions of `REPLACE` and `REGEX` are simply sent to the DBMS.
+ - In the implementation of function `langMatches`, the second argument has to a be a constant: allowing variables will have a negative impact on the performance in our framework.
 
-The following table provides a summary of *Ontop* v4 compliance with [OGC GeoSPARQL 1.0](https://www.ogc.org/standards/geosparql), the standard for representing and querying geospatial linked data. The summary focuses only on the main geospatial functions and properties and unsupported features are ~~crossed out~~.
+
+## GeoSPARQL 1.0 compliance
+*Starting from 4.1.0.*
+
+The following table provides a summary of the compliance of the latest version of Ontop with [OGC GeoSPARQL 1.0](https://www.ogc.org/standards/geosparql), the standard for representing and querying geospatial linked data. The summary focuses only on the main geospatial functions and properties and unsupported features are ~~crossed out~~.
 
 | Section in OGC GeoSPARQL 1.0 | Features  | Coverage                                     |
 | ------------------------------------------- | --------- | ---   |
@@ -39,4 +48,22 @@ The following table provides a summary of *Ontop* v4 compliance with [OGC GeoSPA
 | 9.4. Topological Egenhofer Relation Family Query Functions | `geof:ehEquals`, `geof:ehDisjoint`, `geof:ehMeet`, `geof:ehOverlap`, `geof:ehCovers`, `geof:ehCoveredBy`, `geof:ehInside`, `geof:ehContains`      | 8/8 |
 | 9.5. Topological RCC8 Relation Family Query Functions | `geof:rcc8eq`, `geof:rcc8dc`, `geof:rcc8ec`, `geof:rcc8po`, `geof:rcc8tppi`, `geof:rcc8tpp`, `geof:rcc8ntpp`, `geof:rcc8ntppi`    | 8/8 |
 
-Several non-topological query functions use a unit of measure URI which OGC defines under a specific namespace e.g. `<http://www.opengis.net/def/uom/OGC/1.0/metre>`. *Ontop* v4 currently supports the units metre, radian and degree.
+Several non-topological query functions use a unit of measure URI which OGC defines under a specific namespace e.g. `<http://www.opengis.net/def/uom/OGC/1.0/metre>`. The latest version of Ontop currently supports the units metre, radian and degree.
+
+## R2RML
+*Updated for 4.1.0.*
+
+The latest version of Ontop is almost fully compliant with the [R2RML](https://www.w3.org/TR/r2rml) standard. 
+
+At the moment, it does NOT support:
+ - Base IRIs
+ - [R2RML default mapping](https://www.w3.org/TR/r2rml/#default-mappings) generation
+ - Normalization of binary SQL datatypes
+
+## RDF 1.1
+
+Ontop complies with [RDF 1.1](https://www.w3.org/TR/rdf11-new/). It types simple literals (from RDF 1.0) as `xsd:string` and literals with a language tag as `rdf:langString`.
+
+## OWL 2 QL
+
+## RDFS
