@@ -1,6 +1,6 @@
 # Standards compliance
 
-## SPARQL 1.1 compliance
+## SPARQL 1.1
 *Updated for 4.1.0*.
 
 In the following table we present a summary of the compliance of the latest version of Ontop with [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), where rows correspond to sections of the WC3 recommendation and unsupported features are ~~crossed out~~. Most of the features are supported, but some are unsupported or only partially supported.
@@ -31,7 +31,7 @@ In the following table we present a summary of the compliance of the latest vers
  - In the implementation of function `langMatches`, the second argument has to a be a constant: allowing variables will have a negative impact on the performance in our framework.
 
 
-## GeoSPARQL 1.0 compliance
+## GeoSPARQL 1.0
 *Starting from 4.1.0.*
 
 The following table provides a summary of the compliance of the latest version of Ontop with [OGC GeoSPARQL 1.0](https://www.ogc.org/standards/geosparql), the standard for representing and querying geospatial linked data. The summary focuses only on the main geospatial functions and properties and unsupported features are ~~crossed out~~.
