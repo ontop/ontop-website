@@ -104,7 +104,7 @@ function genGuideSidebarConfig() {
                 'advanced/predefined',
                 'advanced/logging',
                 'advanced/caching',
-                'advanced/properties'
+                'advanced/configuration'
         	]
           },
         {
