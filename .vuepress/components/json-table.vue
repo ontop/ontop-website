@@ -12,7 +12,7 @@
         <tr v-for="(value, propertyName) in json">
           <td class="properties-table-key-header"><code>{{ propertyName }}</code></td>
           <td class="properties-table-key-header">{{ value.type }}</td>
-          <td class="properties-table-description-header">{{ value.description }}</td>
+          <td class="properties-table-description-header"> <markdown-it-vue :content="value.description"></markdown-it-vue></td>
         </tr>
     </tbody>
   </table>
