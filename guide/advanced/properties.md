@@ -3,7 +3,10 @@
 
 ### Top-level keys
 
-<json-table v-bind:json="json"/>
+<ClientOnly>
+  <json-table v-bind:json="json"/>
+</ClientOnly>
+
 
 <script>
     export default {
@@ -12,7 +15,7 @@
                 json : {}
             }
         },
-        async created() {
+        async mounted() {
             const response = await fetch("https://raw.githubusercontent.com/ontop/ontop/feature/property-description-with-type/documentation/property_description.json");
             const responseJson = await response.json();
             this.json = responseJson;
