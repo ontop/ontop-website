@@ -12,7 +12,9 @@
         <tr v-for="(value, propertyName) in json">
           <td class="properties-table-key-header"><code>{{ propertyName }}</code></td>
           <td class="properties-table-key-header">{{ value.type }}</td>
-          <td class="properties-table-description-header"> <markdown-it-vue :content="value.description"></markdown-it-vue></td>
+          <td class="properties-table-description-header">
+            <component v-if="dynamicComponent" :is="dynamicComponent" :content="value.description"></component>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -22,7 +24,17 @@
 <script>
 export default {
   props: ['json'],
-  name: "json-table"
+  name: "json-table",
+  data() {
+    return {
+      dynamicComponent: null
+    }
+  },
+  mounted () {
+    import('markdown-it-vue').then(module => {
+      this.dynamicComponent = module.default
+    })
+  }
 }
 </script>
 

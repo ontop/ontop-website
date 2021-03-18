@@ -2,7 +2,10 @@
 
 Here is a list of the configuration keys which can be set in the properties file.
 
-<json-table v-bind:json="json"/>
+<ClientOnly>
+  <json-table v-bind:json="json"/>
+</ClientOnly>
+
 
 <script>
     export default {
@@ -11,7 +14,7 @@ Here is a list of the configuration keys which can be set in the properties file
                 json : {}
             }
         },
-        async created() {
+        async mounted() {
             const response = await fetch("https://raw.githubusercontent.com/ontop/ontop/version4/documentation/property_description.json");
             const responseJson = await response.json();
             this.json = responseJson;

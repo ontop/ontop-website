@@ -1,5 +1,5 @@
 // async function is also supported, too
-import MarkdownItVue from 'markdown-it-vue';
+// import MarkdownItVue from 'markdown-it-vue';
 export default ({
                     Vue, // the version of Vue being used in the VuePress app
                     options, // the options for the root Vue instance
@@ -9,5 +9,5 @@ export default ({
                 }) => {
     // ...apply enhancements to the app
     // Vue.component('vue-json-to-table', VueJsonToTable)
-    Vue.use(MarkdownItVue)
+    // Vue.use(MarkdownItVue)
 }
