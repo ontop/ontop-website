@@ -14,7 +14,7 @@ Yes! Ontop is available under the Apache License, Version 2.0.
 You can get in touch with us through [our support channels](/community/support) and [contribute to the project](/community/contributing/)
 by, for instance, filing a [bug report](/community/contributing/bug-report).
 
-### Does Ontop supports SPARQL Update?
+### Does Ontop support SPARQL Update?
 No, as for now, Ontop is a read-only system, it does not support [SPARQL Update queries](https://www.w3.org/TR/sparql11-update/) but only SELECT, CONSTRUCT, ASK and DESCRIBE queries. For more details, see [the compliance page](/guide/compliance).
 
 ## Protégé
