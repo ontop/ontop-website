@@ -14,6 +14,9 @@ Yes! Ontop is available under the Apache License, Version 2.0.
 You can get in touch with us through [our support channels](/community/support) and [contribute to the project](/community/contributing/)
 by, for instance, filing a [bug report](/community/contributing/bug-report).
 
+### Does Ontop supports SPARQL Update?
+No, as for now, Ontop is a read-only system, it does not support [SPARQL Update queries](https://www.w3.org/TR/sparql11-update/) but only SELECT, CONSTRUCT, ASK and DESCRIBE queries. For more details, see [the compliance page](/guide/compliance).
+
 ## Protégé
 ### No suitable driver found for .. (driver)
 
@@ -43,7 +46,7 @@ Please go to the *Preferences* and click on *"Reset preferences"*.
 ### Protégé does not show the Ontop tabs
 To see the tabs go to *Windows -> tabs -> Ontop Mappings and Ontop SPARQL*.
 
-## RDF4J workbench
+## RDF4J workbench (not supported anymore)
 
 ### Why RDF4J Workbench refuses to delete some repositories?
 
