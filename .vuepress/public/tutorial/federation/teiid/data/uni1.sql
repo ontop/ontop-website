@@ -61,7 +61,7 @@ CREATE TABLE `course` (
 
 LOCK TABLES `course` WRITE;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
-INSERT INTO `course` VALUES (1234,'Linear Algebra'),(1235,'Analysis'),(1236,'Operating Systems'),(1500,'Data Mining'),(1501,'Theory of Computing'),(1502,'Research Methods');
+INSERT INTO `course` VALUES (1,'abc'),(2,'abc'),(1234,'Linear Algebra'),(1235,'Analysis'),(1236,'Operating Systems'),(1500,'Data Mining'),(1501,'Theory of Computing'),(1502,'Research Methods'),(1601,'Intelligent Systems'),(1602,'Information security');
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,4 +153,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-16 16:15:15
+-- Dump completed on 2021-03-28 20:56:50
