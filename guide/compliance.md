@@ -5,28 +5,28 @@
 
 In the following table we present a summary of the compliance of the latest version of Ontop with [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), where rows correspond to sections of the WC3 recommendation and unsupported features are ~~crossed out~~. Most of the features are supported, but some are unsupported or only partially supported.
 
-| Section in SPARQL 1.1  | Features  | Coverage |
+| <div style="width:140px">Section in <br>SPARQL 1.1</div>  | Features  | Coverage |
 | --------------------------- | --------- | --------- |
 | [5. Graph Patterns](https://www.w3.org/TR/sparql11-query/#GroupPatterns) | `BGP`, `FILTER` | 2/2    |
 | [6. Including Optional Values](https://www.w3.org/TR/sparql11-query/#optionals) | `OPTIONAL` | 1/1    |
-| 7. Matching Alternatives | `UNION` | 1/1    |
-| 8. Negation          | `MINUS`, <code>~~FILTER \[NOT\] EXISTS~~</code>    | 1/2    |
-| 9. Property Paths      | ~~PredicatePath~~, ~~InversePath~~, ~~ZeroOrMorePath~~, ...    | 0 |
-| 10. Assignment  | `BIND`, `VALUES`      | 2/2 |
-| 11. Aggregates  | `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`, `GROUP_CONCAT`, `SAMPLE`      | 6/6 |
-| 12. Subqueries | Subqueries | 1/1 |
-| 13. RDF Dataset | `GRAPH`, <code>~~FROM \[NAMED\]~~</code> | 1/2 |
-| 14. Basic Federated Query |  <code>~~SERVICE~~</code> | 0 |
-| 15. Solution Seqs. & Mods. | `ORDER BY`, `SELECT`, `DISTINCT`, `REDUCED`, `OFFSET`, `LIMIT` | 6/6 |
-| 16. Query Forms | `SELECT`, `CONSTRUCT`, `ASK`, `DESCRIBE` | 4/4 |
-| 17.4.1. Functional Forms | `BOUND`, `IF`, `COALESCE`, <code>~~EXISTS~~</code>, <code>~~NOT EXISTS~~</code>, <code>&#124;&#124;</code> , `&&`, `=`, `sameTerm`, <code>~~IN~~</code>, <code>~~NOT IN~~</code>  | 7/11 |
-| 17.4.2. Functions on RDF Terms | `isIRI`, `isBlank`, `isLiteral`, `isNumeric`, `str`, `lang`, `datatype`, `IRI`, `BNODE`, <code>~~STRDT~~</code>, <code>~~STRLANG~~</code>, `UUID`, `STRUUID` | 11/13 |
-| 17.4.3. Functions on Strings | `STRLEN`, `SUBSTR`, `UCASE`, `LCASE`, `STRSTARTS`, `STRENDS`, `CONTAINS`, `STRBEFORE`, `STRAFTER`, `ENCODE_FOR_URI`, `CONCAT`, `langMatches`, `REGEX`, `REPLACE` | 14/14 |
-| 17.4.4. Functions on Numerics | `abs`, `round`, `ceil`, `floor`, `RAND` | 5/5 |
-| 17.4.5. Functions on Dates&Times | `now`, `year`, `month`, `day`, `hours`, `minutes`, `seconds`, <code>~~timezone~~</code>, `tz` | 8/9 |
-| 17.4.6. Hash Functions | `MD5`, `SHA1`, `SHA256`, `SHA384`, `SHA512` | 5/5 |
-| 17.5 XPath Constructor Functions | ~~casting~~ | 0 |
-| 17.6 Extensible Value Testing | ~~user defined functions~~ | 0 |
+| [7. Matching Alternatives](https://www.w3.org/TR/sparql11-query/#alternatives) | `UNION` | 1/1    |
+| [8. Negation](https://www.w3.org/TR/sparql11-query/#negation)          | `MINUS`, <code>~~FILTER \[NOT\] EXISTS~~</code>    | 1/2    |
+| [9. Property Paths](https://www.w3.org/TR/sparql11-query/#propertypaths)      | ~~PredicatePath~~, ~~InversePath~~, ~~ZeroOrMorePath~~, ...    | 0 |
+| [10. Assignment](https://www.w3.org/TR/sparql11-query/#assignment)  | `BIND`, `VALUES`      | 2/2 |
+| [11. Aggregates](https://www.w3.org/TR/sparql11-query/#aggregates)  | `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`, `GROUP_CONCAT`, `SAMPLE`      | 6/6 |
+| [12. Subqueries](https://www.w3.org/TR/sparql11-query/#subqueries) | Subqueries | 1/1 |
+| [13. RDF Dataset](https://www.w3.org/TR/sparql11-query/#rdfDataset) | `GRAPH`, <code>~~FROM \[NAMED\]~~</code> | 1/2 |
+| [14. Basic Federated Query](https://www.w3.org/TR/sparql11-federated-query/) |  <code>~~SERVICE~~</code> | 0 |
+| [15. Solution Seqs. & Mods.](https://www.w3.org/TR/sparql11-query/#solutionModifiers) | `ORDER BY`, `SELECT`, `DISTINCT`, `REDUCED`, `OFFSET`, `LIMIT` | 6/6 |
+| [16. Query Forms](https://www.w3.org/TR/sparql11-query/#QueryForms) | `SELECT`, `CONSTRUCT`, `ASK`, `DESCRIBE` | 4/4 |
+| [17.4.1. Functional Forms](https://www.w3.org/TR/sparql11-query/#func-forms) | `BOUND`, `IF`, `COALESCE`, <code>~~EXISTS~~</code>, <code>~~NOT EXISTS~~</code>, <code>&#124;&#124;</code> , `&&`, `=`, `sameTerm`, <code>~~IN~~</code>, <code>~~NOT IN~~</code>  | 7/11 |
+| [17.4.2. Functions on RDF Terms](https://www.w3.org/TR/sparql11-query/#func-rdfTerms) | `isIRI`, `isBlank`, `isLiteral`, `isNumeric`, `str`, `lang`, `datatype`, `IRI`, `BNODE`, <code>~~STRDT~~</code>, <code>~~STRLANG~~</code>, `UUID`, `STRUUID` | 11/13 |
+| [17.4.3. Functions on Strings](https://www.w3.org/TR/sparql11-query/#func-strings) | `STRLEN`, `SUBSTR`, `UCASE`, `LCASE`, `STRSTARTS`, `STRENDS`, `CONTAINS`, `STRBEFORE`, `STRAFTER`, `ENCODE_FOR_URI`, `CONCAT`, `langMatches`, `REGEX`, `REPLACE` | 14/14 |
+| [17.4.4. Functions on Numerics](https://www.w3.org/TR/sparql11-query/#func-numerics) | `abs`, `round`, `ceil`, `floor`, `RAND` | 5/5 |
+| [17.4.5. Functions on Dates&Times](https://www.w3.org/TR/sparql11-query/#func-date-time) | `now`, `year`, `month`, `day`, `hours`, `minutes`, `seconds`, <code>~~timezone~~</code>, `tz` | 8/9 |
+| [17.4.6. Hash Functions](https://www.w3.org/TR/sparql11-query/#func-hash) | `MD5`, `SHA1`, `SHA256`, `SHA384`, `SHA512` | 5/5 |
+| [17.5 XPath Constructor Functions](https://www.w3.org/TR/sparql11-query/#FunctionMapping) | ~~casting~~ | 0 |
+| [17.6 Extensible Value Testing](https://www.w3.org/TR/sparql11-query/#extensionFunctions) | ~~user defined functions~~ | 0 |
 
 ### Limitations
  - The 5 hash functions and functions `REPLACE` and `REGEX` for regular expressions have limited support because they heavily depend on the DBMS: not all DBMSs provide all hash functions, and many DBMSs have their own regex dialects. Currently, the SPARQL regular expressions of `REPLACE` and `REGEX` are simply sent to the DBMS.
@@ -38,7 +38,7 @@ In the following table we present a summary of the compliance of the latest vers
 
 The following table provides a summary of the compliance of the latest version of Ontop with [OGC GeoSPARQL 1.0](https://www.ogc.org/standards/geosparql), the standard for representing and querying geospatial linked data. The summary focuses only on the main geospatial functions and properties and unsupported features are ~~crossed out~~.
 
-| Section in OGC GeoSPARQL 1.0 | Features  | Coverage                                     |
+| <div style="width:140px">Section in OGC GeoSPARQL 1.0</div> | Features  | Coverage                                     |
 | ------------------------------------------- | --------- | ---   |
 | 7. Topology Vocabulary Extensions - Properties      | <code>~~geo:sfEquals~~</code>, <code>~~geo:sfDisjoint~~</code>, <code>~~geo:sfIntersects~~</code>, <code>~~geo:sfTouches~~</code>, <code>~~geo:sfCrosses~~</code>, <code>~~geo:sfWithin~~</code>, <code>~~geo:sfContains~~</code>, <code>~~geo:sfOverlaps~~</code>, <code>~~geo:ehEquals~~</code>, <code>~~geo:ehDisjoint~~</code>, <code>~~geo:ehMeet~~</code>, <code>~~geo:ehOverlap~~</code>, <code>~~geo:ehCovers~~</code>, <code>~~geo:ehCoveredBy~~</code>, <code>~~geo:ehInside~~</code>, <code>~~geo:ehContains~~</code>, <code>~~geo:rcc8eq~~</code>, <code>~~geo:rcc8dc~~</code>, <code>~~geo:rcc8ec~~</code>, <code>~~geo:rcc8po~~</code>, <code>~~geo:rcc8tppi~~</code>, <code>~~geo:rcc8tpp~~</code>, <code>~~geo:rcc8ntpp~~</code>, <code>~~geo:rcc8ntppi~~</code> | 0                                                |
 | 8.4. Standard Properties for Geo:Geometry          | <code>~~geo:dimension~~</code>, <code>~~geo:coordinateDimension~~</code>, <code>~~geo:spatialDimension~~</code>, <code>~~geo:isEmpty~~</code>, <code>~~geo:isSimple~~</code>, <code>~~geo:hasSerialization~~</code>    |  0  |
