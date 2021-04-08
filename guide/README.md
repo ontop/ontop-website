@@ -33,7 +33,7 @@ Main features
 
 Organizations
 -------------
-Ontop is backed by the [Free University of Bozen-Bolzano](https://www.inf.unibz.it/krdb/in2data/) and [Ontopic s.r.l.](https://ontopic.biz). It also receives regular important contributions from [Birkbeck, University of London](http://www.bbk.ac.uk/). See the [community section](/community) for more details.
+Ontop is backed by the [Free University of Bozen-Bolzano](https://www.inf.unibz.it/krdb/in2data/) and [Ontopic s.r.l.](https://ontopic.ai). It also receives regular important contributions from [Birkbeck, University of London](http://www.bbk.ac.uk/). See the [community section](/community) for more details.
 
 Licenses
 --------
