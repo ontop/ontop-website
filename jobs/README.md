@@ -16,12 +16,12 @@ If you are interested, please get in touch with [Prof. Diego Calvanese](http://w
 
 ## Ontopic
 
-At the company [Ontopic s.r.l.](http://ontopic.biz/), we are offering:
+At the company [Ontopic s.r.l.](https://ontopic.ai/), we are offering:
 
 - Student internship
 - Bachelor/Master thesis 
 - Part time or full time developer positions.
 
-If you are interested, please get in touch with `inquiry@ontopic.biz`.
+If you are interested, please get in touch with `inquiry@ontopic.ai`.
 
 
