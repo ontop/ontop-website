@@ -1,4 +1,4 @@
-# Ontop with Teiid
+# Ontop with Teiid (Work in Progress for Ontop 4.1)
 
 In this tutorial, we present step-by-step way of connecting Teiid to Ontop. We show how to integrate *uni1* data stored in a MySQL DB and *uni2* data stored in a PostgreSQL DB into one Teiid virtual database, and access these two data sources using Ontop in a uniform way. 
 
