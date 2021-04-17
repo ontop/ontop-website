@@ -5,8 +5,10 @@ services:
     image: mysql:8.0
     ports:
       - '0.0.0.0:${MYSQL_PORT}:3306'
-    command: --default-authentication-plugin=mysql_native_password
     restart: always
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d
+      - data-mysql:/var/lib/mysql
     environment:
       MYSQL_DATABASE: '${MYSQL_DATABASE}'
       MYSQL_USER: '${MYSQL_USER}'
@@ -26,7 +28,8 @@ services:
       POSTGRES_PASSWORD: '${POSTGRES_PASSWORD}'
 
   ontop:
-    image: ontop/ontop-endpoint:4.1.1-SNAPSHOT
+    #image: ontop/ontop-endpoint:4.1.1-SNAPSHOT
+    image: ontop/ontop-endpoint:4.1.0
     restart: unless-stopped
     environment:
       ONTOP_ONTOLOGY_FILE: /opt/ontop/input/university.ttl
@@ -50,5 +53,6 @@ services:
 #      "/opt/ontop/entrypoint.sh" ]
 
 volumes:
-  data-pgsql:
-    name: data-pgsql
+  data-pgsql: {}
+  data-mysql: {}  
+    
