@@ -35,11 +35,8 @@ It remains possible to use Ontop as a Java API through [RDF4J](https://rdf4j.org
 
 Ontop-rdf4j is available on [Maven Central](https://search.maven.org/artifact/it.unibz.inf.ontop/ontop-rdf4j).
 
-#### RDF4J workbench (not recommended)
+#### RDF4J workbench (not supported anymore)
 
-Our first solution for deploying Ontop as SPARQL endpoint has been through the RDF4J workbench. It has several UX issues, mainly because Ontop is working with files (for the mapping and the ontology) while the normal use cases of RDF4J workbench do not.
-
-We recommend you use the Ontop endpoint as a first option. Two bundles of RDF4J workbench with Jetty or Tomcat are available on [Github](https://github.com/ontop/ontop/releases) and [Sourceforge](http://sourceforge.net/projects/ontop4obda/files/).
-
+Our first solution for deploying Ontop as SPARQL endpoint has been through the RDF4J workbench. It has several UX issues, mainly because Ontop is working with files (for the mapping and the ontology) while the normal use cases of RDF4J workbench do not. We recommend you use the Ontop endpoint as a first option.
 
 

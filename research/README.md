@@ -29,7 +29,7 @@ For the development side, see [the community page](/community).
 * Dr. Mariano Rodríguez-Muro (Google USA / Founder / Former Team Leader: 2011 – Oct. 2013)
 * Dr. Martin Rezk (Google USA / Former Team Leader: Oct. 2013 – Nov. 2015)
 * Dr. Elena Botoeva (Imperial College, London)
-* [Dr. Benjamin Cogrel](https://research.bcgl.fr) ([Ontopic](https://ontopic.biz), Bolzano)
+* [Dr. Benjamin Cogrel](https://research.bcgl.fr) ([Ontopic](https://ontopic.ai), Bolzano)
 * Dr. Elem Güzel
 
 ## Projects

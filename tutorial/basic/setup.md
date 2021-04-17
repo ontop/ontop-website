@@ -28,7 +28,7 @@ WHERE "position" = 1
 
 Protégé is an open source ontology editor and knowledge management system. Ontop-Protégé is a plugin for designing and testing a VKG specification.
 
-0. [Download](https://sourceforge.net/projects/ontop4obda/files/ontop-3.0.0/ontop-protege-bundle-3.0.0.zip/download) and unzip the Protégé-bundle archive and go into its folder
+0. [Download the latest Ontop-Protégé bundle for your Operating System](https://sourceforge.net/projects/ontop4obda/files) and unzip the archive and go into its folder
 1. Run it (*run.bat* on Windows, *run.sh* on Mac/Linux)
 2. Register the H2 JDBC driver: go to *Preferences* -> *JDBC Drivers* and add an entry with the following information
      * Description: *h2*

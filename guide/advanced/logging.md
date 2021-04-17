@@ -1,10 +1,10 @@
 # Query logging
 
-*Since 4.1.0*
+*Since 4.1.0.*
 
 Query logging, disabled by default, prints one-line JSON objects into the standard output.
 
-Its JSON format follows some ElasticSearch conventions and works nicely with the corresponding ELK stack (FileBeat, ES, Kibana).
+Its JSON format follows some ElasticSearch conventions and works nicely with the corresponding stack (FileBeat, ES, Kibana).
 
 ## Example
 ```json
@@ -28,8 +28,14 @@ Its JSON format follows some ElasticSearch conventions and works nicely with the
     "httpHeaders": {
       "referer": "http://localhost:8080/"
     },
-    "sparqlQuery": "PREFIX schema: <http://schema.org/>\nSELECT * WHERE {\n  ?h a schema:Hotel ; schema:name ?name .\n  FILTER (langMatches(lang(?name), 'en'))\n} \nLIMIT 10",
-    "reformulatedQuery": "ans1(h,name)\nCONSTRUCT [h, name] [name/RDF(VARCHARToTEXT(AccoDetail-en-Name1m51),@en), h/RDF(http://noi.example.org/data/accommodation/{}(VARCHARToTEXT(Id1m148)),IRI)]\n   NATIVE [AccoDetail-en-Name1m51, Id1m148]\nSELECT v1.\"AccoDetail-en-Name\" AS \"AccoDetail-en-Name1m51\", v1.\"Id\" AS \"Id1m148\"\nFROM \"v_accommodationsopen\" v1\nWHERE (v1.\"AccoDetail-en-Name\" IS NOT NULL AND 'HotelPension' = v1.\"AccoTypeId\")\nLIMIT 10\n",
+    "extractedQueryTemplate": {
+      "hash": "de167012e1ce3cf9dce66a986a3343d883a1f319f800132565b614498d9c73d8",
+      "parameters": {
+        "v0": "\"Residence Tuberis\""
+      }
+    },
+    "sparqlQuery": "PREFIX schema: <http://schema.org/>\nSELECT * WHERE {\n  ?h a schema:Hotel ; schema:name ?name .\n  FILTER (langMatches(lang(?name), 'en'))\n  FILTER(str(?name) = \"Residence Tuberis\")\n} \nLIMIT 10",
+    "reformulatedQuery": "ans1(h,name)\nCONSTRUCT [h, name] [name/\"Residence Tuberis\"^^@en, h/RDF(http://noi.example.org/data/accommodation/{}(VARCHARToTEXT(Id1m148)),IRI)]\n   NATIVE [Id1m148]\nSELECT v1.\"Id\" AS \"Id1m148\"\nFROM \"v_accommodationsopen\" v1\nWHERE ('Residence Tuberis' = v1.\"AccoDetail-en-Name\" AND 'HotelPension' = v1.\"AccoTypeId\")\nLIMIT 10\n",
     "executionBeforeUnblockingDuration": 8,
     "executionAndFetchingDuration": 30,
     "totalDuration": 80,
@@ -47,13 +53,15 @@ Its JSON format follows some ElasticSearch conventions and works nicely with the
 | `message`          | String    | Type of the message. It always start with the prefix `query:`. Its default value is `query:all`. In case of an exception, the value starts with `query:exception-`.    |
 | `application`      | String    | Controlled by the property `ontop.applicationName`. |
 | `payload`  | JSON object      | Gathers the entries below.                 |
-| `queryId`  | UUID      | Unique to each processed query.                 |
+| `queryId`  | UUID      | Unique to each query.                 |
 | `classesUsedInQuery` | Array of IRIs | IRIs of the classes appearing in the SPARQL query. |
 | `propertiesUsedInQuery` | Array of IRIs | IRIs of the properties appearing in the SPARQL query. |
 | `tables` | Array of Strings | Names of the relations appearing in the SQL query. |
 | `reformulationDuration` | Integer | Query reformulation duration (in ms). |
 | `reformulationCacheHit` | Boolean | True if the reformulated query cache has been used |
 | `httpHeaders` | JSON object | Values of a specific list of HTTP headers. By default, this list is empty. To track for instance the referer, set the property `ontop.queryLogging.includeHttpHeader.referer` to true. |
+| `extractedQueryTemplate.` `hash` | String | Hash of the query template extracted, after removing extracted constants. Can be shared by similar queries. |
+| `extractedQueryTemplate.` `parameters` | JSON object | Constants extracted and replaced by variables. |
 | `sparqlQuery` | String | SPARQL query. |
 | `reformulatedQuery` | String | Includes the SQL query and the post-processing. |
 | `executionBefore` `UnblockingDuration` | Integer | Duration between the moments where the SQL query is sent and the result set is unblocked (in ms). |

@@ -94,15 +94,18 @@ function genGuideSidebarConfig() {
                 '',
                 'concepts',
                 'getting-started',
-                'cli'
+                'cli',
+                'compliance'
             ]
         },
           {
         	title: 'Advanced',
         	collapsable: false,
         	children: [
+                'advanced/predefined',
                 'advanced/logging',
-                'advanced/caching'
+                'advanced/caching',
+                'advanced/configuration'
         	]
           },
         {
