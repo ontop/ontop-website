@@ -43,6 +43,9 @@ services:
     depends_on:
       - "mysql"
       - "pgsql"
+    volumes:
+      - teiid-standalone-configuration:/opt/jboss/wildfly/standalone/configuration 
+      - teiid-domain-configuration:/opt/jboss/wildfly/domain/configuration
 
   ontop:
     #image: ontop/ontop-endpoint:4.1.1-SNAPSHOT
@@ -107,4 +110,6 @@ services:
 volumes:
   data-mysql: {}
   data-pgsql: {}
+  teiid-standalone-configuration: {}
+  teiid-domain-configuration: {}
     

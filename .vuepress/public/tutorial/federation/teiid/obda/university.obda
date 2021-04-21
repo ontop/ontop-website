@@ -11,94 +11,94 @@ rdfs:		http://www.w3.org/2000/01/rdf-schema#
 
 [MappingDeclaration] @collection [[
 mappingId	uni1-student
-target		:uni1/student/{s_id} a :Student ; foaf:firstName {first_name}^^xsd:string ; foaf:lastName {last_name}^^xsd:string .
+target		ex:voc#uni1/student/{s_id} a ex:voc#Student ; foaf:firstName {first_name}^^xsd:string ; foaf:lastName {last_name}^^xsd:string . 
 source		SELECT * FROM uni1.student
 
 mappingId	uni1-academic
-target		:uni1/academic/{a_id} a :FacultyMember ; foaf:firstName {first_name}^^xsd:string ; foaf:lastName {last_name}^^xsd:string .
+target		ex:voc#uni1/academic/{a_id} a ex:voc#FacultyMember ; foaf:firstName {first_name}^^xsd:string ; foaf:lastName {last_name}^^xsd:string . 
 source		SELECT * FROM uni1.academic
 
 mappingId	uni1-fullProfessor
-target		:uni1/academic/{a_id} a :FullProfessor .
+target		ex:voc#uni1/academic/{a_id} a ex:voc#FullProfessor . 
 source		SELECT * FROM uni1.academic
 			WHERE position = 1
 
 mappingId	uni1-AssociateProfessor
-target		:uni1/academic/{a_id} a :AssociateProfessor .
+target		ex:voc#uni1/academic/{a_id} a ex:voc#AssociateProfessor . 
 source		SELECT * FROM uni1.academic
 			WHERE position = 2
 
 mappingId	uni1-PostDoc
-target		:uni1/academic/{a_id} a :PostDoc .
+target		ex:voc#uni1/academic/{a_id} a ex:voc#PostDoc . 
 source		SELECT * FROM uni1.academic
 			WHERE position = 9
 
 mappingId	uni1-externalTeacher
-target		:uni1/academic/{a_id} a :ExternalTeacher .
+target		ex:voc#uni1/academic/{a_id} a ex:voc#ExternalTeacher . 
 source		SELECT * FROM uni1.academic
 			WHERE position = 8
 
 mappingId	uni1-course
-target		:uni1/course/{c_id} a :Course ; :title {title} ; :isGivenAt :uni1/university .
+target		ex:voc#uni1/course/{c_id} a ex:voc#Course ; ex:voc#title {title} ; ex:voc#isGivenAt ex:voc#uni1/university . 
 source		SELECT * FROM uni1.course
 
 mappingId	uni1-teaching
-target		:uni1/academic/{a_id} :teaches :uni1/course/{c_id} .
+target		ex:voc#uni1/academic/{a_id} ex:voc#teaches ex:voc#uni1/course/{c_id} . 
 source		SELECT * FROM uni1.teaching
 
 mappingId	uni1-registration
-target		:uni1/student/{s_id} :attends :uni1/course/{c_id} .
+target		ex:voc#uni1/student/{s_id} ex:voc#attends ex:voc#uni1/course/{c_id} . 
 source		SELECT *
 			FROM uni1.course_registration
 
 mappingId	uni2-person
-target		:uni2/person/{pid} a foaf:Person ; foaf:firstName {fname}^^xsd:string ; foaf:lastName {lname}^^xsd:string .
+target		ex:voc#uni2/person/{pid} a foaf:Person ; foaf:firstName {fname}^^xsd:string ; foaf:lastName {lname}^^xsd:string . 
 source		SELECT * FROM uni2.person
 
 mappingId	uni2-undergraduate
-target		:uni2/person/{pid} a :UndergraduateStudent .
+target		ex:voc#uni2/person/{pid} a ex:voc#UndergraduateStudent . 
 source		SELECT * FROM uni2.person
 			WHERE status = 1
 
 mappingId	uni2-graduate
-target		:uni2/person/{pid} a :GraduateStudent .
+target		ex:voc#uni2/person/{pid} a ex:voc#GraduateStudent . 
 source		SELECT * FROM uni2.person
 			WHERE status = 2
 
 mappingId	uni2-fullProfessor
-target		:uni2/person/{pid} a :FullProfessor .
+target		ex:voc#uni2/person/{pid} a ex:voc#FullProfessor . 
 source		SELECT * FROM uni2.person
 			WHERE status = 7
 
 mappingId	uni2-associate-prof
-target		:uni2/person/{pid} a :AssociateProfessor .
+target		ex:voc#uni2/person/{pid} a ex:voc#AssociateProfessor . 
 source		SELECT * FROM uni2.person
 			WHERE status = 8
 
 mappingId	uni2-course
-target		:uni2/course/{cid} a :Course ; :title {topic}^^xsd:string ; :isGivenAt :uni2/university .
+target		ex:voc#uni2/course/{cid} a ex:voc#Course ; ex:voc#title {topic}^^xsd:string ; ex:voc#isGivenAt ex:voc#uni2/university . 
 source		SELECT * FROM uni2.course
 
 mappingId	uni2-lecturer
-target		:uni2/person/{lecturer} :givesLecture :uni2/course/{cid} .
+target		ex:voc#uni2/person/{lecturer} ex:voc#givesLecture ex:voc#uni2/course/{cid} . 
 source		SELECT * FROM uni2.course
 
 mappingId	uni2-assistantProfessor
-target		:uni2/person/{pid} a :AssistantProfessor .
+target		ex:voc#uni2/person/{pid} a ex:voc#AssistantProfessor . 
 source		SELECT * FROM uni2.person
 			WHERE status = 9
 
 mappingId	uni2-postDoc
-target		:uni2/person/{pid} a :PostDoc .
+target		ex:voc#uni2/person/{pid} a ex:voc#PostDoc . 
 source		SELECT * FROM uni2.person
 			WHERE status = 3
 
 mappingId	uni2-lab-teacher
-target		:uni2/person/{lab_teacher} :givesLab :uni2/course/{cid} .
+target		ex:voc#uni2/person/{lab_teacher} ex:voc#givesLab ex:voc#uni2/course/{cid} . 
 source		SELECT * FROM uni2.course
 
 mappingId	uni2-registration
-target		:uni2/person/{pid} :attends :uni2/course/{cid} .
+target		ex:voc#uni2/person/{pid} ex:voc#attends ex:voc#uni2/course/{cid} . 
 source		SELECT *
 			FROM uni2.registration
 ]]

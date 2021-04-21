@@ -1,4 +1,17 @@
 FROM jboss/teiid:13.1.0
+#FROM jboss/wildfly:17.0.1.Final
+
+ENV JBOSS_HOME /opt/jboss/wildfly
+
+## Set the TEIID_VERSION env variable
+#ENV TEIID_VERSION 16.0.0 
+#
+## Download and unzip Teiid server
+#RUN cd $JBOSS_HOME \
+#    && curl -O https://oss.sonatype.org/service/local/repositories/releases/content/org/teiid/wildfly/teiid-wildfly/$TEIID_VERSION/teiid-wildfly-$TEIID_VERSION-dist.zip \
+#    && bsdtar -xf teiid-wildfly-$TEIID_VERSION-dist.zip \
+#    && chmod +x $JBOSS_HOME/bin/*.sh \
+#    && rm teiid-wildfly-$TEIID_VERSION-dist.zip
 
 
 ###################################
@@ -29,7 +42,7 @@ RUN /opt/jboss/wildfly/bin/add-user.sh -a ${APP_USER} -p ${APP_PASSWORD} -r ${AP
 #### -- Volume: Declaration -- ####
 ###################################
 #VOLUME ["$JBOSS_HOME/standalone", "$JBOSS_HOME/domain"]
-VOLUME ["$JBOSS_HOME/standalone/configuration", "$JBOSS_HOME/domain/configuration"]
+#VOLUME ["$JBOSS_HOME/standalone/configuration", "$JBOSS_HOME/domain/configuration"]
 
 ###################################
 #### ---- ENV: Setup ---- ####
@@ -48,16 +61,14 @@ ENV PATH=$PATH:${JBOSS_HOME}/bin
 WORKDIR ${JBOSS_HOME}
 #### CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
 
-
-
 COPY jdbc /opt/jboss/jdbc
 COPY data-federation /opt/jboss/data-federation
 
-RUN /bin/sh -c '$JBOSS_HOME/bin/standalone.sh -c=standalone-full.xml &' && \
-      sleep 10 && \
-      cd /tmp && \
-      $JBOSS_HOME/bin/jboss-cli.sh --file=/opt/jboss/data-federation/setup.cli && \
-      $JBOSS_HOME/bin/jboss-cli.sh --connect --command=:shutdown 
+#RUN /bin/sh -c '$JBOSS_HOME/bin/standalone.sh -c=standalone-full.xml &' && \
+#      sleep 10 && \
+#      cd /tmp && \
+#      $JBOSS_HOME/bin/jboss-cli.sh --file=/opt/jboss/data-federation/setup.cli && \
+#      $JBOSS_HOME/bin/jboss-cli.sh --connect --command=:shutdown 
 
 #CMD ["/opt/jboss/wildfly/bin/jboss-cli.sh", "--file=/opt/jboss/data-federation/setup.cli"]
 
