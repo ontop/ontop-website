@@ -64,13 +64,11 @@ WORKDIR ${JBOSS_HOME}
 COPY jdbc /opt/jboss/jdbc
 COPY data-federation /opt/jboss/data-federation
 
-#RUN /bin/sh -c '$JBOSS_HOME/bin/standalone.sh -c=standalone-full.xml &' && \
-#      sleep 10 && \
-#      cd /tmp && \
-#      $JBOSS_HOME/bin/jboss-cli.sh --file=/opt/jboss/data-federation/setup.cli && \
-#      $JBOSS_HOME/bin/jboss-cli.sh --connect --command=:shutdown 
-
-#CMD ["/opt/jboss/wildfly/bin/jboss-cli.sh", "--file=/opt/jboss/data-federation/setup.cli"]
+RUN /bin/sh -c "${JBOSS_HOME}/bin/standalone.sh -c standalone-teiid.xml -b 0.0.0.0 -bmanagement 0.0.0.0 &" && \
+      sleep 10 && \
+      cd /tmp && \
+      $JBOSS_HOME/bin/jboss-cli.sh --file=/opt/jboss/data-federation/setup.cli && \
+      $JBOSS_HOME/bin/jboss-cli.sh --connect --command=:shutdown 
 
 CMD ["/bin/sh", "-c", "${JBOSS_HOME}/bin/standalone.sh -c standalone-teiid.xml -b 0.0.0.0 -bmanagement 0.0.0.0"]
 
