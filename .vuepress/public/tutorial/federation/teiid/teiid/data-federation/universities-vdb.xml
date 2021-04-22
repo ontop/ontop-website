@@ -38,8 +38,7 @@
                   pid integer not null primary key,
                   fname varchar(40) not null,
                   lname varchar(40) not null,
-                  status integer not null,
-                  ssn varchar(40) not null unique
+                  status integer not null
                  )OPTIONS(UPDATABLE 'FALSE');
                  
              CREATE FOREIGN TABLE course (
