@@ -1,17 +1,19 @@
-FROM jboss/teiid:13.1.0
-#FROM jboss/wildfly:17.0.1.Final
+#FROM jboss/teiid:13.1.0
+FROM jboss/wildfly:19.1.0.Final
 
 ENV JBOSS_HOME /opt/jboss/wildfly
 
-## Set the TEIID_VERSION env variable
-#ENV TEIID_VERSION 16.0.0 
-#
-## Download and unzip Teiid server
-#RUN cd $JBOSS_HOME \
-#    && curl -O https://oss.sonatype.org/service/local/repositories/releases/content/org/teiid/wildfly/teiid-wildfly/$TEIID_VERSION/teiid-wildfly-$TEIID_VERSION-dist.zip \
-#    && bsdtar -xf teiid-wildfly-$TEIID_VERSION-dist.zip \
-#    && chmod +x $JBOSS_HOME/bin/*.sh \
-#    && rm teiid-wildfly-$TEIID_VERSION-dist.zip
+# Set the TEIID_VERSION env variable
+ENV TEIID_VERSION 16.0.0 
+
+#COPY teiid-wildfly-$TEIID_VERSION-dist.zip $JBOSS_HOME 
+
+# Download and unzip Teiid server
+RUN cd $JBOSS_HOME \
+    && curl -O https://oss.sonatype.org/service/local/repositories/releases/content/org/teiid/wildfly/teiid-wildfly/$TEIID_VERSION/teiid-wildfly-$TEIID_VERSION-dist.zip \
+    && bsdtar -xf teiid-wildfly-$TEIID_VERSION-dist.zip \
+    && chmod +x $JBOSS_HOME/bin/*.sh \
+    && rm teiid-wildfly-$TEIID_VERSION-dist.zip
 
 
 ###################################
