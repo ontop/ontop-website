@@ -195,12 +195,12 @@ ontop endpoint -t university.ttl -m university.obda -p teiid.properties --cors-a
 
 Access the SPARQL endpoint. Open <http://localhost:8080/>, and run an example SPARQL query ''asking for the courses that are teached at both university1 and university as well as the lectures of such courses in university2':
 
- ```
-PREFIX : <http://example.org/voc#>\n
+ ```sparql
+PREFIX : <http://example.org/voc#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-select ?x ?z ?y ?e 
+SELECT ?x ?z ?y ?e 
 {?x rdf:type :Course . ?x :title ?y . ?x :isGivenAt <http://example.org/voc#uni1/university> . 
  ?z rdf:type :Course . ?z :title ?y . ?z :isGivenAt <http://example.org/voc#uni2/university> . 
  ?e :givesLecture ?z. }
@@ -211,3 +211,46 @@ select ?x ?z ?y ?e
 [x/<http://example.org/voc#uni1/course/1602>,z/<http://example.org/voc#uni2/course/1>,y/"Information security",e/<http://example.org/voc#uni2/person/1>]
 [x/<http://example.org/voc#uni1/course/1601>,z/<http://example.org/voc#uni2/course/6>,y/"Intelligent Systems",e/<http://example.org/voc#uni2/person/7>]
 ```
+
+## Deploy a SPARQL endpoint using Ontop Docker
+
+### Requirements
+* [Docker](https://docs.docker.com/get-docker/), version 17.09.0 or higher
+* [Docker Compose](https://docs.docker.com/compose/install/), version 1.17.0 or higher
+
+### Steps
+
+1) to start the prototype, downloading / building the required images and containers if needed
+  ```
+  docker-compose up
+  ```
+  (note: may add option `-d` to run in background, in which case logs are not be displayed to standard output but are still accessible via `docker-compose logs`)
+
+**Services** When running, the prototype exposes the following services:
+
+* a PostgreSQL server with the sample data, with connection information defined in the [.env](`.env`) file. 
+
+* a Web portal of the SPARQL endpoint backed by ontop at URL <http://localhost:8880/>
+  
+* a SPARQL endpoint backed by ontop at URL <http://localhost:8880/sparql> (assuming default port `8880` is used).
+
+2) to stop the prototype, if running
+  ```
+  docker-compose down
+  ```
+
+3) to stop the prototype, if running, and also clean any image / container / data associating to it (useful for cleaning up)
+  ```
+  docker-compose down --volumes --remove-orphans
+  ```
+  (note: the above command does not remove Docker images that may result being unused after stopping and removing this prototype containers; to remove such images, add option `--rmi all`)
+
+4) to check the status of the containers forming the prototype
+  ```
+  docker-compose ps
+  ```
+
+5) to check the logs of specific container(s) or of all containers (if no container name is supplied)
+  ```
+  docker-compose logs <container name 1> ... <contaner name N>
+  ```
