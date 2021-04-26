@@ -1,8 +1,56 @@
-# Ontop with Teiid (Work in Progress for Ontop 4.1)
+# Ontop with Teiid (Work in Progress for Ontop 4.1.1)
+
+In this tutorial, we present how to use Teiid as a federator for Ontop. We provides two options:
+
+- Option 1: Using Docker-comopse
+- Option 2: Manual set up
+
+## Option 1: Using Docker-comopse
+
+### Requirements
+* [Docker](https://docs.docker.com/get-docker/), version 17.09.0 or higher
+* [Docker Compose](https://docs.docker.com/compose/install/), version 1.17.0 or higher
+
+### Steps
+
+1) to start the prototype, downloading / building the required images and containers if needed
+  ```
+  docker-compose up
+  ```
+  (note: may add option `-d` to run in background, in which case logs are not be displayed to standard output but are still accessible via `docker-compose logs`)
+
+**Services** When running, the prototype exposes the following services:
+
+* a PostgreSQL server with the sample data, with connection information defined in the [.env](`.env`) file. 
+
+* a Web portal of the SPARQL endpoint backed by ontop at URL <http://localhost:8880/>
+  
+* a SPARQL endpoint backed by ontop at URL <http://localhost:8880/sparql> (assuming default port `8880` is used).
+
+2) to stop the prototype, if running
+  ```
+  docker-compose down
+  ```
+
+3) to stop the prototype, if running, and also clean any image / container / data associating to it (useful for cleaning up)
+  ```
+  docker-compose down --volumes --remove-orphans
+  ```
+  (note: the above command does not remove Docker images that may result being unused after stopping and removing this prototype containers; to remove such images, add option `--rmi all`)
+
+4) to check the status of the containers forming the prototype
+  ```
+  docker-compose ps
+  ```
+
+5) to check the logs of specific container(s) or of all containers (if no container name is supplied)
+  ```
+  docker-compose logs <container name 1> ... <contaner name N>
+  ```
+  
+## Option 2: Manual set up
 
 In this tutorial, we present step-by-step way of connecting Teiid to Ontop. We show how to integrate *uni1* data stored in a MySQL DB and *uni2* data stored in a PostgreSQL DB into one Teiid virtual database, and access these two data sources using Ontop in a uniform way. 
-
-##  Set up Teiid
 
 ### Install Teiid
 
@@ -152,7 +200,7 @@ By the following steps to see whether the VDB has been deployed successfully:
 
 If the 'Statues' of the VDB is 'ACTIVE' then the VDB has been successfully deployed. 
 
-## Configure Ontop-protege to use the VDB of Teiid
+### Configure Ontop-protege to use the VDB of Teiid
 
 Download the JDBC Driver of Teiid from  <https://teiid.io/teiid_wildfly/downloads/>, and put it in a directory. Suppose the path is '$Dir/teiid-16.0.0-jdbc.jar'.
 
@@ -175,7 +223,7 @@ For the connection, in your Datasource manager, use:
     
 Here, '$Var1' and '$Var2' are respecrively the user name and passord of your 'Application User' created before.
 
-## Create the ontology and mapping and try some SPARQL queries
+### Create the ontology and mapping and try some SPARQL queries
 
 You can directly use the files 'university.ttl', 'university.obda' and 'teiid.properties' (in 'ontop-website/.vuepress/public/tutorial/federation/teiid/data/') we have prepared. 
 
@@ -211,46 +259,4 @@ SELECT ?x ?z ?y ?e
 [x/<http://example.org/voc#uni1/course/1602>,z/<http://example.org/voc#uni2/course/1>,y/"Information security",e/<http://example.org/voc#uni2/person/1>]
 [x/<http://example.org/voc#uni1/course/1601>,z/<http://example.org/voc#uni2/course/6>,y/"Intelligent Systems",e/<http://example.org/voc#uni2/person/7>]
 ```
-
-## Deploy a SPARQL endpoint using Ontop Docker
-
-### Requirements
-* [Docker](https://docs.docker.com/get-docker/), version 17.09.0 or higher
-* [Docker Compose](https://docs.docker.com/compose/install/), version 1.17.0 or higher
-
-### Steps
-
-1) to start the prototype, downloading / building the required images and containers if needed
-  ```
-  docker-compose up
-  ```
-  (note: may add option `-d` to run in background, in which case logs are not be displayed to standard output but are still accessible via `docker-compose logs`)
-
-**Services** When running, the prototype exposes the following services:
-
-* a PostgreSQL server with the sample data, with connection information defined in the [.env](`.env`) file. 
-
-* a Web portal of the SPARQL endpoint backed by ontop at URL <http://localhost:8880/>
   
-* a SPARQL endpoint backed by ontop at URL <http://localhost:8880/sparql> (assuming default port `8880` is used).
-
-2) to stop the prototype, if running
-  ```
-  docker-compose down
-  ```
-
-3) to stop the prototype, if running, and also clean any image / container / data associating to it (useful for cleaning up)
-  ```
-  docker-compose down --volumes --remove-orphans
-  ```
-  (note: the above command does not remove Docker images that may result being unused after stopping and removing this prototype containers; to remove such images, add option `--rmi all`)
-
-4) to check the status of the containers forming the prototype
-  ```
-  docker-compose ps
-  ```
-
-5) to check the logs of specific container(s) or of all containers (if no container name is supplied)
-  ```
-  docker-compose logs <container name 1> ... <contaner name N>
-  ```
