@@ -13,7 +13,14 @@ In this tutorial, we present how to use Teiid as a federator for Ontop. We provi
 
 ### Steps
 
-1) to start the prototype, downloading / building the required images and containers if needed
+1) Download the code and cd to the directory of the teiid demo
+
+```shell
+$ git clone https://github.com/ontop/ontop-tutorial/
+$ cd ontop-tutorial/federation/teiid
+```
+
+2) to start the prototype, downloading / building the required images and containers if needed
   ```
   docker-compose up
   ```
@@ -27,23 +34,23 @@ In this tutorial, we present how to use Teiid as a federator for Ontop. We provi
   
 * a SPARQL endpoint backed by ontop at URL <http://localhost:8880/sparql> (assuming default port `8880` is used).
 
-2) to stop the prototype, if running
+3) to stop the prototype, if running
   ```
   docker-compose down
   ```
 
-3) to stop the prototype, if running, and also clean any image / container / data associating to it (useful for cleaning up)
+4) to stop the prototype, if running, and also clean any image / container / data associating to it (useful for cleaning up)
   ```
   docker-compose down --volumes --remove-orphans
   ```
   (note: the above command does not remove Docker images that may result being unused after stopping and removing this prototype containers; to remove such images, add option `--rmi all`)
 
-4) to check the status of the containers forming the prototype
+5) to check the status of the containers forming the prototype
   ```
   docker-compose ps
   ```
 
-5) to check the logs of specific container(s) or of all containers (if no container name is supplied)
+6) to check the logs of specific container(s) or of all containers (if no container name is supplied)
   ```
   docker-compose logs <container name 1> ... <contaner name N>
   ```
