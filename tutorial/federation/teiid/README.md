@@ -28,7 +28,7 @@ $ cd ontop-tutorial/federation/teiid
 
 **Services** When running, the prototype exposes the following services:
 
-* a PostgreSQL server with the sample data, with connection information defined in the [.env](`.env`) file. 
+* a PostgreSQL server with the sample data, with connection information defined in the `.env` file. 
 
 * a Web portal of the SPARQL endpoint backed by ontop at URL <http://localhost:8880/>
   
