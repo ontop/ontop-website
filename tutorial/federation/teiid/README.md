@@ -2,7 +2,7 @@
 
 In this tutorial, we present how to use Teiid as a federator for Ontop. We provides two options:
 
-- Option 1: Using Docker-comopse
+- Option 1: Using Docker-comopse (recommended)
 - Option 2: Manual set up
 
 ## Option 1: Using Docker-comopse
@@ -32,7 +32,7 @@ $ cd ontop-tutorial/federation/teiid
 
 * a Web portal of the SPARQL endpoint backed by ontop at URL <http://localhost:8880/>
   
-* a SPARQL endpoint backed by ontop at URL <http://localhost:8880/sparql> (assuming default port `8880` is used).
+* a SPARQL endpoint backed by ontop at URL <http://localhost:8880/sparql>.
 
 3) to stop the prototype, if running
   ```
