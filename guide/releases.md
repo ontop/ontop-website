@@ -1,5 +1,16 @@
 # Release notes
 
+## 4.1.1 (July 23, 2021)
+
+### Bugfixes
+
+- Bugs related to GeoSPARQL support ([#428](https://github.com/ontop/ontop/issues/428),[#434](https://github.com/ontop/ontop/issues/434) )
+- Issue wtih ORDER BY and LIMIT for MS SQL ([#225](https://github.com/ontop/ontop/issues/225),[#412](https://github.com/ontop/ontop/issues/412))
+
+### New features
+- Teiid support ([#336](https://github.com/ontop/ontop/issues/336))
+- Various improvenmts of the Protege plugin 
+
 ## 4.1.0 (February 28, 2021)
 
 #### Changed behavior

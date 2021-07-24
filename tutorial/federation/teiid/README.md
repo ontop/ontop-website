@@ -1,4 +1,4 @@
-# Ontop with Teiid (Work in Progress for Ontop 4.1.1)
+# Ontop with Teiid
 
 In this tutorial, we present how to use Teiid as a federator for Ontop. We provides two options:
 
