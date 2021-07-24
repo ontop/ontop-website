@@ -47,8 +47,7 @@ services:
       - teiid-domain-configuration:/opt/jboss/wildfly/domain/configuration
 
   ontop-mysql:
-    #image: ontop/ontop-endpoint:4.1.1-SNAPSHOT
-    image: ontop/ontop-endpoint:4.1.0
+    image: ontop/ontop-endpoint:4.1.1
     restart: unless-stopped
     environment:
       ONTOP_ONTOLOGY_FILE: /opt/ontop/input/university.ttl
@@ -73,8 +72,7 @@ services:
         "/opt/ontop/entrypoint.sh" ]
 
   ontop-pgsql:
-    #image: ontop/ontop-endpoint:4.1.1-SNAPSHOT
-    image: ontop/ontop-endpoint:4.1.0
+    image: ontop/ontop-endpoint:4.1.1
     restart: unless-stopped
     environment:
       ONTOP_ONTOLOGY_FILE: /opt/ontop/input/university.ttl
@@ -99,8 +97,7 @@ services:
         "/opt/ontop/entrypoint.sh" ]
 
   ontop-teiid:
-    #image: ontop/ontop-endpoint:4.1.1-SNAPSHOT
-    image: ontop/ontop-endpoint:teiid
+    image: ontop/ontop-endpoint:4.1.1
     restart: unless-stopped
     environment:
       ONTOP_ONTOLOGY_FILE: /opt/ontop/input/university.ttl
