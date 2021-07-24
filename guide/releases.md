@@ -9,7 +9,7 @@
 
 ### New features
 - Teiid support ([#336](https://github.com/ontop/ontop/issues/336))
-- Various improvenmts of the Protege plugin 
+- Various improvements of the Protege plugin 
 
 ## 4.1.0 (February 28, 2021)
 
