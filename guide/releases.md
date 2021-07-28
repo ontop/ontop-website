@@ -9,12 +9,12 @@
 
 ### New features
 - Teiid support ([#336](https://github.com/ontop/ontop/issues/336))
-- Various improvements of the Protege plugin 
+- Various improvements of the Protégé plugin 
 
 ## 4.1.0 (February 28, 2021)
 
 #### Changed behavior
- - [OBDA to R2RML mapping conversion](/guide/cli#ontop-mapping-to-r2rml) now requires by default access to DB metadata (through credentials or as a serialized file). This requirement can be bypassed with the argument `--force`.
+ - [OBDA to R2RML mapping conversion](/guideécli#ontop-mapping-to-r2rml) now requires by default access to DB metadata (through credentials or as a serialized file). This requirement can be bypassed with the argument `--force`.
  - By default, DESCRIBE queries only return the triples where the described IRI appears as subject. To also consider the triples where it appears as object, set the parameter `ontop.includeFixedObjectPositionInDescribe` to true.
  - The Docker endpoint image is now based on Debian ([#394](https://github.com/ontop/ontop/issues/394)), not on Alpine anymore.
 
