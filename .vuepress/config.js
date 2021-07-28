@@ -212,6 +212,7 @@ function genTutorialSidebarConfig() {
                 'federation/',
                 'federation/denodo/',
                 'federation/dremio/',
+		'federation/teiid/'
             ]
         },
         /*{
