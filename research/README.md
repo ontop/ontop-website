@@ -16,6 +16,7 @@ For the development side, see [the community page](/community).
 * Dr. Julien Corman
 * Dr. Linfang Ding
 * Dr. Davide Lanti
+* Dr. Francesco Corcoglioniti
 
 ### International collaborations
 
