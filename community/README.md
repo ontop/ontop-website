@@ -9,11 +9,12 @@ For the research side, [see the dedicated page](/research).
 
 The development of Ontop is guided by an international team (reverse lexicographical order).
 * [Guohui Xiao](http://www.ghxiao.org/) (Unibz, Ontopic)
-* Albulen Pano (Ontopic)
+* Albulen Pano (Unibz)
 * [Davide Lanti](https://www.inf.unibz.it/~dlanti/) (Unibz)
 * [Roman Kontchakov](http://www.dcs.bbk.ac.uk/~roman/) (Birkbeck)
 * [Sarah Komla-Ebri](https://scholar.google.it/citations?user=SDaIlasAAAAJ&hl=en) (Ontopic)
 * [Julien Corman](https://scholar.google.it/citations?user=pT6E42UAAAAJ&hl=en) (Unibz)
+* [Francesco Corcoglioniti](https://scholar.google.com/citations?user=Nw7gPMEAAAAJ&hl=en) (Unibz)
 * [Benjamin Cogrel](https://github.com/bcogrel/) (Ontopic)
 * [Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Unibz, Ontopic)
 
