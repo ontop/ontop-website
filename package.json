@@ -6,9 +6,9 @@
   },
   "dependencies": {
     "markdown-it-vue": "^1.1.6",
-    "vuepress": "^1.5.4",
+    "vuepress": "^1.8.2",
     "vuepress-plugin-mathjax": "^1.2.8",
-    "vuepress-plugin-matomo": "",
+    "vuepress-plugin-matomo": "^1.0.2",
     "vuepress-plugin-redirect": "*"
   },
   "devDependencies": {}
