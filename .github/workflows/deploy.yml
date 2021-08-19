@@ -1,11 +1,10 @@
-name: GitHub Actions Demo
+name: Deploy Website
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Deploy-Website:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2      
+      - uses: actions/checkout@v2      
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
@@ -17,5 +16,5 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: ontop/ontop.github.io
-          publish_branch: master  # default: gh-pages
+          publish_branch: master 
           publish_dir: .vuepress/dist          

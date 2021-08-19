@@ -11,7 +11,5 @@
     "vuepress-plugin-matomo": "",
     "vuepress-plugin-redirect": "*"
   },
-  "devDependencies": {
-    "gh-pages": "^3.2.3"
-  }
+  "devDependencies": {}
 }
