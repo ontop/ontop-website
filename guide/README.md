@@ -27,7 +27,7 @@ Main features
 * Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint) and as [a predefined query endpoint](/guide/advanced/predefined) (since 4.1)
 * Produces efficient SQL queries by applying many optimizations
 * Supports the main database systems (PostgreSQL, MySQL, SQL server, Oracle and DB2)
-* Supports database federators such as Denodo (beta) and Dremio (since 4.1)
+* Supports database federators such as Denodo (beta), Dremio (since 4.1), and Teiid (since 4.1.1)
 * Can [materialize](/guide/cli#ontop-materialize) virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)
 
