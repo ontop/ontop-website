@@ -22,11 +22,18 @@ jobs:
           cache: 'yarn'
       - run: yarn install
       - run: yarn docs:build
-      - name: Deploy with gh-pages
-        run: |
-          # git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          
-          yarn run gh-pages -d .vuepress/dist -u "github-actions-bot <support+actions@github.com>" --repo https://git:${{ secrets.GITHUB_TOKEN }}@github.com/ontop/ontop.github.io.git --branch master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: ontop/ontop.github.io
+          publish_branch: main  # default: gh-pages
+          publish_dir: .vuepress/dist
+#      - name: Deploy with gh-pages
+#        run: |
+#          # git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+#          
+#          yarn run gh-pages -d .vuepress/dist -u "github-actions-bot <support+actions@github.com>" --repo https://git:${{ secrets.GITHUB_TOKEN }}@github.com/ontop/ontop.github.io.git --branch master
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
           
