@@ -25,7 +25,7 @@ jobs:
       - name: Deploy with gh-pages
         run: |
           # git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          yarn run gh-pages -d .vuepress/dist -u "github-actions-bot <support+actions@github.com>" --repo git@github.com:ontop/ontop.github.io.git --branch master
+          yarn run gh-pages -d .vuepress/dist -u "github-actions-bot <support+actions@github.com>" --repo git:${GITHUB_TOKEN}@github.com:ontop/ontop.github.io.git --branch master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
           
