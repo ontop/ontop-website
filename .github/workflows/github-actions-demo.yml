@@ -18,14 +18,15 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
           cache: 'yarn'
       - run: yarn install
       - run: yarn docs:build
       - name: Deploy with gh-pages
         run: |
           # git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          yarn run gh-pages -d .vuepress/dist -u "github-actions-bot <support+actions@github.com>" --repo https://git:${GITHUB_TOKEN}@github.com/ontop/ontop.github.io.git --branch master
+          
+          yarn run gh-pages -d .vuepress/dist -u "github-actions-bot <support+actions@github.com>" --repo https://git:${{ secrets.GITHUB_TOKEN }}@github.com/ontop/ontop.github.io.git --branch master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
           
