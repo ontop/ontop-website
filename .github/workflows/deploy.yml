@@ -21,7 +21,7 @@ jobs:
       - name: Deploy tutorial materal
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_TUTORIAL_KEY }}
           external_repository: ontop/ontop-tutorial
           publish_branch: master 
           publish_dir: .vuepress/public/tutorial  
