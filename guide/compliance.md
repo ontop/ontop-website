@@ -1,7 +1,7 @@
 # Standards compliance
 
 ## SPARQL 1.1
-*Updated for 4.1.0*.
+*Updated for 4.2.0*.
 
 In the following table we present a summary of the compliance of the latest version of Ontop with [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), where rows correspond to sections of the WC3 recommendation and unsupported features are ~~crossed out~~. Most of the features are supported, but some are unsupported or only partially supported.
 
@@ -19,7 +19,7 @@ In the following table we present a summary of the compliance of the latest vers
 | [14. Basic Federated Query](https://www.w3.org/TR/sparql11-federated-query/) |  <code>~~SERVICE~~</code> | 0 |
 | [15. Solution Seqs. & Mods.](https://www.w3.org/TR/sparql11-query/#solutionModifiers) | `ORDER BY`, `SELECT`, `DISTINCT`, `REDUCED`, `OFFSET`, `LIMIT` | 6/6 |
 | [16. Query Forms](https://www.w3.org/TR/sparql11-query/#QueryForms) | `SELECT`, `CONSTRUCT`, `ASK`, `DESCRIBE` | 4/4 |
-| [17.4.1. Functional Forms](https://www.w3.org/TR/sparql11-query/#func-forms) | `BOUND`, `IF`, `COALESCE`, <code>~~EXISTS~~</code>, <code>~~NOT EXISTS~~</code>, <code>&#124;&#124;</code> , `&&`, `=`, `sameTerm`, <code>~~IN~~</code>, <code>~~NOT IN~~</code>  | 7/11 |
+| [17.4.1. Functional Forms](https://www.w3.org/TR/sparql11-query/#func-forms) | `BOUND`, `IF`, `COALESCE`, <code>~~EXISTS~~</code>, <code>~~NOT EXISTS~~</code>, <code>&#124;&#124;</code> , `&&`, `=`, `sameTerm`, `IN`, `NOT IN`  | 9/11 |
 | [17.4.2. Functions on RDF Terms](https://www.w3.org/TR/sparql11-query/#func-rdfTerms) | `isIRI`, `isBlank`, `isLiteral`, `isNumeric`, `str`, `lang`, `datatype`, `IRI`, `BNODE`, <code>~~STRDT~~</code>, <code>~~STRLANG~~</code>, `UUID`, `STRUUID` | 11/13 |
 | [17.4.3. Functions on Strings](https://www.w3.org/TR/sparql11-query/#func-strings) | `STRLEN`, `SUBSTR`, `UCASE`, `LCASE`, `STRSTARTS`, `STRENDS`, `CONTAINS`, `STRBEFORE`, `STRAFTER`, `ENCODE_FOR_URI`, `CONCAT`, `langMatches`, `REGEX`, `REPLACE` | 14/14 |
 | [17.4.4. Functions on Numerics](https://www.w3.org/TR/sparql11-query/#func-numerics) | `abs`, `round`, `ceil`, `floor`, `RAND` | 5/5 |
