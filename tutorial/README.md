@@ -37,3 +37,4 @@ cd ontop-tutorial
 5. [Federating multiple databases](federation)
     * [Ontop with Dremio](federation/dremio/README.md)
     * [Ontop with Denodo](federation/denodo/README.md)
+6. [External tutorials](external-tutorials)

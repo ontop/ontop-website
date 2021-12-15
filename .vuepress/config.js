@@ -215,6 +215,13 @@ function genTutorialSidebarConfig() {
 		'federation/teiid/'
             ]
         },
+        {
+            title: 'Others',
+            collapsable: false,
+            children: [
+                'external-tutorials'
+            ]
+        }
         /*{
           title: 'Api',
           collapsable: false,
