@@ -120,6 +120,7 @@
         Mariano Rodriguez-Muro, Diego Calvanese. OWLED 2012
 
 ## Tutorials and Demos
+1. [Destination Tutorial](https://github.com/ontopic-vkg/destination-tutorial) given at the Knowledge Graph Conference 2021 by Diego Calvanese, Benjamin Cogrel and Guohui Xiao.
 1.  [Novel Developments in Ontology-Based Data Access and
         Integration
         (NOBDI)](https://github.com/ontop/ontop-examples/tree/master/aixia-2018-tutorial/)
