@@ -1,13 +1,47 @@
 # Release notes
 
+## 4.2.0 (upcoming)
+
+#### New features
+ - Support for Apache Spark ([#422](https://github.com/ontop/ontop/pull/422)).
+ - Support for time functions added ([#478](https://github.com/ontop/ontop/issues/478)).
+ - Support for SPARQL `IN` added.
+ - Datatypes can be extracted from non-supported source queries in the mapping (treated internally as "black-box" views). Disabled by default (see [`ontop.allowRetrievingBlackBoxViewMetadataFromDB`](/guide/advanced/configuration)).
+ - T-box triples (e.g. sub-classes, domains and ranges) can be added to the default RDF graph. Disabled by default (see [`ontop.enableFactExtractionWithTBox`](/guide/advanced/configuration)).
+ - Support for Ontop join views added.
+ - Arbitrary levels of Ontop views added (views over views).
+ - Better integrity constraint extraction for Ontop basic and join views.
+ - Non-null information can now be specified for Ontop views.
+ - Support for b-node facts added.
+ - The default query of the SPARQL endpoint portal is now configurable ([#454](https://github.com/ontop/ontop/issues/454)).
+ - Contextually injective IRI templates with numeric or UUID arguments are now decomposed ([#363](https://github.com/ontop/ontop/issues/363)).
+ 
+ - JSON-LD serialization now supported by the materialized ([#481](https://github.com/ontop/ontop/issues/481)).
+
+
+#### Refactoring
+ - Support for Java >= 8. Ontop decoupled from Protégé so as to update several common libraries ([#467](https://github.com/ontop/ontop/issues/467)). 
+ - RDF facts provided by the ontology file are now internally grouped together into values blocks (sorts of "in-memory tables") instead of being splitted into large unions. Enabled by default (see [`ontop.enableValuesNode`](/guide/advanced/configuration)).
+ - Unions are lifted above aggregations when possible.
+ - Docker image updated to JRE 11.
+ - Mutable intermediate queries are not used anymore.
+ - Stronger handling of non well-designed `OPTIONAL` blocks.
+ - Stronger handling of `ORDER BY` in sub-queries.
+ - Type extractor relaxed ([#438](https://github.com/ontop/ontop/issues/438)) to tolerate slightly different datatypes.
+ - JDBC distinct result set removed.
+
+ Many bugfixes (see for instance [our Github bugtracker](https://github.com/ontop/ontop/milestone/14?closed=1)).
+
+ 
+
 ## 4.1.1 (July 23, 2021)
 
-### Bugfixes
+#### Bugfixes
 
 - Bugs related to GeoSPARQL support ([#428](https://github.com/ontop/ontop/issues/428),[#434](https://github.com/ontop/ontop/issues/434) )
-- Issue wtih ORDER BY and LIMIT for MS SQL ([#225](https://github.com/ontop/ontop/issues/225),[#412](https://github.com/ontop/ontop/issues/412))
+- Issue with ORDER BY and LIMIT for MS SQL ([#225](https://github.com/ontop/ontop/issues/225),[#412](https://github.com/ontop/ontop/issues/412))
 
-### New features
+#### New features
 - Teiid support ([#336](https://github.com/ontop/ontop/issues/336))
 - Various improvements of the Protégé plugin 
 
