@@ -3,7 +3,7 @@
 Ontop is a Virtual Knowledge Graph system. 
 It exposes the content of arbitrary relational databases as knowledge graphs. These graphs are virtual, which means that data remains in the data sources instead of being moved to another database. 
 
-Ontop translates [SPARQL queries](https://www.w3.org/TR/sparql11-query/) expressed over the knowledge graphs into SQL queries executed by the relational data sources. It relies on [R2RML mappings](https://www.w3.org/TR/r2rml/) and can take advantage of lightweight ontologies.
+Ontop translates [SPARQL queries](https://www.w3.org/TR/sparql11-query/) expressed over the knowledge graphs into SQL queries executed by the relational data sources. It relies on [R2RML mappings](https://www.w3.org/TR/r2rml/) and can take advantage of lightweight ontologies.
 
 Versions
 --------
@@ -26,8 +26,8 @@ Main features
 * Supports [the majority of SPARQL 1.1 features](/guide/compliance#sparql-1-1), including the main SPARQL aggregation functions (since 4.0-beta-1) and [GeoSPARQL functions](/guide/compliance#geosparql-1-0) (since 4.1)
 * Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint) and as [a predefined query endpoint](/guide/advanced/predefined) (since 4.1)
 * Produces efficient SQL queries by applying many optimizations
-* Supports the main database systems (PostgreSQL, MySQL, SQL server, Oracle and DB2)
-* Supports database federators such as Denodo (beta), Dremio (since 4.1), and Teiid (since 4.1.1)
+* Supports the main database systems (PostgreSQL, MySQL, SQL server, Oracle and DB2)
+* Supports database federators such as Denodo (beta), Dremio (since 4.1), Teiid (since 4.1.1), and Apache Spark (since 4.2.0).
 * Can [materialize](/guide/cli#ontop-materialize) virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)
 
