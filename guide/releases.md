@@ -29,6 +29,7 @@
  - Stronger handling of `ORDER BY` in sub-queries.
  - Type extractor relaxed ([#438](https://github.com/ontop/ontop/issues/438)) to tolerate slightly different datatypes.
  - JDBC distinct result set removed.
+ - JDBC user name and password are not required anymore. Useful when passed in the JDBC URL.
 
  Many bugfixes (see for instance [our Github bugtracker](https://github.com/ontop/ontop/milestone/14?closed=1)).
 

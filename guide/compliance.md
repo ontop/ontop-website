@@ -53,7 +53,7 @@ The following table provides a summary of the compliance of the latest version o
 Several non-topological query functions use a unit of measure URI which OGC defines under a specific namespace e.g. `<http://www.opengis.net/def/uom/OGC/1.0/metre>`. The latest version of Ontop currently supports the units metre, radian and degree.
 
 ## R2RML
-*Updated for 4.1.0.*
+*Updated for 4.2.0*
 
 The latest version of Ontop is almost fully compliant with the [R2RML](https://www.w3.org/TR/r2rml) standard. 
 
@@ -62,7 +62,7 @@ At the moment, it does NOT support:
  - [R2RML default mapping](https://www.w3.org/TR/r2rml/#default-mappings) generation
  - Normalization of binary SQL datatypes
 
- For complex SQL queries (e.g. with a `GROUP BY`) in the mapping, Ontop may not be able to infer the datatype of each column. In such a situation, it may not be able to derive the [natural RDF datatype](https://www.w3.org/TR/r2rml/#natural-mapping) of a literal built over a column and may not apply the expected normalization. This can be partially mitigated by expliciting the RDF datatype in the mapping, but normalization would remain unapplied. 
+ For complex SQL queries (e.g. with a `GROUP BY`) in the mapping, Ontop may not be able to infer the datatype of each column if the option [`ontop.allowRetrievingBlackBoxViewMetadataFromDB`](/guide/advanced/configuration) is not enabled (disabled by default). In such a situation, it may not be able to derive the [natural RDF datatype](https://www.w3.org/TR/r2rml/#natural-mapping) of a literal built over a column and may not apply the expected normalization. This can be partially mitigated by expliciting the RDF datatype in the mapping, but normalization would remain unapplied. 
 
 ## RDF 1.1
 
@@ -71,3 +71,15 @@ Ontop complies with [RDF 1.1](https://www.w3.org/TR/rdf11-new/). It types simple
 ## OWL 2 QL
 
 ## RDFS
+
+## Time functions
+*Since 4.2.0.*
+
+These functions use the prefix `ofn` (http://www.ontotext.com/sparql/functions/) and their documentation can be found [here](https://graphdb.ontotext.com/free/devhub/time-functions.html#durations-expressed-in-certain-units)).
+
+ - `ofn:weeksBetween`
+ - `ofn:daysBetween`
+ - `ofn:hoursBetween`
+ - `ofn:minutesBetween`
+ - `ofn:secondsBetween`
+ - `ofn:millisBetween`
