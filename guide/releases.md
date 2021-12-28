@@ -5,18 +5,17 @@
 #### New features
  - Support for Apache Spark ([#422](https://github.com/ontop/ontop/pull/422)).
  - Support for time functions added ([#478](https://github.com/ontop/ontop/issues/478)).
- - Support for SPARQL `IN` added.
+ - Support for the `IN` SPARQL function added.
  - Datatypes can be extracted from non-supported source queries in the mapping (treated internally as "black-box" views). Disabled by default (see [`ontop.allowRetrievingBlackBoxViewMetadataFromDB`](/guide/advanced/configuration)).
  - T-box triples (e.g. sub-classes, domains and ranges) can be added to the default RDF graph. Disabled by default (see [`ontop.enableFactExtractionWithTBox`](/guide/advanced/configuration)).
  - Support for Ontop join views added.
- - Arbitrary levels of Ontop views added (views over views).
+ - Support for arbitrary levels of Ontop views added (views over views).
  - Better integrity constraint extraction for Ontop basic and join views.
  - Non-null information can now be specified for Ontop views.
  - Support for b-node facts added.
  - The default query of the SPARQL endpoint portal is now configurable ([#454](https://github.com/ontop/ontop/issues/454)).
  - Contextually injective IRI templates with numeric or UUID arguments are now decomposed ([#363](https://github.com/ontop/ontop/issues/363)).
- 
- - JSON-LD serialization now supported by the materialized ([#481](https://github.com/ontop/ontop/issues/481)).
+ - JSON-LD serialization now supported by the materializer ([#481](https://github.com/ontop/ontop/issues/481)).
 
 
 #### Refactoring
@@ -30,6 +29,7 @@
  - Type extractor relaxed ([#438](https://github.com/ontop/ontop/issues/438)) to tolerate slightly different datatypes.
  - JDBC distinct result set removed.
  - JDBC user name and password are not required anymore. Useful when passed in the JDBC URL.
+ - The Command-Line Interface of the bootstrapper has been refactored (invalid options removed, comments improved).
 
  Many bugfixes (see for instance [our Github bugtracker](https://github.com/ontop/ontop/milestone/14?closed=1)).
 
