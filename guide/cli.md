@@ -67,7 +67,7 @@ SYNOPSIS
                 [ --contexts <JSON-LD context file for predefined queries> ]
                 [ --cors-allowed-origins <origins> ]
                 [ {-d | --db-metadata} <db-metadata file> ]
-                [ --db-driver <DB driver> ] [ --db-name <DB name> ]
+                [ --db-driver <DB driver> ]
                 [ --db-password <DB password> ] [ --db-url <DB URL> ] [ --dev ]
                 [ --disable-portal-page ] [ --disable-reasoning ]
                 [ --enable-annotations ] [ --enable-download-ontology ]
@@ -97,9 +97,6 @@ OPTIONS
 
         --db-driver <DB driver>
             DB driver (overrides the properties)
-
-        --db-name <DB name>
-            DB name (overrides the properties)
 
         --db-password <DB password>
             DB password (overrides the properties)
@@ -192,7 +189,7 @@ NAME
 SYNOPSIS
         ontop materialize [ {-c | --constraint} <constraint file> ]
                 [ {-d | --db-metadata} <db-metadata file> ]
-                [ --db-driver <DB driver> ] [ --db-name <DB name> ]
+                [ --db-driver <DB driver> ]
                 [ --db-password <DB password> ] [ --db-url <DB URL> ]
                 [ --disable-reasoning ] [ --enable-annotations ]
                 [ {-f | --format} <outputFormat> ]
@@ -213,9 +210,6 @@ OPTIONS
 
         --db-driver <DB driver>
             DB driver (overrides the properties)
-
-        --db-name <DB name>
-            DB name (overrides the properties)
 
         --db-password <DB password>
             DB password (overrides the properties)
@@ -399,7 +393,7 @@ NAME
 
 SYNOPSIS
         ontop bootstrap {-b | --base-iri} <base IRI>
-                [ --db-driver <DB driver> ] [ --db-name <DB name> ]
+                [ --db-driver <DB driver> ]
                 [ --db-password <DB password> ] [ --db-url <DB URL> ]
                 {-m | --mapping} <mapping file>
                 [ {-p | --properties} <properties file> ]
@@ -412,9 +406,6 @@ OPTIONS
 
         --db-driver <DB driver>
             DB driver (overrides the properties)
-
-        --db-name <DB name>
-            DB name (overrides the properties)
 
         --db-password <DB password>
             DB password (overrides the properties)
@@ -460,7 +451,7 @@ NAME
 SYNOPSIS
         ontop query [ {-c | --constraint} <constraint file> ]
                 [ {-d | --db-metadata} <db-metadata file> ]
-                [ --db-driver <DB driver> ] [ --db-name <DB name> ]
+                [ --db-driver <DB driver> ]
                 [ --db-password <DB password> ] [ --db-url <DB URL> ]
                 [ --disable-reasoning ] [ --enable-annotations ]
                 {-m | --mapping} <mapping file> [ {-o | --output} <output> ]
@@ -480,9 +471,6 @@ OPTIONS
 
         --db-driver <DB driver>
             DB driver (overrides the properties)
-
-        --db-name <DB name>
-            DB name (overrides the properties)
 
         --db-password <DB password>
             DB password (overrides the properties)
