@@ -1,6 +1,6 @@
 # Release notes
 
-## 4.2.0 (upcoming)
+## 4.2.0 (30 December, 2021)
 
 #### New features
  - Support for Apache Spark ([#422](https://github.com/ontop/ontop/pull/422)).
