@@ -46,11 +46,11 @@ $ ./mvnw release:perform
 $ ./build-release.sh 
 ```
 
-### Test
-* run protege plugin tests
-* test CLI
-
 ### Release
+
+* Stage the artifacts in sonatype [https://oss.sonatype.org](https://oss.sonatype.org)
+
+* Make a release in Github
 
 * Deploy the packages to SourceForge via sftp.
 
@@ -59,8 +59,7 @@ $ sftp user,ontop4obda@frs.sourceforge.net
 $ cd /home/pfs/project/o/on/ontop4obda
 # sftp://ghxiao,ontop4obda@frs.sourceforge.net/home/pfs/project/o/on/ontop4obda
 ``` 
-
-* Stage the artifacts in sonatype [https://oss.sonatype.org](https://oss.sonatype.org)
+* Push a new image to Docker Hub
 
 * Update [the guide homepage](/guide) and [the release notes](/guide/releases) of this website
 
