@@ -105,7 +105,8 @@ function genGuideSidebarConfig() {
                 'advanced/predefined',
                 'advanced/logging',
                 'advanced/caching',
-                'advanced/configuration'
+                'advanced/configuration',
+                'advanced/views'
         	]
           },
         {
