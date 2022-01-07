@@ -7,8 +7,8 @@
  - Support for time functions added ([#478](https://github.com/ontop/ontop/issues/478)).
  - Support for the `IN` SPARQL function added.
  - Datatypes can be extracted from non-supported source queries in the mapping (treated internally as "black-box" views). Disabled by default (see [`ontop.allowRetrievingBlackBoxViewMetadataFromDB`](/guide/advanced/configuration)).
- - T-box triples (e.g. sub-classes, domains and ranges) can be added to the default RDF graph. Disabled by default (see [`ontop.enableFactExtractionWithTBox`](/guide/advanced/configuration)).
- - Support for Ontop join views added.
+ - TBox triples (e.g. sub-classes, domains and ranges) can be added to the default RDF graph. Disabled by default (see [`ontop.enableFactExtractionWithTBox`](/guide/advanced/configuration)).
+ - Support for [Ontop join views](/guide/advanced/views) added.
  - Support for arbitrary levels of Ontop views added (views over views).
  - Better integrity constraint extraction for Ontop basic and join views.
  - Non-null information can now be specified for Ontop views.

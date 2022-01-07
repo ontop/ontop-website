@@ -28,6 +28,7 @@ Main features
 * Produces efficient SQL queries by applying many optimizations
 * Supports the main database systems (PostgreSQL, MySQL, SQL server, Oracle and DB2)
 * Supports database federators such as Denodo (beta), Dremio (since 4.1), Teiid (since 4.1.1), and Apache Spark (since 4.2.0).
+* Supports [views](/guide/advanced/views) specified outside the data sources (since 4.2.0).
 * Can [materialize](/guide/cli#ontop-materialize) virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)
 
@@ -48,8 +49,8 @@ Social
 ------
 
 You can find us on the following social platforms:
-- [Facebook (obdaontop)](https://www.facebook.com/obdaontop/)
 - [Twitter (ontop4obda)](https://twitter.com/ontop4obda)
+- [Facebook (obdaontop)](https://www.facebook.com/obdaontop/)
 - [Google Group (ontop4obda)](https://groups.google.com/forum/#!forum/ontop4obda)
 - [GitHub (ontop/ontop)](https://github.com/ontop/ontop/)
 
