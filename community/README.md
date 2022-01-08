@@ -25,7 +25,7 @@ Here we honor some no-longer-active core team members who have made important co
 * [Martin Rezk](http://www.martinrezk.com/) (Google, USA)
 * [Josef Hardi](https://profiles.stanford.edu/josef-hardi) (Stanford University, USA)
 * [Elem Güzel Kalaycı](https://scholar.google.it/citations?user=WYEhpZYAAAAJ&hl=en) (Virtual Vehicle Research GmbH, Austria)
-* [Elena Botoeva](https://www.doc.ic.ac.uk/~ebotoeva/) (Imperial College)
+* [Elena Botoeva](https://www.kent.ac.uk/computing/people/3838/botoeva-elena) (University of Kent, UK)
 
 ## Contributors
 
