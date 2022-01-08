@@ -3,7 +3,7 @@
 
 Ontop views are relational views defined at the level of Ontop and unknown to the underlying database. Ontop views can be defined from database relations and from other Ontop views.
 
-As database relations, Ontop views have a name which can be used in the source part of the mapping entries. They are specified in a separate file that can be provided to Ontop through a dedicated parameter.
+As database relations, Ontop views have a name which can be used in the source part of the mapping entries. They are specified in a separate file that can be provided to Ontop through a dedicated parameter (`--ontop-views` for the [CLI commands](/guide/cli) that support it, `ONTOP_VIEW_FILE` for the [Docker image](https://hub.docker.com/r/ontop/ontop-endpoint)).
 
 ::: warning Don't use Ontop views in complex source SQL queries
 The Ontop mapping SQL parser only parses simple forms of SQL queries (without unions, aggregations, limits, order by, etc.). Non-parsed queries are treated as black-box views, that is as strings that are injected into the final SQL queries sent to the database. If some Ontop views appear in these black-box views, the resulting SQL queries will be rejected by the database because they refer to relations it does not know.
