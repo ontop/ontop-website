@@ -31,6 +31,7 @@ Here we honor some no-longer-active core team members who have made important co
 
 Some members of the Ontop community have so enriched it, that they deserve special mention.
 
+* Lukas Sundqvist
 * Mindaugas Slusnys
 * Sergey Pugacs
 * Tomas Kovachev
