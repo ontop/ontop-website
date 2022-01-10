@@ -5,15 +5,14 @@ Ontop views are relational views defined at the level of Ontop and unknown to th
 
 As database relations, Ontop views have a name which can be used in the source part of the mapping entries. They are specified in a separate file that can be provided to Ontop through a dedicated parameter (`--ontop-views` for the [CLI commands](/guide/cli) that support it, `ONTOP_VIEW_FILE` for the [Docker image](https://hub.docker.com/r/ontop/ontop-endpoint)).
 
-::: warning Don't use Ontop views in complex source SQL queries
-The Ontop mapping SQL parser only parses simple forms of SQL queries (without unions, aggregations, limits, order by, etc.). Non-parsed queries are treated as black-box views, that is as strings that are injected into the final SQL queries sent to the database. If some Ontop views appear in these black-box views, the resulting SQL queries will be rejected by the database because they refer to relations it does not know.
-:::
-
 At the moment, 3 types of Ontop views are available:
  1. [Basic views](#basicviewdefinition) (defined over one base relation)
  2. [Join views](#joinviewdefinition) (defined over multiple base relations)
  3. [SQL views](#joinviewdefinition) (defined from an arbitrary SQL query).
 
+::: warning Don't use Ontop views in complex source SQL queries
+The Ontop mapping SQL parser only parses simple forms of SQL queries (without unions, aggregations, limits, order by, etc.). Non-parsed queries are treated as black-box views, that is as strings that are injected into the final SQL queries sent to the database. If some Ontop views appear in these black-box views, the resulting SQL queries will be rejected by the database because they refer to relations it does not know.
+:::
 
  One interesting feature of Ontop views is that you can specify additional [constraints](#constraints) holding on them (in addition to the ones that can be inferred from base relations). The constraints can be:
    - [Unique constraints](#uniqueconstraint)
@@ -254,7 +253,7 @@ In addition to the [common fields](#common-fields), SQL view definitions accept 
 ```json
 {
     "query": String,
-    "type": "JoinViewDefinition"
+    "type": "SQLViewDefinition"
 }
 ```
 
