@@ -1,4 +1,4 @@
-# Intermediate Query
+# Intermediate Query (IQ)
 
 Input queries for Ontop are expressed in (a fragment of) SPARQL 1.1,
 whereas the output of the query reformulation process is expressed in the query language used by the underlying DBMS (prototypically some variant of SQL
@@ -6,26 +6,14 @@ but also other query languages like the MongoDB Aggregate Framework).
 
 Because most query rewriting and optimization steps apply regardless of the underlying DBMS,
 a DBMS-independent query representation format is used internally.
-This format is called _intermediate query_ and allows for the representation of queries and mapping assertions.
+This format is called _intermediate query_ (IQ) and allows for the representation of queries and mapping assertions.
 
-## IQ and IntermediateQuery classes
+## IQ
 
-In terms of implementation, there are two alternative classes corresponding to intermediate queries:
-  * The class `IntermediateQuery` which is mutable (deprecated)
-  * The class `IQ` which is immutable.
-
-`IntermediateQuery` has been introduced first at the time when it was expected than mutability was needed for performance. 
-`IQ` has been introduced later when immutability would also do the job efficiently while simplifying the code.
-
-`IntermediateQuery` is now deprecated and the optimizations implemented with this data structure will be progressively re-implemented.
-In terms of semantics, they are exactly the same. Both use `QueryNode` as nodes.
+In terms of implementation, since 4.3.0, intermediate queries are always immutable and based on the class `IQ`. Prior to that, there was also a mutable variant, centered on the former class `IntermediateQuery`, which was actually the first implementation.
 
 
 ## Query nodes
-
-::: warning TODO: COMPLETE 
-NativeNode, AggregationNode, SliceNode, DistinctNode, OrderByNode
-:::
 
 An IQ is a standard (rooted and ordered) tree representation of a algebraic query expression.
 
@@ -63,6 +51,16 @@ True nodes represent another limit case,
 namely an expression whose evaluation will always be a singleton set containing the 0-ary tuple.
 
 See [the dedicated section](/research/iq-formal#true-node) for a precise characterization.
+
+#### Native node
+
+A native node is defined from a native query string (e.g. a SQL string) and explicits the datatypes of the variables returned by the native query.
+It is generated at the end of query reformulation. It is not used in the mapping.
+
+#### Values node
+
+*Since 4.2.0*. A Values node, similarily to the `VALUES` keyword in SQL and SPARQL, represents an "embedded table" having its rows embedded in the query.
+
 
 ### Non-leaf node types
 
@@ -109,6 +107,27 @@ and finally rename variable $x$ with $z$.
 Each of these three operations is optional. 
 
 See [the dedicated section](/research/iq-formal#construction-node) for a precise characterization.
+
+#### Aggregation node
+
+An aggregation node is defined by the grouping variables over which the aggregation occurs (if any) and a substitution defined the new variables obtained by from aggregation functions.
+
+It projects the grouping variables and the variables defined by the substitution.
+
+#### Slice node
+
+A slice node contains a limit and/or an offset value, that is uses for eliminate tuples from the result set.
+
+#### Distinct node
+
+A distinct node keeps only one occurrence of each tuple.
+
+#### Order by node
+
+An order by node orders the tuples based on a list of comparators. It orders first the results according to the first comparator (ascending or descending) and, in case of same ordering, it orders them using the following comparator, and so on.
+
+This operator follows a `NULLS FIRST` semantics (if ascending, `NULLS LAST` otherwise), similarly to SPARQL.
+
 
 
 ## Previous query format (version 1)
