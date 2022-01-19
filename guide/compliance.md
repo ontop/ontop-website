@@ -77,9 +77,20 @@ Ontop complies with [RDF 1.1](https://www.w3.org/TR/rdf11-new/). It types simple
 
 These functions use the prefix `ofn` (`http://www.ontotext.com/sparql/functions/`) and their documentation can be found [here](https://graphdb.ontotext.com/free/devhub/time-functions.html#durations-expressed-in-certain-units). They accept both `xsd:date` and `xsd:dateTime` as arguments.
 
- - `ofn:weeksBetween`
- - `ofn:daysBetween`
- - `ofn:hoursBetween`
- - `ofn:minutesBetween`
- - `ofn:secondsBetween`
- - `ofn:millisBetween`
+
+| <div style="width:140px">Ofn Function</div> | Argument 1     | Argument 2 |
+|---------------------------------------------|----------------|------------|
+| `ofn:weeksBetween`                          | `xsd:date`     | `xsd:date` |
+| `ofn:weeksBetween`                          | `xsd:dateTime` | `xsd:dateTime` |
+| `ofn:weeksBetween`*                         | `xsd:date`     | `xsd:dateTime` |
+| `ofn:weeksBetween`*                         | `xsd:dateTime` | `xsd:date` |
+| `ofn:daysBetween`                           | `xsd:date`     | `xsd:date` |
+| `ofn:daysBetween`                           | `xsd:dateTime` | `xsd:dateTime` |
+| `ofn:daysBetween`*                          | `xsd:date`     | `xsd:dateTime` |
+| `ofn:daysBetween`*                          | `xsd:dateTime` | `xsd:date` |
+| `ofn:hoursBetween`                          | `xsd:dateTime` | `xsd:dateTime` |
+| `ofn:minutesBetween`                        | `xsd:dateTime` | `xsd:dateTime` |
+| `ofn:secondsBetween`                        | `xsd:dateTime` | `xsd:dateTime` |
+| `ofn:millisBetween`                         | `xsd:dateTime` | `xsd:dateTime` |
+
+Combinations of argument datatypes marked with the symbol * are not supported for queries over the RDBMS-es: Oracle and Microsoft SQL Server.
