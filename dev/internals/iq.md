@@ -15,7 +15,8 @@ In terms of implementation, since 4.3.0, intermediate queries are always immutab
 
 ## Query nodes
 
-An IQ is a standard (rooted and ordered) tree representation of a algebraic query expression.
+An IQ is a standard (rooted and ordered) tree representation of a algebraic query expression. 
+In terms of implementation, it is based on a projection atom and an `IQTree`.
 
 The underlying algebra is a compromise between (a fragment of) the SPARQL algebra on the one hand,
 and the select/project/join/rename/union relational algebra (_RA_ in what follows) with named attributes on the other hand.
@@ -27,16 +28,21 @@ Optimizations applied to IQs are described in [the dedicated section](/research/
  
 ### Leaf node types
 
-#### Data node
+#### Intensional data node
 
-A data node is a prototypical leaf node.
+A intensional node is a prototypical leaf node that is expected to be replaced by an `IQTree` when unfolding the mapping.
 
 It is characterized by a predicate $p(v_1, \dots, v_n)$,
-where each $v_i$ is either a constant or a variable name.
+where each $v_i$ is either a ground term (constant or functional term without variable) or a variable name.
 
-::: warning TODO
-Describe intensional and extensional data nodes
-:::
+Intensional data nodes are typically used for representing triple and quad patterns from SPARQL.
+
+
+#### Extensional data node
+
+An extensional data node is similar to an intensional data node, expect that:
+  - Is is not required to be unfolded (e.g. if it represents a database table)
+  - It has a sparse representation: only a subset of columns are mapped to variables or ground terms.
 
 #### Empty node
 
