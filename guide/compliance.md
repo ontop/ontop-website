@@ -93,4 +93,4 @@ These functions use the prefix `ofn` (`http://www.ontotext.com/sparql/functions/
 | `ofn:secondsBetween`                        | `xsd:dateTime` | `xsd:dateTime` |
 | `ofn:millisBetween`                         | `xsd:dateTime` | `xsd:dateTime` |
 
-Combinations of argument datatypes marked with the symbol * are not supported for queries over the RDBMS-es: Oracle and Microsoft SQL Server.
+Combinations of argument datatypes marked with the symbol * are not supported for queries over the following data sources: Oracle and Microsoft SQL Server.
