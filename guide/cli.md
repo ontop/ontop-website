@@ -69,7 +69,7 @@ SYNOPSIS
                 [ {-d | --db-metadata} <db-metadata file> ]
                 [ --db-driver <DB driver> ]
                 [ --db-password <DB password> ] [ --db-url <DB URL> ] [ --dev ]
-                [ --disable-portal-page ] [ --disable-reasoning ]
+                [ --disable-portal-page ]
                 [ --enable-annotations ] [ --enable-download-ontology ]
                 [ --lazy ] {-m | --mapping} <mapping file>
                 [ {-o | --output} <output> ]
