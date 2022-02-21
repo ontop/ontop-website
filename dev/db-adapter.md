@@ -12,6 +12,9 @@ The following RDBMSs are currently supported:
 * SQL server
 * H2
 * Denodo
+* Dremio
+* Apache Spark SQL
+* Teiid
 
 It is relatively easy though to extend Ontop's source code in order to support an additional RDBMS, thanks to dependency injection.
 
