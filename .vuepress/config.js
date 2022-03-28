@@ -148,6 +148,7 @@ function genDevSidebarConfig() {
             collapsable: false,
             children: [
                 'internals/iq',
+		'internals/guice'
             ]
         },
         {
