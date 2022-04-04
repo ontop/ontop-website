@@ -161,3 +161,7 @@
         Zakharyaschev. Reasoning Web 2013)
 11. [Ontop: A Tutorial](http://www.slideshare.net/marianomx/ontop-a-tutorial)
         (Mariano Rodriguez-Muro, Vienna'13)
+
+## Master theses
+
+- Lukas Sundqvist: [Extending VKG Systems with RDF-star Support](https://ontop-vkg.org/publications/2022-sundqvist-rdf-star-ontop-msc-thesis.pdf), Free University of Bozen-Bolzano, March 2022.
