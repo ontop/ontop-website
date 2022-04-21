@@ -1,5 +1,17 @@
 # Release notes
 
+## 4.2.1 (April 20, 2022)
+
+#### New features
+  - Support for partial serialized DB metadata, when `ontop.allowRetrievingBlackBoxViewMetadataFromDB` is enabled.
+
+#### Bugfixes
+  - Not renamed variable in sub-query with a distinct ([#417](https://github.com/ontop/ontop/issues/417)).
+  - OBDA to R2RML conversion: require mapping entry IDs to be unique.
+  - Lang tags for constants in R2RML were ignored.
+  - Several fixes related to VALUES.
+  - Better HTTP codes for the ontology download endpoint.
+
 ## 4.2.0 (December 30, 2021)
 
 #### New features
