@@ -12,7 +12,7 @@
   - Several fixes related to VALUES.
   - Better HTTP codes for the ontology download endpoint.
 
-The Jackson and Spring Boot dependencies have been preventively updated (to 2.13.2.2 and 2.6.6 respectively) to address potential vulnerabilities.
+The Jackson and Spring Boot dependencies have been preventively updated (to 2.13.2.2 and 2.6.6 respectively) to address potential vulnerabilities ([CVE-2020-36518](https://nvd.nist.gov/vuln/detail/CVE-2020-36518) and [CVE-2022-22965](https://nvd.nist.gov/vuln/detail/cve-2022-22965)).
 
 
 ## 4.2.0 (December 30, 2021)
