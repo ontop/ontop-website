@@ -2,7 +2,7 @@
 
 ## 4.2.1 (April 20, 2022)
 
-#### New features
+#### New feature
   - Support for partial serialized DB metadata, when `ontop.allowRetrievingBlackBoxViewMetadataFromDB` is enabled.
 
 #### Bugfixes
@@ -11,6 +11,9 @@
   - Lang tags for constants in R2RML were ignored.
   - Several fixes related to VALUES.
   - Better HTTP codes for the ontology download endpoint.
+
+The Jackson and Spring Boot dependencies have been preventively updated (to 2.13.2.2 and 2.6.6 respectively) to address potential vulnerabilities.
+
 
 ## 4.2.0 (December 30, 2021)
 
