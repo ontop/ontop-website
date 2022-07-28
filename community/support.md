@@ -11,3 +11,8 @@ We have a [mailing list (Google group)](https://groups.google.com/d/forum/ontop4
 ## Bug tracking system
 
 To see the list of open issues/bugs, visit [our GitHub tracker](https://github.com/ontop/ontop/issues?state=open)
+
+
+## Commercial support
+
+[Ontopic](https://ontopic.ai) is offering commercial support for Ontop.
