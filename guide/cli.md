@@ -269,7 +269,7 @@ OPTIONS
 Example:
 
 ```
-$ /.ontop materialize -m university-complete.obda \
+$ ./ontop materialize -m university-complete.obda \
                       -t university-complete.ttl \
                       -p university-complete.properties \
                       -f turtle \
