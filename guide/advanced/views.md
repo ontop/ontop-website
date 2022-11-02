@@ -64,7 +64,7 @@ The Ontop mapping SQL parser only parses simple forms of SQL queries (without un
                         "name": "fk1",
                         "from": ["\"regionOfResidence\""],
                         "to": {
-                            "relation": ["\"geo\",\"regions\""],
+                            "relation": ["\"geo\"","\"regions\""],
                             "columns": ["\"reg_id\""]
                         }
                     }
