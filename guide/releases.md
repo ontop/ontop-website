@@ -1,5 +1,11 @@
 # Release notes
 
+## 4.2.2 (November 18, 2022)
+
+#### New features
+  - Support for Protege 5.6-beta under Java 11 and Java 17
+
+
 ## 4.2.1 (April 20, 2022)
 
 #### New feature
