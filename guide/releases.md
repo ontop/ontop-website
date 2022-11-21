@@ -4,6 +4,16 @@
 
 #### New features
   - Support for Protege 5.6-beta under Java 11 and Java 17
+  - Support for the Databricks-specific JDBC driver [#554](https://github.com/ontop/ontop/issues/554)
+  - Support for LIMIT/OFFSET in SQL Server 2008 [#531](https://github.com/ontop/ontop/issues/531)
+  - Support for materialized views in PostgresSQL [#541](https://github.com/ontop/ontop/issues/541)
+
+#### Bugfixes
+ - VALUES handling with Teiid [#525](https://github.com/ontop/ontop/issues/525)
+ - Metadata extraction for Dremio of schema names with dots
+ - Typo in registration of Oracle factories [#557](https://github.com/ontop/ontop/issues/557)
+
+Preventive update of dependencies including Jackson and Gson to address potential vulnerabilities.
 
 
 ## 4.2.1 (April 20, 2022)
