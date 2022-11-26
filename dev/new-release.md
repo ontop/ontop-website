@@ -19,6 +19,8 @@ Update pom.xml files by Maven plugin to a SNAPSHOT version:
 
 ```console
 $ ./mvnw versions:set -DnewVersion=4.0.0-SNAPSHOT
+$ cd protge
+$ ../mvnw versions:set -DnewVersion=4.0.0-SNAPSHOT
 ```
 
 ## Build Maven packages
