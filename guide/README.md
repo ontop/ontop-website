@@ -50,6 +50,7 @@ Social
 
 You can find us on the following social platforms:
 - [Twitter (ontop4obda)](https://twitter.com/ontop4obda)
+- <a rel="me" href="https://fosstodon.org/@ontop">Mastodon (@ontop@fosstodon.org)</a>
 - [Facebook (obdaontop)](https://www.facebook.com/obdaontop/)
 - [Google Group (ontop4obda)](https://groups.google.com/forum/#!forum/ontop4obda)
 - [GitHub (ontop/ontop)](https://github.com/ontop/ontop/)
