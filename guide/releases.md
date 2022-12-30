@@ -1,12 +1,43 @@
 # Release notes
 
+## 5.0.0 (December 31, 2022)
+
+#### Important changes
+  - Java 11 or newer is required
+  - Ontop's Protégé plugin now requires at least Protégé 5.6-beta
+  - RDF4J bindings updated to 4.1.0
+  - The module `ontop-owlapi` is not published anymore. We recommend using `ontop-rdf4j` instead
+  - RDF4J workbench modules removed
+  - Docker image moved to [`ontop/ontop`](https://hub.docker.com/r/ontop/ontop)
+
+#### New features
+  - Support for SPARQL rules for the extending the VKG added [#576](https://github.com/ontop/ontop/pull/576)
+  - The [Docker image](https://hub.docker.com/r/ontop/ontop) now also supported the ARM64 architecture and allows to run all the CLI commands [#532](https://github.com/ontop/ontop/issues/532)
+  - Support for Snowflake added [#520](https://github.com/ontop/ontop/issues/520)
+  - Support for MariaDB added [#271](https://github.com/ontop/ontop/issues/271)
+  - N-Triples and N-quads are now supported by the SPARQL endpoint [#566](https://github.com/ontop/ontop/pull/566)
+  - Option to fully reformulate the SPARQL query into SQL added [#577](https://github.com/ontop/ontop/pull/577)
+
+#### New optimizations
+ - Optimization of joins with a union of class definitions added [#543](https://github.com/ontop/ontop/issues/543)
+ - Optimizations for generic queries with limit added [#578](https://github.com/ontop/ontop/pull/578)
+ - Optimization for queries retrieving all the properties or classes in use in the VKG added [#581](https://github.com/ontop/ontop/pull/581)
+
+#### Refactoring
+  - New module for testing dialects in the Github CI pipeline added
+  - JSQLParser updated to 4.4
+  - Ontop's Protégé plugin isolated from Ontop modules [#278](https://github.com/ontop/ontop/issues/278)
+  - Support for Databricks (Apache Spark) improved
+
+Many bugfixes. See also [its milestone on Github](https://github.com/ontop/ontop/milestone/16?closed=1).
+
 ## 4.2.2 (November 18, 2022)
 
 #### New features
   - Support for Protege 5.6-beta under Java 11 and Java 17
   - Support for the Databricks-specific JDBC driver [#554](https://github.com/ontop/ontop/issues/554)
   - Support for LIMIT/OFFSET in SQL Server 2008 [#531](https://github.com/ontop/ontop/issues/531)
-  - Support for materialized views in PostgresSQL [#541](https://github.com/ontop/ontop/issues/541)
+  - Support for materialized views in PostgreSQL [#541](https://github.com/ontop/ontop/issues/541)
 
 #### Bugfixes
  - VALUES handling with Teiid [#525](https://github.com/ontop/ontop/issues/525)
