@@ -9,6 +9,7 @@
   - The module `ontop-owlapi` is not published anymore. We recommend using `ontop-rdf4j` instead
   - RDF4J workbench modules removed
   - Docker image moved to [`ontop/ontop`](https://hub.docker.com/r/ontop/ontop)
+  - Ontop views renamed [lenses](/guide/advanced/lenses)
 
 #### New features
   - Support for SPARQL rules for the extending the VKG added [#576](https://github.com/ontop/ontop/pull/576)
