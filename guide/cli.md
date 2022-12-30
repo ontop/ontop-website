@@ -434,9 +434,11 @@ You can use this command if you already have a scenario test case including:
 * a working database to connect to,
 * a SPARQL query file
 
-The `ontop query` command helps you to set up the system, runs the query from the query string file over it, and gets the results either in output file or terminal output. What the script actually does is to set up Ontop using the ontology and the mappings files, parse the query from the file and execute it over the created instance of Ontop.
+The `ontop query` command helps you to set up the system, runs the query from the query string file over it, and gets the results either in output file or terminal output. What the script actually does is to set up Ontop using the ontology and the mapping files, parse the query from the file and execute it over the created instance of Ontop.
 
 Note that `ontop query` is NOT intended to be used in production and for benchmarking purposes. Most of its execution time is dedicated to offline tasks like DB metadata extraction and mapping processing. Query answering (i.e. answering the SPARQL query) takes usually much less time. For production and benchmarking purposes, please consider [deploying Ontop as a SPARQL endpoint](#ontop-endpoint).
+
+The results are turned in the CSV format.
 
  ::: warning
 At the moment only SELECT queries are supported by this command. See [#222](https://github.com/ontop/ontop/issues/222).
@@ -522,10 +524,10 @@ $  ./ontop query -m university-complete.obda \
                  -q q1.txt
 
 x
-<http://www.Department0.University0.edu/GraduateStudent44>
-<http://www.Department0.University0.edu/GraduateStudent101>
-<http://www.Department0.University0.edu/GraduateStudent124>
-<http://www.Department0.University0.edu/GraduateStudent142>
+http://www.Department0.University0.edu/GraduateStudent44
+http://www.Department0.University0.edu/GraduateStudent101
+http://www.Department0.University0.edu/GraduateStudent124
+http://www.Department0.University0.edu/GraduateStudent142
 ```
 where `q1.txt` contains the SPARQL query, e.g.:
 ```sparql
@@ -545,10 +547,10 @@ $ ./ontop query -m university-complete.ttl \
 
 $ cat q1.csv
 x
-<http://www.Department0.University0.edu/GraduateStudent44>
-<http://www.Department0.University0.edu/GraduateStudent101>
-<http://www.Department0.University0.edu/GraduateStudent124>
-<http://www.Department0.University0.edu/GraduateStudent142>
+http://www.Department0.University0.edu/GraduateStudent44
+http://www.Department0.University0.edu/GraduateStudent101
+http://www.Department0.University0.edu/GraduateStudent124
+http://www.Department0.University0.edu/GraduateStudent142
 ```
 
 ## `ontop extract-db-metadata`
