@@ -1,7 +1,7 @@
 # Standards compliance
 
 ## SPARQL 1.1
-*Updated for 4.2.0*.
+*Updated for 5.0.0*.
 
 In the following table we present a summary of the compliance of the latest version of Ontop with [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), where rows correspond to sections of the WC3 recommendation and unsupported features are ~~crossed out~~. Most of the features are supported, but some are unsupported or only partially supported.
 
@@ -15,7 +15,7 @@ In the following table we present a summary of the compliance of the latest vers
 | [10. Assignment](https://www.w3.org/TR/sparql11-query/#assignment)  | `BIND`, `VALUES`      | 2/2 |
 | [11. Aggregates](https://www.w3.org/TR/sparql11-query/#aggregates)  | `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`, `GROUP_CONCAT`, `SAMPLE`      | 6/6 |
 | [12. Subqueries](https://www.w3.org/TR/sparql11-query/#subqueries) | Subqueries | 1/1 |
-| [13. RDF Dataset](https://www.w3.org/TR/sparql11-query/#rdfDataset) | `GRAPH`, <code>~~FROM \[NAMED\]~~</code> | 1/2 |
+| [13. RDF Dataset](https://www.w3.org/TR/sparql11-query/#rdfDataset) | `GRAPH`, `FROM [NAMED]` | 2/2 |
 | [14. Basic Federated Query](https://www.w3.org/TR/sparql11-federated-query/) |  <code>~~SERVICE~~</code> | 0 |
 | [15. Solution Seqs. & Mods.](https://www.w3.org/TR/sparql11-query/#solutionModifiers) | `ORDER BY`, `SELECT`, `DISTINCT`, `REDUCED`, `OFFSET`, `LIMIT` | 6/6 |
 | [16. Query Forms](https://www.w3.org/TR/sparql11-query/#QueryForms) | `SELECT`, `CONSTRUCT`, `ASK`, `DESCRIBE` | 4/4 |
