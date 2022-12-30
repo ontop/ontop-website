@@ -23,12 +23,12 @@ Main features
 * Uses [RDF 1.1](/guide/compliance#rdf-1-1) as graph data model
 * Supports RDFS and OWL 2 QL ontologies
 * Supports [R2RML](/guide/compliance#r2rml) and Ontop mappings
-* Supports [the majority of SPARQL 1.1 features](/guide/compliance#sparql-1-1), including the main SPARQL aggregation functions (since 4.0-beta-1) and [GeoSPARQL functions](/guide/compliance#geosparql-1-0) (since 4.1)
-* Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint) and as [a predefined query endpoint](/guide/advanced/predefined) (since 4.1)
+* Supports [the majority of SPARQL 1.1 features](/guide/compliance#sparql-1-1), including the main SPARQL aggregation functions (since 4.0-beta-1) and [GeoSPARQL functions](/guide/compliance#geosparql-1-0) (since 4.1.0)
+* Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint) and as [a predefined query endpoint](/guide/advanced/predefined) (since 4.1.0)
 * Produces efficient SQL queries by applying many optimizations
-* Supports the main database systems (PostgreSQL, MySQL, SQL server, Oracle and DB2)
-* Supports database federators such as Denodo (beta), Dremio (since 4.1), Teiid (since 4.1.1), and Apache Spark (since 4.2.0)
-* Supports [views](/guide/advanced/views) specified outside the data sources (since 4.2.0)
+* Supports the main database systems: PostgreSQL, MySQL, MariaDB (since 5.0.0), SQL Server, Oracle, DB2 and Snowflake (since 5.0.0)
+* Supports database federators such as Denodo (beta), Dremio (since 4.1.0), Teiid (since 4.1.1), and Apache Spark / Databricks (since 4.2.0)
+* Supports [lenses](/guide/advanced/lenses) specified outside the data sources (since 4.2.0)
 * Can [materialize](/guide/cli#ontop-materialize) virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)
 

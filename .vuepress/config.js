@@ -106,7 +106,7 @@ function genGuideSidebarConfig() {
                 'advanced/logging',
                 'advanced/caching',
                 'advanced/configuration',
-                'advanced/views'
+                'advanced/lenses'
         	]
           },
         {
