@@ -17,6 +17,7 @@
   - Support for MariaDB added [#271](https://github.com/ontop/ontop/issues/271)
   - N-Triples and N-quads are now supported by the SPARQL endpoint [#566](https://github.com/ontop/ontop/pull/566)
   - Option to fully reformulate the SPARQL query into SQL added [#577](https://github.com/ontop/ontop/pull/577)
+  - Experimental support for flatten lenses added (only for PostgreSQL)
 
 #### New optimizations
  - Optimization of joins with a union of class definitions added [#543](https://github.com/ontop/ontop/issues/543)
@@ -24,7 +25,7 @@
  - Optimization for queries retrieving all the properties or classes in use in the VKG added [#581](https://github.com/ontop/ontop/pull/581)
 
 #### Refactoring
-  - New module for testing dialects in the Github CI pipeline added
+  - New module for testing dialects in the Github CI pipeline added [#568](https://github.com/ontop/ontop/issues/568)
   - JSQLParser updated to 4.4
   - Ontop's Protégé plugin isolated from Ontop modules [#278](https://github.com/ontop/ontop/issues/278)
   - Support for Databricks (Apache Spark) improved
