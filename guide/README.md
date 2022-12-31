@@ -12,7 +12,7 @@ This documentation is for Ontop 3.0 and more recent versions.
 For earlier versions, please refer to [our previous Wiki](https://github.com/ontop/ontop/wiki).
 
 Most recent version:
-* Stable:  Ontop 4.2.2, released on November 18, 2022.
+* Stable:  Ontop 5.0.0, released on December 31, 2022.
 
 See [release notes](/guide/releases) for more details.
 
