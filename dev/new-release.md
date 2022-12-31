@@ -79,7 +79,7 @@ $ cd ontop/client/docker/
 $ ./build-image.sh -C -x
 ```
 
-- Push a new image of [ontop/ontop-endpoint](https://hub.docker.com/repository/docker/ontop/ontop-endpoint) to Docker Hub
+- Push a new image of [ontop/ontop](https://hub.docker.com/repository/docker/ontop/ontop) to Docker Hub
 
 ## Update the Ontop Website
 

@@ -5,7 +5,7 @@
 
 Lenses are relational views defined at the level of Ontop and unknown to the underlying database. Lenses can be defined from database relations and from other lenses.
 
-As database relations, lenses have a name which can be used in the source part of the mapping entries. They are specified in a separate file that can be provided to Ontop through a dedicated parameter (`--lenses` for the [CLI commands](/guide/cli) that support it, `ONTOP_LENSES_FILE` for the [Docker image](https://hub.docker.com/r/ontop/ontop-endpoint)).
+As database relations, lenses have a name which can be used in the source part of the mapping entries. They are specified in a separate file that can be provided to Ontop through a dedicated parameter (`--lenses` for the [CLI commands](/guide/cli) that support it, `ONTOP_LENSES_FILE` for the [Docker image](https://hub.docker.com/r/ontop/ontop)).
 
 At the moment, 3 types of lenses are available:
  1. [Basic lenses](#basiclens) (defined over one base relation)

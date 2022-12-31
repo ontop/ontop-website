@@ -48,7 +48,7 @@ This is where you will specify the JDBC connection parameters.
 A basic property file template can be found [here](/properties/basic.properties).
 
 ## `ontop endpoint`
-`ontop endpoint` deploys a SPARQL endpoint locally at the address `/sparql` and by default on the port 8080. It powers [our official Docker](https://hub.docker.com/r/ontop/ontop-endpoint), so feel free to use the Docker image instead of the CLI command if it is more convenient for you.
+`ontop endpoint` deploys a SPARQL endpoint locally at the address `/sparql` and by default on the port 8080. It powers [our official Docker](https://hub.docker.com/r/ontop/ontop), so feel free to use the Docker image instead of the CLI command if it is more convenient for you.
 
 It offers several advanced options:
  * *Lazy initialization:* Ontop offline tasks (such as DB metadata extraction and mapping processing) are triggered after receiving the first SPARQL query. This is useful when using a Docker-Compose with Ontop and a DB image that needs to be initialized first.

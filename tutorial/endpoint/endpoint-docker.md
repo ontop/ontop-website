@@ -2,7 +2,7 @@
 
 ## How to use this image
 
-The Docker image [ontop/ontop-endpoint](https://hub.docker.com/r/ontop/ontop-endpoint) is for fast setting up an Ontop SPARQL endpoint.
+The Docker image [ontop/ontop](https://hub.docker.com/r/ontop/ontop) is for fast setting up an Ontop SPARQL endpoint.
 One can either use this image directly, or create a dedicated image based on this image.
 
 1. Go to the `endpoint/` directory. Alternatively, if you don't have already the tutorial files, you can download [this OWL ontology file](input/university-complete.ttl), [this mapping file](input/university-complete.obda), [this properties file](input/university-complete.properties) and paste them in `input/`.
@@ -13,9 +13,9 @@ In addition, we need the [h2 database](../h2.zip) as usual. Assume the h2 databa
 **NB**: Linux users have to modify the property `jdbc.url` in [`input/university-complete.docker.properties`](input/university-complete.docker.properties). Replace `host.docker.internal` with the IP address of your machine (you can see it running the `ifconfig` command).
 
 
-### Use `ontop/ontop-endpoint` directly
+### Use `ontop/ontop` directly
 
-We can start an Ontop SPARQL endpoint by using the `ontop/ontop-endpoint` image directly.
+We can start an Ontop SPARQL endpoint by using the `ontop/ontop` image directly.
 On Linux/Mac:
 
 ```console
@@ -26,7 +26,7 @@ docker run --rm \
            -e ONTOP_MAPPING_FILE=/opt/ontop/input/university-complete.obda \
            -e ONTOP_PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties \
            -p 8080:8080 \
-           ontop/ontop-endpoint
+           ontop/ontop
 ```
 
 On Windows:
@@ -38,7 +38,7 @@ docker run --rm ^
            -e ONTOP_MAPPING_FILE=/opt/ontop/input/university-complete.obda ^
            -e ONTOP_PROPERTIES_FILE=/opt/ontop/input/university-complete.docker.properties ^
            -p 8080:8080 ^
-           ontop/ontop-endpoint
+           ontop/ontop
 ```
 
 Now we can open <http://localhost:8080/> to test SPARQL queries.
@@ -48,7 +48,7 @@ Now we can open <http://localhost:8080/> to test SPARQL queries.
 In case we want to deploy a self-contained image, we can write a complete [`Dockerfile`](Dockerfile):
 
 ```dockerfile
-FROM ontop/ontop-endpoint
+FROM ontop/ontop
 WORKDIR /opt/ontop
 COPY input/university-complete.ttl input/university-complete.obda input/university-complete.docker.properties input/ 
 COPY jdbc/h2-1.4.196.jar jdbc/
@@ -87,7 +87,7 @@ services:
       - "8082:8082"
       - "9082:9082"
   ontop:
-    image: ontop/ontop-endpoint
+    image: ontop/ontop
     environment:
       ONTOP_ONTOLOGY_FILE: /opt/ontop/input/university-complete.ttl
       ONTOP_MAPPING_FILE: /opt/ontop/input/university-complete.obda
