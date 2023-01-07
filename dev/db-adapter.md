@@ -6,15 +6,16 @@ This page describes how Ontop can be extended to support a novel relational data
 The following RDBMSs are currently supported:
 
 * DB2
-* MySQL
+* MySQL / MariaDB
 * Oracle
 * PostgreSQL
 * SQL server
 * H2
 * Denodo
 * Dremio
-* Apache Spark SQL
+* Apache Spark SQL & Databricks
 * Teiid
+* Snowflake
 
 It is relatively easy though to extend Ontop's source code in order to support an additional RDBMS, thanks to dependency injection.
 
