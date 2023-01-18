@@ -1,7 +1,7 @@
 # Standards compliance
 
 ## SPARQL 1.1
-*Updated for 4.2.0*.
+*Updated for 5.0.0*.
 
 In the following table we present a summary of the compliance of the latest version of Ontop with [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), where rows correspond to sections of the WC3 recommendation and unsupported features are ~~crossed out~~. Most of the features are supported, but some are unsupported or only partially supported.
 
@@ -15,7 +15,7 @@ In the following table we present a summary of the compliance of the latest vers
 | [10. Assignment](https://www.w3.org/TR/sparql11-query/#assignment)  | `BIND`, `VALUES`      | 2/2 |
 | [11. Aggregates](https://www.w3.org/TR/sparql11-query/#aggregates)  | `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`, `GROUP_CONCAT`, `SAMPLE`      | 6/6 |
 | [12. Subqueries](https://www.w3.org/TR/sparql11-query/#subqueries) | Subqueries | 1/1 |
-| [13. RDF Dataset](https://www.w3.org/TR/sparql11-query/#rdfDataset) | `GRAPH`, <code>~~FROM \[NAMED\]~~</code> | 1/2 |
+| [13. RDF Dataset](https://www.w3.org/TR/sparql11-query/#rdfDataset) | `GRAPH`, `FROM [NAMED]` | 2/2 |
 | [14. Basic Federated Query](https://www.w3.org/TR/sparql11-federated-query/) |  <code>~~SERVICE~~</code> | 0 |
 | [15. Solution Seqs. & Mods.](https://www.w3.org/TR/sparql11-query/#solutionModifiers) | `ORDER BY`, `SELECT`, `DISTINCT`, `REDUCED`, `OFFSET`, `LIMIT` | 6/6 |
 | [16. Query Forms](https://www.w3.org/TR/sparql11-query/#QueryForms) | `SELECT`, `CONSTRUCT`, `ASK`, `DESCRIBE` | 4/4 |
@@ -75,11 +75,22 @@ Ontop complies with [RDF 1.1](https://www.w3.org/TR/rdf11-new/). It types simple
 ## Time functions
 *Since 4.2.0.*
 
-These functions use the prefix `ofn` (`http://www.ontotext.com/sparql/functions/`) and their documentation can be found [here](https://graphdb.ontotext.com/free/devhub/time-functions.html#durations-expressed-in-certain-units).
+These functions use the prefix `ofn` (`http://www.ontotext.com/sparql/functions/`) and their documentation can be found [here](https://graphdb.ontotext.com/free/devhub/time-functions.html#durations-expressed-in-certain-units). They accept both `xsd:date` and `xsd:dateTime` as arguments.
 
- - `ofn:weeksBetween`
- - `ofn:daysBetween`
- - `ofn:hoursBetween`
- - `ofn:minutesBetween`
- - `ofn:secondsBetween`
- - `ofn:millisBetween`
+
+| <div style="width:140px">Ofn Function</div> | Argument 1     | Argument 2 |
+|---------------------------------------------|----------------|------------|
+| `ofn:weeksBetween`                          | `xsd:date`     | `xsd:date` |
+| `ofn:weeksBetween`                          | `xsd:dateTime` | `xsd:dateTime` |
+| `ofn:weeksBetween`*                         | `xsd:date`     | `xsd:dateTime` |
+| `ofn:weeksBetween`*                         | `xsd:dateTime` | `xsd:date` |
+| `ofn:daysBetween`                           | `xsd:date`     | `xsd:date` |
+| `ofn:daysBetween`                           | `xsd:dateTime` | `xsd:dateTime` |
+| `ofn:daysBetween`*                          | `xsd:date`     | `xsd:dateTime` |
+| `ofn:daysBetween`*                          | `xsd:dateTime` | `xsd:date` |
+| `ofn:hoursBetween`                          | `xsd:dateTime` | `xsd:dateTime` |
+| `ofn:minutesBetween`                        | `xsd:dateTime` | `xsd:dateTime` |
+| `ofn:secondsBetween`                        | `xsd:dateTime` | `xsd:dateTime` |
+| `ofn:millisBetween`                         | `xsd:dateTime` | `xsd:dateTime` |
+
+Combinations of argument datatypes marked with the symbol * are not supported for queries over the following data sources: Oracle and Microsoft SQL Server.

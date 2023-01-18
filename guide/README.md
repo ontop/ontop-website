@@ -12,7 +12,7 @@ This documentation is for Ontop 3.0 and more recent versions.
 For earlier versions, please refer to [our previous Wiki](https://github.com/ontop/ontop/wiki).
 
 Most recent version:
-* Stable:  Ontop 4.2.0, released on December 30, 2021.
+* Stable:  Ontop 5.0.0, released on December 31, 2022.
 
 See [release notes](/guide/releases) for more details.
 
@@ -23,17 +23,18 @@ Main features
 * Uses [RDF 1.1](/guide/compliance#rdf-1-1) as graph data model
 * Supports RDFS and OWL 2 QL ontologies
 * Supports [R2RML](/guide/compliance#r2rml) and Ontop mappings
-* Supports [the majority of SPARQL 1.1 features](/guide/compliance#sparql-1-1), including the main SPARQL aggregation functions (since 4.0-beta-1) and [GeoSPARQL functions](/guide/compliance#geosparql-1-0) (since 4.1)
-* Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint) and as [a predefined query endpoint](/guide/advanced/predefined) (since 4.1)
+* Supports [the majority of SPARQL 1.1 features](/guide/compliance#sparql-1-1), including the main SPARQL aggregation functions (since 4.0-beta-1) and [GeoSPARQL functions](/guide/compliance#geosparql-1-0) (since 4.1.0)
+* Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint) and as [a predefined query endpoint](/guide/advanced/predefined) (since 4.1.0)
 * Produces efficient SQL queries by applying many optimizations
-* Supports the main database systems (PostgreSQL, MySQL, SQL server, Oracle and DB2)
-* Supports database federators such as Denodo (beta), Dremio (since 4.1), Teiid (since 4.1.1), and Apache Spark (since 4.2.0).
+* Supports the main database systems: PostgreSQL, MySQL, MariaDB (since 5.0.0), SQL Server, Oracle, DB2 and Snowflake (since 5.0.0)
+* Supports database federators such as Denodo (beta), Dremio (since 4.1.0), Teiid (since 4.1.1), and Apache Spark / Databricks (since 4.2.0)
+* Supports [lenses](/guide/advanced/lenses) specified outside the data sources (since 4.2.0)
 * Can [materialize](/guide/cli#ontop-materialize) virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)
 
 Organizations
 -------------
-Ontop is backed by the [Free University of Bozen-Bolzano](https://www.inf.unibz.it/krdb/in2data/) and [Ontopic s.r.l.](https://ontopic.ai). It also receives regular important contributions from [Birkbeck, University of London](http://www.bbk.ac.uk/). See the [community section](/community) for more details.
+Ontop is backed by the [Free University of Bozen-Bolzano](https://www.inf.unibz.it/krdb/in2data/) and [Ontopic s.r.l.](https://ontopic.ai). It also receives regular important contributions from [University of Bergen](https://www.uib.no) and [Birkbeck, University of London](http://www.bbk.ac.uk/). See the [community section](/community) for more details.
 
 Licenses
 --------
@@ -48,8 +49,9 @@ Social
 ------
 
 You can find us on the following social platforms:
-- [Facebook (obdaontop)](https://www.facebook.com/obdaontop/)
 - [Twitter (ontop4obda)](https://twitter.com/ontop4obda)
+- <a rel="me" href="https://fosstodon.org/@ontop">Mastodon (@ontop@fosstodon.org)</a>
+- [Facebook (obdaontop)](https://www.facebook.com/obdaontop/)
 - [Google Group (ontop4obda)](https://groups.google.com/forum/#!forum/ontop4obda)
 - [GitHub (ontop/ontop)](https://github.com/ontop/ontop/)
 

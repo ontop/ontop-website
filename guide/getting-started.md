@@ -7,7 +7,7 @@ If you are new to Ontop and Virtual Knowledge Graphs, we encourage you to have a
 
 ## Using Ontop
 
-Ontop is distributed under various forms. They can be downloaded on [Github](https://github.com/ontop/ontop/releases), [Docker Hub](https://hub.docker.com/r/ontop/ontop-endpoint), [Sourceforge](http://sourceforge.net/projects/ontop4obda/files/) and in the Protégé plugin repository.
+Ontop is distributed under various forms. They can be downloaded on [Github](https://github.com/ontop/ontop/releases), [Docker Hub](https://hub.docker.com/r/ontop/ontop), [Sourceforge](http://sourceforge.net/projects/ontop4obda/files/) and in the Protégé plugin repository.
 
 ### Mapping designer
 
@@ -16,7 +16,7 @@ For editing and testing your mappings, you can use our plugin of the [Protégé 
 
 ### Deployment
 
-Once your mappings and your ontology are ready, you can deploy your VKG as a SPARQL endpoint. The Ontop endpoint is available both as a [CLI command (`ontop endpoint`)](/guide/cli#ontop-endpoint) and as a [Docker image](https://hub.docker.com/r/ontop/ontop-endpoint).
+Once your mappings and your ontology are ready, you can deploy your VKG as a SPARQL endpoint. The Ontop endpoint is available both as a [CLI command (`ontop endpoint`)](/guide/cli#ontop-endpoint) and as a [Docker image](https://hub.docker.com/r/ontop/ontop).
 
 You can also use the Ontop endpoint during development as it embeds [a nice YASGUI client](https://about.yasgui.org/) and an optional portal (since 4.0-beta-1) containing pre-defined queries.
 

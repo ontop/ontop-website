@@ -1,5 +1,69 @@
 # Release notes
 
+## 5.0.0 (December 31, 2022)
+
+#### Important changes
+  - Java 11 or newer is required
+  - Ontop's Protégé plugin now requires at least Protégé 5.6-beta
+  - RDF4J bindings updated to 4.1.0
+  - The module `ontop-owlapi` is not published anymore. We recommend using `ontop-rdf4j` instead
+  - RDF4J workbench modules removed
+  - Docker image moved to [`ontop/ontop`](https://hub.docker.com/r/ontop/ontop)
+  - Ontop views renamed [lenses](/guide/advanced/lenses)
+
+#### New features
+  - Support for SPARQL rules for the extending the VKG added [#576](https://github.com/ontop/ontop/pull/576)
+  - The [Docker image](https://hub.docker.com/r/ontop/ontop) now also supported the ARM64 architecture and allows to run all the CLI commands [#532](https://github.com/ontop/ontop/issues/532)
+  - Support for Snowflake added [#520](https://github.com/ontop/ontop/issues/520)
+  - Support for MariaDB added [#271](https://github.com/ontop/ontop/issues/271)
+  - N-Triples and N-quads are now supported by the SPARQL endpoint [#566](https://github.com/ontop/ontop/pull/566)
+  - Option to fully reformulate the SPARQL query into SQL added [#577](https://github.com/ontop/ontop/pull/577)
+  - Experimental support for flatten lenses added (only for PostgreSQL)
+
+#### New optimizations
+ - Optimization of joins with a union of class definitions added [#543](https://github.com/ontop/ontop/issues/543)
+ - Optimizations for generic queries with limit added [#578](https://github.com/ontop/ontop/pull/578)
+ - Optimization for queries retrieving all the properties or classes in use in the VKG added [#581](https://github.com/ontop/ontop/pull/581)
+
+#### Refactoring
+  - New module for testing dialects in the Github CI pipeline added [#568](https://github.com/ontop/ontop/issues/568)
+  - JSQLParser updated to 4.4
+  - Ontop's Protégé plugin isolated from Ontop modules [#278](https://github.com/ontop/ontop/issues/278)
+  - Support for Databricks (Apache Spark) improved
+
+Many bugfixes. See also [its milestone on Github](https://github.com/ontop/ontop/milestone/16?closed=1).
+
+## 4.2.2 (November 18, 2022)
+
+#### New features
+  - Support for Protege 5.6-beta under Java 11 and Java 17
+  - Support for the Databricks-specific JDBC driver [#554](https://github.com/ontop/ontop/issues/554)
+  - Support for LIMIT/OFFSET in SQL Server 2008 [#531](https://github.com/ontop/ontop/issues/531)
+  - Support for materialized views in PostgreSQL [#541](https://github.com/ontop/ontop/issues/541)
+
+#### Bugfixes
+ - VALUES handling with Teiid [#525](https://github.com/ontop/ontop/issues/525)
+ - Metadata extraction for Dremio of schema names with dots
+ - Typo in registration of Oracle factories [#557](https://github.com/ontop/ontop/issues/557)
+
+Preventive update of dependencies including Jackson and Gson to address potential vulnerabilities.
+
+
+## 4.2.1 (April 20, 2022)
+
+#### New feature
+  - Support for partial serialized DB metadata, when `ontop.allowRetrievingBlackBoxViewMetadataFromDB` is enabled.
+
+#### Bugfixes
+  - Not renamed variable in sub-query with a distinct ([#417](https://github.com/ontop/ontop/issues/417)).
+  - OBDA to R2RML conversion: require mapping entry IDs to be unique.
+  - Lang tags for constants in R2RML were ignored.
+  - Several fixes related to VALUES.
+  - Better HTTP codes for the ontology download endpoint.
+
+The Jackson and Spring Boot dependencies have been preventively updated (to 2.13.2.2 and 2.6.6 respectively) to address potential vulnerabilities ([CVE-2020-36518](https://nvd.nist.gov/vuln/detail/CVE-2020-36518) and [CVE-2022-22965](https://nvd.nist.gov/vuln/detail/cve-2022-22965)).
+
+
 ## 4.2.0 (December 30, 2021)
 
 #### New features
@@ -7,8 +71,8 @@
  - Support for time functions added ([#478](https://github.com/ontop/ontop/issues/478)).
  - Support for the `IN` SPARQL function added.
  - Datatypes can be extracted from non-supported source queries in the mapping (treated internally as "black-box" views). Disabled by default (see [`ontop.allowRetrievingBlackBoxViewMetadataFromDB`](/guide/advanced/configuration)).
- - T-box triples (e.g. sub-classes, domains and ranges) can be added to the default RDF graph. Disabled by default (see [`ontop.enableFactExtractionWithTBox`](/guide/advanced/configuration)).
- - Support for Ontop join views added.
+ - TBox triples (e.g. sub-classes, domains and ranges) can be added to the default RDF graph. Disabled by default (see [`ontop.enableFactExtractionWithTBox`](/guide/advanced/configuration)).
+ - Support for [Ontop join views](/guide/advanced/views) added.
  - Support for arbitrary levels of Ontop views added (views over views).
  - Better integrity constraint extraction for Ontop basic and join views.
  - Non-null information can now be specified for Ontop views.

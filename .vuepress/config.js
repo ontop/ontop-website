@@ -105,7 +105,8 @@ function genGuideSidebarConfig() {
                 'advanced/predefined',
                 'advanced/logging',
                 'advanced/caching',
-                'advanced/configuration'
+                'advanced/configuration',
+                'advanced/lenses'
         	]
           },
         {
@@ -147,6 +148,7 @@ function genDevSidebarConfig() {
             collapsable: false,
             children: [
                 'internals/iq',
+		'internals/guice'
             ]
         },
         {

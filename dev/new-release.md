@@ -19,6 +19,8 @@ Update pom.xml files by Maven plugin to a SNAPSHOT version:
 
 ```console
 $ ./mvnw versions:set -DnewVersion=4.0.0-SNAPSHOT
+$ cd protege
+$ ../mvnw versions:set -DnewVersion=4.0.0-SNAPSHOT
 ```
 
 ## Build Maven packages
@@ -69,12 +71,15 @@ $ cd /home/pfs/project/o/on/ontop4obda
 - Build the docker image using the script
 
 ```console
+# log in to Docker Hub
+# docker login
 $ cd ontop/client/docker/
-# modify the version number if necessary
-$ ./build-image.sh
+# `-C`: multi-stage build. slow, but safe
+# `-x`: push to Docker hub 
+$ ./build-image.sh -C -x
 ```
 
-- Push a new image of [ontop/ontop-endpoint](https://hub.docker.com/repository/docker/ontop/ontop-endpoint) to Docker Hub
+- Push a new image of [ontop/ontop](https://hub.docker.com/repository/docker/ontop/ontop) to Docker Hub
 
 ## Update the Ontop Website
 
