@@ -52,7 +52,7 @@ Let us add the following mapping assertions together with the previous one.
 #### Mapping uni2.person
  * Target:
 ```turtle
-ex:uni2/person/{pid} a foaf:Person ;
+:uni2/person/{pid} a foaf:Person ;
     foaf:firstName {fname}^^xsd:string ;
     foaf:lastName {lname}^^xsd:string .
 ```
@@ -65,9 +65,9 @@ FROM "uni2"."person"
 #### Mapping uni2-course
  * Target:
 ```turtle
-ex:uni2/course/{cid} a :Course ;
+:uni2/course/{cid} a :Course ;
     :title {topic}^^xsd:string ;
-    :isGivenAt ex:uni2/university .
+    :isGivenAt :uni2/university .
 ```
  * Source:
 ```sql
@@ -78,7 +78,7 @@ FROM "uni2"."course"
 #### Mapping uni2-lecturer
  * Target:
 ```turtle
-ex:uni2/person/{lecturer} :givesLecture ex:uni2/course/{cid} .
+:uni2/person/{lecturer} :givesLecture :uni2/course/{cid} .
 ```
  * Source:
 ```sql
@@ -89,7 +89,7 @@ FROM "uni2"."course"
 #### Mapping uni2-lab-teacher
  * Target:
 ```turtle
-ex:uni2/person/{lab_teacher} :givesLab ex:uni2/course/{cid} .
+:uni2/person/{lab_teacher} :givesLab :uni2/course/{cid} .
 ```
  * Source:
 ```sql
@@ -100,7 +100,7 @@ FROM "uni2"."course"
 #### Mapping uni2-registration
  * Target:
 ```turtle
-ex:uni2/person/{pid} :attends ex:uni2/course/{cid} .
+:uni2/person/{pid} :attends :uni2/course/{cid} .
 ```
  * Source:
 ```sql
@@ -112,7 +112,7 @@ FROM "uni2"."registration"
 #### Mapping uni2-undergraduate
  * Target:
 ```turtle
-ex:uni2/person/{pid} a :UndergraduateStudent .
+:uni2/person/{pid} a :UndergraduateStudent .
 ```
  * Source:
 ```sql

@@ -98,7 +98,7 @@ There is no primary key, but two foreign keys to the tables *uni1.course* and *u
 
  * Target:
 ```turtle
-ex:uni1/student/{s_id} a :Student ;
+:uni1/student/{s_id} a :Student ;
     foaf:firstName {first_name}^^xsd:string ;
     foaf:lastName {last_name}^^xsd:string .
 ```
@@ -116,9 +116,9 @@ Some remarks:
   - This entry could be split into three mapping assertions
 
 ```turtle
-ex:uni1/student/{s_id} a :Student .
-ex:uni1/student/{s_id} foaf:firstName {first_name}^^xsd:string .
-ex:uni1/student/{s_id} foaf:lastName {last_name}^^xsd:string .
+:uni1/student/{s_id} a :Student .
+:uni1/student/{s_id} foaf:firstName {first_name}^^xsd:string .
+:uni1/student/{s_id} foaf:lastName {last_name}^^xsd:string .
 ```
 
 Let us now add the other mapping assertions by clicking on *create*:
@@ -126,7 +126,7 @@ Let us now add the other mapping assertions by clicking on *create*:
 #### Mapping uni1-academic
  * Target:
 ```turtle
-ex:uni1/academic/{a_id} a :FacultyMember ;
+:uni1/academic/{a_id} a :FacultyMember ;
     foaf:firstName {first_name}^^xsd:string ;
     foaf:lastName {last_name}^^xsd:string .
 ```
@@ -139,9 +139,9 @@ FROM "uni1"."academic"
 #### Mapping uni1-course
  * Target:
 ```turtle
-ex:uni1/course/{c_id} a :Course ;
+:uni1/course/{c_id} a :Course ;
     :title {title} ;
-    :isGivenAt ex:uni1/university .
+    :isGivenAt :uni1/university .
 ```
  * Source:
 ```sql
@@ -152,7 +152,7 @@ FROM "uni1"."course"
 #### Mapping uni1-teaching
  * Target:
 ```turtle
-ex:uni1/academic/{a_id} :teaches ex:uni1/course/{c_id} .
+:uni1/academic/{a_id} :teaches :uni1/course/{c_id} .
 ```
  * Source:
 ```sql
@@ -163,7 +163,7 @@ FROM "uni1"."teaching"
 #### Mapping uni1-registration
  * Target:
 ```turtle
-ex:uni1/student/{s_id} :attends ex:uni1/course/{c_id} .
+:uni1/student/{s_id} :attends :uni1/course/{c_id} .
 ```
  * Source:
 ```sql
@@ -174,7 +174,7 @@ FROM "uni1"."course-registration"
 #### Mapping uni1-fullProfessor
  * Target:
 ```turtle
-ex:uni1/academic/{a_id} a :FullProfessor .
+:uni1/academic/{a_id} a :FullProfessor .
 ```
  * Source:
 ```sql
