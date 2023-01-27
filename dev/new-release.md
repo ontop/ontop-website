@@ -10,7 +10,7 @@
 
 ```console
 $ git checkout develop
-$ git checkout -b release/v-number
+$ git checkout -b releasing/v-number
 ```
 
 ## Update the version numbers
@@ -19,8 +19,6 @@ Update pom.xml files by Maven plugin to a SNAPSHOT version:
 
 ```console
 $ ./mvnw versions:set -DnewVersion=4.0.0-SNAPSHOT
-$ cd protege
-$ ../mvnw versions:set -DnewVersion=4.0.0-SNAPSHOT
 ```
 
 ## Build Maven packages
