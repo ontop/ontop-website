@@ -1,5 +1,16 @@
 # Release notes
 
+## 5.0.1 (January 29, 2023)
+
+#### New feature
+  - DB metadata extraction for MS Access added [#589](https://github.com/ontop/ontop/issues/589)
+
+#### Refactoring
+  - Support for Spark SQL improved and tests added in the CI
+  - All the tables (besides excluded ones) in Oracle are now extracted, not just the user's ones
+
+Several dependencies updated.
+
 ## 5.0.0 (December 31, 2022)
 
 #### Important changes
