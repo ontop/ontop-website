@@ -4,6 +4,7 @@
 
 #### New feature
   - DB metadata extraction for MS Access added [#589](https://github.com/ontop/ontop/issues/589)
+  - JRE-embedded Ontop-Protégé bundles with Protégé-5.6.0-beta-2 are now provided
 
 #### Refactoring
   - Support for Spark SQL improved and tests added in the CI
