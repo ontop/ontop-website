@@ -26,4 +26,4 @@ ontop endpoint ^
 ```
 
 6. Open the web interface of the SPARQL endpoint to try some queries: 
-   http://localhost:8080/
+   [http://localhost:8080/](http://localhost:8080/)
