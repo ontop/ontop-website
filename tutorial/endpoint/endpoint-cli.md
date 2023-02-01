@@ -24,3 +24,6 @@ ontop endpoint ^
     --properties=input/university-complete.properties ^
     --cors-allowed-origins=http://yasgui.org 
 ```
+
+6. Open the web interface of the SPARQL endpoint to try some queries: 
+   http://localhost:8080/
