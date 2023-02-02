@@ -20,7 +20,8 @@ The Ontop mapping SQL parser only parses simple forms of SQL queries (without un
    - [Unique constraints](#uniqueconstraint)
    - [Other functional dependencies](#otherfunctionaldependency)
    - [Foreign keys](#foreignkey)
-   - Non-null constraints (columns that do no include null values).
+   - Non-null constraints (columns that do no include null values)
+   - IRI-safe constraints (columns on which the R2RML safe encoding has no effect). *Since 5.0.2*.
 
 
 ## Example
@@ -75,6 +76,11 @@ The Ontop mapping SQL parser only parses simple forms of SQL queries (without un
             "nonNullConstraints": {
                 "added": [
                     "\"email\""
+                ]
+            },
+            "iriSafeConstraints": {
+                "added": [
+                    "\"ssn\""
                 ]
             },
             "type": "BasicLens"
@@ -148,6 +154,9 @@ All the lenses accept the following fields (most of them are optional):
     "nonNullConstraints": {
         "added": [String]
     },
+    "iriSafeConstraints": {
+        "added": [String]
+    },
     "type": String
 }
 ```
@@ -163,6 +172,8 @@ All the lenses accept the following fields (most of them are optional):
 | `foreignKeys.added` | Array of `ForeignKey`-s | |
 | `nonNullConstraints` | JSON Object | Optional
 | `nonNullConstraints.added` | Array of Strings | Names of non-null columns (with correct quoting). One string per column |
+| `iriSafeConstraints` | JSON Object | Optional
+| `iriSafeConstraints.added` | Array of Strings | Names of IRI-safe columns (with correct quoting). One string per column |
 | `type` | String | Either `BasicLens`, `JoinLens` or `SQLLens`
 
 ### `BasicLens`
