@@ -11,6 +11,9 @@
   - Missing TLS cypher suite JRE modules added to the Docker image
   - More system schemas are now ignored in Oracle [#591](https://github.com/ontop/ontop/issues/591)
 
+#### Tooling
+  - [Scaffolding tool](https://github.com/ontop/dialect-factory-scaffolding) created to make it easier to implement a new SQL dialect adapter. 
+
 ## 5.0.1 (January 29, 2023)
 
 #### New feature
