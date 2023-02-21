@@ -1,5 +1,16 @@
 # Release notes
 
+## 5.0.2 (upcoming)
+
+#### New features
+  - Support for Trino [#599](https://github.com/ontop/ontop/pull/599), PrestoDB [#601](https://github.com/ontop/ontop/pull/601), AWS Athena [#602](https://github.com/ontop/ontop/pull/602), DuckDB [#604](https://github.com/ontop/ontop/pull/604) and AWS Redshift [#605](https://github.com/ontop/ontop/pull/605) added
+  - Declare some columns as IRI-safe in lenses [#587](https://github.com/ontop/ontop/issues/587)
+  - Support for arbitrary JDBC properties added [#606](https://github.com/ontop/ontop/issues/606)
+
+#### Bugfixes
+  - Missing TLS cypher suite JRE modules added to the Docker image
+  - More system schemas are now ignored in Oracle [#591](https://github.com/ontop/ontop/issues/591)
+
 ## 5.0.1 (January 29, 2023)
 
 #### New feature
