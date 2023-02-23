@@ -4,7 +4,7 @@ In this tutorial, we will see how to design a Virtual Knowledge Graph (VKG) spec
 
 ## Requirements
 
-* [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Java 11](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * Latest version of Ontop from [GitHub](https://github.com/ontop/ontop/releases) or [SourceForge](https://sourceforge.net/projects/ontop4obda/files/)
 * H2 with preloaded datasets [h2.zip](h2.zip)
 * [Git](https://git-scm.com/)
