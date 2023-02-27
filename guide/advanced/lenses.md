@@ -196,10 +196,10 @@ In addition to the [common fields](#common-fields), basic lenses accept the foll
 | Key                | Type      | Description                                     |
 | ------------------ | --------- | ---------------------------------------------   |
 | `baseRelation`          | Array of Strings | Name components of the base relation (with correct quoting) |
-| `columns` | JSON Object |
+| `columns` | JSON Object | Optional (since 5.0.2)
 | `columns.added` | Array of `AddedColumn`-s | |
 | `columns.hidden` | Array of Strings | Names of the columns from the base relation to be projected away (with correct quoting) |
-| `filterExpression` | String | Expression expressed in the SQL dialect of the data source. Can only refer to columns from the base relation, not to added columns. Can be empty |
+| `filterExpression` | String | Expression expressed in the SQL dialect of the data source. Can only refer to columns from the base relation, not to added columns. Can be empty. Optional |
 
 #### `AddedColumn`
 
@@ -247,7 +247,7 @@ In addition to the [common fields](#common-fields), join lenses accept the follo
 | `columns` | JSON Object |
 | `columns.added` | Array of `AddedColumn`-s | |
 | `columns.hidden` | Array of Strings | Names of the columns from the base relations to be projected away (with correct quoting) |
-| `filterExpression` | String | Expression expressed in the SQL dialect of the data source. Can only refer to prefixed columns from the base relations, not to added columns. Can be empty |
+| `filterExpression` | String | Expression expressed in the SQL dialect of the data source. Can only refer to prefixed columns from the base relations, not to added columns. Can be empty. Optional |
 
 
 ### `SQLLens` 
