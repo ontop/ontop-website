@@ -244,7 +244,7 @@ In addition to the [common fields](#common-fields), join lenses accept the follo
 | `join`          | JSON Object | |
 | `join.relations`          | Array of arrays of Strings | Arrays of the name components of each base relation (with correct quoting)|
 | `join.columnPrefixes`       | Array of Strings | Prefix for each base relation to be applied on its column names. Follows the same order as `join.relations`. |
-| `columns` | JSON Object |
+| `columns` | JSON Object | Optional (since 5.0.2) |
 | `columns.added` | Array of `AddedColumn`-s | |
 | `columns.hidden` | Array of Strings | Names of the columns from the base relations to be projected away (with correct quoting) |
 | `filterExpression` | String | Expression expressed in the SQL dialect of the data source. Can only refer to prefixed columns from the base relations, not to added columns. Can be empty. Optional |
