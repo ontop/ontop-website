@@ -66,18 +66,18 @@ $ cd /home/pfs/project/o/on/ontop4obda
 
 ## Update Docker Hub
 
-- Build the docker image using the script
+- Build and push the docker image of [ontop/ontop](https://hub.docker.com/repository/docker/ontop/ontop) to Docker Hub using the script `client/docker/build-image.sh`
+  - by default, the script tag the images as `ontop/ontop:[version]` and `ontop/ontop:latest` - use option `-t` (one or more times) to tag differently (e.g., `-t ontop/ontop:xyz -t ontop/ontop:latest`)
+  - run `client/docker/build-image.sh --help` for available options
 
 ```console
 # log in to Docker Hub
 # docker login
 $ cd ontop/client/docker/
 # `-C`: multi-stage build. slow, but safe
-# `-x`: push to Docker hub 
+# `-x`: compile for both amd64 and arm64, which entails pushing to Docker hub
 $ ./build-image.sh -C -x
 ```
-
-- Push a new image of [ontop/ontop](https://hub.docker.com/repository/docker/ontop/ontop) to Docker Hub
 
 ## Update the Ontop Website
 
