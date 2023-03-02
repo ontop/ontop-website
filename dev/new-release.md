@@ -3,14 +3,14 @@
 ## Update documents
 
 - `README.md` in `build/distribution`. This file will be uploaded to SourceForge and Github Releases
-- `README.html` in `client/protege`. This file will be displayed in the Protégé Plugin Update window.
-- `update.properties` file in `client/protege`. This is the configuration file for Protégé plugin Auto Update
+- `README.html` in `protege/plugin`. This file will be displayed in the Protégé Plugin Update window.
+- `update.properties` file in `protege/plugin`. This is the configuration file for Protégé plugin Auto Update
 
 ## Create a git branch for release
 
 ```console
-$ git checkout develop
-$ git checkout -b releasing/v-number
+$ git checkout <main development branch>
+$ git checkout -b releasing/<version-major.minor>
 ```
 
 ## Update the version numbers
@@ -31,7 +31,7 @@ $ ./mvnw release:clean
 $ ./mvnw -DperformRelease=true release:prepare
 
 # stage the release
-$ ./mvnw release:perform 
+$ ./mvnw release:perform
 
 # Or stage from a Git tag
 # ./mvnw release:perform  -DconnectionUrl=scm:git:git@github.com:ontop/ontop.git -Dtag=ontop-3.0.0
