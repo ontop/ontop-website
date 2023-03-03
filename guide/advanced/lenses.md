@@ -7,10 +7,11 @@ Lenses are relational views defined at the level of Ontop and unknown to the und
 
 As database relations, lenses have a name which can be used in the source part of the mapping entries. They are specified in a separate file that can be provided to Ontop through a dedicated parameter (`--lenses` for the [CLI commands](/guide/cli) that support it, `ONTOP_LENSES_FILE` for the [Docker image](https://hub.docker.com/r/ontop/ontop)).
 
-At the moment, 3 types of lenses are available:
+At the moment, 4 types of lenses are available:
  1. [Basic lenses](#basiclens) (defined over one base relation)
  2. [Join lenses](#joinlens) (defined over multiple base relations)
- 3. [SQL lenses](#sqllens) (defined from an arbitrary SQL query).
+ 3. [SQL lenses](#sqllens) (defined from an arbitrary SQL query)
+ 4. [Union lenses](#unionlens) (defined as a union of multiple base relations)
 
 ::: warning Don't use lenses in complex source SQL queries
 The Ontop mapping SQL parser only parses simple forms of SQL queries (without unions, aggregations, limits, order by, etc.). Non-parsed queries are treated as black-box views, that is as strings that are injected into the final SQL queries sent to the database. If some lenses appear in these black-box views, the resulting SQL queries will be rejected by the database because they refer to relations it does not know.
@@ -273,6 +274,32 @@ In addition to the [common fields](#common-fields), SQL lenses accept the follow
 | Key                | Type      | Description                                     |
 | ------------------ | --------- | ---------------------------------------------   |
 | `query` | String | SQL query |
+
+
+### `UnionLens`
+
+*Union lenses will be supported starting with version 5.1.0*.
+
+
+A union lens is defined from multiple base relations that share attributes with exactly the same names and types. The relations will be merged with each other, concatenating their contents.
+
+When defining a union lens, a "_provenance column_" can be determined to hold, for each data entry, the name of the base relation it originates from.
+
+In addition to the [common fields](#common-fields), union lenses accept the following ones:
+```json
+{
+    "unionRelations": [[String]],
+    "makeDistinct": boolean,
+    "provenanceColumn": String,
+    "type": "UnionLens"
+}
+```
+
+| Key                | Type      | Description                                     |
+| ------------------ | --------- | ---------------------------------------------   |
+| `unionRelations` | Array of arrays of Strings | Arrays of the name components of each base relation (with correct quoting).  |
+| `makeDistinct` | boolean | Determines, if the final resulting union should be made distinct.  |
+| `unionRelations` | String | The name of the column that should contain the base relation each entry originates from. If not provided, provenance information will not be included in the result.  |
 
 
 
