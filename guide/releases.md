@@ -1,6 +1,6 @@
 # Release notes
 
-## 5.0.2 (upcoming)
+## 5.0.2 (March 9, 2023)
 
 #### New features
   - Support for Trino [#599](https://github.com/ontop/ontop/pull/599), PrestoDB [#601](https://github.com/ontop/ontop/pull/601), AWS Athena [#602](https://github.com/ontop/ontop/pull/602), DuckDB [#604](https://github.com/ontop/ontop/pull/604), AWS Redshift [#605](https://github.com/ontop/ontop/pull/605) and Google BigQuery [#615](https://github.com/ontop/ontop/pull/615) added
