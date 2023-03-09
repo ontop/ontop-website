@@ -18,7 +18,7 @@ $ git checkout -b releasing/v-number
 Update pom.xml files by Maven plugin to a SNAPSHOT version:
 
 ```console
-$ ./mvnw versions:set -DnewVersion=4.0.0-SNAPSHOT
+$ ./mvnw versions:set -DnewVersion=5.0.0-SNAPSHOT
 ```
 
 ## Build Maven packages
@@ -28,7 +28,7 @@ $ ./mvnw release:clean
 
 # Preparing the release will create the new tag in git and automatically push to github
 # When 100% sure, you can skip the test by `-Darguments="-DskipTests"`
-$ ./mvnw -DperformRelease=true release:prepare
+$ ./mvnw release:prepare
 
 # stage the release
 $ ./mvnw release:perform 
