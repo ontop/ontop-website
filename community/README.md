@@ -33,6 +33,7 @@ Some members of the Ontop community have so enriched it, that they deserve speci
 
 * Lukas Sundqvist
 * Mindaugas Slusnys
+* Damian Rovara
 * Sergey Pugacs
 * Tomas Kovachev
 * Dag Hovland
