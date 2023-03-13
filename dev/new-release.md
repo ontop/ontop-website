@@ -3,14 +3,14 @@
 ## Update documents
 
 - `README.md` in `build/distribution`. This file will be uploaded to SourceForge and Github Releases
-- `README.html` in `client/protege`. This file will be displayed in the Protégé Plugin Update window.
-- `update.properties` file in `client/protege`. This is the configuration file for Protégé plugin Auto Update
+- `README.html` in `protege/plugin`. This file will be displayed in the Protégé Plugin Update window.
+- `update.properties` file in `protege/plugin`. This is the configuration file for Protégé plugin Auto Update
 
 ## Create a git branch for release
 
 ```console
-$ git checkout develop
-$ git checkout -b releasing/v-number
+$ git checkout <main development branch>
+$ git checkout -b releasing/<version-major.minor>
 ```
 
 ## Update the version numbers
@@ -26,15 +26,15 @@ $ ./mvnw versions:set -DnewVersion=5.0.0-SNAPSHOT
 ```console
 $ ./mvnw release:clean
 
-# Preparing the release will create the new tag in git and automatically push to github
+# Preparing the release will sign artifacts (GPG key needed), create the new tag in git and automatically push to github.
 # When 100% sure, you can skip the test by `-Darguments="-DskipTests"`
 $ ./mvnw  --batch-mode release:prepare
 
 # stage the release
-$ ./mvnw release:perform 
+$ ./mvnw release:perform
 
 # Or stage from a Git tag
-# ./mvnw release:perform  -DconnectionUrl=scm:git:git@github.com:ontop/ontop.git -Dtag=ontop-3.0.0
+# ./mvnw release:perform  -DconnectionUrl=scm:git:git@github.com:ontop/ontop.git -Dtag=ontop-5.0.0
 ```
 
 ### Stage the Maven artifacts
@@ -66,18 +66,18 @@ $ cd /home/pfs/project/o/on/ontop4obda
 
 ## Update Docker Hub
 
-- Build the docker image using the script
+- Build and push the docker image of [ontop/ontop](https://hub.docker.com/repository/docker/ontop/ontop) to Docker Hub using the script `client/docker/build-image.sh`
+  - by default, the script tag the images as `ontop/ontop:[version]` and `ontop/ontop:latest` - use option `-t` (one or more times) to tag differently (e.g., `-t ontop/ontop:xyz -t ontop/ontop:latest`)
+  - run `client/docker/build-image.sh --help` for available options
 
 ```console
 # log in to Docker Hub
 # docker login
 $ cd ontop/client/docker/
 # `-C`: multi-stage build. slow, but safe
-# `-x`: push to Docker hub 
+# `-x`: compile for both amd64 and arm64, which entails pushing to Docker hub
 $ ./build-image.sh -C -x
 ```
-
-- Push a new image of [ontop/ontop](https://hub.docker.com/repository/docker/ontop/ontop) to Docker Hub
 
 ## Update the Ontop Website
 

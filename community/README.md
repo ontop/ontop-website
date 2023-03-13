@@ -14,7 +14,6 @@ The development of Ontop is guided by an international team (reverse lexicograph
 * [Roman Kontchakov](http://www.dcs.bbk.ac.uk/~roman/) (Birkbeck)
 * [Sarah Komla-Ebri](https://scholar.google.it/citations?user=SDaIlasAAAAJ&hl=en) (Ontopic)
 * [Julien Corman](https://scholar.google.it/citations?user=pT6E42UAAAAJ&hl=en) (Unibz)
-* [Francesco Corcoglioniti](https://scholar.google.com/citations?user=Nw7gPMEAAAAJ&hl=en) (Unibz)
 * [Benjamin Cogrel](https://github.com/bcogrel/) (Ontopic)
 * [Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Unibz, Ontopic)
 
