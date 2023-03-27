@@ -50,7 +50,7 @@ The Ontop mapping SQL parser only parses simple forms of SQL queries (without un
                 "added": [
                     {
                         "name": "uc2",
-                        "determinants": "\"ssn\""
+                        "determinants": ["\"ssn\""]
                     }
                 ]
             },
