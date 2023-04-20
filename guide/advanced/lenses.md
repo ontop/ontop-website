@@ -315,12 +315,6 @@ In addition, a `position` column can be included in the lens, providing a unique
 The flatten operation is only performed on the "outer-most" array layer. Multi-dimensional arrays will have their dimensionality reduced by 1.
 :::
 
-::: warning
-Due to various limitations in the language definitions, the FlattenLens is currently not supported for `DB2`, `Denodo`, and `H2`.
-
-Furthermore, for `Dremio` and `SQLServer`, we currently do not support the `position` argument in the lens.
-:::
-
 In addition to the [common fields](#common-fields), flatten lenses accept the following ones:
 ```json
 {
@@ -346,6 +340,27 @@ In addition to the [common fields](#common-fields), flatten lenses accept the fo
 | `columns.kept` | Array of Strings | The names of the columns from the base relation that should be included in the output.  |
 | `columns.new` | String | The name of the newly created column that should hold the elements of the flattened array.  |
 | `columns.position` | String | The name of the newly created column that should hold the index of each flattened element in its source list. If not provided, no position column will be included.  |
+
+Due to various limitations in the language definitions, the FlattenLens is currently not equally supported for all dialects. The table below lists, in detail, the level of support for each dialect. *"Flatten"* defines if the flatten lens is supported by the dialect, *"position"* defines if the `position` column can be provided, and *"Infer base type"* indicates if Ontop is able to infer the type of the flattened output column if the input is an array type. *"Array Type"* and *"JSON Type"* indicate if the flatten lens is supported over array-like types (`ARRAY`, `ARRAY<T>`, `LIST`, `T[]` etc.) and JSON-arrays (either as `JSON` type or as `VARCHAR`) respectively.
+
+| Dialect | Flatten | Position | Infer base type | Array Type | JSON Type |
+| ------------------ | --------- | ---------------------------------------------   | ------ | ------ | -------- |
+| AWS Athena | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+| AWS Redshift | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| BigQuery | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+| DB2 | ![NO][no] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| Denodo | ![NO][no] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| Dremio | ![YES][yes] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| DuckDB | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+| MariaDB | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![NO][no] | ![YES][yes] |
+| MS SQLServer | ![YES][yes] | ![NO][no]  | ![NO][no] | ![NO][no] | ![YES][yes] |
+| MySQL | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![NO][no] | ![YES][yes] |
+| Oracle | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![NO][no] | ![YES][yes] |
+| PostgreSQL | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![YES][yes] |
+| Presto | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+| Snowflake | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| SparkSQL | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![YES][yes] |
+| Trino | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
 
 
 ## Constraints
@@ -401,3 +416,7 @@ Useful for dealing with denormalized data, where unique constraints cannot be ap
 | `to`   | JSON Object | |
 | `to.relation` | Array of Strings | Name components of the target relation (with correct quoting) |
 | `to.columns` | Array of Strings | Target columns (with correct quoting). Same order as for the source columns |
+
+<!-- Images -->
+[yes]: ./img/check.png
+[no]: ./img/cross.png
