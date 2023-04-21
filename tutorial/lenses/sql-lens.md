@@ -1,8 +1,8 @@
 # SQL Lens
 
-SQL lenses are a special type of lens that can generate virtual views over any number of base relations through an arbitrary SQL query. While this allows for more flexibility, as any SQL functionality can be used by this lens, it obfuscates the inner workings to Ontop, preventing it from performing any meaningful inference and optimization.
+SQL lenses are a special type of lens that can generate virtual views over any number of base relations through an arbitrary SQL query. While this allows for more flexibility, as any SQL functionalities can be used by this lens, it obfuscates the inner workings towards Ontop, preventing it from performing any meaningful inference and optimization.
 
-One major use case for SQL lenses is to perform complex operations that are currently not supported by other ontop lenses. For this example, we will look at the table `art_exhibits`. This table has the following schema:
+One major use case for SQL lenses is to perform complex operations that are currently not supported by other Ontop lenses. For this example, we will look at the table `art_exhibits`. This table has the following schema:
 
 column | type |
 ----- | ------- |
@@ -11,7 +11,7 @@ name | string
 artist_name | string
 museum_id | integer
 
-We now want to gather more information on artists. Including how many exhibits they created and in how many museums their works appear. In SQL, this can be achieved easily by running aggregate functions on a `GROUP BY` query, but there is no corresponding lens for aggregate functions in Ontop. We therefore have to take advantage of the SQL lens.
+We now want to gather more information on artists. Including how many exhibits they created and in how many museums their works appear. In SQL, this can be achieved easily by running aggregate functions on a `GROUP BY` query, but there is no corresponding lens for aggregate functions in Ontop. We, therefore, have to take advantage of the SQL lens.
 
 This lens has the following structure:
 ```json
@@ -22,7 +22,7 @@ This lens has the following structure:
 }
 ```
 
-Here, the `query` field is a single SQL query that project all attributes that are of interest for us. In our example, we want to group over all artist names and count their number of exhibits and **distinct** museums. A corresponding SQL lens could look like this:
+Here, the `query` field is a single SQL query that projects all attributes that are of interest to us. In our example, we want to group all artists' names and count their number of exhibits and **distinct** museums. A corresponding SQL lens could look like this:
 
 ```json
 {
@@ -61,11 +61,11 @@ SELECT ?name ?exhibits ?museums WHERE {
 }
 ```
 
-If everything was done correctly, you should get a list of three artists with the number of their exhibit and the number of museums they are featured in.
+If everything was done correctly, you should get a list of three artists with the number of their exhibits and the number of museums they are featured in.
 
 ### Adding Unique Constraints
 
-Ontop cannot infer unqiue constraints from the expressions used in SQL lenses. However, as the user, it is clear to us that the field `artist_name` will be *unique*, as it is used by the `GROUP BY` clause. In such cases, explicity adding unique constraints is a useful feature. Similarly to how it was shown in the [basic lens tutorial](basic-lens.md), we can achieve this by adding an additional field to the lens:
+Ontop cannot infer unique constraints from the expressions used in SQL lenses. However, as the user, it is clear to us that the field `artist_name` will be *unique*, as it is used by the `GROUP BY` clause. In such cases, explicitly adding unique constraints is a useful feature. Similarly to how it was shown in the [basic lens tutorial](basic-lens.md), we can achieve this by adding an additional field to the lens:
 
 ```json
 {

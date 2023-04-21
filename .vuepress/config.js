@@ -215,9 +215,9 @@ function genTutorialSidebarConfig() {
                 'lenses/setup',
                 'lenses/basic-lens',
                 'lenses/join-lens',
-                'lenses/sql-lens',
                 'lenses/union-lens',
                 'lenses/flatten-lens',
+                'lenses/sql-lens',
             ]
         },
         {

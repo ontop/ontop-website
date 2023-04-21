@@ -7,9 +7,9 @@ We will go over all lenses currently supported by Ontop:
 
 1. [Basic Lens](basic-lens.md)
 2. [Join Lens](join-lens.md)
-3. [SQL Lens](sql-lens.md)
-4. [Union Lens](union-lens.md)
-5. [Flatten Lens](flatten-lens.md)
+3. [Union Lens](union-lens.md)
+4. [Flatten Lens](flatten-lens.md)
+5. [SQL Lens](sql-lens.md)
 
 ::: tip NOTE
 In this tutorial, we use a different database than in the previous guides. Before running any of the examples, please follow the [setup guide](setup).
