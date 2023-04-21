@@ -192,6 +192,8 @@ After doing the same for the `nature_exhibits` table, referencing the new extend
 }
 ```
 
+### Mapping 
+
 We can now extend the mapping file to also include artist names:
 
 ```obda
@@ -200,9 +202,8 @@ target		data:exhibit/{exhibit_id} a :Exhibit ; :name {name} ; :displayedIn data:
 source		SELECT exhibit_id, name, museum_id, exhibit_type, artist_name FROM lenses.all_exhibits;
 ```
 
-Now, running the same query from earlier, we will once again get all earlier results, in addition to all exhibits contained in the `art_exhibit` table.
+Now, running this slightly modified SPARQL query:
 
-On the other hand, running this slightly modified SPARQL query:
 
 ```SPARQL
 PREFIX : <http://example.org/museum_kg/>
@@ -214,7 +215,7 @@ SELECT ?name ?type ?artist WHERE {
 }
 ```
 
-will only return the entries of `art_exhibits`, as they are the only ones with a valid value for `:artistName`.
+we will once again get all earlier results, in addition to all exhibits contained in the `art_exhibit` table. While the earlier results will have the value `None` as their artist name, the `art_exhibits` entries will include the name of their artists.
 
 ---
 

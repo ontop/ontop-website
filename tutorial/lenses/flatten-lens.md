@@ -66,6 +66,9 @@ A possible `lenses.json` file for this task may look like this:
 ```
 
 As we just need to assign a title to a `:Worker` individual, the only column that has to be kept is `worker_id`.
+
+### Mapping
+
 Now, we can already define the mapping entries for the wanted properties:
 
 ```obda
