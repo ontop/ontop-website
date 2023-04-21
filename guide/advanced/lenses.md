@@ -7,11 +7,12 @@ Lenses are relational views defined at the level of Ontop and unknown to the und
 
 As database relations, lenses have a name which can be used in the source part of the mapping entries. They are specified in a separate file that can be provided to Ontop through a dedicated parameter (`--lenses` for the [CLI commands](/guide/cli) that support it, `ONTOP_LENSES_FILE` for the [Docker image](https://hub.docker.com/r/ontop/ontop)).
 
-At the moment, 4 types of lenses are available:
+At the moment, 5 types of lenses are available:
  1. [Basic lenses](#basiclens) (defined over one base relation)
  2. [Join lenses](#joinlens) (defined over multiple base relations)
  3. [SQL lenses](#sqllens) (defined from an arbitrary SQL query)
  4. [Union lenses](#unionlens) (defined as a union of multiple base relations)
+ 4. [Flatten lenses](#flattenlens) (defined as an unnest operation over one base relation)
 
 ::: warning Don't use lenses in complex source SQL queries
 The Ontop mapping SQL parser only parses simple forms of SQL queries (without unions, aggregations, limits, order by, etc.). Non-parsed queries are treated as black-box views, that is as strings that are injected into the final SQL queries sent to the database. If some lenses appear in these black-box views, the resulting SQL queries will be rejected by the database because they refer to relations it does not know.
@@ -302,6 +303,65 @@ In addition to the [common fields](#common-fields), union lenses accept the foll
 | `unionRelations` | String | The name of the column that should contain the base relation each entry originates from. If not provided, provenance information will not be included in the result.  |
 
 
+### `FlattenLens`
+
+*Flatten lenses will be supported starting with version 5.1.0*.
+
+A flatten lens is defined from one base (parent) relation that contains an array-like data structure in one of its fields. The array is flattened into multiple rows, where each row contains a single item from the flattened array in the `new` column. Columns of the base relation not included in the `kept` list will be discarded when flattening the array.
+
+In addition, a `position` column can be included in the lens, providing a unique index for each flattened row in its parent relation.
+
+::: tip NOTE
+The flatten operation is only performed on the "outer-most" array layer. Multi-dimensional arrays will have their dimensionality reduced by 1.
+:::
+
+In addition to the [common fields](#common-fields), flatten lenses accept the following ones:
+```json
+{
+    "flattenedColumn": {
+        "name": String,
+        "datatype": String
+    },
+    "columns": {
+        "kept": [String],
+        "new": String,
+        "position": String
+    },
+    "type": "FlattenLens"
+}
+```
+
+| Key                | Type      | Description                                     |
+| ------------------ | --------- | ---------------------------------------------   |
+| `flattenedColumn` | JSON Object | Identifies the column that is to be flattened.  |
+| `flattenedColumn.name` | String | The name of the column that is to be flattened.  |
+| `flattenedColumn.datatype` | String | The type of the column that is to be flattened.  |
+| `columns` | JSON Object | Defines the columns of the output relation.  |
+| `columns.kept` | Array of Strings | The names of the columns from the base relation that should be included in the output.  |
+| `columns.new` | String | The name of the newly created column that should hold the elements of the flattened array.  |
+| `columns.position` | String | The name of the newly created column that should hold the index of each flattened element in its source list. If not provided, no position column will be included.  |
+
+Due to various limitations in the language definitions, the FlattenLens is currently not equally supported for all dialects. The table below lists, in detail, the level of support for each dialect. *"Flatten"* defines if the flatten lens is supported by the dialect, *"position"* defines if the `position` column can be provided, and *"Infer base type"* indicates if Ontop is able to infer the type of the flattened output column if the input is an array type. *"Array Type"* and *"JSON Type"* indicate if the flatten lens is supported over array-like types (`ARRAY`, `ARRAY<T>`, `LIST`, `T[]` etc.) and JSON-arrays (either as `JSON` type or as `VARCHAR`) respectively.
+
+| Dialect | Flatten | Position | Infer base type | Array Type | JSON Type |
+| ------------------ | --------- | ---------------------------------------------   | ------ | ------ | -------- |
+| AWS Athena | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+| AWS Redshift | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| BigQuery | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+| DB2 | ![NO][no] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| Denodo | ![NO][no] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| Dremio | ![YES][yes] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| DuckDB | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+| MariaDB | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![NO][no] | ![YES][yes] |
+| MS SQLServer | ![YES][yes] | ![NO][no]  | ![NO][no] | ![NO][no] | ![YES][yes] |
+| MySQL | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![NO][no] | ![YES][yes] |
+| Oracle | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![NO][no] | ![YES][yes] |
+| PostgreSQL | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![YES][yes] |
+| Presto | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+| Snowflake | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| SparkSQL | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![YES][yes] |
+| Trino | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+
 
 ## Constraints
 
@@ -356,3 +416,7 @@ Useful for dealing with denormalized data, where unique constraints cannot be ap
 | `to`   | JSON Object | |
 | `to.relation` | Array of Strings | Name components of the target relation (with correct quoting) |
 | `to.columns` | Array of Strings | Target columns (with correct quoting). Same order as for the source columns |
+
+<!-- Images -->
+[yes]: ./img/check.png
+[no]: ./img/cross.png

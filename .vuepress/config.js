@@ -208,6 +208,19 @@ function genTutorialSidebarConfig() {
             ]
         },
         {
+            title: 'Lenses',
+            collapsable: false,
+            children: [
+                'lenses/',
+                'lenses/setup',
+                'lenses/basic-lens',
+                'lenses/join-lens',
+                'lenses/union-lens',
+                'lenses/flatten-lens',
+                'lenses/sql-lens',
+            ]
+        },
+        {
             title: 'Federation',
             collapsable: false,
             children: [
