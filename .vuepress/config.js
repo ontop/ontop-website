@@ -208,6 +208,16 @@ function genTutorialSidebarConfig() {
             ]
         },
         {
+            title: 'Federation',
+            collapsable: false,
+            children: [
+                'federation/',
+                'federation/denodo/',
+                'federation/dremio/',
+		'federation/teiid/'
+            ]
+        },
+        {
             title: 'Lenses',
             collapsable: false,
             children: [
@@ -218,16 +228,6 @@ function genTutorialSidebarConfig() {
                 'lenses/union-lens',
                 'lenses/flatten-lens',
                 'lenses/sql-lens',
-            ]
-        },
-        {
-            title: 'Federation',
-            collapsable: false,
-            children: [
-                'federation/',
-                'federation/denodo/',
-                'federation/dremio/',
-		'federation/teiid/'
             ]
         },
         {

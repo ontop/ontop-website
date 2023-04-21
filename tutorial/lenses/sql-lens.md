@@ -65,7 +65,7 @@ If everything was done correctly, you should get a list of three artists with th
 
 ### Adding Unique Constraints
 
-Ontop cannot infer unique constraints from the expressions used in SQL lenses. However, as the user, it is clear to us that the field `artist_name` will be *unique*, as it is used by the `GROUP BY` clause. In such cases, explicitly adding unique constraints is a useful feature. Similarly to how it was shown in the [basic lens tutorial](basic-lens.md), we can achieve this by adding an additional field to the lens:
+Ontop cannot infer unique constraints from the expressions used in SQL lenses. However, as the user, it is clear to us that the field `artist_name` will be *unique*, as it is used by the `GROUP BY` clause. In such cases, explicitly adding unique constraints is a useful feature. Similarly to how it was shown in the [basic lens section](basic-lens.md), we can achieve this by adding an additional field to the lens:
 
 ```json
 {
