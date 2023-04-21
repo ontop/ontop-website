@@ -2,9 +2,9 @@
 
 Flattening or unnesting an array is the process of transforming a nested array into an array of lower dimensionality, by "pulling" each nested entry into its "outer" entry. In databases, specifically, it represents a function that takes a column containing an array and transforms it into a table that has each of the *outer-most* elements as one of its rows.
 
-This is particularly useful for tables that have arrays in their columns that should be inspected more thoroughly.
+Flattening is need when we want to map values inside arrays.
 
-In Ontop, a fatten lens is a type of lens over a single base relation that takes as an input the column that should be flattened, the names of columns that should be retained after flattening, and the name of the column that should be added containing the flattened output. Additionally, the name for a *position* column can be passed to the lens. When flattening, the *position* column will hold the index of the current row's flattened element in the original array.
+In Ontop, a flatten lens is a type of lens over a single base relation that takes as an input the column that should be flattened, the names of columns that should be retained after flattening, and the name of the column that should be added containing the flattened output. Additionally, the name for a *position* column can be passed to the lens. When flattening, the *position* column will hold the index of the current row's flattened element in the original array.
 
 For this example, we will first look at the table `workers`. This table has the following schema:
 
