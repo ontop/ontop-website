@@ -4,7 +4,7 @@ Basic lenses can be used on one base relation, over which we can apply a filter,
 
 ## Projection
 
-For this section, we first look at the table `museums` from the tutorial database. This table has the following schema:
+For this section, we first look at the table `museums` from the DuckDB database. This table has the following schema:
 
 column | type |
 ----- | ------- |
@@ -188,8 +188,8 @@ SELECT ?name WHERE {
 This should result in a list of *3* manager names.
 
 :::warning
-All examples in the lenses tutorial are compatible with each other. However, all lenses referenced in the mapping file need to be included in `lenses.json`. If you wish to continuously extend the mapping file throughout the tutorial,
-you will also need to keep all previous lenses in the `relations` list of the lenses file, otherwise, Ontop will throw an error. Alternatively, you can always start each of the tutorials from a new mapping template file. This way, only the lenses of the current exercise have to be included.
+All examples in the lens sections are compatible with each other. However, all lenses referenced in the mapping file need to be included in `lenses.json`. If you wish to continuously extend the mapping file throughout the tutorial,
+you will also need to keep all previous lenses in the `relations` list of the lenses file, otherwise, Ontop will throw an error. Alternatively, you can always start each of the sections from a new mapping template file. This way, only the lenses of the current exercise have to be included.
 :::
 
 As an extension to this exercise, you can now try to define similar lenses and mappings for the `"guide"` and `"guard"` roles, assigning them to the classes `:Guide` and `:Guard`, respectively.
@@ -202,7 +202,7 @@ Generally, Ontop can infer many constraints from the base relation used by a len
 
 In many instances, however, expert knowledge can be used to define further constraints for lenses. A full list of all supported constraints and how they can be defined can be found in the [documentation of lenses](../../guide/advanced/lenses.md).
 
-For this tutorial, we want to use our expert knowledge of the table `workers` to provide the following constraints:
+For this section, we want to use our expert knowledge of the table `workers` to provide the following constraints:
 1. The name of a worker is *unique* and *not null*.
 2. The role of a worker is *not null*
 3. There is a functional dependency from *role* to *access_level*.

@@ -12,7 +12,7 @@ This documentation is for Ontop 3.0 and more recent versions.
 For earlier versions, please refer to [our previous Wiki](https://github.com/ontop/ontop/wiki).
 
 Most recent version:
-* Stable:  Ontop 5.0.1, released on January 29, 2023.
+* Stable:  Ontop 5.0.2, released on March 9, 2023.
 
 See [release notes](/guide/releases) for more details.
 
@@ -26,8 +26,8 @@ Main features
 * Supports [the majority of SPARQL 1.1 features](/guide/compliance#sparql-1-1), including the main SPARQL aggregation functions (since 4.0-beta-1) and [GeoSPARQL functions](/guide/compliance#geosparql-1-0) (since 4.1.0)
 * Can be deployed as [a SPARQL endpoint](/guide/cli#ontop-endpoint) and as [a predefined query endpoint](/guide/advanced/predefined) (since 4.1.0)
 * Produces efficient SQL queries by applying many optimizations
-* Supports the main database systems: PostgreSQL, MySQL, MariaDB (since 5.0.0), SQL Server, Oracle, DB2 and Snowflake (since 5.0.0)
-* Supports database federators such as Denodo (beta), Dremio (since 4.1.0), Teiid (since 4.1.1), and Apache Spark / Databricks (since 4.2.0)
+* Supports the main database systems: PostgreSQL, MySQL, MariaDB (since 5.0.0), SQL Server, Oracle, DB2, Snowflake (since 5.0.0), Google BigQuery (since 5.0.2), AWS Redshift (since 5.0.2) and DuckDB (since 5.0.2).
+* Supports database federators such as Denodo (beta), Dremio (since 4.1.0), Teiid (since 4.1.1), Apache Spark (since 4.2.0) / Databricks (since 5.0.0) and Trino / PrestoDB / AWS Athena (since 5.0.2).
 * Supports [lenses](/guide/advanced/lenses) specified outside the data sources (since 4.2.0)
 * Can [materialize](/guide/cli#ontop-materialize) virtual graphs into RDF files
 * Provides a plugin for editing and testing mappings in the [Protégé ontology editor](https://protege.stanford.edu/)

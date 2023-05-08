@@ -1,12 +1,12 @@
 # Research team
 
-Ontop is a project initiated by Diego Calvanese and Mariano Rodriguez-Muro in 2009 in [the KRDB research centre for Knowledge and Data](https://www.inf.unibz.it/krdb/) at [the Free University of Bolzano](https://www.unibz.it/en/faculties/computer-science/). 
+Ontop is a project initiated by Diego Calvanese and Mariano Rodriguez-Muro in 2009 in [the KRDB research centre for Knowledge and Data](https://www.inf.unibz.it/krdb/) at [the Free University of Bolzano](https://www.unibz.it/en/faculties/computer-science/).
 
 A decade after, Ontop remains very active, both from a research and a software development point of view.
 
 ## Researchers
 
-Here we list the people who has been involved in the research side of the Ontop project. 
+Here we list the people who has been involved in the research side of the Ontop project.
 For the development side, see [the community page](/community).
 
 ### At the Free University of Bozen-Bolzano (Unibz)
@@ -16,7 +16,6 @@ For the development side, see [the community page](/community).
 * Dr. Julien Corman
 * Dr. Linfang Ding
 * Dr. Davide Lanti
-* Dr. Francesco Corcoglioniti
 
 ### International collaborations
 
@@ -42,7 +41,7 @@ The development and the research around Ontop over the years have been mainly fu
 * Thinking ONtologiES (TONES), EU FET project
 * [Optique](http://optique-project.eu/) (Scalable End-User Access to Big Data) FP7 project
 * Ontology-based Data Access to NoSQL Database (OBDAM), Unibz project
-* Ontology-based analysis of temporal and streaming data (OBATS), Unibz project 
+* Ontology-based analysis of temporal and streaming data (OBATS), Unibz project
 
 ### Current projects
 * [INODE](http://www.inode-project.eu/) (data management infrastructures), H2020 EU project
