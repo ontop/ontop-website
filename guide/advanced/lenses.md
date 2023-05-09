@@ -51,7 +51,7 @@ The Ontop mapping SQL parser only parses simple forms of SQL queries (without un
                 "added": [
                     {
                         "name": "uc2",
-                        "determinants": "\"ssn\""
+                        "determinants": ["\"ssn\""]
                     }
                 ]
             },
@@ -349,6 +349,7 @@ Due to various limitations in the language definitions, the FlattenLens is curre
 | AWS Redshift | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![YES][yes] | ![NO][no] |
 | BigQuery | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
 | DB2 | ![NO][no] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
+| Databricks | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![YES][yes] |
 | Denodo | ![NO][no] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
 | Dremio | ![YES][yes] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
 | DuckDB | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
