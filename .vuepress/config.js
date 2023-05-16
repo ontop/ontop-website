@@ -110,6 +110,31 @@ function genGuideSidebarConfig() {
         	]
           },
         {
+            title: 'Supported Databases',
+            collapsable: true,
+            children: [
+                'databases/generic.md',
+                'databases/athena.md',
+                'databases/redshift.md',
+                'databases/databricks.md',
+                'databases/db2.md',
+                'databases/denodo.md',
+                'databases/dremio.md',
+                'databases/duckdb.md',
+                'databases/bigquery.md',
+                'databases/h2.md',
+                'databases/mariadb.md',
+                'databases/mssql.md',
+                'databases/mysql.md',
+                'databases/oracle.md',
+                'databases/postgres.md',
+                'databases/presto.md',
+                'databases/snowflake.md',
+                'databases/spark.md',
+                'databases/trino.md',
+            ]
+        },
+        {
             title: 'Troubleshooting',
             collapsable: false,
             children: [
@@ -123,7 +148,7 @@ function genGuideSidebarConfig() {
                 'glossary',
                 'releases'
             ]
-        }
+        },
     ]
 }
 
