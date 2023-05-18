@@ -5,7 +5,6 @@ Through the [BigQuery](https://cloud.google.com/bigquery) connector, Ontop is ab
 
 ## Limitations & Exceptions
 
-- Authentication credentials of any type for a Google BigQuery database.
 - String literals have to be encased in _single quotes_ (`'`). Double quote string literals (`"`) are not supported.
 - The position counter in the [Flatten Lens](../guide/advanced/lenses.md#flattenlens) starts counting at 0 instead of 1 for BigQuery.
 - Accessing struct fields with the "dot operator" is not supported (see below).
