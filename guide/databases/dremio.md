@@ -5,7 +5,11 @@ Ontop can connect to normal Dremio instances, as well as Dremio Cloud databases.
 
 ## Limitations & Exceptions
 
-- The extraction of integrity constraints from Dremio is not supported. Certain optimizations can, therefore, not be performed.
+:::warning
+Dremio does not provide information about integrity constraints. Please provide this information manually in order to avoid very inefficient queries. 
+We recommend using [lenses](/guide/advanced/lenses) for this purpose.
+:::
+
 - The `position` argument for the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens) cannot be used with Dremio.
 - When using a Dremio version below 21.0.0, some larger queries that employ `UNION`s may fail. This can be solved by adding `ontop.maxNbChildrenLiftingDBFS=0` to the properties
 
