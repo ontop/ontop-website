@@ -21,9 +21,9 @@ jdbc.driver = oracle.jdbc.OracleDriver
 ## Nested Type Support
 
 Ontop does not implement explicit compatibility with nested datatypes in Oracle.
-However, Ontop allows the usage of the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens) over string columns that contain JSON-encoded arrays. The output type of the flattened result column cannot be inferred. 
+However, Ontop allows the usage of the [flatten lens](/guide/advanced/lenses#flattenlens) over string columns that contain JSON-encoded arrays. The output type of the flattened result column cannot be inferred. 
 
-To use the _Flatten Lens_ with Oracle array types, they must first be converted to JSON strings.
+To use the flatten lens with Oracle array types, they must first be converted to JSON strings.
 
 In case the flattened column is still a nested structure after the flatten operation is performed (e.g. for arrays of objects), [Oracle's JSON functions](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/query-json-data.html#GUID-119E5069-77F2-45DC-B6F0-A1B312945590) can be used to further work with them.
 

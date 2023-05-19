@@ -4,7 +4,11 @@ Through the [Trino](https://trino.io) connector, Ontop is able to construct VKGs
 
 ## Limitations & Exceptions
 
-- The extraction of integrity constraints from Trino is not supported. Certain optimizations can, therefore, not be performed.
+:::warning
+Trino does not provide information about integrity constraints. Make sure to provide this information in order to avoid very inefficient queries. 
+We recommend using [lenses](/guide/advanced/lenses) for this purpose.
+:::
+
 - Accessing struct fields with the "dot operator" is not supported (see below).
 
 ## Database Connection
@@ -22,11 +26,11 @@ In case Trino is set up without authentication, the `jdbc.user` and `jdbc.passwo
 
 ## Nested Type Support
 
-Ontop implements explicit compatibility with the Trino array type `array(t)`. When used with the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens), it is able to automatically infer the type of the result column.
+Ontop implements explicit compatibility with the Trino array type `array(t)`. When used with the [flatten lens](/guide/advanced/lenses#flattenlens), it is able to automatically infer the type of the result column.
 
-The _Flatten Lens_ cannot be used on arrays stored as JSON-encoded columns in the database. For such use cases, the column first has to be converted to an array type.
+The flatten lens cannot be used on arrays stored as JSON-encoded columns in the database. For such use cases, the column first has to be converted to an array type.
 
-### Struct Access:
+### Struct Access
  Individual `MAP` objects can be accessed by SQL expressions in the dialect's default way:
 ```
 SELECT my_struct['my_attribute'] FROM ...

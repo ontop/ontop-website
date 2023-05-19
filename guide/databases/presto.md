@@ -4,7 +4,11 @@ Through the [Presto](https://prestodb.io) connector, Ontop is able to construct 
 
 ## Limitations & Exceptions
 
-- The extraction of integrity constraints from Presto is not supported. Certain optimizations can, therefore, not be performed.
+:::warning
+Presto does not provide information about integrity constraints. Make sure to provide this information in order to avoid very inefficient queries. 
+We recommend using [lenses](/guide/advanced/lenses) for this purpose.
+:::
+
 - Accessing struct fields with the "dot operator" is not supported (see below).
 
 ## Database Connection
@@ -22,11 +26,11 @@ In case Presto is set up without authentication, the `jdbc.user` and `jdbc.passw
 
 ## Nested Type Support
 
-Ontop implements explicit compatibility with the Presto array type `array(t)`. When used with the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens), it is able to automatically infer the type of the result column.
+Ontop implements explicit compatibility with the Presto array type `array(t)`. When used with the [flatten lens](/guide/advanced/lenses#flattenlens), it is able to automatically infer the type of the result column.
 
-The _Flatten Lens_ cannot be used on arrays stored as JSON-encoded columns in the database. For such use cases, the column first has to be converted to an array type.
+The flatten lens cannot be used on arrays stored as JSON-encoded columns in the database. For such use cases, the column first has to be converted to an array type.
 
-### Struct Access:
+### Struct Access
  In Presto, individual `ROW` objects can be accessed by SQL expressions using the "dot operator" on the `ROW` column. In Ontop, this feature is not currently supported. 
 
 Should any of their elements still be required, then a workaround can be performed by first transforming the struct into a JSON object and then accessing it using JSON functions. 

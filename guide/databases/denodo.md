@@ -5,7 +5,7 @@ Through the [Denodo](https://www.denodo.com/en) connector, Ontop is able to cons
 ## Limitations & Exceptions
 
 - SPARQL _UUID_ and _hash_ functions are not supported for Denodo.
-- Nested data types and the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens) are not supported for Denodo.
+- Nested data types and the [flatten lens](/guide/advanced/lenses#flattenlens) are not supported for Denodo.
 
 ## Database Connection
 
@@ -20,4 +20,4 @@ jdbc.driver = com.denodo.vdp.jdbc.Driver
 
 ## Nested Type Support
 
-Nested data types and the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens) are not supported for Denodo.
+Nested data types and the [flatten lens](/guide/advanced/lenses#flattenlens) are not supported for Denodo.

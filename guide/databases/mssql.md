@@ -6,7 +6,7 @@ Through the [MS SQLServer](https://www.microsoft.com/en-us/sql-server) connector
 ## Limitations & Exceptions
 
 - RegEx SPARQL functions are not supported.
-- The `position` argument for the [Flatten Lens](../guide/advanced/lenses.md#flattenlens) cannot be used with SQLServer.
+- The `position` argument for the [Flatten Lens](/guide/advanced/lenses#flattenlens) cannot be used with SQLServer.
 
 ## Database Connection
 
@@ -21,10 +21,10 @@ jdbc.driver = com.microsoft.sqlserver.jdbc.SQLServerDriver
 
 ## Nested Type Support
 
-Nested data types are not supported by SQLServer. However, Ontop allows the usage of the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens) over string columns that contain JSON-encoded arrays. The output type of the flattened result column cannot be inferred. 
+Nested data types are not supported by SQLServer. However, Ontop allows the usage of the [flatten lens](/guide/advanced/lenses#flattenlens) over string columns that contain JSON-encoded arrays. The output type of the flattened result column cannot be inferred. 
 
 :::warning
-The `position` argument for _Flatten Lenses_ cannot be used with SQLServer.
+The `position` argument for flatten lenses cannot be used with SQLServer.
 :::
 
 In case the flattened column is still a nested structure after the flatten operation is performed (e.g. for arrays of objects), [SQLServer's JSON functions](https://learn.microsoft.com/en-us/sql/t-sql/functions/json-functions-transact-sql?view=sql-server-ver16) can be used to further work with them.

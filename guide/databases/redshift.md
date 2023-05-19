@@ -4,7 +4,11 @@ Through the [Redshift](https://aws.amazon.com/redshift/) connector, Ontop is abl
 
 ## Limitations & Exceptions
 
-- The extraction of integrity constraints from Redshift is not supported. Certain optimizations can, therefore, not be performed.
+:::warning
+AWS Redshift does not provide information about integrity constraints. Make sure to provide this information in order to avoid very inefficient queries. 
+We recommend using [lenses](/guide/advanced/lenses) for this purpose.
+:::
+
 - The Simba Redshift JDBC does not support the use of default databases when connecting to Redshift.
 - Accessing `SUPER` object fields with the "dot operator" is not supported (see below).
 
@@ -27,9 +31,9 @@ The AWS Redshift JDBC supports different types of authentication methods. The ab
 
 Ontop implements explicit compatibility with the Redshift type `SUPER`. 
 
-This type can be used with the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens). However, Ontop is not able to automatically infer the type of the result column.
+This type can be used with the [flatten lens](/guide/advanced/lenses#flattenlens). However, Ontop is not able to automatically infer the type of the result column.
 
-### Struct Access:
+### Struct Access
  In Redshift, individual `SUPER` struct objects can be accessed by SQL expressions using the "dot operator" on the `SUPER` column. In Ontop, this feature is not currently supported. 
 
 Should any of their elements still be required, then a workaround can be performed by first transforming the struct into a JSON object and then accessing it using JSON functions. 
