@@ -25,6 +25,9 @@ The Ontop mapping SQL parser only parses simple forms of SQL queries (without un
    - Non-null constraints (columns that do no include null values)
    - IRI-safe constraints (columns on which the R2RML safe encoding has no effect). *Since 5.0.2*.
 
+::: tip Tutorial
+To see lenses used in practice, check [the tutorial](/tutorial/lenses/)
+:::
 
 ## Example
 
