@@ -1,4 +1,4 @@
-# Generic JDBC
+# Generic JDBC (not recommended)
 
 ::: warning
 ***Don't rely on generic JDBC support. It isn't sufficient for any data source.***

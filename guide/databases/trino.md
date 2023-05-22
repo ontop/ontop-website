@@ -1,4 +1,5 @@
 # Trino
+*Supported since 5.0.2.*
 
 Through the [Trino](https://trino.io) connector, Ontop is able to construct VKGs on Trino databases.
 

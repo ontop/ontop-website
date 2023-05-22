@@ -1,4 +1,5 @@
 # AWS Redshift
+*Supported since 5.0.2.*
 
 Through the [Redshift](https://aws.amazon.com/redshift/) connector, Ontop is able to construct VKGs on AWS Redshift databases.
 

@@ -282,7 +282,7 @@ In addition to the [common fields](#common-fields), SQL lenses accept the follow
 
 ### `UnionLens`
 
-*Union lenses will be supported starting with version 5.1.0*.
+*Union lenses will be supported starting with version 5.1.0 (beta).*
 
 
 A union lens is defined from multiple base relations that share attributes with exactly the same names and types. The relations will be merged with each other, concatenating their contents.
@@ -308,7 +308,7 @@ In addition to the [common fields](#common-fields), union lenses accept the foll
 
 ### `FlattenLens`
 
-*Flatten lenses will be supported starting with version 5.1.0*.
+*Flatten lenses will be supported starting with version 5.1.0 (beta).*
 
 A flatten lens is defined from one base (parent) relation that contains an array-like data structure in one of its fields. The array is flattened into multiple rows, where each row contains a single item from the flattened array in the `new` column. Columns of the base relation not included in the `kept` list will be discarded when flattening the array.
 

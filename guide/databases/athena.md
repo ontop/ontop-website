@@ -1,4 +1,5 @@
 # AWS Athena
+*Supported since 5.0.2.*
 
 Through the [Athena](https://aws.amazon.com/athena/) connector, Ontop is able to construct VKGs on AWS Athena databases using the [Simba Athena JDBC Driver](https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html).
 

@@ -1,4 +1,5 @@
 # DuckDB
+*Supported since 5.0.2.*
 
 Through the [DuckDB](https://duckdb.org) connector, Ontop is able to construct VKGs on DuckDB database files.
 

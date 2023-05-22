@@ -1,5 +1,5 @@
 # Flatten Lens
-*Flatten lenses will be supported starting with version 5.1.0.*
+*Flatten lenses will be supported starting with version 5.1.0 (beta).*
 
 Flattening or unnesting an array is the process of transforming a nested array into an array of lower dimensionality, by "pulling" each nested entry into its "outer" entry. In databases, specifically, it represents a function that takes a column containing an array and transforms it into a table that has each of the *outer-most* elements as one of its rows.
 

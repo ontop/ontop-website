@@ -1,4 +1,5 @@
 # SparkSQL
+*Supported since 4.2.0.*
 
 Through the [SparkSQL](https://spark.apache.org/) connector, Ontop is able to construct VKGs on an external Spark database, using the SparkSQL JDBC.
 

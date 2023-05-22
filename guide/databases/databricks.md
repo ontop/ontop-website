@@ -1,4 +1,5 @@
 # Databricks
+*Supported since 5.0.0.*
 
 Through the [Databricks](https://spark.apache.org/) SparkSQL connector, Ontop is able to construct VKGs on a Databricks cloud database. All main Ontop features are supported for Databricks.
 

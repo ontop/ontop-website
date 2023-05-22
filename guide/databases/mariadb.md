@@ -1,4 +1,5 @@
 # MariaDB
+*Supported since 5.0.0.*
 
 Through the [MariaDB](https://mariadb.com) connector, Ontop is able to construct VKGs on MariaDB databases.
 

@@ -1,4 +1,5 @@
 # Dremio
+*Supported since 4.1.0.*
 
 Through the [Dremio](https://dremio.com) connector, Ontop is able to construct VKGs on Dremio databases.
 Ontop can connect to normal Dremio instances, as well as Dremio Cloud databases.

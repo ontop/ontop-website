@@ -1,4 +1,5 @@
 # Snowflake
+*Supported since 5.0.0.*
 
 Through the [Snowflake](https://snowflake.com) connector, Ontop is able to construct VKGs on cloud-based Snowflake databases.
 

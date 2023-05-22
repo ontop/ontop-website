@@ -1,4 +1,5 @@
 # Google BigQuery
+*Supported since 5.0.2.*
 
 Through the [BigQuery](https://cloud.google.com/bigquery) connector, Ontop is able to construct VKGs on cloud-based Google BigQuery databases using the [Simba BigQuery JDBC Driver](https://cloud.google.com/bigquery/docs/reference/odbc-jdbc-drivers).
 

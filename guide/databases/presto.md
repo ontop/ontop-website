@@ -1,4 +1,5 @@
 # Presto
+*Supported since 5.0.2.*
 
 Through the [Presto](https://prestodb.io) connector, Ontop is able to construct VKGs on Presto databases.
 
