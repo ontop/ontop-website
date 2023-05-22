@@ -1,6 +1,6 @@
-# MS SQLServer
+# MS SQL Server
 
-Through the [MS SQLServer](https://www.microsoft.com/en-us/sql-server) connector, Ontop is able to construct VKGs on SQLServer databases.
+Through the [MS SQL Server](https://www.microsoft.com/en-us/sql-server) connector, Ontop is able to construct VKGs on SQL Server databases.
 
 
 ## Limitations & Exceptions
