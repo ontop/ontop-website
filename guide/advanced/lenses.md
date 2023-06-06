@@ -22,8 +22,8 @@ The Ontop mapping SQL parser only parses simple forms of SQL queries (without un
    - [Unique constraints](#uniqueconstraint)
    - [Other functional dependencies](#otherfunctionaldependency)
    - [Foreign keys](#foreignkey)
-   - Non-null constraints (columns that do no include null values)
-   - IRI-safe constraints (columns on which the R2RML safe encoding has no effect). *Since 5.0.2*.
+   - [Non-null constraints](#nonnullconstraint) (columns that do no include null values)
+   - [IRI-safe constraints](#irisafeconstraint) (columns on which the R2RML safe encoding has no effect). *Since 5.0.2*.
 
 
 ## Example
@@ -417,6 +417,31 @@ Useful for dealing with denormalized data, where unique constraints cannot be ap
 | `to`   | JSON Object | |
 | `to.relation` | Array of Strings | Name components of the target relation (with correct quoting) |
 | `to.columns` | Array of Strings | Target columns (with correct quoting). Same order as for the source columns |
+
+### `NonNullConstraint`
+
+```json
+{
+    "added": [String]
+}
+```
+
+| Key                | Type      | Description                                     |
+| ------------------ | --------- | ---------------------------------------------   |
+| `added` | Array of Strings | List of names of non-nullable columns. One String per column|
+
+### `IRISafeConstraint`
+
+```json
+{
+    "added": [String]
+}
+```
+
+| Key                | Type      | Description                                     |
+| ------------------ | --------- | ---------------------------------------------   |
+| `added` | Array of Strings | List of names of IRI-safe columns. One String per column |
+
 
 <!-- Images -->
 [yes]: ./img/check.png
