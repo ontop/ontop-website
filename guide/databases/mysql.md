@@ -20,7 +20,7 @@ jdbc.driver = com.mysql.cj.jdbc.Driver
 
 ## Nested Type Support
 
-Ontop implements explicit compatibility with the MySQL type `JSON` which can be used with the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens). However, it cannot infer the type of the flattened result column.
+Ontop implements explicit compatibility with the MySQL type `JSON` which can be used with the [flatten lens](/guide/advanced/lenses#flattenlens). However, it cannot infer the type of the flattened result column.
 
 In case the flattened column is still a nested structure after the flatten operation is performed (e.g. for arrays of objects), [MySQL's JSON functions](https://dev.mysql.com/doc/refman/8.0/en/json-functions.html) can be used to further work with them.
 

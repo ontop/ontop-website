@@ -1,6 +1,7 @@
 # Union Lens
+*Union lenses will be supported starting with version 5.1.0 (beta).*
 
-Unions lenses can be used to concatenate multiple relations with the same schema into one. Additionally, a *provenance* field can be added to each row, determining the source relation the row originates from.
+Union lenses can be used to concatenate multiple relations with the same schema into one. Additionally, a *provenance* field can be added to each row, determining the source relation the row originates from.
 
 For this example, we will look at the tables `nature_exhibits`, `historical_exhibits` and `art_exhibits` from the DuckDB database. We want to combine them into a single relation containing all exhibits.
 

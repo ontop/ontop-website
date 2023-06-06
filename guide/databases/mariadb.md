@@ -1,4 +1,5 @@
 # MariaDB
+*Supported since 5.0.0.*
 
 Through the [MariaDB](https://mariadb.com) connector, Ontop is able to construct VKGs on MariaDB databases.
 
@@ -19,6 +20,6 @@ jdbc.driver = org.mariadb.jdbc.Driver
 
 ## Nested Type Support
 
-Ontop implements explicit compatibility with the MariaDB type `JSON` which can be used with the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens). However, it cannot infer the type of the flattened result column.
+Ontop implements explicit compatibility with the MariaDB type `JSON` which can be used with the [flatten lens](/guide/advanced/lenses#flattenlens). However, it cannot infer the type of the flattened result column.
 
 In case the flattened column is still a nested structure after the flatten operation is performed (e.g. for arrays of objects), [MariaDB's JSON functions](https://mariadb.com/kb/en/json-functions/) can be used to further work with them.

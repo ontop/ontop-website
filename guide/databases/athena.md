@@ -1,10 +1,15 @@
 # AWS Athena
+*Supported since 5.0.2.*
 
 Through the [Athena](https://aws.amazon.com/athena/) connector, Ontop is able to construct VKGs on AWS Athena databases using the [Simba Athena JDBC Driver](https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html).
 
 ## Limitations & Exceptions
 
-- The extraction of integrity constraints from Athena is not supported. Certain optimizations can, therefore, not be performed.
+:::warning
+Athena does not provide information about integrity constraints. Make sure to provide this information in order to avoid very inefficient queries. 
+We recommend using [lenses](/guide/advanced/lenses) for this purpose.
+:::
+
 - The Simba Athena JDBC does not support the use of default databases when connecting to Athena.
 - Accessing object fields with the "dot operator" is not supported (see below).
 
@@ -21,11 +26,11 @@ jdbc.driver = com.simba.athena.jdbc.Driver
 
 ## Nested Type Support
 
-Ontop implements explicit compatibility with the Athena array type `ARRAY<T>`. When used with the [_Flatten Lens_](../guide/advanced/lenses.md#flattenlens), it is able to automatically infer the type of the result column.
+Ontop implements explicit compatibility with the Athena array type `ARRAY<T>`. When used with the [flatten lens](/guide/advanced/lenses#flattenlens), it is able to automatically infer the type of the result column.
 
-The _Flatten Lens_ cannot be used on arrays stored as JSON-encoded columns in the database. For such use cases, the column first has to be converted to an array type.
+The flatten lens cannot be used on arrays stored as JSON-encoded columns in the database. For such use cases, the column first has to be converted to an array type.
 
-### Struct Access:
+### Struct Access
  Individual `MAP` objects can be accessed by SQL expressions in the dialect's default way:
 ```
 SELECT my_struct['my_attribute'] FROM ...

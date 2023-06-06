@@ -110,7 +110,7 @@ function genGuideSidebarConfig() {
         	]
           },
         {
-            title: 'Supported Databases',
+            title: 'Data sources',
             collapsable: true,
             children: [
                 'databases/generic.md',
