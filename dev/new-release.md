@@ -28,7 +28,7 @@ $ ./mvnw release:clean
 
 # Preparing the release will sign artifacts (GPG key needed), create the new tag in git and automatically push to github.
 # When 100% sure, you can skip the test by `-Darguments="-DskipTests"`
-$ ./mvnw  --batch-mode release:prepare
+$ ./mvnw release:prepare
 
 # stage the release
 $ ./mvnw release:perform
