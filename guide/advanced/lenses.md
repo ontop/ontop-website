@@ -22,8 +22,8 @@ The Ontop mapping SQL parser only parses simple forms of SQL queries (without un
    - [Unique constraints](#uniqueconstraint)
    - [Other functional dependencies](#otherfunctionaldependency)
    - [Foreign keys](#foreignkey)
-   - Non-null constraints (columns that do no include null values)
-   - IRI-safe constraints (columns on which the R2RML safe encoding has no effect). *Since 5.0.2*.
+   - [Non-null constraints](#nonnullconstraint) (columns that do no include null values)
+   - [IRI-safe constraints](#irisafeconstraint) (columns on which the R2RML safe encoding has no effect). *Since 5.0.2*.
 
 ::: tip Tutorial
 To see lenses used in practice, check [the tutorial](/tutorial/lenses/)
@@ -349,6 +349,7 @@ Due to various limitations in the language definitions, the FlattenLens is curre
 | Dialect | Flatten | Position | Infer base type | Array Type | JSON Type |
 | ------------------ | --------- | ---------------------------------------------   | ------ | ------ | -------- |
 | AWS Athena | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+| AWS DynamoDB | ![NO][no] | ![NO][no]  | ![NO][no] | ![NO][no] | ![NO][no] |
 | AWS Redshift | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![YES][yes] | ![NO][no] |
 | BigQuery | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
 | DB2 | ![NO][no] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
@@ -420,6 +421,31 @@ Useful for dealing with denormalized data, where unique constraints cannot be ap
 | `to`   | JSON Object | |
 | `to.relation` | Array of Strings | Name components of the target relation (with correct quoting) |
 | `to.columns` | Array of Strings | Target columns (with correct quoting). Same order as for the source columns |
+
+### `NonNullConstraint`
+
+```json
+{
+    "added": [String]
+}
+```
+
+| Key                | Type      | Description                                     |
+| ------------------ | --------- | ---------------------------------------------   |
+| `added` | Array of Strings | List of names of non-nullable columns. One String per column|
+
+### `IRISafeConstraint`
+
+```json
+{
+    "added": [String]
+}
+```
+
+| Key                | Type      | Description                                     |
+| ------------------ | --------- | ---------------------------------------------   |
+| `added` | Array of Strings | List of names of IRI-safe columns. One String per column |
+
 
 <!-- Images -->
 [yes]: ./img/check.png
