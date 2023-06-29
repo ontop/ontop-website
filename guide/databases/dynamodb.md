@@ -1,5 +1,5 @@
 # AWS DynamoDB
-*Supported since 5.1.0.*
+*Supported (beta) since 5.1.0.*
 
 Through the [DynamoDB](https://www.amazonaws.cn/en/dynamodb/) connector, Ontop is able to construct VKGs on AWS DynamoDB tables using the [CData JDBC Driver for Amazon DynamoDB](https://www.cdata.com/drivers/dynamodb/jdbc/).
 
