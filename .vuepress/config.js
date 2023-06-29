@@ -115,6 +115,7 @@ function genGuideSidebarConfig() {
             children: [
                 'databases/generic.md',
                 'databases/athena.md',
+                'databases/dynamodb.md',
                 'databases/redshift.md',
                 'databases/databricks.md',
                 'databases/db2.md',

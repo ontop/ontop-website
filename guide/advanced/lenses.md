@@ -349,6 +349,7 @@ Due to various limitations in the language definitions, the FlattenLens is curre
 | Dialect | Flatten | Position | Infer base type | Array Type | JSON Type |
 | ------------------ | --------- | ---------------------------------------------   | ------ | ------ | -------- |
 | AWS Athena | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
+| AWS DynamoDB | ![NO][no] | ![NO][no]  | ![NO][no] | ![NO][no] | ![NO][no] |
 | AWS Redshift | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![YES][yes] | ![NO][no] |
 | BigQuery | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
 | DB2 | ![NO][no] | ![NO][no]  | ![NO][no] | ![YES][yes] | ![NO][no] |
