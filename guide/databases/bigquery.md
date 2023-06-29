@@ -15,7 +15,6 @@ We recommend using [lenses](/guide/advanced/lenses) for this purpose.
 - The position counter in the [flatten lens](/guide/advanced/lenses#flattenlens) starts counting at 0 instead of 1 for BigQuery.
 - Accessing struct fields with the "dot operator" is not supported (see below).
 - In BigQuery, columns of the type `ARRAY<ARRAY<T>>` are not supported. Use `ARRAY<STRUCT<ARRAY<T>>>` instead.
-- Fields taken from structs may cause errors in the presence of `DISTINCT`, as BigQuery does not support `DISTINCT` over `STRUCT`.
 
 ## Database Connection
 
