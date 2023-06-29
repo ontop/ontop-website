@@ -24,13 +24,9 @@ You can send us the generated log file from Protégé starting from *Window -> S
 #### Enable Command Line Interface log
 Go to the folder *log* and modify the line of the *logback.xml* file from `<root Level="ERROR">` to `<root Level="debug">`.
 
-#### Enable RDF4J log
-It is possible to see the log of the RDF4 Workbench by going to the data directory [Rdf4j_DATA]. 
-RDF4J Server stores by default its data in a directory *%APPDATA%\Rdf4j* (on Windows),
-*\$HOME/.rdf4j* (on Linux), or *$HOME/Library/Application Support/Rdf4j* (on Mac OSX).
-Change the log to `DEBUG` in */OpenRDF Sesame/conf/logback.xml*. 
-Modify the line of the *logback.xml* file from `<root Level="info">` to `<root Level="debug">`.
-After running the test, get the log file from */Rdf4j/logs*.
+#### Enable logging in the Docker image
+Define the environment variable [`ONTOP_DEBUG`](https://hub.docker.com/r/ontop/ontop) (`ONTOP_DEBUG = "true"`).
+
 
 ## Asking for help or information
 See [the support page](/community/support).

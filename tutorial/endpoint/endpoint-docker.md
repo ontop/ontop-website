@@ -110,6 +110,6 @@ $ docker-compose up
 ``` 
 
 It exposes the following two ports for the browser:
-- <http://localhost:8080> H2 Web Console
-- <http://localhost:8082> Ontop SPARQL endpoint
+- <http://localhost:8082> H2 Web Console
+- <http://localhost:8080> Ontop SPARQL endpoint
 
