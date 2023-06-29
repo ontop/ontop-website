@@ -3,20 +3,12 @@
 
 Through the [DuckDB](https://duckdb.org) connector, Ontop is able to construct VKGs on DuckDB database files.
 
-
 ## Limitations & Exceptions
-
-
-:::warning
-DuckDB does not provide information about integrity constraints. Make sure to provide this information in order to avoid very inefficient queries. 
-We recommend using [lenses](/guide/advanced/lenses) for this purpose.
-:::
 
 - DuckDB database files prior to version 1.0 are not guaranteed to be compatible with later versions.
 - Setting a default schema is not supported when connecting to DuckDB.
 - Nested data types are only supported starting from version 0.7 of DuckDB.
 - Accessing struct fields using the "dot operator" is not supported.
-
 
 ## Database Connection
 
