@@ -6,7 +6,7 @@ Through the [SparkSQL](https://spark.apache.org/) connector, Ontop is able to co
 ## Limitations & Exceptions
 
 :::warning
-Trino does not provide information about integrity constraints. Make sure to provide this information in order to avoid very inefficient queries. 
+SparkSQL does not provide information about integrity constraints. Make sure to provide this information in order to avoid very inefficient queries. 
 We recommend using [lenses](/guide/advanced/lenses) for this purpose.
 :::
 
