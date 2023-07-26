@@ -1,18 +1,12 @@
 # How to deploy your Knowledge Graph in a graph database with Ontop
 
-Many people build a Knowledge Graph by moving and transforming existing data into a graph database. This approach is also known as Knowledge Graph materialization.
-
-During the past decade, [Ontop](../glossary/#ontop) has become a reference open-source solution for materializing Knowledge Graphs from relational data sources in large organizations.
-
-In this article, we present two ways to materialize your Knowledge Graph using Ontop.
+In this tutorial, we present two ways to materialize your Knowledge Graph using Ontop.
 
 ## How to materialize data into a graph database using Ontop
 
-Let’s start with the most common way to use materialize with Ontop:
-
 1.  ### Materialize in RDF files and load into a triplestore
 
-    For this tutorial, you will need the following prerequisites:
+    For the first solution, you will need the following prerequisites:
 
     - Access to a relational database (in our example PostgreSQL)
     - [Mapping](../glossary/#mapping) ([R2RML](../glossary/#r2rml) or [OBDA](../glossary/#obda_mapping_format) files)
@@ -20,7 +14,9 @@ Let’s start with the most common way to use materialize with Ontop:
 
     Using the CLI command _ontop-materialize_ ([https://ontop-vkg.org/guide/cli#ontop-materialize](https://ontop-vkg.org/guide/cli#ontop-materialize)), you can [materialize](../glossary/#materialization) your KG into one or multiple files. For simplicity, we keep the default option and only materialize it into one file.
 
-    _./ontop materialize -m mapping.ttl -p credentials.properties -f turtle -o materialized-triples.ttl_
+
+        _./ontop materialize -m mapping.ttl -p credentials.properties -f turtle -o materialized-triples.ttl_
+
 
     After running the command, we have all the content of our KG copied to the file _materialized-triples.ttl_.
 
@@ -30,17 +26,15 @@ Let’s start with the most common way to use materialize with Ontop:
 
 2.  ### Deploy a VKG and fetch its content from the graph database
 
-    For this second solution, we make use of the concept of KG virtualization, which you can learn more about in this [article](../what-is-a-virtual-knowledge-graph/).
-
-    This approach is a more direct solution.
+    For the second solution, we make use of the concept of KG virtualization.
 
     We deploy the KG as a virtual KG first and then query it from the graph database. In this way, you can retrieve the triples and store them locally in the graph database.
 
     Triples are directly streamed to the graph database: no intermediate file storage is involved, making this solution more direct than the previous one.
 
-    Going back to our example, instead of using the _ontop-materialize_ CLI command, let’s deploy the KG as a virtual KG using the _ontop-endpoint_ command:
+    let’s deploy the KG as a virtual KG using the _ontop-endpoint_ command:
 
-    _./ontop endpoint -m mapping.ttl -p credentials.properties_
+        _./ontop endpoint -m mapping.ttl -p credentials.properties_
 
     Now Ontop is deployed as a [SPARQL endpoint](../glossary/#sparql_endpoint) available at [http://localhost:8080/sparql](http://localhost:8080/sparql).
 
@@ -57,30 +51,20 @@ Let’s start with the most common way to use materialize with Ontop:
 
     This query materializes the same triples as with the first approach.
 
-## Which approach to choose for your use case?
+## Choosing the Right Approach for Your Use Case
 
-If your dataset is not particularly large and a communication channel is easy to set up between the Ontop SPARQL endpoint and the graph database, we recommend solution #2 as it avoids dealing with files and allocating intermediate storage.
+1\. **Small Dataset, Easy Communication:** If your dataset isn't large and you can easily set up communication between the Ontop SPARQL endpoint and the graph database, go with solution #2. It avoids dealing with files and intermediate storage.
 
-If your dataset is very large, you want to use the most efficient loading solution supported by the triplestore, even if it requires more effort to set it up.
+2\. **Large Dataset, Efficient Loading:** For very large datasets, choose the most efficient loading solution supported by the triplestore, even if it requires more effort to set up.
 
-Another interesting feature of solution #2, is that it makes it easy to materialize only fragments of the KG, as it just requires adapting the SPARQL query.
+3\. **Materializing Fragments of the KG:** Solution #2 allows easy materialization of specific fragments of the Knowledge Graph by adapting the SPARQL query. You can have hybrid KGs with some parts stored in the graph database and the rest kept virtual.
 
-This allows for hybrid KGs, where one part is stored in a graph database, and the rest is kept virtual.
+4\. **Advantage of Keeping Data Virtual:** Keeping data virtual is great for large volumes of sensor data that constantly update. It's better to keep this part virtual while storing rich contextual information in the graph database.
 
-Keeping data virtual is particularly advantageous when dealing with large volumes of sensor data that are constantly updated. It makes sense to keep this part of the Knowledge Graph virtual while storing rich contextual information in the graph database.
+## Ontology Usage
 
-## What about ontology?
+If you're familiar with Ontop, you might have noticed that we didn't use an ontology in this example. Providing an ontology to Ontop can result in a significantly larger KG due to the reasoning capabilities embedded in Ontop. However, GraphDB also has reasoning capabilities, allowing reasoning to be done later in GraphDB, making materialization simpler and faster. If your graph database doesn't support reasoning, Ontop can handle it.
 
-Users familiar with Ontop may have noticed that we didn’t use an [ontology](../glossary/#ontology) in this example.
+## Mapping Options
 
-If you provide an ontology to Ontop, the resulting KG may be significantly larger than the one without due to the reasoning capabilities embedded in Ontop.
-
-As GraphDB also embeds reasoning capabilities, the reasoning can be done later in GraphDB, rather than before at the Ontop. This makes the materialization simpler and faster.
-
-However, if your graph database doesn’t support reasoning, you can rely on Ontop to perform it.
-
-## What about mapping?
-
-Any R2RML mapping is supported (read more on the mapping approach [here](https://ontopic.ai/en/tech-notes/00-mapping-introduction/)), as well as the Ontop native format (.obda).
-
-You can create these mappings manually or use a specialized platform like Ontopic Studio. [Ontopic Studio](../../ontopic-studio) is a no-code environment especially built for designing knowledge graphs and managing large mappings.
+Ontop supports any R2RML mapping as well as its native format (.obda). You can create these mappings manually or use Ontopic Studio, a no-code environment designed for designing knowledge graphs and managing large mappings.
