@@ -223,13 +223,6 @@ function genTutorialSidebarConfig() {
             ]
         },
         {
-            title: 'Materialize',
-            collapsable: false,
-            children: [
-                'materialization/materialization.md'
-            ]
-        },
-        {
             title: 'Mapping',
             collapsable: false,
             children: [
@@ -248,6 +241,13 @@ function genTutorialSidebarConfig() {
                 'federation/denodo/',
                 'federation/dremio/',
 		'federation/teiid/'
+            ]
+        },  
+        {
+            title: 'Materialize',
+            collapsable: false,
+            children: [
+                'materialization/materialization.md'
             ]
         },
         {
