@@ -19,7 +19,6 @@ Using the CLI command _ontop-materialize_ ([https://ontop-vkg.org/guide/cli#onto
 ./ontop materialize -m mapping.ttl -p credentials.properties -f turtle -o materialized-triples.ttl
 ```
 
-
 After running the command, we have all the content of our KG copied to the file _materialized-triples.ttl_.
 
 Now we load this file in the triplestore of our choice, in this case, we use [GraphDB](https://www.ontotext.com/products/graphdb/download/). This graph database offers [several ways to load files](https://graphdb.ontotext.com/documentation/10.2/loading-and-updating-data.html). Here, since our file is only 200 MB, we go for the simplest option and load it directly from the UI.
@@ -70,7 +69,3 @@ This query materializes the same triples as with the first approach.
 ## Ontology Usage
 
 If you're familiar with Ontop, you might have noticed that we didn't use an ontology in this example. Providing an ontology to Ontop can result in a significantly larger KG due to the reasoning capabilities embedded in Ontop. However, GraphDB also has reasoning capabilities, allowing reasoning to be done later in GraphDB, making materialization simpler and faster. If your graph database doesn't support reasoning, Ontop can handle it.
-
-## Mapping Options
-
-Ontop supports any R2RML mapping as well as its native format (.obda). You can create these mappings manually or use Ontopic Studio, a no-code environment designed for designing knowledge graphs and managing large mappings.
