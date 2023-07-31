@@ -6,50 +6,56 @@ In this tutorial, we present two ways to materialize your Knowledge Graph using 
 
 1.  ### Materialize in RDF files and load into a triplestore
 
-    For the first solution, you will need the following prerequisites:
+For the first solution, you will need the following prerequisites:
 
-    - Access to a relational database (in our example PostgreSQL)
-    - [Mapping](../glossary/#mapping) ([R2RML](../glossary/#r2rml) or [OBDA](../glossary/#obda_mapping_format) files)
-    - [Ontop](https://ontop-vkg.org/guide/cli.html#setup-ontop-cli)
+- Access to a relational database (in our example PostgreSQL)
+- [Mapping](../glossary/#mapping) ([R2RML](../glossary/#r2rml) or [OBDA](../glossary/#obda_mapping_format) files)
+- [Ontop](https://ontop-vkg.org/guide/cli.html#setup-ontop-cli)
 
-    Using the CLI command _ontop-materialize_ ([https://ontop-vkg.org/guide/cli#ontop-materialize](https://ontop-vkg.org/guide/cli#ontop-materialize)), you can [materialize](../glossary/#materialization) your KG into one or multiple files. For simplicity, we keep the default option and only materialize it into one file.
-
-
-        _./ontop materialize -m mapping.ttl -p credentials.properties -f turtle -o materialized-triples.ttl_
+Using the CLI command _ontop-materialize_ ([https://ontop-vkg.org/guide/cli#ontop-materialize](https://ontop-vkg.org/guide/cli#ontop-materialize)), you can [materialize](../glossary/#materialization) your KG into one or multiple files. For simplicity, we keep the default option and only materialize it into one file.
 
 
-    After running the command, we have all the content of our KG copied to the file _materialized-triples.ttl_.
+```bash
+./ontop materialize -m mapping.ttl -p credentials.properties -f turtle -o materialized-triples.ttl
+```
 
-    Now we load this file in the triplestore of our choice, in this case, we use [GraphDB](https://www.ontotext.com/products/graphdb/download/). This graph database offers [several ways to load files](https://graphdb.ontotext.com/documentation/10.2/loading-and-updating-data.html). Here, since our file is only 200 MB, we go for the simplest option and load it directly from the UI.
 
-    Once this is done, we can query this KG using GraphDB.
+After running the command, we have all the content of our KG copied to the file _materialized-triples.ttl_.
+
+Now we load this file in the triplestore of our choice, in this case, we use [GraphDB](https://www.ontotext.com/products/graphdb/download/). This graph database offers [several ways to load files](https://graphdb.ontotext.com/documentation/10.2/loading-and-updating-data.html). Here, since our file is only 200 MB, we go for the simplest option and load it directly from the UI.
+
+Once this is done, we can query this KG using GraphDB.
 
 2.  ### Deploy a VKG and fetch its content from the graph database
 
-    For the second solution, we make use of the concept of KG virtualization.
+For the second solution, we make use of the concept of KG virtualization.
 
-    We deploy the KG as a virtual KG first and then query it from the graph database. In this way, you can retrieve the triples and store them locally in the graph database.
+We deploy the KG as a virtual KG first and then query it from the graph database. In this way, you can retrieve the triples and store them locally in the graph database.
 
-    Triples are directly streamed to the graph database: no intermediate file storage is involved, making this solution more direct than the previous one.
+Triples are directly streamed to the graph database: no intermediate file storage is involved, making this solution more direct than the previous one.
 
-    let’s deploy the KG as a virtual KG using the _ontop-endpoint_ command:
+let’s deploy the KG as a virtual KG using the _ontop-endpoint_ command:
 
-        _./ontop endpoint -m mapping.ttl -p credentials.properties_
+```bash
+./ontop endpoint -m mapping.ttl -p credentials.properties
+```
 
-    Now Ontop is deployed as a [SPARQL endpoint](../glossary/#sparql_endpoint) available at [http://localhost:8080/sparql](http://localhost:8080/sparql).
+Now Ontop is deployed as a [SPARQL endpoint](../glossary/#sparql_endpoint) available at [http://localhost:8080/sparql](http://localhost:8080/sparql).
 
-    Let’s go now to GraphDB. To fetch and insert all the triples from the VKG exposed by Ontop, we run the following SPARQL INSERT query from GraphDB itself:
+Let’s go now to GraphDB. To fetch and insert all the triples from the VKG exposed by Ontop, we run the following SPARQL INSERT query from GraphDB itself:
 
-             INSERT {
-               ?s ?p ?o
-             }
-             WHERE {
-               SERVICE <http://localhost:8080/sparql> {
-                 ?s ?p ?o
-               }
-             }
+```sparql
+INSERT {
+  ?s ?p ?o
+}
+WHERE {
+  SERVICE <http://localhost:8080/sparql> {
+   ?s ?p ?o
+  }
+}
+```
 
-    This query materializes the same triples as with the first approach.
+This query materializes the same triples as with the first approach.
 
 ## Choosing the Right Approach for Your Use Case
 
