@@ -1,15 +1,15 @@
-# How to deploy your Knowledge Graph in a graph database
+# How to materialize data into a graph database
 
 In this section, we present two ways to materialize your Knowledge Graph using Ontop.
 
-## How to materialize data into a graph database
+## Solutions
 
 1.  ### Materialize in RDF files and load into a triplestore
 
 For the first solution, you will need the following prerequisites:
 
 - Access to the tutorial H2 database
-- [The mapping file](input/university-complete.obda) `university-complete.obda` and [the properties file](input/university-complete.properties) `university-complete.properties`
+- The [mapping file](../endpoint/input/university-complete.obda) `university-complete.obda` and the [properties file](../endpoint/input/university-complete.properties) `university-complete.properties`
 - [Ontop CLI](https://ontop-vkg.org/guide/cli.html#setup-ontop-cli)
 
 Using the CLI command _ontop-materialize_ ([https://ontop-vkg.org/guide/cli#ontop-materialize](https://ontop-vkg.org/guide/cli#ontop-materialize)), you can [materialize](../glossary/#materialization) your KG into one or multiple files. For simplicity, we keep the default option and only materialize it into one file.
