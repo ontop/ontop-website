@@ -233,6 +233,13 @@ function genTutorialSidebarConfig() {
                 'mapping/existential',
             ]
         },
+	{
+            title: 'Materialize',
+            collapsable: false,
+            children: [
+                'materialization/materialization.md'
+            ]
+        },
         {
             title: 'Federation',
             collapsable: false,
@@ -243,13 +250,6 @@ function genTutorialSidebarConfig() {
 		'federation/teiid/'
             ]
         },  
-        {
-            title: 'Materialize',
-            collapsable: false,
-            children: [
-                'materialization/materialization.md'
-            ]
-        },
         {
             title: 'Lenses',
             collapsable: false,
