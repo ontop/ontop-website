@@ -8,15 +8,17 @@ In this tutorial, we present two ways to materialize your Knowledge Graph using 
 
 For the first solution, you will need the following prerequisites:
 
-- Access to a relational database (in our example PostgreSQL)
-- [Mapping](../glossary/#mapping) ([R2RML](../glossary/#r2rml) or [OBDA](../glossary/#obda_mapping_format) files)
+- Access to a relational database (in our example H2)
+- [Mapping](../glossary/#mapping) ([OBDA](../glossary/#obda_mapping_format) files)
 - [Ontop](https://ontop-vkg.org/guide/cli.html#setup-ontop-cli)
 
 Using the CLI command _ontop-materialize_ ([https://ontop-vkg.org/guide/cli#ontop-materialize](https://ontop-vkg.org/guide/cli#ontop-materialize)), you can [materialize](../glossary/#materialization) your KG into one or multiple files. For simplicity, we keep the default option and only materialize it into one file.
 
-
 ```bash
-./ontop materialize -m mapping.ttl -p credentials.properties -f turtle -o materialized-triples.ttl
+./ontop materialize
+--mapping=input/university-complete.obda \
+--properties=input/university-complete.properties \
+-f turtle
 ```
 
 After running the command, we have all the content of our KG copied to the file _materialized-triples.ttl_.
@@ -36,7 +38,9 @@ Triples are directly streamed to the graph database: no intermediate file storag
 let’s deploy the KG as a virtual KG using the _ontop-endpoint_ command:
 
 ```bash
-./ontop endpoint -m mapping.ttl -p credentials.properties
+./ontop endpoint
+--mapping=input/university-complete.obda \
+--properties=input/university-complete.properties \
 ```
 
 Now Ontop is deployed as a [SPARQL endpoint](../glossary/#sparql_endpoint) available at [http://localhost:8080/sparql](http://localhost:8080/sparql).
