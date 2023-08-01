@@ -1,29 +1,30 @@
-# How to deploy your Knowledge Graph in a graph database with Ontop
+# How to deploy your Knowledge Graph in a graph database
 
-In this tutorial, we present two ways to materialize your Knowledge Graph using Ontop.
+In this section, we present two ways to materialize your Knowledge Graph using Ontop.
 
-## How to materialize data into a graph database using Ontop
+## How to materialize data into a graph database
 
 1.  ### Materialize in RDF files and load into a triplestore
 
 For the first solution, you will need the following prerequisites:
 
-- Access to a relational database (in our example H2)
-- [Mapping](../glossary/#mapping) ([OBDA](../glossary/#obda_mapping_format) files)
-- [Ontop](https://ontop-vkg.org/guide/cli.html#setup-ontop-cli)
+- Access to the tutorial H2 database
+- [The mapping file](input/university-complete.obda) `university-complete.obda` and [the properties file](input/university-complete.properties) `university-complete.properties`
+- [Ontop CLI](https://ontop-vkg.org/guide/cli.html#setup-ontop-cli)
 
 Using the CLI command _ontop-materialize_ ([https://ontop-vkg.org/guide/cli#ontop-materialize](https://ontop-vkg.org/guide/cli#ontop-materialize)), you can [materialize](../glossary/#materialization) your KG into one or multiple files. For simplicity, we keep the default option and only materialize it into one file.
 
 ```bash
 ./ontop materialize
---mapping=input/university-complete.obda \
---properties=input/university-complete.properties \
--f turtle
+--mapping=university-complete.obda \
+--properties=university-complete.properties \
+-f turtle \
+-o materialized-triples.ttl
 ```
 
 After running the command, we have all the content of our KG copied to the file _materialized-triples.ttl_.
 
-Now we load this file in the triplestore of our choice, in this case, we use [GraphDB](https://www.ontotext.com/products/graphdb/download/). This graph database offers [several ways to load files](https://graphdb.ontotext.com/documentation/10.2/loading-and-updating-data.html). Here, since our file is only 200 MB, we go for the simplest option and load it directly from the UI.
+Now we load this file in the triplestore of our choice, in this case, we use [GraphDB](https://www.ontotext.com/products/graphdb/download/). This graph database offers [several ways to load files](https://graphdb.ontotext.com/documentation/10.2/loading-and-updating-data.html). Here, since our file is small, we go for the simplest option and load it directly from the UI.
 
 Once this is done, we can query this KG using GraphDB.
 
