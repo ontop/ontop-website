@@ -8,7 +8,7 @@
  - Support for [union lenses](/guide/advanced/lenses.html#unionlens) added *(beta)* [#612](https://github.com/ontop/ontop/pull/612)
  - Support for XSD cast functions added [#630](https://github.com/ontop/ontop/pull/630)
  - Support for date-trunc and more date extraction functions added [#705](https://github.com/ontop/ontop/pull/705)
- - Support for a Separate RDF file for facts added [#666](https://github.com/ontop/ontop/pull/666)
+ - Support for a separate RDF file for facts added [#666](https://github.com/ontop/ontop/pull/666)
  - Options to ignore invalid mapping entries [#631](https://github.com/ontop/ontop/pull/631) and lenses [#709](https://github.com/ontop/ontop/pull/709) added
  - Partial support for regular expressions in SQL Server added [#702](https://github.com/ontop/ontop/pull/702)
  - Support for DynamoDB using the CData connector added *(beta)* [#693](https://github.com/ontop/ontop/pull/693)
