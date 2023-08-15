@@ -7,7 +7,7 @@
  - Support for [flatten lenses](/guide/advanced/lenses.html#flattenlens) added *(beta)* [#622](https://github.com/ontop/ontop/pull/622), [#625](https://github.com/ontop/ontop/pull/625), [#628](https://github.com/ontop/ontop/pull/628), [#629](https://github.com/ontop/ontop/pull/629), [#633](https://github.com/ontop/ontop/pull/633), [#635](https://github.com/ontop/ontop/pull/635), [#636](https://github.com/ontop/ontop/pull/636), [#637](https://github.com/ontop/ontop/pull/637), [#638](https://github.com/ontop/ontop/pull/638), [#639](https://github.com/ontop/ontop/pull/639), [#640](https://github.com/ontop/ontop/pull/640), [#641](https://github.com/ontop/ontop/pull/641), [#642](https://github.com/ontop/ontop/pull/642), [#643](https://github.com/ontop/ontop/pull/643), [#661](https://github.com/ontop/ontop/pull/661), [#715](https://github.com/ontop/ontop/pull/715)
  - Support for [union lenses](/guide/advanced/lenses.html#unionlens) added *(beta)* [#612](https://github.com/ontop/ontop/pull/612)
  - Support for XSD cast functions added [#630](https://github.com/ontop/ontop/pull/630)
- - Support for more date time functions added [#705](https://github.com/ontop/ontop/pull/705)
+ - Support for date-trunc and more date extraction functions added [#705](https://github.com/ontop/ontop/pull/705)
  - Support for a Separate RDF file for facts added [#666](https://github.com/ontop/ontop/pull/666)
  - Options to ignore invalid mapping entries [#631](https://github.com/ontop/ontop/pull/631) and lenses [#709](https://github.com/ontop/ontop/pull/709) added
  - Partial support for regular expressions in SQL Server added [#702](https://github.com/ontop/ontop/pull/702)

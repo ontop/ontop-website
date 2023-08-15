@@ -1,9 +1,9 @@
 # Standards compliance
 
 ## SPARQL 1.1
-*Updated for 5.0.0*.
+*Updated for 5.1.0*.
 
-In the following table we present a summary of the compliance of the latest version of Ontop with [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), where rows correspond to sections of the WC3 recommendation and unsupported features are ~~crossed out~~. Most of the features are supported, but some are unsupported or only partially supported.
+In the following table we present a summary of the compliance of the latest version of Ontop with [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), where rows correspond to sections of the W3C recommendation and unsupported features are ~~crossed out~~. Most of the features are supported, but some are unsupported or only partially supported.
 
 | <div style="width:140px">Section in <br>SPARQL 1.1</div>  | Features  | Coverage |
 | --------------------------- | --------- | --------- |
@@ -25,11 +25,11 @@ In the following table we present a summary of the compliance of the latest vers
 | [17.4.4. Functions on Numerics](https://www.w3.org/TR/sparql11-query/#func-numerics) | `abs`, `round`, `ceil`, `floor`, `RAND` | 5/5 |
 | [17.4.5. Functions on Dates&Times](https://www.w3.org/TR/sparql11-query/#func-date-time) | `now`, `year`, `month`, `day`, `hours`, `minutes`, `seconds`, <code>~~timezone~~</code>, `tz` | 8/9 |
 | [17.4.6. Hash Functions](https://www.w3.org/TR/sparql11-query/#func-hash) | `MD5`, `SHA1`, `SHA256`, `SHA384`, `SHA512` | 5/5 |
-| [17.5 XPath Constructor Functions](https://www.w3.org/TR/sparql11-query/#FunctionMapping) | ~~casting~~ | 0 |
+| [17.5 XPath Constructor Functions](https://www.w3.org/TR/sparql11-query/#FunctionMapping) | Casting | - |
 | [17.6 Extensible Value Testing](https://www.w3.org/TR/sparql11-query/#extensionFunctions) | ~~user defined functions~~ | 0 |
 
 ### Limitations
- - The 5 hash functions and functions `REPLACE` and `REGEX` for regular expressions have limited support because they heavily depend on the DBMS: not all DBMSs provide all hash functions, and many DBMSs have their own regex dialects. Currently, the SPARQL regular expressions of `REPLACE` and `REGEX` are simply sent to the DBMS.
+ - The 5 hash functions and functions `REPLACE` and `REGEX` for regular expressions have limited support because they heavily depend on the DBMS: not all DBMSs provide all hash functions, and many DBMSs have their own regex dialects. Currently, the SPARQL regular expressions of `REPLACE` and `REGEX` are simply sent to the DBMS by default.
  - In the implementation of function `langMatches`, the second argument has to a be a constant: allowing variables will have a negative impact on the performance in our framework.
 
 
@@ -73,12 +73,14 @@ Ontop complies with [RDF 1.1](https://www.w3.org/TR/rdf11-new/). It types simple
 ## RDFS
 
 ## Time functions
-*Since 4.2.0.*
+*Updated for 5.1.0*.
 
-These functions use the prefix `ofn` (`http://www.ontotext.com/sparql/functions/`) and their documentation can be found [here](https://graphdb.ontotext.com/documentation/10.0/devhub/time-functions.html#durations-expressed-in-certain-units). They accept both `xsd:date` and `xsd:dateTime` as arguments.
+The functions using the prefix `ofn` (`http://www.ontotext.com/sparql/functions/`) and their documentation can be found [here](https://graphdb.ontotext.com/documentation/10.0/devhub/time-functions.html#durations-expressed-in-certain-units). They accept both `xsd:date` and `xsd:dateTime` as arguments. (*supported since 4.2.0*).
+
+The functions using the prefix `obdaf` (`https://w3id.org/obda/functions#`) have been introduced in 5.1.0 (see [#705](https://github.com/ontop/ontop/pull/705)).
 
 
-| <div style="width:140px">Ofn Function</div> | Argument 1     | Argument 2 |
+| <div style="width:140px">Function</div> | Argument 1     | Argument 2 |
 |---------------------------------------------|----------------|------------|
 | `ofn:weeksBetween`                          | `xsd:date`     | `xsd:date` |
 | `ofn:weeksBetween`                          | `xsd:dateTime` | `xsd:dateTime` |
@@ -92,5 +94,13 @@ These functions use the prefix `ofn` (`http://www.ontotext.com/sparql/functions/
 | `ofn:minutesBetween`                        | `xsd:dateTime` | `xsd:dateTime` |
 | `ofn:secondsBetween`                        | `xsd:dateTime` | `xsd:dateTime` |
 | `ofn:millisBetween`                         | `xsd:dateTime` | `xsd:dateTime` |
+| `obdaf:dateTrunc` | `xsd:dateTime` | `xsd:string` |
+| `obdaf:milliseconds-from-dateTime` | `xsd:dateTime` | |
+| `obdaf:microseconds-from-dateTime` | `xsd:dateTime` | |
+| `obdaf:week-from-dateTime` | `xsd:dateTime` | |
+| `obdaf:quarter-from-dateTime` | `xsd:dateTime` | |
+| `obdaf:decade-from-dateTime` | `xsd:dateTime` | |
+| `obdaf:century-from-dateTime` | `xsd:dateTime` | |
+| `obdaf:millenium-from-dateTime` | `xsd:dateTime` | |
 
 Combinations of argument datatypes marked with the symbol * are not supported for queries over the following data sources: Oracle and Microsoft SQL Server.
