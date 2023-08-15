@@ -1,5 +1,55 @@
 # Release notes
 
+## 5.1.0 (August 15, 2023)
+
+#### New features
+
+ - Support for [flatten lenses](/guide/advanced/lenses.html#flattenlens) added *(beta)* [#622](https://github.com/ontop/ontop/pull/622), [#625](https://github.com/ontop/ontop/pull/625), [#628](https://github.com/ontop/ontop/pull/628), [#629](https://github.com/ontop/ontop/pull/629), [#633](https://github.com/ontop/ontop/pull/633), [#635](https://github.com/ontop/ontop/pull/635), [#636](https://github.com/ontop/ontop/pull/636), [#637](https://github.com/ontop/ontop/pull/637), [#638](https://github.com/ontop/ontop/pull/638), [#639](https://github.com/ontop/ontop/pull/639), [#640](https://github.com/ontop/ontop/pull/640), [#641](https://github.com/ontop/ontop/pull/641), [#642](https://github.com/ontop/ontop/pull/642), [#643](https://github.com/ontop/ontop/pull/643), [#661](https://github.com/ontop/ontop/pull/661), [#715](https://github.com/ontop/ontop/pull/715)
+ - Support for [union lenses](/guide/advanced/lenses.html#unionlens) added *(beta)* [#612](https://github.com/ontop/ontop/pull/612)
+ - Support for XSD cast functions added [#630](https://github.com/ontop/ontop/pull/630)
+ - Support for more date time functions added [#705](https://github.com/ontop/ontop/pull/705)
+ - Support for a Separate RDF file for facts added [#666](https://github.com/ontop/ontop/pull/666)
+ - Options to ignore invalid mapping entries [#631](https://github.com/ontop/ontop/pull/631) and lenses [#709](https://github.com/ontop/ontop/pull/709) added
+ - Partial support for regular expressions in SQL Server added [#702](https://github.com/ontop/ontop/pull/702)
+ - Support for DynamoDB using the CData connector added *(beta)* [#693](https://github.com/ontop/ontop/pull/693)
+
+
+#### Optimizations
+ - Upwards propagation of lens unique constraints added [#668](https://github.com/ontop/ontop/pull/668)
+ - Left join optimizations:
+    - Reducing left joins to inner joins when the right child has a left join [#662](https://github.com/ontop/ontop/pull/662)
+    - Merging left joins nested on the left [#663](https://github.com/ontop/ontop/pull/663), [#686](https://github.com/ontop/ontop/pull/686)
+    - Robustness to nullable joining columns [#667](https://github.com/ontop/ontop/pull/667) 
+    - Pruning the right of a left join when not contributing
+ - VALUES node decomposition added [#680](https://github.com/ontop/ontop/pull/680)
+ - Functional dependency inference added [#681](https://github.com/ontop/ontop/pull/681)
+ - Reduction of aggregation nodes with no aggregation functional terms to distinct added
+ - Transitive closure of functional dependencies added [#732](https://github.com/ontop/ontop/pull/732)
+
+
+#### Refactoring
+  - Substitutions refactored [#616](https://github.com/ontop/ontop/pull/616)
+  - Typing for math operators added [#706](https://github.com/ontop/ontop/pull/706)
+  - QuotedIDFactory refactored [#644](https://github.com/ontop/ontop/pull/644)
+  - Removal of non-required variables improved [#669](https://github.com/ontop/ontop/pull/669)
+  - Support for the STRING datatype for DuckDB added [#646](https://github.com/ontop/ontop/pull/646)
+  - Support for SAMPLE at the database level added [#660](https://github.com/ontop/ontop/pull/660)
+
+#### Bug fixes
+  - Support LIMIT/OFFSET in SQL Server improved [#676](https://github.com/ontop/ontop/pull/676), [#679](https://github.com/ontop/ontop/pull/679), [#682](https://github.com/ontop/ontop/pull/682), [#721](https://github.com/ontop/ontop/pull/721)
+  - Extraction of unique constraints in Oracle made more consistent [#695](https://github.com/ontop/ontop/pull/695)
+  - Metadata extraction for DuckDB made more robust [#687](https://github.com/ontop/ontop/pull/687)
+  - Missing casts when using Bnode templates added [#657](https://github.com/ontop/ontop/pull/657)
+  - Invalid SPARQL UNION translation fixed [#651](https://github.com/ontop/ontop/pull/651)
+  - Empty results for CONSTRUCT queries with unions and different variables fixed [#652](https://github.com/ontop/ontop/pull/652)
+
+
+#### Documentation
+ - Dedicated pages for each supported database (for instance [AWS Athena](https://ontop-vkg.org/guide/databases/athena))
+ - [Tutorial about lenses](/tutorial/lenses/)
+ - [Tutorial about materialization](/tutorial/materialization/materialization)
+
+
 ## 5.0.2 (March 9, 2023)
 
 #### New features
