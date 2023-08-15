@@ -13,6 +13,11 @@ Ontop is distributed under various forms. They can be downloaded on [Github](htt
 
 For editing and testing your mappings, you can use our plugin of the [Protégé ontology editor](https://protege.stanford.edu/). You can download the latest stable release directly from Protégé. Alternatively, pre-releases can be found on [Github](https://github.com/ontop/ontop/releases) and [Sourceforge](http://sourceforge.net/projects/ontop4obda/files/).
 
+::: warning Limited support of advanced features
+In particular, the Protégé plugin doesn't support [lenses](/guide/advanced/lenses). For advanced usage, we recommend using text editors or considering commercial offerings.
+:::
+
+
 
 ### Deployment
 
@@ -34,9 +39,5 @@ Historically, Ontop has been made available under other means that we don't reco
 It remains possible to use Ontop as a Java API through [RDF4J](https://rdf4j.org/) although we recommend the HTTP SPARQL endpoint as a first option (think of a microservice). Why? Because such a Java API would add many dependencies to your project and constraint you to use certain versions of Java.
 
 Ontop-rdf4j is available on [Maven Central](https://search.maven.org/artifact/it.unibz.inf.ontop/ontop-rdf4j).
-
-#### RDF4J workbench (not supported anymore)
-
-Our first solution for deploying Ontop as SPARQL endpoint has been through the RDF4J workbench. It has several UX issues, mainly because Ontop is working with files (for the mapping and the ontology) while the normal use cases of RDF4J workbench do not. We recommend you use the Ontop endpoint as a first option.
 
 
