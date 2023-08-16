@@ -104,3 +104,63 @@ The functions using the prefix `obdaf` (`https://w3id.org/obda/functions#`) have
 | `obdaf:millenium-from-dateTime` | `xsd:dateTime` | |
 
 Combinations of argument datatypes marked with the symbol * are not supported for queries over the following data sources: Oracle and Microsoft SQL Server.
+
+The `obdaf:[datePart]-from-dateTime` functions are supported for all dialects. They can be used to extract a specific part of the provided `dateTime` value in a numeric format (`xsd:decimal` for `milliseconds` and `microseconds`, `xsd:integer` for the remaining functions).
+
+:::tip NOTE
+The function `obdaf:week-from-dateTime` returns the ISO week index of the given date, where week 1 is considered the first week with a majority of its days in January.
+:::
+
+The `obdas:dateTrunc` function can be used to truncate a given `xsd:dateTime` to a new value with specified granularity. The granularity must be provided as an `xsd:string` __literal__. The following granularity values are supported:
+
+- `microsecond`
+- `millisecond`
+- `second`
+- `minute`
+- `hour`
+- `day`
+- `week`
+- `month`
+- `quarter`
+- `year`
+- `decade`
+- `century`
+- `millennium`
+
+:::warning
+Not all database systems support all granularities equally.
+
+`decade`, `century`, and `millennium` are not supported by:
+- AWS Athena
+- Denodo (`century` is supported)
+- MySQL (`century` is supported)
+- MariaDB (`century` is supported)
+- Oracle
+- Presto
+- SQLServer
+- Snowflake
+- Spark
+- Trino
+
+`second` is not supported by:
+- Denodo
+
+`millisecond` and `microsecond` are not supported by:
+- AWS Athena
+- Denodo
+- MySQL
+- MariaDB
+- Oracle
+- Presto
+- Trino
+
+PostgreSQL requires these granularities to be named `milliseconds` and `microseconds` instead.
+:::
+
+### Examples
+
+`obdaf:year("2023-08-16T09:00:00"^^xsd:dateTime)` $\rightarrow$ `"2023"^^xsd:integer`
+
+`obdaf:hour("2023-08-16T09:00:00"^^xsd:dateTime)` $\rightarrow$ `"9"^^xsd:integer`
+
+`obdaf:dateTrunc("2023-08-16T09:00:00"^^xsd:dateTime, "month"^^xsd:string)` $\rightarrow$ `"2023-08-01T00:00:00"^^xsd:dateTime`
