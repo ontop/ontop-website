@@ -1,4 +1,4 @@
-# Using Ontop Lenses
+# Using lenses
 
 In this part of the tutorial, we cover the use of lenses with Ontop. Lenses allow us to create "virtual views" of specific operations over the data, that can be referenced
 in our mapping definitions for a more structured access to the database.
