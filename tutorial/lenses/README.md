@@ -15,6 +15,11 @@ We will go over all lenses currently supported by Ontop:
 In this tutorial, we use a different database than in the previous sections. Before running any of the examples, please follow the [setup instructions](setup).
 :::
 
+::: warning Not supported by Ontop-Protégé
+Lenses are not supported by the Ontop plugin for Protégé. To follow this tutorial, please use a text editor.
+:::
+
+
 ## General
 
 Lenses are provided to Ontop as a JSON file of the following structure:
