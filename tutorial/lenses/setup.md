@@ -37,7 +37,7 @@ On Windows:
 ontop endpoint ^
     --ontology=input/ontology.ttl ^
     --mapping=input/mapping.obda ^
-    --mapping=input/lenses.json ^
+    --lenses=input/lenses.json ^
     --properties=input/duckdb.properties ^
     --cors-allowed-origins=http://yasgui.org 
 ```
