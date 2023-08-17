@@ -63,13 +63,16 @@ NAME
         ontop endpoint - Start a SPARQL endpoint powered by Ontop
 
 SYNOPSIS
-        ontop endpoint [ {-c | --constraint} <constraint file> ]
+        ontop endpoint [ {-a | --facts} <fact file> ]
+                [ {-c | --constraint} <constraint file> ]
                 [ --contexts <JSON-LD context file for predefined queries> ]
                 [ --cors-allowed-origins <origins> ]
                 [ {-d | --db-metadata} <db-metadata file> ]
                 [ --db-driver <DB driver> ] [ --db-password <DB password> ]
                 [ --db-url <DB URL> ] [ --dev ] [ --disable-portal-page ]
                 [ --enable-annotations ] [ --enable-download-ontology ]
+                [ --facts-base-iri <Base IRI of facts in fact file> ]
+                [ --facts-format <format of facts file> ]
                 [ {-l | --lenses | -v | --ontop-views} <lenses file> ]
                 [ --lazy ] {-m | --mapping} <mapping file>
                 [ {-p | --properties} <properties file> ] [ --port <port> ]
@@ -82,6 +85,9 @@ SYNOPSIS
                 [ {-x | --xml-catalog} <xml catalog file> ]
 
 OPTIONS
+        -a <fact file>, --facts <fact file>
+            User-supplied constant fact file
+
         -c <constraint file>, --constraint <constraint file>
             User-supplied DB constraint file
 
@@ -116,6 +122,20 @@ OPTIONS
         --enable-download-ontology
             Allow to download the ontology as a plain text file (/ontology).
             Default: false
+
+        --facts-base-iri <Base IRI of facts in fact file>
+            The base IRI used for the facts taken from the fact file.
+
+        --facts-format <format of facts file>
+            The format of the materialized ontology. Default: infer from file extension
+
+            This options value is restricted to the following set of values:
+                rdfxml
+                turtle
+                ntriples
+                nquads
+                trig
+                jsonld
 
         -l <lenses file>, --lenses <lenses file>, -v <lenses file>,
         --ontop-views <lenses file>
@@ -184,11 +204,14 @@ NAME
         and the OWL ontology
 
 SYNOPSIS
-        ontop materialize [ {-c | --constraint} <constraint file> ]
+        ontop materialize [ {-a | --facts} <fact file> ]
+                [ {-c | --constraint} <constraint file> ]
                 [ {-d | --db-metadata} <db-metadata file> ]
                 [ --db-driver <DB driver> ] [ --db-password <DB password> ]
                 [ --db-url <DB URL> ] [ --enable-annotations ]
                 [ {-f | --format} <outputFormat> ]
+                [ --facts-base-iri <Base IRI of facts in fact file> ]
+                [ --facts-format <format of facts file> ]
                 [ {-l | --lenses | -v | --ontop-views} <lenses file> ]
                 {-m | --mapping} <mapping file> [ --no-streaming ]
                 [ {-o | --output} <output> ]
@@ -199,6 +222,9 @@ SYNOPSIS
                 [ {-x | --xml-catalog} <xml catalog file> ]
 
 OPTIONS
+        -a <fact file>, --facts <fact file>
+            User-supplied constant fact file
+
         -c <constraint file>, --constraint <constraint file>
             User-supplied DB constraint file
 
@@ -220,6 +246,20 @@ OPTIONS
 
         -f <outputFormat>, --format <outputFormat>
             The format of the materialized ontology. Default: rdfxml
+
+            This options value is restricted to the following set of values:
+                rdfxml
+                turtle
+                ntriples
+                nquads
+                trig
+                jsonld
+
+        --facts-base-iri <Base IRI of facts in fact file>
+            The base IRI used for the facts taken from the fact file.
+
+        --facts-format <format of facts file>
+            The format of the materialized ontology. Default: infer from file extension
 
             This options value is restricted to the following set of values:
                 rdfxml
@@ -449,10 +489,13 @@ NAME
         ontology
 
 SYNOPSIS
-        ontop query [ {-c | --constraint} <constraint file> ]
+        ontop query [ {-a | --facts} <fact file> ]
+                [ {-c | --constraint} <constraint file> ]
                 [ {-d | --db-metadata} <db-metadata file> ]
                 [ --db-driver <DB driver> ] [ --db-password <DB password> ]
                 [ --db-url <DB URL> ] [ --enable-annotations ]
+                [ --facts-base-iri <Base IRI of facts in fact file> ]
+                [ --facts-format <format of facts file> ]
                 [ {-l | --lenses | -v | --ontop-views} <lenses file> ]
                 {-m | --mapping} <mapping file> [ {-o | --output} <output> ]
                 [ {-p | --properties} <properties file> ]
@@ -463,6 +506,9 @@ SYNOPSIS
                 [ {-x | --xml-catalog} <xml catalog file> ]
 
 OPTIONS
+        -a <fact file>, --facts <fact file>
+            User-supplied constant fact file
+
         -c <constraint file>, --constraint <constraint file>
             User-supplied DB constraint file
 
@@ -481,6 +527,20 @@ OPTIONS
         --enable-annotations
             enable annotation properties defined in the ontology. Default:
             false
+
+        --facts-base-iri <Base IRI of facts in fact file>
+            The base IRI used for the facts taken from the fact file.
+
+        --facts-format <format of facts file>
+            The format of the materialized ontology. Default: infer from file extension
+
+            This options value is restricted to the following set of values:
+                rdfxml
+                turtle
+                ntriples
+                nquads
+                trig
+                jsonld
 
         -l <lenses file>, --lenses <lenses file>, -v <lenses file>,
         --ontop-views <lenses file>
