@@ -15,6 +15,7 @@ We recommend using [lenses](/guide/advanced/lenses) for this purpose.
 - The position counter in the [flatten lens](/guide/advanced/lenses#flattenlens) starts counting at 0 instead of 1 for BigQuery.
 - Accessing struct fields with the "dot operator" is not supported (see below).
 - In BigQuery, columns of the type `ARRAY<ARRAY<T>>` are not supported. Use `ARRAY<STRUCT<ARRAY<T>>>` instead.
+- The Ontop option `ontop.exposeSystemTables` is not supported for BigQuery, as the JBDC does not allow us to access system tables.
 
 ## Database Connection
 
