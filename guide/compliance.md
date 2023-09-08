@@ -111,7 +111,7 @@ The `obdaf:[datePart]-from-dateTime` functions are supported for all dialects. T
 The function `obdaf:week-from-dateTime` returns the ISO week index of the given date, where week 1 is considered the first week with a majority of its days in January.
 :::
 
-The `obdas:dateTrunc` function can be used to truncate a given `xsd:dateTime` to a new value with specified granularity. The granularity must be provided as an `xsd:string` __literal__. The following granularity values are supported:
+The `obdaf:dateTrunc` function can be used to truncate a given `xsd:dateTime` to a new value with specified granularity. The granularity must be provided as an `xsd:string` __literal__. The following granularity values are supported:
 
 - `microsecond`
 - `millisecond`
