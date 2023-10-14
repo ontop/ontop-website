@@ -7,6 +7,7 @@ Through the [MS SQL Server](https://www.microsoft.com/en-us/sql-server) connecto
 
 - RegEx SPARQL functions are not supported.
 - The `position` argument for the [Flatten Lens](/guide/advanced/lenses#flattenlens) cannot be used with SQLServer.
+- Support for `DATETRUNC` in SQL Server is very recent (introduced in SQL Server 2022)
 
 ## Database Connection
 
