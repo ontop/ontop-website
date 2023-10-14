@@ -9,7 +9,7 @@ Its JSON format follows some ElasticSearch conventions and works nicely with the
 ## Example
 ```json
 {
-  "@timestamp": "2021-02-23T14:02:05.973Z",
+  "@timestamp": "2023-10-13T14:02:05.973Z",
   "message": "query:all",
   "application": "ontop-odh",
   "payload": {
@@ -25,6 +25,9 @@ Its JSON format follows some ElasticSearch conventions and works nicely with the
     ],
     "reformulationDuration": 50,
     "reformulationCacheHit": false,
+    "user": "joe",
+    "groups": "admins,users",
+    "roles": "my_app_write,my_app_reader",
     "httpHeaders": {
       "referer": "http://localhost:8080/"
     },
@@ -59,6 +62,9 @@ Its JSON format follows some ElasticSearch conventions and works nicely with the
 | `tables` | Array of Strings | Names of the relations appearing in the SQL query. |
 | `reformulationDuration` | Integer | Query reformulation duration (in ms). |
 | `reformulationCacheHit` | Boolean | True if the reformulated query cache has been used |
+| `user`        | String      | Since 5.2.0. User ID. Disabled by default |
+| `groups`      | String      | Since 5.2.0. User groups separated by commas. Disabled by default |
+| `roles`       | String      | Since 5.2.0. User roles separated by commas. Disabled by default |
 | `httpHeaders` | JSON object | Values of a specific list of HTTP headers. By default, this list is empty. To track for instance the referer, set the property `ontop.queryLogging.includeHttpHeader.referer` to true. |
 | `extractedQueryTemplate.` `hash` | String | Hash of the query template extracted, after removing extracted constants. Can be shared by similar queries. |
 | `extractedQueryTemplate.` `parameters` | JSON object | Constants extracted and replaced by variables. |
@@ -88,6 +94,8 @@ ontop.queryLogging.includeReformulatedQuery=false
 ontop.queryLogging.includeClassesAndProperties=true
 # Includes DB tables/views into the query log
 ontop.queryLogging.includeTables=true
+# Includes the user ID, his/her groups and roles
+ontop.queryLogging.includeUserInfo=false
 # Provides separated message at different phases (after reformulation, result set unblocked, last result fetched)
 ontop.queryLogging.decomposition=false
 # Sets that merged messages are only inserted when decomposition is disabled
