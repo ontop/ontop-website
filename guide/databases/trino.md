@@ -32,12 +32,12 @@ Ontop implements explicit compatibility with the Trino array type `array(t)`. Wh
 The flatten lens cannot be used on arrays stored as JSON-encoded columns in the database. For such use cases, the column first has to be converted to an array type.
 
 ### Struct Access
- Individual `MAP` objects can be accessed by SQL expressions in the dialect's default way:
+ Individual [`MAP`](https://trino.io/docs/current/language/types.html#map) objects can be accessed by SQL expressions in the dialect's default way:
 ```
 SELECT my_struct['my_attribute'] FROM ...
 ```
 
-`ROW` objects, can also be accessed using the `[key]` operator. Please note, that in this case, `key` must be an integer index instead of the name of the field:
+[`ROW`](https://trino.io/docs/current/language/types.html#row) objects, can be accessed using the `[position]` operator. `position` must be an integer index starting from 1:
 ```
 SELECT my_struct[1] FROM ...
 ```
