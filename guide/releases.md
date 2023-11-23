@@ -8,7 +8,7 @@
  - Option to disable the registration of custom SPARQL aggregation functions [#746](https://github.com/ontop/ontop/pull/746)
 
 #### Bug fixes
-  See https://github.com/ontop/ontop/milestone/23?closed=1
+  See [https://github.com/ontop/ontop/milestone/23?closed=1](https://github.com/ontop/ontop/milestone/23?closed=1)
 
 ## 5.1.0 (August 15, 2023)
 
