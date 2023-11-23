@@ -1,5 +1,15 @@
 # Release notes
 
+## 5.1.1 (November 22, 2023)
+
+#### New features
+ - Option to expose system tables added [#744](https://github.com/ontop/ontop/pull/744)
+ - Standard deviation and variance functions added [#735](https://github.com/ontop/ontop/pull/735)
+ - Option to disable the registration of custom SPARQL aggregation functions [#746](https://github.com/ontop/ontop/pull/746)
+
+#### Bug fixes
+  See https://github.com/ontop/ontop/milestone/23?closed=1
+
 ## 5.1.0 (August 15, 2023)
 
 #### New features
