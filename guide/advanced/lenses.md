@@ -282,7 +282,7 @@ In addition to the [common fields](#common-fields), SQL lenses accept the follow
 
 ### `UnionLens`
 
-*Since 5.1.0.*
+*Since 5.1.0*
 
 
 A union lens is defined from multiple base relations that share attributes with exactly the same names and types. The relations will be merged with each other, concatenating their contents.
