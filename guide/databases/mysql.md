@@ -6,6 +6,7 @@ Through the [MySQL](https://mysql.com) connector, Ontop is able to construct VKG
 
 - String literals have to be encased in _single quotes_ (`'`). Double quote string literals (`"`) are not supported.
 - Accessing JSON object fields with the "dot operator" is not supported (see below).
+- MySQL 5.x comes with some limitations (e.g. no anonymous bnode support, no regexp replace, no nested data support). MySQL 5.x reached its end-of-life, so please consider upgrading.
 
 ## Database Connection
 
@@ -26,4 +27,8 @@ In case the flattened column is still a nested structure after the flatten opera
 
 :::warning
 Accessing object fields using the "arrow operator" is not supported.
+:::
+
+:::warning
+Nested type only supported for MySQL >= 8.0
 :::
