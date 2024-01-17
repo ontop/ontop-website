@@ -1,5 +1,13 @@
 # Release notes
 
+## 5.1.2 (January 17, 2024)
+
+#### Bug fixes
+ - Conflict between columns in case of a self-join in the bootstrapper [#786](https://github.com/ontop/ontop/pull/786)
+ - Handling of casts for different versions of MySQL and MariaDB [#787](https://github.com/ontop/ontop/pull/787)
+
+Several dependencies updated, including JQuery ([#780](https://github.com/ontop/ontop/pull/780))
+
 ## 5.1.1 (November 22, 2023)
 
 #### New features
