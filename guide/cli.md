@@ -304,7 +304,7 @@ OPTIONS
             redirecting ontologies imported by owl:imports
 ```
 
-Example:
+### Examples
 
 ```
 $ ./ontop materialize -m university-complete.obda \
@@ -313,6 +313,18 @@ $ ./ontop materialize -m university-complete.obda \
                       -f turtle \
                       -o materialized-triples.ttl
 ```
+
+In case you have some lenses:
+
+```
+$ ./ontop materialize -m mapping.ttl \
+                      -t ontology.ttl \
+                      -l lenses.json \
+                      -p configuration.properties \
+                      -f turtle \
+                      -o materialized-triples.ttl
+```
+
 
 ## `ontop mapping`
 
