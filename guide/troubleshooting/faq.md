@@ -17,6 +17,9 @@ by, for instance, filing a [bug report](/community/contributing/bug-report).
 ### Does Ontop support SPARQL Update?
 No, as for now, Ontop is a read-only system, it does not support [SPARQL Update queries](https://www.w3.org/TR/sparql11-update/) but only SELECT, CONSTRUCT, ASK and DESCRIBE queries. For more details, see [the compliance page](/guide/compliance).
 
+### How to set the log level to debug?
+For both the Docker image and the CLI, set the environment variable `ONTOP_LOG_LEVEL` to `debug`.
+
 ## Protégé
 ### No suitable driver found for .. (driver)
 
