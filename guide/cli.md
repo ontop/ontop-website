@@ -42,6 +42,11 @@ You will need to manually download the JDBC drivers for your database management
 
 Consider putting the directory of ontop to your `PATH`.
 
+### Logging level
+It can be set using the environment variable `ONTOP_LOG_LEVEL`. Set it to `DEBUG` to get most details, including generated SQL queries.
+Alternatively, you can change the value of the `level` attribute of the `root` element at the end of the file `log/logback.xml`.
+
+
 ### Property file
 Most commands below require or accept as input a property file.
 This is where you will specify the JDBC connection parameters.
