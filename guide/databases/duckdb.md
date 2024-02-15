@@ -11,6 +11,7 @@ Through the [DuckDB](https://duckdb.org) connector, Ontop is able to construct V
 - Accessing struct fields using the "dot operator" is not supported.
 - The Ontop option `ontop.exposeSystemTables` is not supported for DuckDB, as the JBDC does not allow us to access system tables.
 - DuckDB has a very specific [concurrency model](https://duckdb.org/faq#how-does-duckdb-handle-concurrency). In particular, it does not support concurrent multi-process read-write queries.
+- DuckDB supports integrity constraints, but they tend to [costly for large tables](https://duckdb.org/docs/guides/performance/indexing). Consider instead specifying constraints using lenses for large datasets.
 
 ## Database Connection
 
