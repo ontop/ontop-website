@@ -200,7 +200,9 @@ $ ./ontop endpoint -m university-complete.obda \
 
 ## `ontop materialize`
 
-This command provides a "materialization utility". Materialization is helpful when you want to generate RDF data out of your database, using the provided mappings. This utility will take all the triples that the mapping can produce from the data source, and write them to the output. `ontop materialize` does not need any query file, but instead, needs the user to specify a format in which he/she wants the output (either to terminal or output file). The user can choose between three output formats: [Turtle](https://www.w3.org/TR/2014/REC-turtle-20140225/), [N-triples](https://www.w3.org/TR/2014/REC-n-triples-20140225/) or [RDF/XML](https://www.w3.org/TR/2014/REC-rdf-syntax-grammar-20140225/). For very large datasets, producing the output might take some time. 
+This command provides a "materialization utility". Materialization is helpful when you want to generate RDF data out of your database, using the provided mappings. This utility will take all the triples that the mapping can produce from the data source, and write them to the output. `ontop materialize` does not need any query file, but instead, needs the user to specify a format in which he/she wants the output (either to terminal or output file). The user can choose between three output formats: [Turtle](https://www.w3.org/TR/2014/REC-turtle-20140225/), [N-triples](https://www.w3.org/TR/2014/REC-n-triples-20140225/) or [RDF/XML](https://www.w3.org/TR/2014/REC-rdf-syntax-grammar-20140225/). For very large datasets, producing the output might take some time.
+
+The compression option has been added in 5.2.0.
 
 ```
 $ ./ontop help materialize
@@ -211,13 +213,14 @@ NAME
 SYNOPSIS
         ontop materialize [ {-a | --facts} <fact file> ]
                 [ {-c | --constraint} <constraint file> ]
+                [ --compression <output compression> ]
                 [ {-d | --db-metadata} <db-metadata file> ]
                 [ --db-driver <DB driver> ] [ --db-password <DB password> ]
                 [ --db-url <DB URL> ] [ --enable-annotations ]
-                [ {-f | --format} <outputFormat> ]
-                [ --facts-base-iri <Base IRI of facts in fact file> ]
+                [ {-f | --format} <output format> ]
+                [ --facts-base-iri <base IRI of facts in fact file> ]
                 [ --facts-format <format of facts file> ]
-                [ {-l | --lenses | -v | --ontop-views} <lenses file> ]
+                [ {-l | --lenses | -v | --ontop-views} <Lenses file> ]
                 {-m | --mapping} <mapping file> [ --no-streaming ]
                 [ {-o | --output} <output> ]
                 [ {-p | --properties} <properties file> ] [ --separate-files ]
@@ -228,10 +231,19 @@ SYNOPSIS
 
 OPTIONS
         -a <fact file>, --facts <fact file>
-            User-supplied constant fact file
+            RDF fact file
 
         -c <constraint file>, --constraint <constraint file>
             User-supplied DB constraint file
+
+        --compression <output compression>
+            The compression format of the materialized RDF graph. Default: no
+            compression
+
+            This options value is restricted to the following set of values:
+                gzip
+                zip
+                no_compression
 
         -d <db-metadata file>, --db-metadata <db-metadata file>
             User-supplied db-metadata file
@@ -249,8 +261,8 @@ OPTIONS
             enable annotation properties defined in the ontology. Default:
             false
 
-        -f <outputFormat>, --format <outputFormat>
-            The format of the materialized ontology. Default: rdfxml
+        -f <output format>, --format <output format>
+            The format of the materialized RDF graph. Default: rdfxml
 
             This options value is restricted to the following set of values:
                 rdfxml
@@ -260,11 +272,12 @@ OPTIONS
                 trig
                 jsonld
 
-        --facts-base-iri <Base IRI of facts in fact file>
-            The base IRI used for the facts taken from the fact file.
+        --facts-base-iri <base IRI of facts in fact file>
+            The base IRI of facts in the fact file to resolve relative IRIs. If
+            not provided, a random IRI is generated.
 
         --facts-format <format of facts file>
-            The format of the materialized ontology. Default: infer from file extension
+            The format of the 'facts' input file.
 
             This options value is restricted to the following set of values:
                 rdfxml
@@ -274,8 +287,8 @@ OPTIONS
                 trig
                 jsonld
 
-        -l <lenses file>, --lenses <lenses file>, -v <lenses file>,
-        --ontop-views <lenses file>
+        -l <Lenses file>, --lenses <Lenses file>, -v <Lenses file>,
+        --ontop-views <Lenses file>
             User-supplied lenses file. Lenses were formerly named Ontop views.
 
         -m <mapping file>, --mapping <mapping file>
