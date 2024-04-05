@@ -13,11 +13,16 @@ Through the [MySQL](https://mysql.com) connector, Ontop is able to construct VKG
 The following shows the content of a sample `.properties` file that can be used to connect Ontop to MySQL:
 
 ```bash
-jdbc.url = jdbc:mysql://localhost:3306/defaultdatabase
+jdbc.url = jdbc:mysql://localhost:3306/defaultdatabase?useCursorFetch=true
 jdbc.user = user
 jdbc.password = password
 jdbc.driver = com.mysql.cj.jdbc.Driver
 ```
+
+:::warning
+The parameter `useCursorFetch=true` needs to be added to the JDBC URL for streaming to be enabled. Otherwise, the JDBC driver will block until the full result set is fetched, which may cause out-of-memory exceptions when materializing or running large queries.
+:::
+
 
 ## Nested Type Support
 
