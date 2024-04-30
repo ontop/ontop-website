@@ -75,7 +75,7 @@ Ontop complies with [RDF 1.1](https://www.w3.org/TR/rdf11-new/). It types simple
 ## Time functions
 *Updated for 5.1.0*.
 
-The functions using the prefix `ofn` (`http://www.ontotext.com/sparql/functions/`) and their documentation can be found [here](https://graphdb.ontotext.com/documentation/10.0/devhub/time-functions.html#durations-expressed-in-certain-units). They accept both `xsd:date` and `xsd:dateTime` as arguments. (*supported since 4.2.0*).
+The functions using the prefix `ofn` (`http://www.ontotext.com/sparql/functions/`) and their documentation can be found [here](https://graphdb.ontotext.com/documentation/10.6/sparql-ext-functions-reference.html#date-and-time-function-extensions). They accept both `xsd:date` and `xsd:dateTime` as arguments. (*supported since 4.2.0*).
 
 The functions using the prefix `obdaf` (`https://w3id.org/obda/functions#`) have been introduced in 5.1.0 (see [#705](https://github.com/ontop/ontop/pull/705)).
 
