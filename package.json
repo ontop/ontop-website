@@ -5,8 +5,8 @@
     "docs:build": "vuepress build"
   },
   "dependencies": {
-    "markdown-it-vue": "^1.1.6",
-    "vuepress": "^1.8.2",
+    "markdown-it-vue": "^1.1.7",
+    "vuepress": "^1.9.9",
     "vuepress-plugin-mathjax": "^1.2.8",
     "vuepress-plugin-matomo": "^1.0.2",
     "vuepress-plugin-redirect": "*"
