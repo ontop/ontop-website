@@ -13,9 +13,9 @@ For the development side, see [the community page](/community).
 
 * [Assistant Prof. Dr. Guohui Xiao](http://www.ghxiao.org) (Team Leader)
 * [Prof. Dr. Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Scientific Coordinator)
-* Dr. Julien Corman
-* Dr. Linfang Ding
-* Dr. Davide Lanti
+* Assistant Professor Dr. Julien Corman
+* Assistant Professor Dr. Davide Lanti
+* Assistant Professor Dr. Alessandro Mosca (also affiliated at CNR-ISTC [Laboratory for Applied Ontology (LOA)](https://www.loa.istc.cnr.it/)
 
 ### International collaborations
 
@@ -31,6 +31,7 @@ For the development side, see [the community page](/community).
 * [Dr. Elena Botoeva](https://www.kent.ac.uk/computing/people/3838/botoeva-elena) (University of Kent, UK)
 * [Dr. Benjamin Cogrel](https://research.bcgl.fr) ([Ontopic](https://ontopic.ai), Bolzano)
 * [Dr. Elem Güzel Kalaycı](https://scholar.google.it/citations?user=WYEhpZYAAAAJ&hl=en) (Virtual Vehicle Research GmbH, Austria)
+* [Dr. Linfang Ding](https://www.ntnu.edu/employees/linfang.ding) (Norwegian University of Science and Technology, Norway)
 
 ## Projects
 
