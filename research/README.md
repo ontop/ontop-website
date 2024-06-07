@@ -6,16 +6,16 @@ A decade after, Ontop remains very active, both from a research and a software d
 
 ## Researchers
 
-Here we list the people who has been involved in the research side of the Ontop project.
+Here we list the people who have been involved in the research side of the Ontop project.
 For the development side, see [the community page](/community).
 
 ### At the Free University of Bozen-Bolzano (Unibz)
 
 * [Assistant Prof. Dr. Guohui Xiao](http://www.ghxiao.org) (Team Leader)
 * [Prof. Dr. Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Scientific Coordinator)
-* Assistant Professor Dr. Julien Corman
-* Assistant Professor Dr. Davide Lanti
-* Assistant Professor Dr. Alessandro Mosca (also affiliated at CNR-ISTC [Laboratory for Applied Ontology (LOA)](https://www.loa.istc.cnr.it/)
+* Assistant Prof. Dr. Julien Corman
+* Assistant Prof. Dr. Davide Lanti
+* Assistant Prof. Dr. Alessandro Mosca (also affiliated at CNR-ISTC [Laboratory for Applied Ontology (LOA)](https://www.loa.istc.cnr.it/)
 
 ### International collaborations
 
@@ -37,17 +37,20 @@ For the development side, see [the community page](/community).
 
 The development and the research around Ontop over the years have been mainly funded by research projects.
 
+
+### Current projects
+* [CYCLOPS](https://www.cyclopsproject.eu/), EU Project
+* [D2G2](https://gepris.dfg.de/gepris/projekt/500249124?language=en) (Dense and Deep Geographic Virtual Knowledge Graphs for Visual Analysis), funded by DFG and the province of Bolzano)
+
 ### Past projects
 
 * Thinking ONtologiES (TONES), EU FET project
 * [Optique](http://optique-project.eu/) (Scalable End-User Access to Big Data) FP7 project
 * Ontology-based Data Access to NoSQL Database (OBDAM), Unibz project
 * Ontology-based analysis of temporal and streaming data (OBATS), Unibz project
-
-### Current projects
-* [INODE](http://www.inode-project.eu/) (data management infrastructures), H2020 EU project
-* High quality Open data Publishing and Enrichment (HOPE), Italian national PRIN (Research Projects of National Relevance)
-* PACMEL (VKG for process mining),  CHIST-ERA EU Project
 * IDEE (data integration in the energy sector), FESR Project
 * GeoVKG (geo-spatial VKG), Unibz project
 * High Quality Data Integration with Ontologies (QUADRO), Unibz project
+* High quality Open data Publishing and Enrichment (HOPE), Italian national PRIN (Research Projects of National Relevance)
+* PACMEL (VKG for process mining),  CHIST-ERA EU Project
+* [INODE](http://www.inode-project.eu/) (data management infrastructures), H2020 EU project
