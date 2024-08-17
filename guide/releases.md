@@ -1,5 +1,55 @@
 # Release notes
 
+## 5.2.0 (August 16, 2024)
+
+#### New features
+ - Extract user information (ID, group, role) from HTTP headers and make it available to special SQL functions [#753](https://github.com/ontop/ontop/pull/753)
+ - Insert user info in the query log [#768](https://github.com/ontop/ontop/pull/768)
+ - Compression option added to the materialization [#797](https://github.com/ontop/ontop/pull/797)
+
+#### Optimizations
+ - Left join optimizations:
+      - Pruning the right child when unused and cardinality doesn't matter [#752](https://github.com/ontop/ontop/pull/752)
+      - More non-nullability constraints extracted from the ancestors for transferring self-left-joins based on functional dependencies [#761](https://github.com/ontop/ontop/pull/761)
+      - Self-left-join elimination with nullable determinants of functional dependencies [#783](https://github.com/ontop/ontop/pull/783)
+      - Self-left join elimination on nullable functional dependency determinants made robust to provenance variables and trivial functional dependencies [#804](https://github.com/ontop/ontop/pull/804)
+ - Unique constraint and variable non requirement inference with distinct nodes improved [#756](https://github.com/ontop/ontop/pull/756)
+ - Simplification of conjunctions and disjunctions of equalities [#755](https://github.com/ontop/ontop/pull/755)
+ - Propagation of foreign keys from basic lenses to parents [#759](https://github.com/ontop/ontop/pull/759)
+ - Functional dependency inference for unions improved [#760](https://github.com/ontop/ontop/pull/760)
+ - Optimization to the SPARQL `strStartsWith` function [#801](https://github.com/ontop/ontop/pull/801)
+ - IRI decomposition with more than 1 argument when some arguments are nullable enabled [#809](https://github.com/ontop/ontop/pull/809)
+ - Removal of distincts below joins when there is a `limit 1` above
+ - Year extraction from timestamps with DuckDB optimized
+
+#### Refactoring
+  - T-mapping and related optimizations refactored [#769](https://github.com/ontop/ontop/pull/769)
+  - B-node label anonymization pushed into the IQTree [#772](https://github.com/ontop/ontop/pull/772)
+  - Handling environment variables with the CLI refactored [#814](https://github.com/ontop/ontop/pull/814)
+  - Robust simplification for GeoSPARQL functions [#808](https://github.com/ontop/ontop/pull/808)
+  - Wrapping a values node into a lens at mapping processing time added (disabled by default; see property `ontop.wrapMappingValuesNodesInLenses`)
+  - Non-nullable variables are not used anymore for right provenance from a left join (was preventing some optimizations)
+
+#### Bug fixes
+  - `<expression> = true` issue with SQLServer and Oracle fixed [#758](https://github.com/ontop/ontop/pull/758)
+  - Connection test for Trino and H2 fixed [#767](https://github.com/ontop/ontop/pull/767)
+  - Mysql datetime conversion is now encoded to UTF8 to avoid collation error [#779](https://github.com/ontop/ontop/pull/779)
+  - Missing spaces in string format pattern with MySQL added [#784](https://github.com/ontop/ontop/pull/784)
+  - Configuration classes now use injector suppliers [#794](https://github.com/ontop/ontop/pull/794)
+  - MS SQL Server identifiers are now treated not case-sensitive (even if quoted) [#805](https://github.com/ontop/ontop/pull/805)
+  - Incorrect time zone format in xsd:dateTime for Redshift's `TIMESTAMP` data type fixed [#807](https://github.com/ontop/ontop/pull/807)
+  - Database constraints were ignored by Ontop CLI [#777](https://github.com/ontop/ontop/pull/777)
+  - Error with the CLI during the R2RML to OBDA mapping conversion fixed [#799](https://github.com/ontop/ontop/pull/799)
+  - `TIMESTAMP WITH TIME ZONE` is now recognized for H2
+  - Typing nulls for `DATE` with Dremio fixed
+  - Missing minutes from the DuckDB time zone added
+  - Invalid URNs for the triple patterns generated when converting the mapping to R2RML fixed
+  - Error with constant in order-by involving a VALUES node fixed
+  - Missed duplicate elimination for some overlapping IRI templates fixed
+  - Incorrect content types returned for CSV and TSV results of a SPARQL query fixed
+
+[Milestone on Github](https://github.com/ontop/ontop/milestone/24?closed=1)
+
 ## 5.1.2 (January 17, 2024)
 
 #### Bug fixes
