@@ -4,7 +4,7 @@
 
 #### New features
  - Extract user information (ID, group, role) from HTTP headers and make it available to special SQL functions [#753](https://github.com/ontop/ontop/pull/753)
- - Insert user info in the query log [#768](https://github.com/ontop/ontop/pull/768)
+ - Insert user information into the query log [#768](https://github.com/ontop/ontop/pull/768)
  - Compression option added to the materialization [#797](https://github.com/ontop/ontop/pull/797)
 
 #### Optimizations
