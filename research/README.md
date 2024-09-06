@@ -15,7 +15,7 @@ For the development side, see [the community page](/community).
 * [Prof. Dr. Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Scientific Coordinator)
 * Assistant Prof. Dr. Julien Corman
 * Assistant Prof. Dr. Davide Lanti
-* Assistant Prof. Dr. Alessandro Mosca (also affiliated at CNR-ISTC [Laboratory for Applied Ontology (LOA)](https://www.loa.istc.cnr.it/)
+* Assistant Prof. Dr. Alessandro Mosca (also affiliated at CNR-ISTC [Laboratory for Applied Ontology (LOA)](https://www.loa.istc.cnr.it/)）
 
 ### International collaborations
 
