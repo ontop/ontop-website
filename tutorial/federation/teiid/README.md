@@ -2,10 +2,10 @@
 
 In this tutorial, we present how to use Teiid as a federator for Ontop. We provides two options:
 
-- Option 1: Using Docker-comopse (recommended)
+- Option 1: Using Docker-compose (recommended)
 - Option 2: Manual set up
 
-## Option 1: Using Docker-comopse
+## Option 1: Using Docker-compose
 
 ### Requirements
 * [Docker](https://docs.docker.com/get-docker/), version 17.09.0 or higher
