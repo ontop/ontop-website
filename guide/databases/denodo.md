@@ -12,7 +12,10 @@ Through the [Denodo](https://www.denodo.com/en) connector, Ontop is able to cons
 The following shows the content of a sample `.properties` file that can be used to connect Ontop to Denodo:
 
 ```bash
-jdbc.url = jdbc:vdb://localhost:9999/books
+# For Denodo >= 8
+jdbc.url = jdbc:denodo://localhost:9999/
+# For Denodo < 8
+#jdbc.url = jdbc:vdb://localhost:9999/books
 jdbc.user = admin
 jdbc.password = ${denodo.password}
 jdbc.driver = com.denodo.vdp.jdbc.Driver
