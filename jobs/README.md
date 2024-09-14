@@ -12,7 +12,7 @@ At the [In2Data research group](https://www.inf.unibz.it/krdb/in2data/) at the K
 - PhD student positions (<https://www.inf.unibz.it/krdb/phd/>) 
 - Research assistant / Scientific programmer / PostDoc researcher positions
 
-If you are interested, please get in touch with [Prof. Diego Calvanese](http://www.inf.unibz.it/~calvanese/) or [Dr. Guohui Xiao](https://www.ghxiao.org/). 
+If you are interested, please get in touch with [Prof. Diego Calvanese](http://www.inf.unibz.it/~calvanese/). 
 
 ## Ontopic
 
