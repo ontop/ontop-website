@@ -8,7 +8,7 @@ For the research side, [see the dedicated page](/research).
 ## Active Core Team Members
 
 The development of Ontop is guided by an international team (reverse lexicographical order).
-* [Guohui Xiao](http://www.ghxiao.org/) (Unibz, Ontopic)
+* [Guohui Xiao](http://www.ghxiao.org/) (Southeast University, Ontopic)
 * Albulen Pano (Unibz)
 * [Davide Lanti](https://www.inf.unibz.it/~dlanti/) (Unibz)
 * [Roman Kontchakov](http://www.dcs.bbk.ac.uk/~roman/) (Birkbeck)
