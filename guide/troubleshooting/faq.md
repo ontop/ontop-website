@@ -48,10 +48,3 @@ Please go to the *Preferences* and click on *"Reset preferences"*.
 
 ### Protégé does not show the Ontop tabs
 To see the tabs go to *Windows -> tabs -> Ontop Mappings and Ontop SPARQL*.
-
-## RDF4J workbench (not supported anymore)
-
-### Why RDF4J Workbench refuses to delete some repositories?
-
-For deleting metadata about a repository, the RDF4J Workbench should be able to create an instance of this repository. However, if the repository configuration is invalid (due to, for instance to bad mapping and ontology files), such an instance cannot be created.
-To avoid this situation, the configuration is validated in depth when a new repository is added to the Workbench. However, if the mapping and ontology files are changed afterwards, we offer no protection.    One workaround is to create a valid repository with the same name and then to delete it. Another workaround is to delete it from the RDF4J console.
