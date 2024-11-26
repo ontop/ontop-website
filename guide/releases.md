@@ -1,5 +1,13 @@
 # Release notes
 
+## 5.2.1 (November 24, 2024)
+
+- Column info extraction for Oracle made robust to latency [#827](https://github.com/ontop/ontop/pull/827)
+- Implement RDF4J `Query.getDataset()` and `Query.setDataset()`
+- Exponentially slow removal of variables of a large BGP after applying a distinct fixed
+
+Apache Commons IO dependency updated
+
 ## 5.2.0 (August 16, 2024)
 
 #### New features
