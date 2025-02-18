@@ -1,5 +1,20 @@
 # Release notes
 
+## 5.3.0 (February 18, 2025)
+
+#### Major dependency update
+  - RDF4J updated from 4.x to 5.1.0 [#819](https://github.com/ontop/ontop/pull/819)
+  - OWLAPI updated to 5.5.1 [#819](https://github.com/ontop/ontop/pull/819)
+
+#### New optimizations
+
+  - Unique constraint inference for unions improved in presence of disjoint IRI templates
+  - Inference of strict dependents as a lightweight alternative to functional dependencies added
+  - `IQTree.getPossibleVariableDefinitions()` refactored to handle partially unfolded IQ trees
+
+#### Bugfix
+  - `STRSTARTS` handling of IRI template strings fixed
+
 ## 5.2.1 (November 24, 2024)
 
 - Column info extraction for Oracle made robust to latency [#827](https://github.com/ontop/ontop/pull/827)
