@@ -10,7 +10,6 @@
 
   - Unique constraint inference for unions improved in presence of disjoint IRI templates
   - Inference of strict dependents as a lightweight alternative to functional dependencies added
-  - `IQTree.getPossibleVariableDefinitions()` refactored to handle partially unfolded IQ trees
 
 #### Bugfix
   - `STRSTARTS` handling of IRI template strings fixed
