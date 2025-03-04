@@ -179,6 +179,7 @@ Several dependencies updated.
 
 #### New features
   - Support for SPARQL rules for the extending the VKG added [#576](https://github.com/ontop/ontop/pull/576)
+  - Support for SPARQL `FROM` and `FROM NAMED` constructs (also part of [#576](https://github.com/ontop/ontop/pull/576))
   - The [Docker image](https://hub.docker.com/r/ontop/ontop) now also supported the ARM64 architecture and allows to run all the CLI commands [#532](https://github.com/ontop/ontop/issues/532)
   - Support for Snowflake added [#520](https://github.com/ontop/ontop/issues/520)
   - Support for MariaDB added [#271](https://github.com/ontop/ontop/issues/271)
