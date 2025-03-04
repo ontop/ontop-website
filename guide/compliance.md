@@ -25,12 +25,15 @@ In the following table we present a summary of the compliance of the latest vers
 | [17.4.4. Functions on Numerics](https://www.w3.org/TR/sparql11-query/#func-numerics) | `abs`, `round`, `ceil`, `floor`, `RAND` | 5/5 |
 | [17.4.5. Functions on Dates&Times](https://www.w3.org/TR/sparql11-query/#func-date-time) | `now`, `year`, `month`, `day`, `hours`, `minutes`, `seconds`, <code>~~timezone~~</code>, `tz` | 8/9 |
 | [17.4.6. Hash Functions](https://www.w3.org/TR/sparql11-query/#func-hash) | `MD5`, `SHA1`, `SHA256`, `SHA384`, `SHA512` | 5/5 |
-| [17.5 XPath Constructor Functions](https://www.w3.org/TR/sparql11-query/#FunctionMapping) | Casting | - |
+| [17.5 XPath Constructor Functions](https://www.w3.org/TR/sparql11-query/#FunctionMapping) | `xsd:string`, `xsd:float`, `xsd:double`, `xsd:decimal`, `xsd:integer`, `xsd:boolean`, `xsd:dateTime` | 7/7 |
 | [17.6 Extensible Value Testing](https://www.w3.org/TR/sparql11-query/#extensionFunctions) | ~~user defined functions~~ | 0 |
 
 ### Limitations
  - The 5 hash functions and functions `REPLACE` and `REGEX` for regular expressions have limited support because they heavily depend on the DBMS: not all DBMSs provide all hash functions, and many DBMSs have their own regex dialects. Currently, the SPARQL regular expressions of `REPLACE` and `REGEX` are simply sent to the DBMS by default.
  - In the implementation of function `langMatches`, the second argument has to a be a constant: allowing variables will have a negative impact on the performance in our framework.
+ - Cast to `xsd:boolean`. Casting NaN to boolean should result in `"false"^^xsd:boolean`, however this check is not feasible for many DB dialects, hence there is mostly no special handling of these values with support limited to PostgreSQL, Oracle and Spark.
+- Cast to `xsd:decimal`. Casting to DECIMAL results in values with scale 0 in several SQL dialects. As such the custom DECIMAL_STR with an arbitrary precision defined in the respective DBTypeFactory of a dialect is used for each cast.
+- Cast to `xsd:dateTime`. The list of possible timestamp patterns is too large, and many dialects lack an effective way to check for these patterns without getting extremely verbose. Hence, it is not possible to often detect whether a value is a valid timestamp before the cast is performed. With the exception of SQL Server and Snowflake which have TRY_CAST functions, applying this function to other dialects comes with severe limitations.
 
 
 ## GeoSPARQL 1.0
