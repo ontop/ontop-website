@@ -167,3 +167,8 @@ PostgreSQL requires these granularities to be named `milliseconds` and `microsec
 `obdaf:hour("2023-08-16T09:00:00"^^xsd:dateTime)` $\rightarrow$ `"9"^^xsd:integer`
 
 `obdaf:dateTrunc("2023-08-16T09:00:00"^^xsd:dateTime, "month"^^xsd:string)` $\rightarrow$ `"2023-08-01T00:00:00"^^xsd:dateTime`
+
+
+## Other functions
+
+- Cast to `xsd:date`
