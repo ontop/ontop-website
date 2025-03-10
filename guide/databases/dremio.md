@@ -11,6 +11,10 @@ Dremio does not provide information about integrity constraints. Make sure to pr
 We recommend using [lenses](/guide/advanced/lenses) for this purpose.
 :::
 
+:::warning
+The Dremio JDBC officially only supports Java 8 and 11. If you want to use Java 17, the following option must be added to the JVM `--add-opens java.base/java.nio=ALL-UNNAMED`.
+:::
+
 - The `position` argument for the [flatten lens](/guide/advanced/lenses#flattenlens) cannot be used with Dremio.
 - When using a Dremio version below 21.0.0, some larger queries that employ `UNION`s may fail. This can be solved by adding `ontop.maxNbChildrenLiftingDBFS=0` to the properties
 
