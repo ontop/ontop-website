@@ -11,6 +11,10 @@ Integrity constraint information is a recent feature in BigQuery. Beware that th
 We recommend using [lenses](/guide/advanced/lenses) for this purpose.
 :::
 
+:::warning
+The Simba BigQuery JDBC Driver officially only supports Java 8 and 11. If you want to use Java 17, the following option must be added to the JVM `--add-opens java.base/java.nio=ALL-UNNAMED`.
+:::
+
 - String literals have to be encased in _single quotes_ (`'`). Double quote string literals (`"`) are not supported.
 - The position counter in the [flatten lens](/guide/advanced/lenses#flattenlens) starts counting at 0 instead of 1 for BigQuery.
 - Accessing struct fields with the "dot operator" is not supported (see below).
