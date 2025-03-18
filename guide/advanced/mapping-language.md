@@ -5,7 +5,7 @@ While Ontop is compatible with the W3C standard mapping language [R2RML](https:/
 An OBDA mapping file is a text file with extension `.obda` and it is made up of two main sections:
 
 - `PrefixDeclaration`: a list of prefix definitions used in the mapping file. Each prefix is declared by a pair of its identifier (or name) and its IRI definition.
-- `MappingDeclaration`: collection of **mapping axioms** where each mapping axiom consists of three fields: `mappingId`, `source` and `target`. The mappingId is any string identifying the axiom, the source is an arbitrary SQL query over the database, and the target is a [triple template](#target-triple-template) that contains placeholders that reference column names mentioned in the source query.
+- `MappingDeclaration`: collection of **mapping assertions** where each mapping assertion consists of three fields: `mappingId`, `source` and `target`. The mappingId is any string identifying the assertion, the source is an arbitrary SQL query over the database, and the target is a [triple template](#target-triple-template) that contains placeholders that reference column names mentioned in the source query.
 
 The following is an example of a valid OBDA mapping file:
 
@@ -30,16 +30,16 @@ where the empty lines between the two sections and between the mappings are mand
 
 ## Source Query
 
-The `source` query in a mapping axiom is an SQL query over the underlying relational database and as such it uses the SQL syntax of that specific database dialect.
+The `source` query in a mapping assertion is an SQL query over the underlying relational database and as such it uses the SQL syntax of that specific database dialect.
 So things like quotes conventions may vary depending on the database system used. For example, in PostgreSQL double quotes are used for tables and column identifiers, while in MySQL backticks are used.
 
 ::: warning
-The Ontop SQL parser only parses simple SQL queries without unions, aggregations, order by, etc.. Non parsed queries are treated as black-box views and sent directly to the database so the optimizations that Ontop can apply are limited.
+The Ontop SQL parser only parses simple SQL queries without unions, aggregations, order by, etc. Non-parsed queries are treated as black-box views and sent directly to the database so the optimizations that Ontop can apply are limited.
 :::
 
 ## Target triple template
 
-Here we explain the syntax of IRI and literal templates used in the `target` of mapping axioms which is an adaptation of the [Turtle](http://www.w3.or/TR/turtle) syntax. The **target triple template** is written like an RDF subject-predicate-object (SPO) graph.
+Here we explain the syntax of IRI and literal templates used in the `target` of mapping assertions which is an adaptation of the [Turtle](http://www.w3.or/TR/turtle) syntax. The **target triple template** is written like an RDF subject-predicate-object (SPO) graph.
 
 ```
 target  <http://www.example.org/library#BID_{id}> rdf:type :Book .
@@ -62,7 +62,7 @@ Each triple must be separated by space followed by a period (`s p o .`) and it i
 
   1. IRI constant: e.g. `<http://www.example.org/library#Book>`
   2. [IRI template](#iri-template): e.g. `<http://www.example.org/Author-{pid}>`
-  3. Literal: either a plain literal (e.g. `"John"`, `123`), a typed literal (e.g. `"John"^^xsd:string`, `"123"^^xsd:int`) or a literal with language (e.g. `"Il Trono di Spade"@it`).
+  3. Literal: either a typed literal (e.g. `"John"^^xsd:string`, `"123"^^xsd:integer`) or a literal with language (e.g. `"Il Trono di Spade"@it`). If the type is not specified, it is treated as an `xsd:string`.
      <!-- Note that adding a language tag or a type are mutually exclusive. -->
   4. [Literal template](#literal-template): just like literals, literal templates can also be typed or have a language tag (e.g. `{id}^^xsd:integer`, `{id}`).
 
@@ -79,7 +79,7 @@ target        :BID_{id} :title {title}^^xsd:string@it .
 
 ### IRI Template
 
-IRI templates are used in the target of mapping axioms for identification of generated objects. An IRI template is an arbitrary string with placeholders (e.g. `<http://www.example.org/library#BID_{id}>`). More than one placeholder can appear in a IRI template, which allows to construct complex IRI paths. For example:
+IRI templates are used in the target of mapping assertions for identification of generated objects. An IRI template is an arbitrary string with placeholders (e.g. `<http://www.example.org/library#BID_{id}>`). More than one placeholder can appear in a IRI template, which allows to construct complex IRI paths. For example:
 
 ```
 mappingId     Spare parts
@@ -94,11 +94,11 @@ Prefixes can be used when writing a IRI template and are replaced by their defin
 _Example_. Assume that the following prefixes are defined:
 
 ```
-PREFIX   :	http://www.example.org/ontology1#
-PREFIX   p:	http://www.example.org/ontology2#
+:	http://www.example.org/ontology1#
+p:	http://www.example.org/ontology2#
 ```
 
-Then this mapping axiom:
+Then this mapping assertion:
 
 ```
 mappingId     Example
@@ -106,7 +106,7 @@ source        SELECT col1, col2 FROM table
 target        <http://www.example.org/ontology1#{col1}> :property <http://www.example.org/ontology2#{col2}>
 ```
 
-is equivalent to this mapping axiom:
+is equivalent to this mapping assertion:
 
 ```
 mappingId     Example
@@ -125,7 +125,7 @@ It is possible to create typed literals by specifying the type in the mapping. F
 ```
 mappingId     Book titles
 source        SELECT id, title, edition, comment FROM books
-target        :BID_{id} :title {title}^^xsd:string; :edition {edition}^^xsd:int; :description {comment} .
+target        :BID_{id} :title {title}^^xsd:string; :edition {edition}^^xsd:integer; :description {comment} .
 ```
 
 The type used in the mapping has to agree with the type in the ontology (if specified).
@@ -198,11 +198,11 @@ Following [Turtle](http://www.w3.org/TR/turtle/) syntax, Ontop native mapping fo
 :A_Game_of_Thrones :title "A Game of Thrones"@en-US, "Il Trono di Spade"@it .
 ```
 
-## Meta mappings
+## Meta-mapping
 
-Meta Mappings are syntactically the same as normal mappings but they allow users to put variables in the target of mappings without restriction. This implies that class and property names can be constructed dynamically from the database.
+Meta-mapping assertions are syntactically the same as normal assertions but they allow users to put variables in the targets without restriction. This implies that class and property names can be constructed dynamically from the database.
 
-_Example_. Consider the following mappings:
+_Example_. Consider the following mapping assertions:
 
 ```
 mappingId	mapping1
@@ -216,7 +216,7 @@ target	<{iri}> :{role}_{code} {value} .
 source	SELECT value, iri, code, role FROM table1 where code > 0
 ```
 
-Suppose we also have a table named `table1` that the mappings are referring to:
+Suppose we also have a table named `table1` that the mapping assertions are referring to:
 
 | iri    | value | code | role |
 | ------ | ----- | ---- | ---- |
@@ -236,8 +236,3 @@ And `mapping2` will generate triples:
 ```
 iri1 :P_1 A . iri2 :P_2 B . iri3 :Q_2 A . iri4 :Q_2 B .
 ```
-
-<!--Still to add somewhere:
-- RDFS and OWL vocabulary are not allowed in mappings, with the exception of rdf:type
-- multischema
--->

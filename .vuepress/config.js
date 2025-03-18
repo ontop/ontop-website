@@ -102,12 +102,12 @@ function genGuideSidebarConfig() {
         	title: 'Advanced',
         	collapsable: false,
         	children: [
+                'advanced/mapping-language',
                 'advanced/predefined',
                 'advanced/logging',
                 'advanced/caching',
                 'advanced/configuration',
-                'advanced/lenses',
-                'advanced/mapping-language'
+                'advanced/lenses'
         	]
           },
         {
