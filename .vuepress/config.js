@@ -106,7 +106,8 @@ function genGuideSidebarConfig() {
                 'advanced/logging',
                 'advanced/caching',
                 'advanced/configuration',
-                'advanced/lenses'
+                'advanced/lenses',
+                'advanced/mapping-language'
         	]
           },
         {
