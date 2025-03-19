@@ -56,7 +56,7 @@ Each triple must be separated by space followed by a period (`s p o .`) and it i
   1. IRI or blank node constant: e.g. `<http://www.example.org/library#BID_FF125>` or `_:Library1`
   2. [IRI or blank node template](#iri-or-blank-node-template): e.g. `<http://www.example.org/library#BID_{id}>` or `_:{id}`
 
-- **Predicate node**. The predicate node only accepts IRIs, both constants (e.g. `http://www.example.org/library#title>`) and templates (e.g. `<{iri}>`)
+- **Predicate node**. The predicate node only accepts IRIs, both constants (e.g. `<http://www.example.org/library#title>`) and templates (e.g. `<{iri}>`)
 
 - **Object node**. The object node can be one of the following terms:
 
