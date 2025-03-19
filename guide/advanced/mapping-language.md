@@ -53,30 +53,24 @@ Each triple must be separated by space followed by a period (`s p o .`) and it i
 
 - **Subject node**. The subject node can be one of the following terms:
 
-  1. IRI constant: e.g. `<http://www.example.org/library#BID_FF125>`
-  2. [IRI template](#iri-template): e.g. `<http://www.example.org/library#BID_{id}>`
-  3. Blank node: e.g. `_:{id}`
+  1. IRI or blank node constant: e.g. `<http://www.example.org/library#BID_FF125>` or `_:Library1`
+  2. [IRI or blank node template](#iri-or-blank-node-template): e.g. `<http://www.example.org/library#BID_{id}>` or `_:{id}`
 
 - **Predicate node**. The predicate node only accepts IRIs, both constants (e.g. `http://www.example.org/library#title>`) and templates (e.g. `<{iri}>`)
 
 - **Object node**. The object node can be one of the following terms:
 
-  1. IRI constant: e.g. `<http://www.example.org/library#Book>`
-  2. [IRI template](#iri-template): e.g. `<http://www.example.org/Author-{pid}>`
-  3. Blank node e.g. `_:{id}`
-  4. Literal: either a typed literal (e.g. `"John"^^xsd:string`, `"123"^^xsd:integer`) or a literal with language (e.g. `"Il Trono di Spade"@it`). If the type is not specified, it is treated as an `xsd:string`.
-  5. Literal template: just like literal constants, literal templates can also be typed or have a language tag (e.g. `"POINT ({longitude} {latitude})"^^geo:wktLiteral`).
-  6. Column: a column from the source query (e.g. `{title}`). It can also have a type or language tag.
-  
-Compared to columns, both IRI templates and literal templates are **IRI-safe**. This means that they are encoded to be valid IRIs, following the [R2RML standard](https://www.w3.org/TR/r2rml/#dfn-iri-safe). For example, if we take the previous literal template `"POINT ({longitude} {latitude})"^^geo:wktLiteral` and suppose we have the following data
-| longitude | latitude |
-| --------- | -------- |
-| 12.34     | 56.78    |
+  1. IRI or blank node constant: e.g. `<http://www.example.org/library#Book>`
+  2. [IRI or blank node template](#iri-template): e.g. `<http://www.example.org/Author-{pid}>`
+  3. Literal constant: either an implicitly typed literal (e.g. `1` or `true` or `"John"`), an explicitly typed literal (e.g. `"John"^^xsd:string`, `"123"^^xsd:integer`) or a literal with language tag (e.g. `"Il Trono di Spade"@it`).
+  4. Literal column: a column from the source query (e.g. `{title}`). It can also have a type or a language tag.
+  5. Literal template: just like literal constants, literal templates can also be explicitly typed or have a language tag (e.g. `"POINT ({longitude} {latitude})"^^geo:wktLiteral`).
 
-then the encoded literal will be `"POINT%20%2812.34%2056.78%29"^^geo:wktLiteral`.
+  
+Compared to columns, both IRI and blank node templates are **IRI-safe**. This means that they are encoded to be valid IRIs, following the [R2RML standard](https://www.w3.org/TR/r2rml/#dfn-iri-safe).
 
 ::: warning
-Literals, literal templates and columns can either be typed or have a language tag, but the two cannot be combined. For example the following mapping is invalid:
+Literal constants, templates and columns can either be explicitly typed or have a language tag, but the two cannot be combined. For example the following mapping is invalid:
 
 ```
 mappingId     Book titles in Italian
@@ -85,15 +79,24 @@ target        :BID_{id} :title {title}^^xsd:string@it .
 ```
 :::
 
-### IRI Template
+### IRI or Blank Node Template
 
-IRI templates are used in the target of mapping assertions for identification of generated objects. An IRI template is an arbitrary string with placeholders (e.g. `<http://www.example.org/library#BID_{id}>`). More than one placeholder can appear in a IRI template, which allows to construct complex IRI paths. For example:
+IRI or blank node templates are used in the target of mapping assertions for identification of generated objects. An IRI/blank node template is a string with placeholders (e.g. `<http://www.example.org/library#BID_{id}>`). More than one placeholder can appear in a template, which allows to construct complex paths. For example, as an IRI template:
 
 ```
 mappingId     Spare parts
 source        SELECT product, part, vendor FROM product
 target        <http://example.org/{vendor}/{product}/{part}> a :Part .
 ```
+
+or as a blank node template:
+
+```
+mappingId     Spare parts
+source        SELECT product, part, vendor FROM product
+target        _:{product}/{part} a :Part .
+```
+
 
 #### Prefixes in IRI Templates
 
@@ -122,8 +125,7 @@ source        SELECT col1, col2 FROM table
 target        :{col1} :title p:{col2}
 ```
 
-### Literal 
-Since in an RDF graph literals can be typed and have language tags, literal templates and columns can be typed and tagged as well
+### Literal
 
 #### Literal Typing
 
