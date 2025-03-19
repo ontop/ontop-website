@@ -175,15 +175,15 @@ or, using a template for the graph name:
 
 ```
 mappingId     Book titles in Italian
-source        SELECT id, title FROM books where lang='ITALIAN'
+source        SELECT id, title FROM books WHERE lang='ITALIAN'
 target        GRAPH <http://www.example.org/graphs/{lang}> { :BID_{id} :title {title}@it . }
 ```
 
-### Compact form
+### Compact Form
 
-Following [Turtle](https://www.w3.org/TR/turtle/) syntax, Ontop native mapping format allows writing down an RDF graph in a compact textual form. A set of triples sharing the same subject can be written as a **predicate list**, where the pairs predicate-object are separated using semicolons, while a set of triples sharing the same subject and predicate can be written as an **object list**, where objects are separated using commas.
+Following the [Turtle](https://www.w3.org/TR/turtle/) syntax, Ontop's native mapping format allows writing an RDF graph in a compact textual form. A set of triples sharing the same subject can be written as a **predicate list**, where predicate-object pairs are separated by semicolons. Similarly, a set of triples sharing the same subject and predicate can be written as an **object list**, where objects are separated by commas.
 
-**Predicate list**: These two examples are equivalent ways of writing the triple template about Author.
+**Predicate List**: These two examples are equivalent ways of writing the triple template for an Author.
 
 ```
 :Author-{ID} a :Author .
@@ -196,7 +196,7 @@ Following [Turtle](https://www.w3.org/TR/turtle/) syntax, Ontop native mapping f
 :Author-{ID} a :Author; :firstName {FNAME}; :lastName {LNAME}; :writes :Book-{ID} .
 ```
 
-**Object list**: These two examples are equivalent ways of writing the triple template about _A Game of Thrones_ book.
+**Object List**: These two examples are equivalent ways of writing the triple template for the _A Game of Thrones_ book.
 
 ```
 :A_Game_of_Thrones :title "A Game of Thrones"@en-US .
@@ -207,25 +207,25 @@ Following [Turtle](https://www.w3.org/TR/turtle/) syntax, Ontop native mapping f
 :A_Game_of_Thrones :title "A Game of Thrones"@en-US, "Il Trono di Spade"@it .
 ```
 
-## Meta-mapping
+## Meta-Mapping
 
-Meta-mapping assertions are syntactically the same as normal assertions but they allow users to put variables in the targets without restriction. This implies that class and property names can be constructed dynamically from the database.
+Meta-mapping assertions are syntactically the same as normal assertions, but they allow users to include variables in the targets without restrictions. This means that class and property names can be constructed dynamically from the database.
 
-_Example_. Consider the following mapping assertions:
-
-```
-mappingId	mapping1
-target	<{iri}> a :{value}_{code} .
-source	SELECT value, iri, code FROM table1 where code > 0
-```
+_Example_: Consider the following mapping assertions:
 
 ```
-mappingId	mapping2
-target	<{iri}> :{role}_{code} {value} .
-source	SELECT value, iri, code, role FROM table1 where code > 0
+mappingId     mapping1
+target        <{iri}> a :{value}_{code} .
+source        SELECT value, iri, code FROM table1 WHERE code > 0
 ```
 
-Suppose we also have a table named `table1` that the mapping assertions are referring to:
+```
+mappingId     mapping2
+target        <{iri}> :{role}_{code} {value} .
+source        SELECT value, iri, code, role FROM table1 WHERE code > 0
+```
+
+Suppose we also have a table named `table1` that the mapping assertions refer to:
 
 | iri    | value | code | role |
 | ------ | ----- | ---- | ---- |
@@ -234,14 +234,20 @@ Suppose we also have a table named `table1` that the mapping assertions are refe
 | iri3   |  A    |  2   |  Q   |
 | iri4   |  B    |  2   |  Q   |
 
-Then `mapping1` will generate triples:
+Then `mapping1` will generate the following triples:
 
 ```
-iri1 a :A_1 . iri2 a :B_2. iri3 a :A_2 . iri4 a :B_2 .
+iri1 a :A_1 .
+iri2 a :B_2 .
+iri3 a :A_2 .
+iri4 a :B_2 .
 ```
 
-And `mapping2` will generate triples:
+And `mapping2` will generate the following triples:
 
 ```
-iri1 :P_1 A . iri2 :P_2 B . iri3 :Q_2 A . iri4 :Q_2 B .
+iri1 :P_1 A .
+iri2 :P_2 B .
+iri3 :Q_2 A .
+iri4 :Q_2 B .
 ```
