@@ -70,7 +70,7 @@ Each triple must be separated by space followed by a period (`s p o .`) and it i
 Compared to columns, both IRI and blank node templates are **IRI-safe**. This means that they are encoded to be valid IRIs, following the [R2RML standard](https://www.w3.org/TR/r2rml/#dfn-iri-safe).
 
 ::: warning
-Literal constants, templates and columns can either be explicitly typed or have a language tag, but the two cannot be combined. For example the following mapping is invalid:
+Literal constants, templates and columns can either be explicitly typed or have a language tag, but the two cannot be combined. For example the following mapping is *invalid*:
 
 ```
 mappingId     Book titles in Italian
@@ -151,7 +151,7 @@ target        :BID_{id} :title {title}@it .
 ```
 
 ::: warning
-Language tags can only be constants, it is not possible to obtain them dynamically from the database. So for example the following mapping is invalid:
+Language tags can only be constants, it is not possible to obtain them dynamically from the database. So for example the following mapping is *invalid*:
 
 ```
 mappingId     Book titles in Italian
