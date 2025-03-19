@@ -55,26 +55,34 @@ Each triple must be separated by space followed by a period (`s p o .`) and it i
 
   1. IRI constant: e.g. `<http://www.example.org/library#BID_FF125>`
   2. [IRI template](#iri-template): e.g. `<http://www.example.org/library#BID_{id}>`
+  3. Blank node: e.g. `_:{id}`
 
-- **Predicate node**. The predicate node only accept IRI constants (e.g. `http://www.example.org/library#title>`).
+- **Predicate node**. The predicate node only accepts IRIs, both constants (e.g. `http://www.example.org/library#title>`) and templates (e.g. `<{iri}>`)
 
 - **Object node**. The object node can be one of the following terms:
 
   1. IRI constant: e.g. `<http://www.example.org/library#Book>`
   2. [IRI template](#iri-template): e.g. `<http://www.example.org/Author-{pid}>`
-  3. Literal: either a typed literal (e.g. `"John"^^xsd:string`, `"123"^^xsd:integer`) or a literal with language (e.g. `"Il Trono di Spade"@it`). If the type is not specified, it is treated as an `xsd:string`.
-     <!-- Note that adding a language tag or a type are mutually exclusive. -->
-  4. [Literal template](#literal-template): just like literals, literal templates can also be typed or have a language tag (e.g. `{id}^^xsd:integer`, `{id}`).
+  3. Blank node e.g. `_:{id}`
+  4. Literal: either a typed literal (e.g. `"John"^^xsd:string`, `"123"^^xsd:integer`) or a literal with language (e.g. `"Il Trono di Spade"@it`). If the type is not specified, it is treated as an `xsd:string`.
+  5. Literal template: just like literal constants, literal templates can also be typed or have a language tag (e.g. `"POINT ({longitude} {latitude})"^^geo:wktLiteral`).
+  6. Column: a column from the source query (e.g. `{title}`). It can also have a type or language tag.
+  
+Compared to columns, both IRI templates and literal templates are **IRI-safe**. This means that they are encoded to be valid IRIs, following the [R2RML standard](https://www.w3.org/TR/r2rml/#dfn-iri-safe). For example, if we take the previous literal template `"POINT ({longitude} {latitude})"^^geo:wktLiteral` and suppose we have the following data
+| longitude | latitude |
+| --------- | -------- |
+| 12.34     | 56.78    |
+
+then the encoded literal will be `"POINT%20%2812.34%2056.78%29"^^geo:wktLiteral`.
 
 ::: warning
-Literals and literal templates can either be typed or have a language tag, but the two cannot be combined. For example the following mapping is invalid:
+Literals, literal templates and columns can either be typed or have a language tag, but the two cannot be combined. For example the following mapping is invalid:
 
 ```
 mappingId     Book titles in Italian
 source        SELECT id, title FROM books where lang='ITALIAN'
 target        :BID_{id} :title {title}^^xsd:string@it .
 ```
-
 :::
 
 ### IRI Template
@@ -114,9 +122,8 @@ source        SELECT col1, col2 FROM table
 target        :{col1} :title p:{col2}
 ```
 
-### Literal Template
-
-The simplest literal template is merely a placeholder (e.g. `{name}`). Since in an RDF graph literals can be typed and have language tags, a literal template can also be typed and tagged.
+### Literal 
+Since in an RDF graph literals can be typed and have language tags, literal templates and columns can be typed and tagged as well
 
 #### Literal Typing
 
@@ -129,7 +136,7 @@ target        :BID_{id} :title {title}^^xsd:string; :edition {edition}^^xsd:inte
 ```
 
 The type used in the mapping has to agree with the type in the ontology (if specified).
-If the type is not specified (for example, for the `description` property in the previous mapping), the system will look at the SQL type of the SQL column used in the mapping and will use the [**Natural Mapping of SQL values**](http://www.w3.org/TR/r2rml/#natural-mapping) as defined by [R2RML standard](http://www.w3.org/TR/r2rml/).
+If the type is not specified (for example, for the `description` property in the previous mapping), the system will look at the SQL type of the SQL column used in the mapping and will use the [**Natural Mapping of SQL values**](https://www.w3.org/TR/r2rml/#natural-mapping) as defined by [R2RML standard](https://www.w3.org/TR/r2rml/).
 
 #### Language tags
 
@@ -172,7 +179,7 @@ target        GRAPH <http://www.example.org/graphs/{lang}> { :BID_{id} :title {t
 
 ### Compact form
 
-Following [Turtle](http://www.w3.org/TR/turtle/) syntax, Ontop native mapping format allows writing down an RDF graph in a compact textual form. A set of triples sharing the same subject can be written as a **predicate list**, where the pairs predicate-object are separated using semicolons, while a set of triples sharing the same subject and predicate can be written as an **object list**, where objects are separated using commas.
+Following [Turtle](https://www.w3.org/TR/turtle/) syntax, Ontop native mapping format allows writing down an RDF graph in a compact textual form. A set of triples sharing the same subject can be written as a **predicate list**, where the pairs predicate-object are separated using semicolons, while a set of triples sharing the same subject and predicate can be written as an **object list**, where objects are separated using commas.
 
 **Predicate list**: These two examples are equivalent ways of writing the triple template about Author.
 
