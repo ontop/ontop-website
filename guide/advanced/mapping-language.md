@@ -59,29 +59,26 @@ Each triple must be separated by a space followed by a period (`s p o .`) and is
 
   1. IRI or blank node constant: e.g. `<http://www.example.org/library#BID_FF125>` or `_:Library1`
   2. [IRI or blank node template](#iri-or-blank-node-template): e.g. `<http://www.example.org/library#BID_{id}>` or `_:{id}`
-  3. Column: a column directly from the source query (e.g. `<{iri}>`)
+  3. IRI or blank node column: a column directly from the source query (e.g. `<{iri}>`)
 
 - **Predicate node**: The predicate node can be one of the following terms:
 
   1. IRI constant: e.g. `<http://www.example.org/library#title>`
   2. IRI template: e.g. `<http://www.example.org/library#{predicate}>`
-  3. Column: a column from the source query (e.g. `<{predicate_iri}>`)
-    
+  3. IRI column: a column from the source query (e.g. `<{predicate_iri}>`)
+
   Note that the special predicate `a` is a shortcut that stands for `rdf:type` (more precisely, for `<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>`).
 
 - **Object node**: The object node can be one of the following terms:
 
   1. IRI or blank node constant: e.g., `<http://www.example.org/library#Book>`
   2. [IRI or blank node template](#iri-template): e.g., `<http://www.example.org/Author-{pid}>`
-  3. Literal constant: either an implicitly typed literal (e.g., `123` or `true` or `"John"`), an explicitly typed literal (e.g., `"John"^^xsd:string`, `"123"^^xsd:integer`) or a literal with a language tag (e.g., `"Il Trono di Spade"@it`).
-  4. Literal column: a column from the source query (e.g., `{title}`). It can also be explicitly typed (e.g., `{title}^^xsd:string`) or have a language tag (e.g., `{title}@en`).
-  5. Literal template: just like literal constants, literal templates can also be explicitly typed or have a language tag. Literal templates can be useful to create complex, arbitrary literals by concatenation (e.g. `"POINT ({longitude} {latitude})"^^geo:wktLiteral`).
+  3. IRI or blank node column: e.g. `<{object_iri}>`
+  4. Literal constant: either an implicitly typed literal (e.g., `123` or `true` or `"John"`), an explicitly typed literal (e.g., `"John"^^xsd:string`, `"123"^^xsd:integer`) or a literal with a language tag (e.g., `"Il Trono di Spade"@it`).
+  5. Literal column: a column from the source query (e.g., `{title}`). It can also be explicitly typed (e.g., `{title}^^xsd:string`) or have a language tag (e.g., `{title}@en`).
+  6. Literal template: just like literal constants, literal templates can also be explicitly typed or have a language tag. Literal templates can be useful to create complex, arbitrary literals by concatenation (e.g. `"POINT ({longitude} {latitude})"^^geo:wktLiteral`).
 
-Compared to columns, both IRI and blank node templates are **IRI-safe**. This means that they are encoded to be valid IRIs, following the [R2RML standard](https://www.w3.org/TR/r2rml/#dfn-iri-safe). For example, if we have the IRI template `<http://www.example.org/library#BID_{name}>` and suppose that for the `name` column we have the value `"John Library"`, then the generated IRI will be `<http://www.example.org/library#BID_John%20Library>`.
-
-<!-- 
-*Note*: Since columns are not IRI-safe, if you want to use a column directly as subject or predicate (e.g. `<iri>`), you should make sure that the values are already valid, percent-encoded IRIs. 
--->
+IRI and blank node templates apply **IRI-safe** encoding to their columns, following the [R2RML standard](https://www.w3.org/TR/r2rml/#dfn-iri-safe). For example, if we have the IRI template `<http://www.example.org/library#BID_{name}>` and suppose that for the `name` column we have the value `"John Library"`, then the generated IRI will be `<http://www.example.org/library#BID_John%20Library>`. Instead, IRI columns are not transformed, so their values are expected to already be valid IRIs.
 
 ::: warning
 Literal constants, templates, and columns can either be explicitly typed or have a language tag, but the two cannot be combined. For example, the following mapping is *invalid*:
