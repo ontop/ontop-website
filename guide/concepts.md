@@ -28,7 +28,7 @@ Ontop supports a large fragment of [SPARQL 1.1](https://www.w3.org/TR/sparql11-q
 ## Mappings
 
 Mappings specify the correspondence between the data models of the relational data sources and the RDF graph.
-Ontop supports the [R2RML standard mapping language](https://www.w3.org/TR/r2rml/) and the Ontop mapping language, which is fully interoperable with R2RML.
+Ontop supports the [R2RML standard mapping language](https://www.w3.org/TR/r2rml/) and the [Ontop mapping language](/guide/advanced/mapping-language), which is fully interoperable with R2RML.
 
 ## Ontology
 
