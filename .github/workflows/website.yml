@@ -1,5 +1,8 @@
 name: Deploy Website
-on: [push]
+on:
+  push:
+    branches:
+      - master
 jobs:
   Deploy-Website:
     runs-on: ubuntu-latest
