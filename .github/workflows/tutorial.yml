@@ -1,5 +1,8 @@
 name: Deploy Tutorial
-on: [push]
+on:
+  push:
+    branches:
+      - master
 jobs:
   Deploy-Tutorial:
     runs-on: ubuntu-latest
