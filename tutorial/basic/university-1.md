@@ -109,7 +109,7 @@ FROM "uni1"."student"
 ```
 
 Some remarks:
-  - The target part is described using a [Turtle-like syntax](https://github.com/ontop/ontop/wiki/TurtleSyntax) while the source part is a regular SQL query.
+  - The target part is described using a [Turtle-like syntax](/guide/advanced/mapping-language) while the source part is a regular SQL query.
   - We used the primary key `s_id` to create the IRI. [As we will see later](../mapping/primary-keys.md),
     this practice enables Ontop to remove self-joins, which is very important for optimizing
     the query performance.
