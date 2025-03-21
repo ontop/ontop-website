@@ -102,6 +102,7 @@ function genGuideSidebarConfig() {
         	title: 'Advanced',
         	collapsable: false,
         	children: [
+                'advanced/mapping-language',
                 'advanced/predefined',
                 'advanced/logging',
                 'advanced/caching',
