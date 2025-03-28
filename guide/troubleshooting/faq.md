@@ -5,7 +5,7 @@ Some Frequently Asked Questions
 ## General
 
 ### Which mapping syntaxes are supported?
-We support [R2RML](https://www.w3.org/TR/r2rml/) and our own mapping syntax, which can be automatically converted into R2RML using Ontop CLI command [`ontop mapping to-r2rml`](/guide/cli#ontop-mapping-to-r2rml)
+We support [R2RML](https://www.w3.org/TR/r2rml/) and [our own mapping syntax](/guide/advanced/mapping-language), which can be automatically converted into R2RML using Ontop CLI command [`ontop mapping to-r2rml`](/guide/cli#ontop-mapping-to-r2rml)
 
 ### Is it open source?
 Yes! Ontop is available under the Apache License, Version 2.0.
