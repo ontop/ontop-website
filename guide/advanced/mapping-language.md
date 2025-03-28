@@ -1,6 +1,6 @@
 # Ontop Mapping Language
 
-While Ontop is compatible with the W3C standard mapping language [R2RML](https://www.w3.org/TR/2012/REC-r2rml-20120927/), it also provides its own native mapping language (**OBDA**).
+While Ontop is compatible with the W3C standard mapping language [R2RML](https://www.w3.org/TR/2012/REC-r2rml-20120927/), it also provides [its own native mapping language (**OBDA**)](/guide/advanced/mapping-language).
 
 An OBDA mapping file is a text file with the extension `.obda` and consists of two main sections:
 
