@@ -164,6 +164,7 @@ function genDevSidebarConfig() {
                 'git',
                 'build',
                 'new-release',
+                'snapshot',
                 'debug-protege',
                 'debug-jetty',
                 'db-adapter',
