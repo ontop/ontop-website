@@ -48,8 +48,13 @@ $ ./mvnw release:perform
 
 ## Build and distribute Ontop bundles
 
+The bundles are located at 
+- CLI: `checkout/build/distribution/target/`
+- Protege plugin and bundles: `checkout/protege/distribution/target/`
+
+We can also recompile them from the `checkout` directory generated during the Maven release
+
 ```console
-# we can start from the `checkout` directory generated during the Maven release
 $ cd target/checkout
 $ ./build-release.sh
 ```
