@@ -18,7 +18,8 @@ $ git checkout -b releasing/<version-major.minor>
 Update pom.xml files by Maven plugin to a SNAPSHOT version:
 
 ```console
-$ ./mvnw versions:set -DnewVersion=5.0.0-SNAPSHOT
+$ ./mvnw versions:set -DnewVersion=<version-major.minor>-SNAPSHOT
+# $ ./mvnw versions:set -DnewVersion=5.0.0-SNAPSHOT
 ```
 
 ## Build Maven packages
@@ -26,12 +27,15 @@ $ ./mvnw versions:set -DnewVersion=5.0.0-SNAPSHOT
 ```console
 $ ./mvnw release:clean
 
-# Preparing the release will sign artifacts (GPG key needed), create the new tag in git and automatically push to github.
-# When 100% sure, you can skip the test by `-Darguments="-DskipTests"`
-$ ./mvnw release:prepare
+# Preparing the release will sign artifacts (GPG key needed), create the new tag in git, and automatically push to github.
+$ ./mvnw release:prepare -B
 
 # stage the release
 $ ./mvnw release:perform
+# To skip tests:
+# ./mvnw release:perform \
+#  -Darguments="-Dmaven.test.skip=true -DskipTests" \
+#  -Dgoals="deploy -Dmaven.test.skip=true -DskipTests" 
 
 # Or stage from a Git tag
 # ./mvnw release:perform  -DconnectionUrl=scm:git:git@github.com:ontop/ontop.git -Dtag=ontop-5.0.0
