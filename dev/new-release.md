@@ -41,12 +41,10 @@ $ ./mvnw release:perform
 # ./mvnw release:perform  -DconnectionUrl=scm:git:git@github.com:ontop/ontop.git -Dtag=ontop-5.0.0
 ```
 
-### Stage the Maven artifacts
+### Stage the Maven artifacts at Maven Central
 
-- URL: [https://oss.sonatype.org](https://oss.sonatype.org)
-- Navigate to "Staging Repositories" from the left panel
-- Close the repository by clicking the `Close` button
-- Release the artifacts by clicking the `Release` button
+- URL: [https://central.sonatype.com/publishing/deployments]
+- Click "Publish"
 
 ## Build and distribute Ontop bundles
 
