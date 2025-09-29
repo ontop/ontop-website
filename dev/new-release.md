@@ -32,6 +32,7 @@ $ ./mvnw release:prepare -B
 
 # stage the release
 $ ./mvnw release:perform
+
 # To skip tests:
 # ./mvnw release:perform \
 #  -Darguments="-Dmaven.test.skip=true -DskipTests" \
@@ -43,16 +44,22 @@ $ ./mvnw release:perform
 
 ### Stage the Maven artifacts at Maven Central
 
-- URL: [https://central.sonatype.com/publishing/deployments]
-- Click "Publish"
+- URL: https://central.sonatype.com/publishing/deployments
+- Click `Publish`
 
 ## Build and distribute Ontop bundles
 
 The bundles are located at 
-- CLI: `checkout/build/distribution/target/`
-- Protege plugin and bundles: `checkout/protege/distribution/target/`
+- CLI: `target/checkout/build/distribution/target/`
+  - `ontop-cli-*.zip`  
+- Protege plugin and bundles: `target/checkout/protege/distribution/target/`
+  -  `it.unibz.inf.ontop.protege-*.jar`
+  -  `ontop-protege-bundle-linux-*.tar.gz`
+  -  `ontop-protege-bundle-macos-*.zip`
+  -  `ontop-protege-bundle-win-*.zip`
+  -  `ontop-protege-bundle-platform-independent-*.zip`
 
-We can also recompile them from the `checkout` directory generated during the Maven release
+We can also recompile them from the `target/checkout` directory generated during the Maven release
 
 ```console
 $ cd target/checkout
