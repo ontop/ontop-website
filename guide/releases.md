@@ -1,5 +1,53 @@
 # Release notes
 
+## 5.4.0 (September 29, 2025)
+
+##### New features
+- New query unfolder, performing query unfolding in two phases for handling abstract SPARQL queries more efficiently, added [#846](https://github.com/ontop/ontop/pull/846)
+- Support for `rdfs:subClassOf*` property path added [#832](https://github.com/ontop/ontop/pull/832)
+- Bottom-up implementation of `EXISTS`, supporting most cases for `EXISTS`, added [#853](https://github.com/ontop/ontop/pull/853) and [#861](https://github.com/ontop/ontop/pull/861)
+- Support for TDEngine added [#875](https://github.com/ontop/ontop/pull/875) and [#877](https://github.com/ontop/ontop/pull/877)
+- Support for multi-line target queries in OBDA files added [#874](https://github.com/ontop/ontop/pull/874)
+
+##### New optimization
+- Case-insensitive substring matching simplified [#882](https://github.com/ontop/ontop/pull/882)
+
+##### Refactoring
+- Robust to primary keys with NULLable attributes added [#859](https://github.com/ontop/ontop/pull/859)
+- `IQTree` and `QueryNode` code cleaned up [#862](https://github.com/ontop/ontop/pull/862)
+- Numeric binary operators refactored [#893](https://github.com/ontop/ontop/pull/893)
+- More Trino functions recognized [#849](https://github.com/ontop/ontop/pull/849)
+
+
+##### Bug fixes
+- `ORDER BY` lifted above `DISTINCT` when necessary [#847](https://github.com/ontop/ontop/pull/847)
+- Foreign key inference in lenses preserved in the presence of IRI safeness declarations [#880](https://github.com/ontop/ontop/pull/880)
+- Correct datatypes declared for all geospatial related functions
+
+[Milestone on Github](https://github.com/ontop/ontop/milestone/29?closed=1)
+
+## 5.3.1 (September 29, 2025)
+
+##### New features
+- Database init script added [#856](https://github.com/ontop/ontop/pull/856)
+- `ST_Distance` function for Trino added [#845](https://github.com/ontop/ontop/pull/845)
+- H2 information schema tables are now classified as system tables [#869](https://github.com/ontop/ontop/pull/869)
+
+##### New optimization
+- Conjunctive query containment check now handles NULLable columns [#872](https://github.com/ontop/ontop/pull/872)
+
+##### Refactoring
+- `CHARACTER VARYING` and `VARCHAR` are now treated the same in Dremio [#881](https://github.com/ontop/ontop/pull/881)
+
+##### Bugfixes
+- Arity violation fixed [#866](https://github.com/ontop/ontop/pull/866)
+- DuckDB catalogs are now taken into account [#867](https://github.com/ontop/ontop/pull/867)
+- Non-renamed variable in `NullableFDSelfLJOptimizer` fixed [#900](https://github.com/ontop/ontop/pull/900)
+- Missing padding with nulls when simplified left joins fixed
+- Long artificial `LIMIT` value reduced for supporting Dremio 26
+
+[Milestone on Github](https://github.com/ontop/ontop/milestone/28?closed=1)
+
 ## 5.3.0 (February 18, 2025)
 
 #### Major dependency update
