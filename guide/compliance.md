@@ -1,7 +1,7 @@
 # Standards compliance
 
 ## SPARQL 1.1
-*Updated for 5.1.0*.
+*Updated for 5.4.0*.
 
 In the following table we present a summary of the compliance of the latest version of Ontop with [SPARQL 1.1](https://www.w3.org/TR/sparql11-query/), where rows correspond to sections of the W3C recommendation and unsupported features are ~~crossed out~~. Most of the features are supported, but some are unsupported or only partially supported.
 
@@ -10,7 +10,7 @@ In the following table we present a summary of the compliance of the latest vers
 | [5. Graph Patterns](https://www.w3.org/TR/sparql11-query/#GroupPatterns) | `BGP`, `FILTER` | 2/2    |
 | [6. Including Optional Values](https://www.w3.org/TR/sparql11-query/#optionals) | `OPTIONAL` | 1/1    |
 | [7. Matching Alternatives](https://www.w3.org/TR/sparql11-query/#alternatives) | `UNION` | 1/1    |
-| [8. Negation](https://www.w3.org/TR/sparql11-query/#negation)          | `MINUS`, <code>~~FILTER \[NOT\] EXISTS~~</code>    | 1/2    |
+| [8. Negation](https://www.w3.org/TR/sparql11-query/#negation)          | `MINUS`, `FILTER [NOT] EXISTS`    | 2/2    |
 | [9. Property Paths](https://www.w3.org/TR/sparql11-query/#propertypaths)      | ~~PredicatePath~~, ~~InversePath~~, ~~ZeroOrMorePath~~, ...    | 0 |
 | [10. Assignment](https://www.w3.org/TR/sparql11-query/#assignment)  | `BIND`, `VALUES`      | 2/2 |
 | [11. Aggregates](https://www.w3.org/TR/sparql11-query/#aggregates)  | `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`, `GROUP_CONCAT`, `SAMPLE`      | 6/6 |
@@ -19,7 +19,7 @@ In the following table we present a summary of the compliance of the latest vers
 | [14. Basic Federated Query](https://www.w3.org/TR/sparql11-federated-query/) |  <code>~~SERVICE~~</code> | 0 |
 | [15. Solution Seqs. & Mods.](https://www.w3.org/TR/sparql11-query/#solutionModifiers) | `ORDER BY`, `SELECT`, `DISTINCT`, `REDUCED`, `OFFSET`, `LIMIT` | 6/6 |
 | [16. Query Forms](https://www.w3.org/TR/sparql11-query/#QueryForms) | `SELECT`, `CONSTRUCT`, `ASK`, `DESCRIBE` | 4/4 |
-| [17.4.1. Functional Forms](https://www.w3.org/TR/sparql11-query/#func-forms) | `BOUND`, `IF`, `COALESCE`, <code>~~EXISTS~~</code>, <code>~~NOT EXISTS~~</code>, <code>&#124;&#124;</code> , `&&`, `=`, `sameTerm`, `IN`, `NOT IN`  | 9/11 |
+| [17.4.1. Functional Forms](https://www.w3.org/TR/sparql11-query/#func-forms) | `BOUND`, `IF`, `COALESCE`, `EXISTS`, `NOT EXISTS`, <code>&#124;&#124;</code> , `&&`, `=`, `sameTerm`, `IN`, `NOT IN`  | 11/11 |
 | [17.4.2. Functions on RDF Terms](https://www.w3.org/TR/sparql11-query/#func-rdfTerms) | `isIRI`, `isBlank`, `isLiteral`, `isNumeric`, `str`, `lang`, `datatype`, `IRI`, `BNODE`, <code>~~STRDT~~</code>, <code>~~STRLANG~~</code>, `UUID`, `STRUUID` | 11/13 |
 | [17.4.3. Functions on Strings](https://www.w3.org/TR/sparql11-query/#func-strings) | `STRLEN`, `SUBSTR`, `UCASE`, `LCASE`, `STRSTARTS`, `STRENDS`, `CONTAINS`, `STRBEFORE`, `STRAFTER`, `ENCODE_FOR_URI`, `CONCAT`, `langMatches`, `REGEX`, `REPLACE` | 14/14 |
 | [17.4.4. Functions on Numerics](https://www.w3.org/TR/sparql11-query/#func-numerics) | `abs`, `round`, `ceil`, `floor`, `RAND` | 5/5 |
@@ -34,6 +34,7 @@ In the following table we present a summary of the compliance of the latest vers
  - Cast to `xsd:boolean`. Casting NaN to boolean should result in `"false"^^xsd:boolean`, however this check is not feasible for many DB dialects, hence there is mostly no special handling of these values with support limited to PostgreSQL, Oracle and Spark.
 - Cast to `xsd:decimal`. Casting to DECIMAL results in values with scale 0 in several SQL dialects. As such the custom DECIMAL_STR with an arbitrary precision defined in the respective DBTypeFactory of a dialect is used for each cast.
 - Cast to `xsd:dateTime`. The list of possible timestamp patterns is too large, and many dialects lack an effective way to check for these patterns without getting extremely verbose. Hence, it is not possible to often detect whether a value is a valid timestamp before the cast is performed. With the exception of SQL Server and Snowflake which have TRY_CAST functions, applying this function to other dialects comes with severe limitations.
+- `EXISTS` is only supported when it can be translated into a bottom-up manner, i.e. using a left join. In practice, it covers most of the cases, but sometimes a top-down evaluation is necessary.
 
 
 ## GeoSPARQL 1.0
