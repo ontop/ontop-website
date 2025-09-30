@@ -9,8 +9,6 @@ Versions
 --------
 This documentation is for Ontop 3.0 and more recent versions.
 
-For earlier versions, please refer to [our previous Wiki](https://github.com/ontop/ontop/wiki).
-
 Most recent version:
 * Stable:  Ontop 5.4.0, released on September 29, 2025.
 
