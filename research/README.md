@@ -40,6 +40,7 @@ The development and the research around Ontop over the years have been mainly fu
 ### Current projects
 * [CYCLOPS](https://www.cyclopsproject.eu/), EU Project
 * [D2G2](https://gepris.dfg.de/gepris/projekt/500249124?language=en) (Dense and Deep Geographic Virtual Knowledge Graphs for Visual Analysis), funded by DFG and the province of Bolzano
+* [CRIMA](https://crima.eurac.edu/), FESR Project
 
 ### Past projects
 
