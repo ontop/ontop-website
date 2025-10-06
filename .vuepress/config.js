@@ -133,6 +133,7 @@ function genGuideSidebarConfig() {
                 'databases/presto.md',
                 'databases/snowflake.md',
                 'databases/spark.md',
+                'databases/tdengine.md',
                 'databases/trino.md',
             ]
         },
