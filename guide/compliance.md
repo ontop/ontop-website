@@ -11,7 +11,7 @@ In the following table we present a summary of the compliance of the latest vers
 | [6. Including Optional Values](https://www.w3.org/TR/sparql11-query/#optionals) | `OPTIONAL` | 1/1    |
 | [7. Matching Alternatives](https://www.w3.org/TR/sparql11-query/#alternatives) | `UNION` | 1/1    |
 | [8. Negation](https://www.w3.org/TR/sparql11-query/#negation)          | `MINUS`, `FILTER [NOT] EXISTS`    | 2/2    |
-| [9. Property Paths](https://www.w3.org/TR/sparql11-query/#propertypaths)      | ~~PredicatePath~~, ~~InversePath~~, ~~ZeroOrMorePath~~, ...    | 0 |
+| [9. Property Paths](https://www.w3.org/TR/sparql11-query/#propertypaths)      | `PredicatePath`, `InversePath`, `SequencePath`, `AlternativePath`, `NegatedPropertySet`, ~~`ZeroOrMorePath`~~, ~~`OneOrMorePath`~~, ~~`ZeroOrOnePath`~~     | 5/8 |
 | [10. Assignment](https://www.w3.org/TR/sparql11-query/#assignment)  | `BIND`, `VALUES`      | 2/2 |
 | [11. Aggregates](https://www.w3.org/TR/sparql11-query/#aggregates)  | `COUNT`, `SUM`, `MIN`, `MAX`, `AVG`, `GROUP_CONCAT`, `SAMPLE`      | 6/6 |
 | [12. Subqueries](https://www.w3.org/TR/sparql11-query/#subqueries) | Subqueries | 1/1 |
