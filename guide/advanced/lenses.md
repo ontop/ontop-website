@@ -365,6 +365,7 @@ Due to various limitations in the language definitions, the FlattenLens is curre
 | Presto | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
 | Snowflake | ![YES][yes] | ![YES][yes]  | ![NO][no] | ![YES][yes] | ![NO][no] |
 | SparkSQL | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![YES][yes] |
+| TDengine | ![NO][no] | ![NO][no]  | ![NO][no] | ![NO][no] | ![NO][no] |
 | Trino | ![YES][yes] | ![YES][yes]  | ![YES][yes] | ![YES][yes] | ![NO][no] |
 
 
