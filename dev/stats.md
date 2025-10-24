@@ -7,6 +7,11 @@ For all the versions 4.x:
 curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/ontop/ontop/releases \
    | jq '[.[] | select((.tag_name | startswith("ontop-4."))) | .assets[] | .download_count ] | add' 
 ```
+For all the versions 5.x:
+```bash
+curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/ontop/ontop/releases \
+   | jq '[.[] | select((.tag_name | startswith("ontop-5."))) | .assets[] | .download_count ] | add' 
+```
 
 ### Docker Hub (image pulls)
 Starting from 5.0.0:
