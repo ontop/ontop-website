@@ -25,7 +25,7 @@ You can send us the generated log file from Protégé starting from *Window -> S
 Go to the folder *log* and modify the line of the *logback.xml* file from `<root Level="ERROR">` to `<root Level="debug">`.
 
 #### Enable logging in the Docker image
-Define the environment variable [`ONTOP_DEBUG`](https://hub.docker.com/r/ontop/ontop) (`ONTOP_DEBUG = "true"`).
+Set the environment variable [`ONTOP_LOG_LEVEL`](https://hub.docker.com/r/ontop/ontop) to `debug`  (`ONTOP_LOG_LEVEL=debug`).
 
 
 ## Asking for help or information
