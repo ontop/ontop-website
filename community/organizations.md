@@ -8,9 +8,8 @@ The [KRDB research group](https://www.unibz.it/en/faculties/engineering/research
 
 ## Ontopic s.r.l.
 
-[Ontopic](https://ontopic.ai/) is the first spin-off of Free University of Bozen-Bolzano and has been co-founded by some members of the KRDB research group.
-Its mission is to help Ontop and the Virtual Knowledge Graph to become mainstream. 
-Ontopic provides a [no-code mapping editor, Ontopic Studio,](https://ontopic.ai/en/ontopic-studio/) and professional services.
+[Ontopic](https://ontopic.ai/) has been co-founded by members of the research group at the Free University of Bozen-Bolzano that started Ontop. 
+Ontopic provides a complete [suite](https://ontopic.ai/en/ontopic-suite/) of solutions for leveraging the potential of Ontop and Virtual Knowledge Graphs.
 
 ## Birkbeck, University of London
 
