@@ -12,6 +12,8 @@ We recommend using [lenses](/guide/advanced/lenses) for this purpose.
 
 :::warning
 If you want to use the Snowflake JDBC Driver with Java 17, the following option must be added to the JVM `--add-opens java.base/java.nio=ALL-UNNAMED`.
+
+Alternatively, you can add the parameter `JDBC_QUERY_RESULT_FORMAT=JSON` to the JDBC URL to avoid using Apache Arrow.
 :::
 
 - Due to an issue in the JDBC, quotation marks cannot always be used when defining an alias. Because of this, it is recommended to choose column names without special characters where possible.
