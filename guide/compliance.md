@@ -171,5 +171,7 @@ PostgreSQL requires these granularities to be named `milliseconds` and `microsec
 
 
 ## Other functions
+*Updated for 5.5.0*.
 
 - Cast to `xsd:date`
+- Query ID: `obdaf:queryId`
