@@ -1,5 +1,22 @@
 # Release notes
 
+## 5.5.0 (February 14, 2026)
+
+#### New features
+  - Support paths to files/directories as relation names in FROM clauses in mappings [#905](https://github.com/ontop/ontop/pull/905)
+  - Common Table Expression in SQL serialization [#911](https://github.com/ontop/ontop/pull/911)
+  - Basic operations on constant time intervals [#916](https://github.com/ontop/ontop/pull/916)
+  - New SPARQL function: `obdaf:queryId` [#924](https://github.com/ontop/ontop/pull/924)
+
+
+#### Refactoring
+  - Refactoring IQTree creation and transformation [#906](https://github.com/ontop/ontop/pull/906)
+  - SQLQueryParser simplifications [#907](https://github.com/ontop/ontop/pull/907)
+  - DB metadata extraction adapted for DuckDB 1.4 [#915](https://github.com/ontop/ontop/pull/915)
+
+[Milestone on Github](https://github.com/ontop/ontop/milestone/31?closed=1)
+
+
 ## 5.4.0 (September 29, 2025)
 
 #### New features
