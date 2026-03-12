@@ -6,6 +6,7 @@ An OBDA mapping file is a text file with the extension `.obda` and consists of t
 
 - `PrefixDeclaration`: a list of prefix definitions used in the mapping file. Each prefix is declared by a pair of its identifier (or name) and its IRI definition.
 - `MappingDeclaration`: collection of **mapping assertions** where each mapping assertion consists of three fields: `mappingId`, `source` and `target`. The mappingId is any string identifying the assertion, the source is an arbitrary SQL query over the database, and the target is a [triple template](#target-triple-template) that contains placeholders that reference column names mentioned in the source query.
+- `@collection`: a grouping name for a mapping declaration. You can have mutiple mapping declaration blocks as long as they are wrapped in their own `[MappingDeclaration] [[]]` tags
 
 The following is an example of a valid OBDA mapping file:
 
@@ -31,6 +32,19 @@ The empty lines between the two sections and between the mappings are mandatory.
 ::: tip Comments
 To comment out a line in an OBDA mapping file, you can use the `;` character at the beginning of the line. Note that you can only comment out entire lines, not parts of them.
 :::
+
+In `target`, it is also possible to have mutiple statements on one line, where subjects can be chained by using `;` in between statements and the final statement terminates with a `.`. Multi-line `target` statements are not possible.
+
+```text
+[MappingDeclaration] @collection Books [[
+
+mappingId     book-and-author-relationship
+target        :BID_{book_id}_Authorship a :Authorship ; :hasBook :BID_{book_id} ; :hasAuthor :AID_{author_id} .
+source        SELECT book_id, author_id FROM books_authors
+
+]]
+
+```
 
 ## Source Query
 
