@@ -8,14 +8,15 @@ For the research side, [see the dedicated page](/research).
 ## Active Core Team Members
 
 The development of Ontop is guided by an international team (reverse lexicographical order).
-* [Guohui Xiao](http://www.ghxiao.org/) (Southeast University, Ontopic)
+* [Guohui Xiao](http://www.ghxiao.org/) (Southeast University)
 * Albulen Pano (Unibz)
 * [Davide Lanti](https://www.inf.unibz.it/~dlanti/) (Unibz)
 * [Roman Kontchakov](http://www.dcs.bbk.ac.uk/~roman/) (Birkbeck)
-* [Sarah Komla-Ebri](https://scholar.google.it/citations?user=SDaIlasAAAAJ&hl=en) (Ontopic)
+* [Sarah Komla-Ebri](https://scholar.google.it/citations?user=SDaIlasAAAAJ&hl=en) (Digital Science, ex-Ontopic)
+* [Manuela Corte Pause](https://github.com/ManuelaCorte) (Digital Science, ex-Ontopic)
 * [Julien Corman](https://scholar.google.it/citations?user=pT6E42UAAAAJ&hl=en) (Unibz)
-* [Benjamin Cogrel](https://github.com/bcogrel/) (Ontopic)
-* [Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Unibz, Ontopic)
+* [Benjamin Cogrel](https://github.com/bcogrel/) (Digital Science, ex-Ontopic)
+* [Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Unibz)
 
 ## Core Team Emeriti
 
