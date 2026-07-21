@@ -12,10 +12,10 @@ The development of Ontop is guided by an international team (reverse lexicograph
 * Albulen Pano (Unibz)
 * [Davide Lanti](https://www.inf.unibz.it/~dlanti/) (Unibz)
 * [Roman Kontchakov](http://www.dcs.bbk.ac.uk/~roman/) (Birkbeck)
-* [Sarah Komla-Ebri](https://scholar.google.it/citations?user=SDaIlasAAAAJ&hl=en) (Digital Science, ex-Ontopic)
-* [Manuela Corte Pause](https://github.com/ManuelaCorte) (Digital Science, ex-Ontopic)
+* [Sarah Komla-Ebri](https://scholar.google.it/citations?user=SDaIlasAAAAJ&hl=en) (Digital Science/Ontopic)
+* [Manuela Corte Pause](https://github.com/ManuelaCorte) (Digital Science/Ontopic)
 * [Julien Corman](https://scholar.google.it/citations?user=pT6E42UAAAAJ&hl=en) (Unibz)
-* [Benjamin Cogrel](https://github.com/bcogrel/) (Digital Science, ex-Ontopic)
+* [Benjamin Cogrel](https://github.com/bcogrel/) (Digital Science/Ontopic)
 * [Diego Calvanese](http://www.inf.unibz.it/~calvanese/) (Unibz)
 
 ## Core Team Emeriti
